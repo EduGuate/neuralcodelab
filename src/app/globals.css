@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff; /* Fondo blanco */
+  --foreground: #1a73e8; /* Texto azul brillante */
+  --card: #ffffff;
+  --card-foreground: #1a73e8;
+  --popover: #ffffff;
+  --popover-foreground: #1a73e8;
+  --primary: #1a73e8; /* Azul primario */
+  --primary-foreground: #ffffff; /* Texto blanco sobre el azul */
+  --secondary: #e3f2fd; /* Azul claro */
+  --secondary-foreground: #0d47a1; /* Azul oscuro para texto en fondo claro */
+  --muted: #e3f2fd; /* Azul claro para elementos secundarios */
+  --muted-foreground: #0d47a1; /* Azul oscuro para texto en fondo claro */
+  --accent: #0288d1; /* Azul más oscuro para acentos */
+  --accent-foreground: #ffffff; /* Texto blanco sobre el azul oscuro */
+  --destructive: #f44336; /* Rojo para acciones destructivas */
+  --destructive-foreground: #ffffff; /* Texto blanco sobre el rojo */
+  --border: #b0bec5; /* Gris claro para bordes */
+  --input: #ffffff; /* Fondo blanco para inputs */
+  --ring: #1a73e8; /* Azul brillante para anillos de enfoque */
+  --chart-1: #1a73e8; /* Azul para gráficos */
+  --chart-2: #0288d1; /* Azul más oscuro para gráficos */
+  --chart-3: #e3f2fd; /* Azul claro para gráficos */
+  --chart-4: #b0bec5; /* Gris claro para gráficos */
+  --radius: 8px;
+  --font-geist-sans: 'Arial', sans-serif;
+  --font-geist-mono: 'Courier New', monospace;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

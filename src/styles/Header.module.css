@@ -1,0 +1,112 @@
+/* Estilos generales para el header */
+.header {
+  background-color: #ffffff; /* Ajusta este color según tu esquema de colores */
+  color: #333333; /* Ajusta este color según tu esquema de colores */
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Asegura que el menú móvil se posicione correctamente */
+}
+
+/* Estilo para el logo */
+.logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Menú de escritorio */
+.navDesktop {
+  display: none; /* Oculta el menú de escritorio por defecto */
+}
+
+.navDesktop ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem; /* Espaciado entre los elementos del menú */
+}
+
+.navDesktop li {
+  display: inline-block;
+}
+
+.navDesktop a {
+  color: #007bff; /* Ajusta este color según tu esquema de colores */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.navDesktop a:hover {
+  text-decoration: underline;
+}
+
+/* Menú móvil */
+.navMobile {
+  display: flex; /* Muestra el menú móvil por defecto */
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 16rem;
+  height: 100%;
+  background-color: #ffffff; /* Ajusta este color según tu esquema de colores */
+  color: #333333; /* Ajusta este color según tu esquema de colores */
+  padding: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 50; /* Asegura que el menú esté encima del contenido */
+}
+
+.navMobileOpen {
+  transform: translateX(0);
+}
+
+.navMobile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navMobile li {
+  margin-bottom: 1rem; /* Espaciado entre los elementos del menú */
+}
+
+.navMobile a {
+  display: block;
+  padding: 0.5rem;
+  color: #007bff; /* Ajusta este color según tu esquema de colores */
+  text-decoration: none;
+}
+
+.navMobile a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para el botón de menú */
+.menuButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+}
+
+.menuButtonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #007bff; /* Ajusta este color según tu esquema de colores */
+}
+
+/* Media Query para pantallas grandes */
+@media (min-width: 768px) {
+  .navDesktop {
+    display: flex; /* Muestra el menú de escritorio en pantallas grandes */
+    flex-grow: 1;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+  }
+
+  .navMobile {
+    display: none; /* Oculta el menú móvil en pantallas grandes */
+  }
+}
