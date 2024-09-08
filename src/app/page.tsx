@@ -13,7 +13,7 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
-    { id: 1, title: 'Proyecto 1', description: 'Aplicacion de aprendizaje para edad de 4 a 5', image: '/images/proyecto1.png' },
+    { id: 1, title: 'Proyecto 1', description: 'Aplicacion de aprendizaje para edad de 4 a 5', image: '/img/proyecto1.png' },
     { id: 2, title: 'Proyecto 2', description: 'Descripción breve del Proyecto 2', image: '/images/proyecto2.jpg' },
     { id: 3, title: 'Proyecto 3', description: 'Descripción breve del Proyecto 3', image: '/images/proyecto3.jpg' },
     { id: 4, title: 'Proyecto 4', description: 'Descripción breve del Proyecto 4', image: '/images/proyecto4.jpg' },
