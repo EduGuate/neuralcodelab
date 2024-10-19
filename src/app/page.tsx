@@ -1,143 +1,232 @@
-'use client';
+'use client'; // Indica que este componente utiliza características de React en el lado del cliente
+
+// Importar dependencias necesarias de React y Material UI
 import { useState } from 'react';
 import Image from 'next/image';
+import { Container, Grid, Typography, Button, Box } from '@mui/material';
 
+// Definición de la interfaz para los proyectos
 interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
+  id: number; // Identificador único del proyecto
+  title: string; // Título del proyecto
+  description: string; // Descripción del proyecto
+  image: string; // Ruta de la imagen del proyecto
 }
 
+// Datos de los servicios
+const services = [
+  {
+    title: "Educación",
+    description: "Proporcionamos herramientas y recursos educativos para empoderar a las comunidades a través del aprendizaje.",
+    icon: "🎓",
+    imageUrl: "/img/educacion.jpg" // Asegúrate de tener esta imagen en public/img
+  },
+  {
+    title: "Desarrollo",
+    description: "Nos enfocamos en construir proyectos de código abierto que inspiran a otros a crear e innovar.",
+    icon: "💻",
+    imageUrl: "/img/desarrollo.jpg" // Asegúrate de tener esta imagen en public/img
+  },
+  {
+    title: "Consultoría",
+    description: "Ofrecemos servicios de consultoría para guiar la transformación digital y la adopción de tecnología.",
+    icon: "📊",
+    imageUrl: "/img/consultorias.jpg" // Asegúrate de tener esta imagen en public/img
+  },
+  {
+    title: "Comunidad",
+    description: "Construimos una red de aprendices y desarrolladores para compartir conocimientos y colaborar.",
+    icon: "👥",
+    imageUrl: "/img/comunidad.jpg" // Asegúrate de tener esta imagen en public/img
+  },
+  {
+    title: "Soporte",
+    description: "Dedicados a proporcionar apoyo y orientación para asegurar el éxito en los esfuerzos tecnológicos.",
+    icon: "🛠️",
+    imageUrl: "/img/soporte.jpg" // Asegúrate de tener esta imagen en public/img
+  }
+];
+
+// Componente principal de la página de inicio
 export default function Home() {
+  // Estados para manejar el estado de hover y el proyecto seleccionado
+  const [isHovered, setIsHovered] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  // Datos de los proyectos
   const projects: Project[] = [
     { id: 1, title: 'AprendeGT', description: 'Aplicacion de aprendizaje para edad de 4 a 5 años', image: '/img/proyecto1.png' },
-    { id: 2, title: 'Proyecto 2', description: 'Descripción breve del Proyecto 2', image: '/images/proyecto2.jpg' },
-    { id: 3, title: 'Proyecto 3', description: 'Descripción breve del Proyecto 3', image: '/images/proyecto3.jpg' },
-    { id: 4, title: 'Proyecto 4', description: 'Descripción breve del Proyecto 4', image: '/images/proyecto4.jpg' },
-    { id: 5, title: 'Proyecto 5', description: 'Descripción breve del Proyecto 5', image: '/images/proyecto5.jpg' },
-    { id: 6, title: 'Proyecto 6', description: 'Descripción breve del Proyecto 6', image: '/images/proyecto6.jpg' },
-    { id: 7, title: 'Proyecto 7', description: 'Descripción breve del Proyecto 7', image: '/images/proyecto7.jpg' },
-    { id: 8, title: 'Proyecto 8', description: 'Descripción breve del Proyecto 8', image: '/images/proyecto8.jpg' }
+    { id: 2, title: 'Proyecto 2', description: 'Descripción breve del Proyecto 2', image: '/img/proyecto2.jpg' },
+    { id: 3, title: 'Proyecto 3', description: 'Descripción breve del Proyecto 3', image: '/img/proyecto3.jpg' },
+    { id: 4, title: 'Proyecto 4', description: 'Descripción breve del Proyecto 4', image: '/img/proyecto4.jpg' }
   ];
 
+  // Función para manejar clics en proyectos
   const handleProjectClick = (project: Project) => {
-    setSelectedProject(project);
+    setSelectedProject(project); // Establece el proyecto seleccionado
   };
 
+  // Función para cerrar el popup de proyecto seleccionado
   const handleClosePopup = () => {
-    setSelectedProject(null);
+    setSelectedProject(null); // Restablece el proyecto seleccionado
   };
 
   return (
-    <div className="flex flex-col min-h-screen px-8 text-center bg-background text-foreground">
-      <header className="bg-primary text-primary-foreground py-8">
-        <h1 className="text-4xl font-bold">Bienvenido a Neural Code Lab</h1>
-        <p className="text-xl mt-4">Creando software gratuito para beneficiar a comunidades y personas que quieren aprender</p>
-        <Image
-          src="/img/logo.png"
-          alt="Logo de Neural Code Lab"
-          className="mx-auto mt-4 rounded-full"
-          width={250}
-          height={250}
-        />
-      </header>
+    <div>
+      {/* Contenedor principal con fondo */}
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{ position: 'relative', minHeight: '100vh' }}
+        onMouseEnter={() => setIsHovered(true)} // Cambia el estado de hover al entrar
+        onMouseLeave={() => setIsHovered(false)} // Cambia el estado de hover al salir
+      >
+        <Box sx={{ position: 'absolute', inset: 0 }}>
+          {/* Imagen de fondo */}
+          <Image
+            src="/img/background.jpg"  // Ruta a la imagen en la carpeta public/img
+            alt="Background"
+            fill
+            className={`object-cover transition-transform duration-700 ease-out ${isHovered ? 'scale-110' : 'scale-100'}`} // Efecto de zoom al hacer hover
+          />
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))',
+              transition: 'opacity 0.7s',
+              opacity: isHovered ? 0.4 : 0.7, // Cambia la opacidad del overlay al hacer hover
+            }}
+          />
+        </Box>
 
-      <main className="flex-1 py-8">
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Sobre Nosotros</h2>
-          <p className="mt-4 max-w-3xl mx-auto">
-            En Neural Code Lab, nos dedicamos a desarrollar software gratuito para ayudar a comunidades y personas de escasos recursos a aprender y crecer. Nuestro objetivo es proporcionar herramientas y recursos accesibles que impulsen el conocimiento y la educación en tecnología.
-          </p>
-        </section>
+        {/* Sección del encabezado */}
+        <Box sx={{ position: 'relative', zIndex: 10, textAlign: 'center', py: 10 }}>
+          <Typography variant="h2" component="h1" sx={{ color: 'black', fontWeight: 'bold' }}>
+            Neural Code Lab
+          </Typography>
+          <Box
+            sx={{
+              height: 4,
+              width: isHovered ? 120 : 80, // Cambia el ancho del indicador al hacer hover
+              backgroundColor: 'purple',
+              mx: 'auto',
+              my: 2,
+              transition: 'width 0.7s',
+            }}
+          />
+          <Typography variant="body1" sx={{ color: 'black', maxWidth: '600px', mx: 'auto' }}>
+            Creando software gratuito para beneficiar a comunidades y personas que quieren aprender.
+          </Typography>
+        </Box>
+      </Container>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Proyectos</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((project) => (
-              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <Image src={project.image} alt={project.title} width={300} height={200} className="w-full h-40 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold mb-2 truncate">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 h-12 overflow-hidden">{project.description}</p>
-                  <button
-                    onClick={() => handleProjectClick(project)}
-                    className="bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-300"
-                  >
-                    Ver Más
-                  </button>
-                </div>
-              </div>
+      {/* Sección de servicios */}
+      <Box sx={{ py: 5, backgroundColor: '#f0f0f0' }}>
+        <Container maxWidth="lg">
+          <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 4 }}>
+            Nuestros Servicios
+          </Typography>
+          <Grid container spacing={4}>
+            {services.map((service, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Box
+                  sx={{
+                    border: '1px solid #e0e0e0',
+                    borderRadius: 2,
+                    textAlign: 'center',
+                    padding: 2,
+                    boxShadow: 1,
+                    transition: 'transform 0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.05)',
+                    },
+                  }}
+                >
+                  <Image src={service.imageUrl} alt={service.title} width={300} height={200} style={{ borderRadius: '8px' }} />
+                  <Box sx={{ mt: 2 }}>
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <Typography variant="h6" gutterBottom>{service.title}</Typography>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{service.description}</Typography>
+                  </Box>
+                </Box>
+              </Grid>
             ))}
-          </div>
-        </section>
+          </Grid>
+        </Container>
+      </Box>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Nuestra Misión</h2>
-          <div className="flex flex-wrap items-center justify-center">
-            <div className="w-full md:w-1/2 p-4">
-              <p className="text-lg">
-                Nuestra misión es democratizar el acceso al conocimiento tecnológico, proporcionando recursos educativos gratuitos y de alta calidad a comunidades con recursos limitados.
-              </p>
-            </div>
-            <div className="w-full md:w-1/2 p-4">
-              <div className="relative overflow-hidden rounded-lg group">
-                <Image
-                  src="/img/mision.webp"
-                  alt="Nuestra Misión"
-                  width={600}
-                  height={400}
-                  className="w-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xl font-bold">Impactando Vidas</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Sección de proyectos */}
+      <Container maxWidth="lg" sx={{ py: 5 }}>
+        <Typography variant="h4" gutterBottom>
+          Proyectos
+        </Typography>
+        <Grid container spacing={4}>
+          {projects.map((project) => (
+            <Grid item xs={12} sm={6} md={3} key={project.id}>
+              <Box
+                sx={{
+                  transition: 'transform 0.3s', // Efecto de transición para el hover
+                  '&:hover': {
+                    transform: 'translateY(-10px)', // Mueve el proyecto hacia arriba al hacer hover
+                  },
+                  p: 2,
+                  borderRadius: 2,
+                  backgroundColor: 'white',
+                }}
+              >
+                {/* Imagen del proyecto */}
+                <Image src={project.image} alt={project.title} width={300} height={200} style={{ borderRadius: '8px' }} />
+                <Typography variant="h6" sx={{ mt: 2 }}>{project.title}</Typography>
+                <Typography variant="body2">{project.description}</Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleProjectClick(project)} // Manejar clic en el proyecto
+                  sx={{ mt: 2 }}
+                >
+                  Ver Proyecto
+                </Button>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Nuestro Impacto</h2>
-          <div className="flex flex-wrap items-center justify-center">
-            <div className="w-full md:w-1/2 p-4">
-              <div className="relative overflow-hidden rounded-lg group">
-                <Image
-                  src="/img/impacto.webp"
-                  alt="Nuestro Impacto"
-                  width={250}
-                  height={250}
-                  className="w-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xl font-bold">Transformando Comunidades</span>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 p-4">
-              <p className="text-lg">
-                Hemos impactado positivamente en la vida de miles de personas, proporcionando herramientas y conocimientos que han permitido el desarrollo de habilidades tecnológicas y la creación de oportunidades laborales.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-
+      {/* Popup para mostrar detalles del proyecto */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md mx-4">
-            <h3 className="text-2xl font-semibold mb-4">{selectedProject.title}</h3>
-            <p className="text-gray-700 mb-4">{selectedProject.description}</p>
-            <button
-              onClick={handleClosePopup}
-              className="bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary-dark transition-colors duration-300"
-            >
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            bgcolor: 'rgba(0,0,0,0.7)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 1000,
+          }}
+          onClick={handleClosePopup} // Cierra el popup al hacer clic
+        >
+          <Box
+            sx={{
+              bgcolor: 'white',
+              padding: 4,
+              borderRadius: 2,
+              width: '80%',
+              maxWidth: 600,
+              textAlign: 'center',
+            }}
+          >
+            <Typography variant="h5">{selectedProject.title}</Typography>
+            <Typography variant="body2" sx={{ mt: 2 }}>{selectedProject.description}</Typography>
+            <Button variant="contained" color="primary" onClick={handleClosePopup} sx={{ mt: 3 }}>
               Cerrar
-            </button>
-          </div>
-        </div>
+            </Button>
+          </Box>
+        </Box>
       )}
     </div>
   );
