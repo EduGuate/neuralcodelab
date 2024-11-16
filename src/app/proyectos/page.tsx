@@ -129,6 +129,30 @@ const Proyectos: React.FC = () => {
           </div>
         </div>
 
+          {/* Proyecto 5 */}
+          <div className="transform hover:scale-105 transition-all duration-300">
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl">
+              <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center relative">
+                <Image 
+                  src="/img/mental-health.jpg"
+                  alt="Salud Mental Digital"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-bold mb-3 text-gray-800">Salud Mental Digital</h2>
+                <p className="text-gray-600">
+                  Aplicación innovadora que proporciona herramientas y recursos para el bienestar mental y emocional.
+                </p>
+              </div>
+            </div>
+          </div>
+        
+
+
+
+
         {/* Sección Final con CTA */}
         <div className="mt-16 text-center">
           <div className="inline-block p-8 rounded-2xl bg-gradient-to-r from-purple-100 to-blue-100">

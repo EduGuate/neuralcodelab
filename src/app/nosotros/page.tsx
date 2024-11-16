@@ -22,7 +22,7 @@ const AboutContactTeam: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <Image 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                src="/img/contactImg.png" 
                 alt="Equipo de Neural Code Lab" 
                 className="rounded-lg shadow-lg" 
                 width={1350} // Añade el ancho de la imagen
