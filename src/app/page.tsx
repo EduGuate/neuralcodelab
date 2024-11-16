@@ -84,7 +84,7 @@ export default function Home() {
         <Box sx={{ position: 'absolute', inset: 0 }}>
           {/* Imagen de fondo */}
           <Image
-            src="/img/background.jpg"  // Ruta a la imagen en la carpeta public/img
+            src="/img/background.webp"  // Ruta a la imagen en la carpeta public/img
             alt="Background"
             fill
             className={`object-cover transition-transform duration-700 ease-out ${isHovered ? 'scale-110' : 'scale-100'}`} // Efecto de zoom al hacer hover
