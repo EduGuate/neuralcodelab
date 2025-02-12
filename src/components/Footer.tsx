@@ -7,19 +7,19 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Neural Code Lab</h2>
-            <p className="text-gray-300">Creando software gratuito para beneficiar a comunidades y personas que quieren aprender.</p>
+            <p className="text-gray-300">Creating free software to benefit communities and individuals who want to learn.</p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Enlaces Rápidos</h3>
+            <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Inicio</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Proyectos</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Acerca de</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Contacto</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Home</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Projects</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">About</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Síguenos</h3>
+            <h3 className="text-xl font-semibold">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="https://facebook.com/neuralcodelab" aria-label="Facebook" className="text-2xl hover:text-blue-400 transition-colors">
                 📘
@@ -38,10 +38,10 @@ const Footer: React.FC = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Neural Code Lab. Todos los derechos reservados.
+            © {new Date().getFullYear()} Neural Code Lab. All rights reserved.
           </p>
           <p className="mt-2 text-sm text-gray-500 flex items-center justify-center">
-            Hecho con ❤️ por el equipo de Neural Code Lab
+            Made with ❤️ by the Neural Code Lab team
           </p>
         </div>
       </div>

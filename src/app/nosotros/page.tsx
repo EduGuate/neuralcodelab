@@ -3,51 +3,51 @@
 import React from 'react';
 import Image from 'next/image';
 
-// Datos del equipo
+// Team data
 const teamMembers = [
   {
     name: "Lewis Ortiz",
-    role: "Fundadora & CEO",
-    image: "/img/profile.png" // Añadí la ruta de la imagen aquí
+    role: "Founder & CEO",
+    image: "/img/profile.png" // Added the image path here
   }
 ];
 
 const AboutContactTeam: React.FC = () => {
   return (
     <div>
-      {/* Sección Sobre Nosotros */}
+      {/* About Us Section */}
       <section id="about" className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Sobre Nosotros</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <Image 
                 src="/img/contactImg.png" 
-                alt="Equipo de Neural Code Lab" 
+                alt="Neural Code Lab Team" 
                 className="rounded-lg shadow-lg" 
-                width={1350} // Añade el ancho de la imagen
-                height={750} // Añade la altura de la imagen
+                width={1350} // Added image width
+                height={750} // Added image height
               />
             </div>
             <div className="md:w-1/2 md:pl-10">
               <p className="text-gray-600 mb-4">
-                Neural Code Lab es una organización dedicada a la creación de software gratuito que beneficia a comunidades y personas que desean aprender sobre tecnología y desarrollo de software.
+                Neural Code Lab is an organization dedicated to creating free software that benefits communities and individuals who want to learn about technology and software development.
               </p>
               <p className="text-gray-600 mb-4">
-                Nuestro equipo está compuesto por apasionados de la tecnología que buscan crear herramientas accesibles y útiles para todos. Creemos en el poder del software para cambiar el mundo y trabajamos constantemente para ofrecer soluciones innovadoras.
+                Our team is composed of technology enthusiasts who strive to create accessible and useful tools for everyone. We believe in the power of software to change the world and constantly work to deliver innovative solutions.
               </p>
               <p className="text-gray-600">
-                Nuestra misión es democratizar el acceso al conocimiento tecnológico y fomentar una comunidad global de desarrolladores comprometidos con el aprendizaje continuo y la innovación.
+                Our mission is to democratize access to technological knowledge and foster a global community of developers committed to continuous learning and innovation.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sección Nuestro Equipo */}
+      {/* Our Team Section */}
       <section id="team" className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-center mb-8">Nuestro Equipo</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Our Team</h2>
           <div className="flex justify-center">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs mx-2">
@@ -55,8 +55,8 @@ const AboutContactTeam: React.FC = () => {
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-64 object-cover" 
-                  width={400} // Añade el ancho de la imagen
-                  height={256} // Añade la altura de la imagen
+                  width={400} // Added image width
+                  height={256} // Added image height
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 text-center">{member.name}</h3>

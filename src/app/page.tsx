@@ -1,233 +1,352 @@
-'use client'; // Indica que este componente utiliza características de React en el lado del cliente
+'use client';
 
-// Importar dependencias necesarias de React y Material UI
-import { useState } from 'react';
-import Image from 'next/image';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Github, ExternalLink, Mail, Linkedin, Brain, Code, Users, Database } from 'lucide-react';
 
-// Definición de la interfaz para los proyectos
 interface Project {
-  id: number; // Identificador único del proyecto
-  title: string; // Título del proyecto
-  description: string; // Descripción del proyecto
-  image: string; // Ruta de la imagen del proyecto
+  title: string;
+  description: string;
+  liveUrl: string;
+  tags: string[];
+  category: string;
 }
 
-// Datos de los servicios
-const services = [
-  {
-    title: "Educación",
-    description: "Proporcionamos herramientas y recursos educativos para empoderar a las comunidades a través del aprendizaje.",
-    icon: "🎓",
-    imageUrl: "/img/educacion.jpg" // Asegúrate de tener esta imagen en public/img
-  },
-  {
-    title: "Desarrollo",
-    description: "Nos enfocamos en construir proyectos de código abierto que inspiran a otros a crear e innovar.",
-    icon: "💻",
-    imageUrl: "/img/desarrollo.jpg" // Asegúrate de tener esta imagen en public/img
-  },
-  {
-    title: "Consultoría",
-    description: "Ofrecemos servicios de consultoría para guiar la transformación digital y la adopción de tecnología.",
-    icon: "📊",
-    imageUrl: "/img/consultorias.jpg" // Asegúrate de tener esta imagen en public/img
-  },
-  {
-    title: "Comunidad",
-    description: "Construimos una red de aprendices y desarrolladores para compartir conocimientos y colaborar.",
-    icon: "👥",
-    imageUrl: "/img/comunidad.jpg" // Asegúrate de tener esta imagen en public/img
-  },
-  {
-    title: "Soporte",
-    description: "Dedicados a proporcionar apoyo y orientación para asegurar el éxito en los esfuerzos tecnológicos.",
-    icon: "🛠️",
-    imageUrl: "/img/soporte.jpg" // Asegúrate de tener esta imagen en public/img
-  }
-];
+interface ProjectCardProps extends Project {}
 
-// Componente principal de la página de inicio
-export default function Home() {
-  // Estados para manejar el estado de hover y el proyecto seleccionado
-  const [isHovered, setIsHovered] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, liveUrl, tags }) => (
+  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-purple-100 hover:scale-105">
+    <div className="flex items-center justify-between mb-4">
+      <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        {title}
+      </h3>
+    </div>
+    <p className="text-gray-600 mb-4">{description}</p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag, index) => (
+        <span key={index} 
+              className="px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <div className="flex gap-4">
+      <a href={liveUrl} 
+         target="_blank" 
+         rel="noopener noreferrer"
+         className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+        <ExternalLink size={20} />
+        <span>Visit Site</span>
+      </a>
+    </div>
+  </div>
+);
 
-  // Datos de los proyectos
-  const projects: Project[] = [
-    { id: 1, title: 'AprendeGT', description: 'Aplicacion de aprendizaje para edad de 4 a 5 años', image: '/img/proyecto1.png' },
-    { id: 2, title: 'Proyecto 2', description: 'Descripción breve del Proyecto 2', image: '/img/proyecto2.jpg' },
-    { id: 3, title: 'Proyecto 3', description: 'Descripción breve del Proyecto 3', image: '/img/proyecto3.jpg' },
-    { id: 4, title: 'Proyecto 4', description: 'Descripción breve del Proyecto 4', image: '/img/proyecto4.jpg' }
+interface FeatureCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => (
+  <div className="bg-white rounded-xl shadow-lg p-6 border border-purple-100">
+    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+      <Icon size={24} className="text-white" />
+    </div>
+    <h3 className="text-lg font-bold mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+);
+
+export default function Page() {
+  const [activeSection, setActiveSection] = useState('projects');
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Projects' },
+    { id: 'business', name: 'Business' },
+    { id: 'education', name: 'Education' },
+    { id: 'tools', name: 'Tools & Utilities' },
+    { id: 'entertainment', name: 'Entertainment' },
+    { id: 'lifestyle', name: 'Lifestyle' }
   ];
 
-  // Función para manejar clics en proyectos
-  const handleProjectClick = (project: Project) => {
-    setSelectedProject(project); // Establece el proyecto seleccionado
-  };
+  const features = [
+    {
+      icon: Brain,
+      title: "Neural Learning",
+      description: "Innovative AI-powered learning solutions for modern education"
+    },
+    {
+      icon: Code,
+      title: "Open Source",
+      description: "Contributing to the community with free, open-source software"
+    },
+    {
+      icon: Users,
+      title: "Community Driven",
+      description: "Building together with developers around the world"
+    },
+    {
+      icon: Database,
+      title: "Modern Stack",
+      description: "Using cutting-edge technologies for better solutions"
+    }
+  ];
 
-  // Función para cerrar el popup de proyecto seleccionado
-  const handleClosePopup = () => {
-    setSelectedProject(null); // Restablece el proyecto seleccionado
-  };
+  const projects: Project[] = [
+    {
+      title: "ETS Steam Carpet Cleaning",
+      description: "Professional carpet cleaning service website with booking system.",
+      liveUrl: "https://etsteamcarpetcleaning.com/",
+      tags: ["Business", "Web Design"],
+      category: "business"
+    },
+    {
+      title: "Data Tool",
+      description: "A tool for data analysis and visualization.",
+      liveUrl: "https://datasightool.netlify.app/",
+      tags: ["Tools", "Data Analysis"],
+      category: "tools"
+    },
+    {
+      title: "CleanCarPro GT LandingPage",
+      description: "Landing page for a car cleaning service.",
+      liveUrl: "https://cleancarprogt.shop/",
+      tags: ["Landing Page", "Business"],
+      category: "business"
+    },
+    {
+      title: "RetroX Gaming LandingPage",
+      description: "Landing page for a retro gaming platform.",
+      liveUrl: "https://retrox.netlify.app/",
+      tags: ["Landing Page", "Entertainment"],
+      category: "entertainment"
+    },
+    {
+      title: "SkateVibes LandingPage",
+      description: "Landing page for a skateboarding community.",
+      liveUrl: "https://skatevibes.netlify.app/",
+      tags: ["Landing Page", "Lifestyle"],
+      category: "lifestyle"
+    },
+    {
+      title: "Sport LandingPage",
+      description: "Landing page for a sports-related product or service.",
+      liveUrl: "https://eclectic-jalebi-ffb392.netlify.app/",
+      tags: ["Landing Page", "Lifestyle"],
+      category: "lifestyle"
+    },
+    {
+      title: "TechProFree LandingPage",
+      description: "Landing page for a tech-related product or service.",
+      liveUrl: "https://techprofree.netlify.app/",
+      tags: ["Landing Page", "Tools"],
+      category: "tools"
+    },
+    {
+      title: "SlimVita",
+      description: "A platform for health and wellness tips.",
+      liveUrl: "https://slimvita.netlify.app/",
+      tags: ["Health", "Lifestyle"],
+      category: "lifestyle"
+    },
+    {
+      title: "Learning Website",
+      description: "An educational platform for learning new skills.",
+      liveUrl: "https://phenomenal-gnome-b602ac.netlify.app/",
+      tags: ["Education", "Learning"],
+      category: "education"
+    },
+    {
+      title: "MoonPug Token",
+      description: "A landing page for a cryptocurrency token.",
+      liveUrl: "https://beautiful-croissant-631a28.netlify.app/",
+      tags: ["Crypto", "Blockchain"],
+      category: "tools"
+    },
+    {
+      title: "Movies Searcher",
+      description: "A platform to search and discover movies.",
+      liveUrl: "https://peliscout.netlify.app/",
+      tags: ["Entertainment", "Movies"],
+      category: "entertainment"
+    },
+    {
+      title: "Music Downloader",
+      description: "A tool to download music from various sources.",
+      liveUrl: "https://downm.netlify.app/",
+      tags: ["Tools", "Music"],
+      category: "tools"
+    },
+    {
+      title: "Learning For Kids",
+      description: "An educational platform designed for children.",
+      liveUrl: "https://camilakids.netlify.app/",
+      tags: ["Education", "Kids"],
+      category: "education"
+    },
+    {
+      title: "Music LandingPage",
+      description: "Landing page for a music-related product or service.",
+      liveUrl: "https://frolicking-mermaid-89dba4.netlify.app/",
+      tags: ["Landing Page", "Music"],
+      category: "entertainment"
+    },
+    {
+      title: "FeriaExpo LandingPage",
+      description: "Landing page for an expo or fair event.",
+      liveUrl: "https://velvety-torrone-1f4973.netlify.app/",
+      tags: ["Landing Page", "Events"],
+      category: "business"
+    },
+    {
+      title: "Water LandingPage",
+      description: "Landing page for a water-related product or service.",
+      liveUrl: "https://delicate-crisp-c5f8e3.netlify.app/",
+      tags: ["Landing Page", "Lifestyle"],
+      category: "lifestyle"
+    },
+    {
+      title: "Wedding Assistance LandingPage",
+      description: "Landing page for wedding planning services.",
+      liveUrl: "https://classy-donut-0c9792.netlify.app/",
+      tags: ["Landing Page", "Events"],
+      category: "lifestyle"
+    },
+    {
+      title: "Random YouTube LandingPage",
+      description: "A fun landing page for discovering random YouTube videos.",
+      liveUrl: "https://randomyd.netlify.app/",
+      tags: ["Entertainment", "YouTube"],
+      category: "entertainment"
+    },
+    {
+      title: "Image to WebP",
+      description: "A tool to convert images to WebP format.",
+      liveUrl: "https://flowfix.netlify.app/",
+      tags: ["Tools", "Image Processing"],
+      category: "tools"
+    },
+    {
+      title: "Life Path Number Calculator",
+      description: "A tool to calculate your life path number based on numerology.",
+      liveUrl: "https://numerodevida.netlify.app/",
+      tags: ["Tools", "Lifestyle"],
+      category: "lifestyle"
+    },
+    {
+      title: "HealthTrack Website",
+      description: "A platform to track health and fitness progress.",
+      liveUrl: "https://healthtrackfit.netlify.app/",
+      tags: ["Health", "Fitness"],
+      category: "lifestyle"
+    }
+  ];
+
+
+  const filteredProjects = activeCategory === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div>
-      {/* Contenedor principal con fondo */}
-      <Container
-        maxWidth={false}
-        disableGutters
-        sx={{ position: 'relative', minHeight: '100vh' }}
-        onMouseEnter={() => setIsHovered(true)} // Cambia el estado de hover al entrar
-        onMouseLeave={() => setIsHovered(false)} // Cambia el estado de hover al salir
-      >
-        <Box sx={{ position: 'absolute', inset: 0 }}>
-          {/* Imagen de fondo */}
-          <Image
-            src="/img/background.webp"  // Ruta a la imagen en la carpeta public/img
-            alt="Background"
-            fill
-            className={`object-cover transition-transform duration-700 ease-out ${isHovered ? 'scale-110' : 'scale-100'}`} // Efecto de zoom al hacer hover
-          />
-          <Box
-            sx={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))',
-              transition: 'opacity 0.7s',
-              opacity: isHovered ? 0.4 : 0.7, // Cambia la opacidad del overlay al hacer hover
-            }}
-          />
-        </Box>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
 
-        {/* Sección del encabezado */}
-        <Box sx={{ position: 'relative', zIndex: 10, textAlign: 'center', py: 10 }}>
-          <Typography variant="h2" component="h1" sx={{ color: 'black', fontWeight: 'bold' }}>
-            Neural Code Lab
-          </Typography>
-          <Box
-            sx={{
-              height: 4,
-              width: isHovered ? 120 : 80, // Cambia el ancho del indicador al hacer hover
-              backgroundColor: 'purple',
-              mx: 'auto',
-              my: 2,
-              transition: 'width 0.7s',
-            }}
-          />
-          <Typography variant="body1" sx={{ color: 'black', maxWidth: '600px', mx: 'auto' }}>
-            Creando software gratuito para beneficiar a comunidades y personas que quieren aprender.
-          </Typography>
-        </Box>
-      </Container>
 
-      {/* Sección de servicios */}
-      <Box sx={{ py: 5, backgroundColor: '#f0f0f0' }}>
-        <Container maxWidth="lg">
-          <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 4 }}>
-            Nuestros Servicios
-          </Typography>
-          <Grid container spacing={4}>
-            {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Box
-                  sx={{
-                    border: '1px solid #e0e0e0',
-                    borderRadius: 2,
-                    textAlign: 'center',
-                    padding: 2,
-                    boxShadow: 1,
-                    transition: 'transform 0.3s',
-                    '&:hover': {
-                      transform: 'scale(1.05)',
-                    },
-                  }}
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Creating Free Software for Learning
+          </h2>
+          <p className="text-xl text-purple-100 max-w-2xl mx-auto mb-8">
+            We build open-source tools and platforms to empower communities and individuals in their learning journey.
+          </p>
+          <a href="https://github.com/neuralcodelab" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             className="inline-flex items-center gap-2 bg-white text-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+            <Github size={24} />
+            <span>View Our GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-4 py-16">
+        {activeSection === 'projects' ? (
+          <>
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {features.map((feature, index) => (
+                <FeatureCard key={index} {...feature} />
+              ))}
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              {categories.map(category => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                    activeCategory === category.id
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
                 >
-                  <Image src={service.imageUrl} alt={service.title} width={300} height={200} style={{ borderRadius: '8px' }} />
-                  <Box sx={{ mt: 2 }}>
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    <Typography variant="h6" gutterBottom>{service.title}</Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{service.description}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+                  {category.name}
+                </button>
+              ))}
+            </div>
 
-      {/* Sección de proyectos */}
-      <Container maxWidth="lg" sx={{ py: 5 }}>
-        <Typography variant="h4" gutterBottom>
-          Proyectos
-        </Typography>
-        <Grid container spacing={4}>
-          {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={3} key={project.id}>
-              <Box
-                sx={{
-                  transition: 'transform 0.3s', // Efecto de transición para el hover
-                  '&:hover': {
-                    transform: 'translateY(-10px)', // Mueve el proyecto hacia arriba al hacer hover
-                  },
-                  p: 2,
-                  borderRadius: 2,
-                  backgroundColor: 'white',
-                }}
-              >
-                {/* Imagen del proyecto */}
-                <Image src={project.image} alt={project.title} width={300} height={200} style={{ borderRadius: '8px' }} />
-                <Typography variant="h6" sx={{ mt: 2 }}>{project.title}</Typography>
-                <Typography variant="body2">{project.description}</Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => handleProjectClick(project)} // Manejar clic en el proyecto
-                  sx={{ mt: 2 }}
-                >
-                  Ver Proyecto
-                </Button>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+              About NeuralCodeLab
+            </h2>
+            <div className="prose prose-lg">
+              <p className="text-gray-600 mb-6">
+                NeuralCodeLab is dedicated to creating innovative, open-source software solutions 
+                that make learning more accessible and engaging. Our focus is on combining 
+                artificial intelligence with educational technology to create powerful learning tools.
+              </p>
+              <p className="text-gray-600 mb-6">
+                We believe in the power of community-driven development and open source collaboration. 
+                All our projects are free to use and open for contributions from developers around the world.
+              </p>
+              <div className="flex gap-6 mt-8">
+                <a href="https://github.com/neuralcodelab" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors">
+                  <Github size={24} />
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/company/neuralcodelab" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors">
+                  <Linkedin size={24} />
+                  <span>LinkedIn</span>
+                </a>
+                <a href="mailto:contact@neuralcodelab.com"
+                   className="flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors">
+                  <Mail size={24} />
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
 
-      {/* Popup para mostrar detalles del proyecto */}
-      {selectedProject && (
-        <Box
-          sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            bgcolor: 'rgba(0,0,0,0.7)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 1000,
-          }}
-          onClick={handleClosePopup} // Cierra el popup al hacer clic
-        >
-          <Box
-            sx={{
-              bgcolor: 'white',
-              padding: 4,
-              borderRadius: 2,
-              width: '80%',
-              maxWidth: 600,
-              textAlign: 'center',
-            }}
-          >
-            <Typography variant="h5">{selectedProject.title}</Typography>
-            <Typography variant="body2" sx={{ mt: 2 }}>{selectedProject.description}</Typography>
-            <Button variant="contained" color="primary" onClick={handleClosePopup} sx={{ mt: 3 }}>
-              Cerrar
-            </Button>
-          </Box>
-        </Box>
-      )}
     </div>
   );
 }
