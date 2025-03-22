@@ -2,6 +2,7 @@ import './globals.css';
 import type { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import FloatingWidget from '../components/FloatingWidget';
 import Script from 'next/script';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingWidget />
       </body>
     </html>
   );
