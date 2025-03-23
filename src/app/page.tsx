@@ -244,11 +244,11 @@ export default function Page() {
           </p>
           
           <button 
-  onClick={() => window.location.href = '/proyectos'}
-  className="px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300 transform hover:-translate-y-1"
->
-  Descubrir Soluciones
-</button>
+            onClick={() => window.location.href = '/proyectos'}
+            className="px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300 transform hover:-translate-y-1"
+          >
+            Descubrir Soluciones
+          </button>
         </div>
         
         {/* Indicador de scroll */}
@@ -282,6 +282,39 @@ export default function Page() {
           <SimpleCarousel items={testimonials} />
         </div>
       </div>
+      
+      <div className="mt-16 text-center bg-gradient-to-b from-blue-50 to-white rounded-xl shadow-lg py-10 px-6 max-w-4xl mx-auto">
+  <h2 className="text-3xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">1-800-ChatGPT</h2>
+  <p className="text-xl font-medium mb-8">Llamando y enviando mensajes a ChatGPT desde tu teléfono</p>
+  
+  <div className="flex justify-center mb-8">
+    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></div>
+  </div>
+  
+  <div className="grid md:grid-cols-2 gap-8 mb-10">
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-lg font-bold mb-3 text-blue-700">¿Qué es 1-800-ChatGPT?</h3>
+      <p className="text-gray-700">
+        1-800-ChatGPT es una función experimental que permite un acceso más amplio a ChatGPT. Puedes interactuar con ChatGPT mediante llamadas telefónicas o mensajes de WhatsApp al 1-800-CHATGPT sin necesitar una cuenta.
+      </p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-lg font-bold mb-3 text-blue-700">Cómo Conectarte</h3>
+      <p className="text-gray-700">
+        ChatGPT nunca iniciará una llamada o chat. Puedes comenzar una conversación llamando al 1-800-CHATGPT (1-800-242-8478) desde un número de EE.UU. o Canadá, o enviando mensajes al mismo número vía WhatsApp desde países compatibles.
+      </p>
+    </div>
+  </div>
+  
+
+  
+  <p className="text-sm text-gray-600 mt-8 max-w-2xl mx-auto">
+    Al comunicarte con 1-800-ChatGPT, aceptas nuestros Términos de Uso y confirmas haber leído nuestra Política de Privacidad. Recuerda que ChatGPT puede cometer errores, así que verifica la información importante. Este servicio es para mayores de 13 años.
+  </p>
+  
+  <p className="text-xs text-gray-500 mt-4">Se pueden aplicar tarifas estándar del operador.</p>
+</div>
     </div>
   );
 }
