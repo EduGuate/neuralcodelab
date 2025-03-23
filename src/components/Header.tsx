@@ -1,21 +1,21 @@
-'use client'; // Marks the component as client-side
+'use client'; // Marca el componente como del lado del cliente
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline'; // For Heroicons v1
-import styles from '../styles/Header.module.css'; // Import the styles file
-import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Para Heroicons v1
+import styles from '../styles/Header.module.css'; // Importar el archivo de estilos
+import { useRouter } from 'next/navigation'; // Importar useRouter para la navegación
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Create an instance of useRouter
+  const [estaAbierto, setEstaAbierto] = useState(false);
+  const router = useRouter(); // Crear una instancia de useRouter
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const alternarMenu = () => setEstaAbierto(!estaAbierto);
 
-  // Function to navigate to a page and close the mobile menu
-  const handleNavigation = (path: string) => {
-    router.push(path);
-    setIsOpen(false); // Close the mobile menu after navigation
+  // Función para navegar a una página y cerrar el menú móvil
+  const manejarNavegacion = (ruta: string) => {
+    router.push(ruta);
+    setEstaAbierto(false); // Cerrar el menú móvil después de navegar
   };
 
   return (
@@ -23,36 +23,36 @@ export default function Header() {
       {/* Logo */}
       <div className="flex items-center">
         <Image
-          src="/img/logo.png" // Make sure the path is correct
-          alt="Neural Code Lab Logo"
+          src="/img/logo.png" // Asegúrate de que la ruta sea correcta
+          alt="Logo de Neural Code Lab"
           width={250}
           height={250}
           className={styles.logo}
         />
       </div>
 
-      {/* Desktop Menu */}
+      {/* Menú de escritorio */}
       <nav className={styles.navDesktop}>
-        <a href="/" className={styles.navLink}>Home</a>
-        <a href="/nosotros" className={styles.navLink}>About Us</a>
-        <a href="/proyectos" className={styles.navLink}>Projects</a>
-        <a href="/contacto" className={styles.navLink}>Contact</a>
+        <a href="/" className={styles.navLink}>Inicio</a>
+        <a href="/nosotros" className={styles.navLink}>Nosotros</a>
+        <a href="/proyectos" className={styles.navLink}>Proyectos</a>
+        <a href="/contacto" className={styles.navLink}>Contacto</a>
       </nav>
 
-      {/* Mobile Hamburger Menu */}
+      {/* Menú hamburguesa para móviles */}
       <div className="md:hidden flex items-center">
-        <button onClick={toggleMenu} aria-label="Toggle menu" className={styles.menuButton}>
-          {isOpen ? <XIcon className={styles.menuButtonIcon} /> : <MenuIcon className={styles.menuButtonIcon} />}
+        <button onClick={alternarMenu} aria-label="Alternar menú" className={styles.menuButton}>
+          {estaAbierto ? <XIcon className={styles.menuButtonIcon} /> : <MenuIcon className={styles.menuButtonIcon} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      <div className={`${styles.navMobile} ${isOpen ? styles.navMobileOpen : ''}`}>
+      {/* Menú desplegable para móviles */}
+      <div className={`${styles.navMobile} ${estaAbierto ? styles.navMobileOpen : ''}`}>
         <nav>
-          <a href="/" className={styles.navLink} onClick={() => handleNavigation('/')}>Home</a>
-          <a href="/nosotros" className={styles.navLink} onClick={() => handleNavigation('/nosotros')}>About Us</a>
-          <a href="/proyectos" className={styles.navLink} onClick={() => handleNavigation('/proyectos')}>Projects</a>
-          <a href="/contacto" className={styles.navLink} onClick={() => handleNavigation('/contacto')}>Contact</a>
+          <a href="/" className={styles.navLink} onClick={() => manejarNavegacion('/')}>Inicio</a>
+          <a href="/nosotros" className={styles.navLink} onClick={() => manejarNavegacion('/nosotros')}>Nosotros</a>
+          <a href="/proyectos" className={styles.navLink} onClick={() => manejarNavegacion('/proyectos')}>Proyectos</a>
+          <a href="/contacto" className={styles.navLink} onClick={() => manejarNavegacion('/contacto')}>Contacto</a>
         </nav>
       </div>
     </header>
