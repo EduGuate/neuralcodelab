@@ -306,9 +306,7 @@ export default function Page() {
       </p>
     </div>
   </div>
-  
 
-  
   <p className="text-sm text-gray-600 mt-8 max-w-2xl mx-auto">
     Al comunicarte con 1-800-ChatGPT, aceptas nuestros Términos de Uso y confirmas haber leído nuestra Política de Privacidad. Recuerda que ChatGPT puede cometer errores, así que verifica la información importante. Este servicio es para mayores de 13 años.
   </p>
