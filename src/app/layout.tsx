@@ -7,7 +7,7 @@ import Script from 'next/script';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         {/* Google Analytics Script */}
         <Script

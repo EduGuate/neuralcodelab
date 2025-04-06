@@ -84,10 +84,7 @@ export default function Contact() {
 
             <div className="bg-cream-10 p-8 rounded-2xl shadow-community">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-4 bg-gradient-to-r from-earth-700 to-clay-600 text-cream-100 px-8 py-3 rounded-full">
-                  <Users size={24} />
-                  <span className="font-semibold">Contacto Comunitario</span>
-                </div>
+
               </div>
 
               <div className="space-y-6">
@@ -97,7 +94,7 @@ export default function Contact() {
                   className="flex items-center justify-center gap-3 bg-gradient-to-r from-sun-400 to-fire-500 text-earth-900 px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all"
                 >
                   <Mail size={20} />
-                  Enviar Mensaje Colectivo
+                  Enviar Mensaje
                 </motion.a>
 
                 <div className="text-center text-earth-700">

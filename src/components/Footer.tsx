@@ -54,16 +54,14 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-purple-400">Síguenos</h3>
             <div className="flex gap-4">
-              <a href="https://github.com/neuralcodelab" aria-label="GitHub" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
+              <a href="https://github.com/devlewiso" aria-label="GitHub" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
                 <Github size={20} className="text-white" />
               </a>
-              <a href="https://twitter.com/neuralcodelab" aria-label="Twitter" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
-                <Twitter size={20} className="text-white" />
-              </a>
-              <a href="https://linkedin.com/company/neuralcodelab" aria-label="LinkedIn" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
+
+              <a href="https://gt.linkedin.com/in/devlewiso/es" aria-label="LinkedIn" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
                 <Linkedin size={20} className="text-white" />
               </a>
-              <a href="mailto:contacto@neuralcodelab.com" aria-label="Email" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
+              <a href="mailto:devlewiso@gmail.com" aria-label="Email" className="p-3 bg-gray-700 hover:bg-purple-500 rounded-lg transition-colors">
                 <Mail size={20} className="text-white" />
               </a>
             </div>
