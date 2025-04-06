@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 // Datos del equipo
 const teamMembers = [
   {
-    name: "Lewis Ortiz",
+    name: "Iran Lewis",
     role: "Fundador & CEO",
     image: "https://picsum.photos/400/400?random=1"
   }
