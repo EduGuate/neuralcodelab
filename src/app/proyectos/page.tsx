@@ -82,7 +82,7 @@ export default function Projects() {
               >
                 <div className="relative h-48 bg-gray-100">
                   <Image
-                    src={project.imageUrl}
+                    src={project.imageUrl || "https://picsum.photos/400/300"}
                     alt={project.title}
                     fill
                     className="object-cover"

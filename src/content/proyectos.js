@@ -92,23 +92,6 @@ export const proyectos = [
   {
     title: "Movies Searcher",
     description: "A platform to search and discover movies.",
-    liveUrl: "https://peliscout.netlify.app/",
-    githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=11",
-    tags: ["Entertainment", "Movies"],
-    category: "entertainment"
-  },
-  {
-    title: "Music Downloader",
-    description: "A tool to download music from various sources.",
-    tags: ["Landing Page", "Music"],
-    category: "entertainment"
-  },
-  {
-    title: "FeriaExpo LandingPage",
-    description: "Landing page for an expo or fair event.",
-    liveUrl: "https://velvety-torrone-1f4973.netlify.app/",
-    githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=15",
     tags: ["Landing Page", "Events"],
     category: "business"
