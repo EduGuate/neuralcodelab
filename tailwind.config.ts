@@ -12,7 +12,7 @@ const config: Config = {
         // Manteniendo las variables CSS originales
         background: "var(--background)",
         foreground: "var(--foreground)",
-        
+
         // Añadiendo la nueva paleta de colores
         earth: {
           100: '#f5f0e6',
@@ -36,6 +36,17 @@ const config: Config = {
         fire: {
           400: '#e67a54',
           500: '#d95b46',
+        },
+        // Maya Palette
+        maya: {
+          teal: "#00C9A7",
+          amber: "#FFC93C",
+          coral: "#FF6767",
+          purple: "#845EC2",
+          blue: "#4D8BF0",
+          green: "#2BDA8E",
+          pink: "#FF7A90",
+          cyan: "#00D2FC"
         }
       },
       // Opcional: Añadir estilos de sombra personalizados

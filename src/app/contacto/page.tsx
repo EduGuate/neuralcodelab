@@ -1,143 +1,95 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Mail, Users, Globe, HeartHandshake } from 'lucide-react';
-import Image from 'next/image';
+import { Mail, Globe, HeartHandshake, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sage-50 to-clay-100">
-      {/* Hero Section with Cultural Patterns */}
-      <div className="relative bg-gradient-to-r from-earth-700 via-clay-600 to-earth-800 text-cream-50 py-24 overflow-hidden">
-        {/* Traditional Pattern Background */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://picsum.photos/1920/1080?random=50"
-            alt="Cultural background"
-            fill
-            className="object-cover opacity-20"
-          />
-        </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative max-w-6xl mx-auto px-4 text-center"
-        >
-          <div className="mb-8 flex justify-center">
-            <div className="p-4 bg-cream-10/20 rounded-full">
-              <Globe size={48} className="text-cream-100" />
-            </div>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="max-w-3xl text-center mx-auto">
+          <div className="inline-flex items-center justify-center p-3 bg-gray-100 rounded-full mb-6">
+            <Globe size={24} className="text-gray-900" />
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-traditional">
-            <span className="bg-gradient-to-r from-sun-400 to-fire-500 bg-clip-text text-transparent">
-              Tejiendo Código con las Comunidades
-            </span>
+
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Tejiendo Código con las Comunidades
           </h1>
-          
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-white">
-  En NeuralCode, creamos herramientas digitales libres para preservar saberes ancestrales.
-  ¿Tienes un proyecto comunitario? Hablemos.
-</p>
-        </motion.div>
-      </div>
 
-      {/* Community Connection Section */}
-      <main className="max-w-6xl mx-auto px-4 py-20">
-        <motion.div 
-          initial={{ scale: 0.95 }}
-          animate={{ scale: 1 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
-        >
-          {/* Cultural Illustration */}
-          <div className="relative h-96 rounded-3xl overflow-hidden">
-            <Image
-              src="https://picsum.photos/800/600?random=55"
-              alt="Cultural illustration"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-earth-800/80 to-transparent flex items-end p-8">
-              <blockquote className="text-cream-100 italic text-lg">
-                &ldquo;La tecnología debe servir para proteger nuestra madre tierra y nuestras tradiciones&rdquo;
-              </blockquote>
-            </div>
-          </div>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            En NeuralCode, creamos herramientas digitales libres para preservar saberes ancestrales.
+            ¿Tienes un proyecto comunitario? Hablemos.
+          </p>
+        </div>
+      </section>
 
-          {/* Contact Form */}
+      {/* Contact Options */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Info */}
           <div className="space-y-8">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-earth-900">
-                <span className="inline-block mr-4"><HeartHandshake size={32} /></span>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <HeartHandshake className="text-gray-900" />
                 Colaboración Comunitaria
               </h2>
-              <p className="text-earth-700">
-                Ofrecemos:
-                <ul className="list-disc pl-6 mt-2 space-y-2">
-                  <li>Desarrollo de software libre para proyectos indígenas</li>
-                  <li>Capacitación tecnológica en lenguas originarias</li>
-                  <li>Plataformas para documentación cultural</li>
-                </ul>
+              <p className="text-gray-600 mb-6">
+                Estamos comprometidos con el desarrollo tecnológico accesible. Ofrecemos:
               </p>
+              <ul className="space-y-4">
+                {[
+                  'Desarrollo de software libre para proyectos indígenas',
+                  'Capacitación tecnológica en lenguas originarias',
+                  'Plataformas para documentación cultural'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-900 mt-2.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="bg-cream-10 p-8 rounded-2xl shadow-community">
-              <div className="text-center mb-8">
-
-              </div>
-
-              <div className="space-y-6">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  href={`mailto:devlewiso@gmail.com?subject=${encodeURIComponent('Proyecto Comunitario')}`}
-                  className="flex items-center justify-center gap-3 bg-gradient-to-r from-sun-400 to-fire-500 text-earth-900 px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all"
-                >
-                  <Mail size={20} />
-                  Enviar Mensaje
-                </motion.a>
-
-                <div className="text-center text-earth-700">
-                  <p className="mb-4">O escríbenos en tu lengua:</p>
-                  <div className="flex justify-center gap-4">
-                    <button className="px-4 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors">
-                      <span className="text-xl">🌾</span> Kaqchikel
-                    </button>
-                    <button className="px-4 py-2 bg-[#2ecc71] text-white rounded-lg hover:bg-[#27ae60] transition-colors">
-                      <span className="text-xl">🌳</span> K'iche' (Quiché)
-                    </button>
-                    <button className="px-4 py-2 bg-[#9b59b6] text-white rounded-lg hover:bg-[#8e44ad] transition-colors">
-                      <span className="text-xl">🌎</span> English
-                    </button>
-                  </div>
-                </div>
+            <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+              <h3 className="font-semibold text-gray-900 mb-4">Idiomas disponibles</h3>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
+                  Español
+                </span>
+                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
+                  Kaqchikel
+                </span>
+                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
+                  K'iche'
+                </span>
+                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
+                  English
+                </span>
               </div>
             </div>
           </div>
-        </motion.div>
 
-        {/* Community Showcase */}
-        <div className="mt-20 p-8 bg-gradient-to-b from-[#faf5e4] to-[#f0e9d2] rounded-2xl shadow-lg">
-          <h3 className="text-2xl font-bold mb-6 text-[#2c3e50]">Proyectos en Comunidad</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {['Mapa Cultural Interactivo', 'Diccionario Digital Kaqchikel', 'Sistema de Alertas Climáticas'].map((project, index) => (
-              <div key={project} className="p-6 bg-[#ffffff] rounded-xl border border-[#e0d7c1] shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="relative h-48 mb-4">
-                  <Image
-                    src={`https://picsum.photos/600/400?random=${index + 10}`}
-                    alt={project}
-                    fill
-                    className="rounded-lg object-cover"
-                  />
-                </div>
-                <h4 className="font-semibold mb-2 text-[#34495e]">{project}</h4>
-                <p className="text-[#7f8c8d] text-sm">Colaboración con comunidad </p>
-                <div className="mt-4 h-2 bg-gradient-to-r from-[#f1c40f] to-[#e67e22] rounded-full" />
-              </div>
-            ))}
+          {/* Action Card */}
+          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Inicia una conversación</h3>
+            <p className="text-gray-600 mb-8">
+              Cuéntanos sobre tu proyecto o idea. Estamos aquí para escuchar y colaborar.
+            </p>
+
+            <a
+              href={`mailto:devlewiso@gmail.com?subject=${encodeURIComponent('Proyecto Comunitario')}`}
+              className="flex items-center justify-center gap-2 w-full bg-gray-900 text-white px-6 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
+            >
+              <Mail size={20} />
+              Enviar Correo
+            </a>
+
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Respondemos usualmente en 24-48 horas
+            </p>
           </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
