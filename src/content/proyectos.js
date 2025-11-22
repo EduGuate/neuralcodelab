@@ -72,8 +72,8 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "Learning Website",
-    description: "An educational platform for learning new skills.",
+    title: "Aprende Lenguas Mayas",
+    description: "¡Aprende los idiomas ancestrales de Guatemala de forma divertida y gratuita!.",
     liveUrl: "https://phenomenal-gnome-b602ac.netlify.app/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=9",
@@ -101,27 +101,6 @@ export const proyectos = [
   {
     title: "Music Downloader",
     description: "A tool to download music from various sources.",
-    liveUrl: "https://downm.netlify.app/",
-    githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=12",
-    tags: ["Tools", "Music"],
-    category: "tools"
-  },
-  {
-    title: "Learning For Kids",
-    description: "An educational platform designed for children.",
-    liveUrl: "https://camilakids.netlify.app/",
-    githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=13",
-    tags: ["Education", "Kids"],
-    category: "education"
-  },
-  {
-    title: "Music LandingPage",
-    description: "Landing page for a music-related product or service.",
-    liveUrl: "https://frolicking-mermaid-89dba4.netlify.app/",
-    githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=14",
     tags: ["Landing Page", "Music"],
     category: "entertainment"
   },
@@ -195,6 +174,51 @@ export const proyectos = [
     githubUrl: "https://github.com/neuralcodelab/astromaya",
     imageUrl: "https://picsum.photos/400/300?random=21",
     tags: ["Education", "Culture"],
+    category: "education"
+  },
+  {
+    title: "K-Idols Kids Learning",
+    description: "Plataforma de aprendizaje interactivo para niños de 5 años.",
+    liveUrl: "https://k-idols.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=22",
+    tags: ["Education", "Kids"],
+    category: "education"
+  },
+  {
+    title: "K-Idols Warriors (6 Años)",
+    description: "Aventura de aprendizaje para niños de 6 años.",
+    liveUrl: "https://k-idols6.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=23",
+    tags: ["Education", "Kids"],
+    category: "education"
+  },
+  {
+    title: "K-Saber Maya Guardianes (7 Años)",
+    description: "Descubre los secretos de la educación maya. Edición 7 años.",
+    liveUrl: "https://k-idols7.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=24",
+    tags: ["Education", "Kids", "Culture"],
+    category: "education"
+  },
+  {
+    title: "K-Saber Maya Guardianes (8 Años)",
+    description: "Conviértete en un guardián del saber maya. Edición 8 años.",
+    liveUrl: "https://k-idols8.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=2",
+    tags: ["Tools", "Data Analysis"],
+    category: "tools"
+  },
+  {
+    title: "CamilaKids",
+    description: "¡Bienvenido al Mundo del Aprendizaje! Un proyecto educativo de neuralcodelab.com. Aprende las vocales, el abecedario, números y matemáticas de forma divertida.",
+    liveUrl: "https://camilakids.netlify.app/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=26",
+    tags: ["Education", "Kids", "Learning"],
     category: "education"
   }
 ];
