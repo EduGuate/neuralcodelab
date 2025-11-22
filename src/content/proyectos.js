@@ -1,5 +1,23 @@
 export const proyectos = [
   {
+    title: "Oryx Studio",
+    description: "Efficient natural language to Oryx token translator.",
+    liveUrl: "https://oryx-studio.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/oryx-parser",
+    imageUrl: "https://picsum.photos/400/300?random=27",
+    tags: ["Tools", "Compiler", "AI"],
+    category: "tools"
+  },
+  {
+    title: "Oryx paser",
+    description: "Efficient natural language to Oryx token translator.",
+    liveUrl: "https://oryx-parser.neuralcodelab.com/",
+    githubUrl: "https://oryx-parser.neuralcodelab.com/",
+    imageUrl: "https://picsum.photos/400/300?random=27",
+    tags: ["Tools", "Compiler", "AI"],
+    category: "tools"
+  },
+  {
     title: "ETS Steam Carpet Cleaning",
     description: "Professional carpet cleaning service website with booking system.",
     liveUrl: "https://etsteamcarpetcleaning.com/",
