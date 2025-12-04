@@ -9,7 +9,7 @@ export const proyectos = [
     category: "tools"
   },
   {
-    title: "Oryx paser",
+    title: "Oryx Parser",
     description: "Efficient natural language to Oryx token translator.",
     liveUrl: "https://oryx-parser.neuralcodelab.com/",
     githubUrl: "https://oryx-parser.neuralcodelab.com/",
@@ -36,7 +36,7 @@ export const proyectos = [
     category: "tools"
   },
   {
-    title: "CleanCarPro GT LandingPage",
+    title: "CleanCarPro GT Landing Page",
     description: "Landing page for a car cleaning service.",
     liveUrl: "https://cleancarprogt.shop/",
     githubUrl: "",
@@ -45,7 +45,7 @@ export const proyectos = [
     category: "business"
   },
   {
-    title: "RetroX Gaming LandingPage",
+    title: "RetroX Gaming Landing Page",
     description: "Landing page for a retro gaming platform.",
     liveUrl: "https://retrox.netlify.app/",
     githubUrl: "",
@@ -54,7 +54,7 @@ export const proyectos = [
     category: "entertainment"
   },
   {
-    title: "SkateVibes LandingPage",
+    title: "SkateVibes Landing Page",
     description: "Landing page for a skateboarding community.",
     liveUrl: "https://skatevibes.netlify.app/",
     githubUrl: "",
@@ -63,7 +63,7 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "Sport LandingPage",
+    title: "Sport Landing Page",
     description: "Landing page for a sports-related product or service.",
     liveUrl: "https://eclectic-jalebi-ffb392.netlify.app/",
     githubUrl: "",
@@ -72,7 +72,7 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "TechProFree LandingPage",
+    title: "TechProFree Landing Page",
     description: "Landing page for a tech-related product or service.",
     liveUrl: "https://techprofree.netlify.app/",
     githubUrl: "",
@@ -90,8 +90,8 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "Aprende Lenguas Mayas",
-    description: "¡Aprende los idiomas ancestrales de Guatemala de forma divertida y gratuita!.",
+    title: "Learn Mayan Languages",
+    description: "Learn the ancestral languages of Guatemala in a fun and free way!",
     liveUrl: "https://phenomenal-gnome-b602ac.netlify.app/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=9",
@@ -110,12 +110,14 @@ export const proyectos = [
   {
     title: "Movies Searcher",
     description: "A platform to search and discover movies.",
+    liveUrl: "",
+    githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=15",
     tags: ["Landing Page", "Events"],
     category: "business"
   },
   {
-    title: "Water LandingPage",
+    title: "Water Landing Page",
     description: "Landing page for a water-related product or service.",
     liveUrl: "https://delicate-crisp-c5f8e3.netlify.app/",
     githubUrl: "",
@@ -124,7 +126,7 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "Wedding Assistance LandingPage",
+    title: "Wedding Assistance Landing Page",
     description: "Landing page for wedding planning services.",
     liveUrl: "https://classy-donut-0c9792.netlify.app/",
     githubUrl: "",
@@ -133,7 +135,7 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "Random YouTube LandingPage",
+    title: "Random YouTube Landing Page",
     description: "A fun landing page for discovering random YouTube videos.",
     liveUrl: "https://randomyd.netlify.app/",
     githubUrl: "",
@@ -169,8 +171,8 @@ export const proyectos = [
     category: "lifestyle"
   },
   {
-    title: "AstroMaya Lenguas Mayas",
-    description: "Una plataforma para aprender lenguas mayas.",
+    title: "AstroMaya Mayan Languages",
+    description: "A platform to learn Mayan languages.",
     liveUrl: "https://astromaya.neuralcodelab.com/",
     githubUrl: "https://github.com/neuralcodelab/astromaya",
     imageUrl: "https://picsum.photos/400/300?random=21",
@@ -179,7 +181,7 @@ export const proyectos = [
   },
   {
     title: "K-Idols Kids Learning",
-    description: "Plataforma de aprendizaje interactivo para niños de 5 años.",
+    description: "Interactive learning platform for 5-year-old children.",
     liveUrl: "https://k-idols.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=22",
@@ -187,8 +189,8 @@ export const proyectos = [
     category: "education"
   },
   {
-    title: "K-Idols Warriors (6 Años)",
-    description: "Aventura de aprendizaje para niños de 6 años.",
+    title: "K-Idols Warriors (6 Years)",
+    description: "Learning adventure for 6-year-old children.",
     liveUrl: "https://k-idols6.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=23",
@@ -196,8 +198,8 @@ export const proyectos = [
     category: "education"
   },
   {
-    title: "K-Saber Maya Guardianes (7 Años)",
-    description: "Descubre los secretos de la educación maya. Edición 7 años.",
+    title: "K-Saber Maya Guardians (7 Years)",
+    description: "Discover the secrets of Mayan education. 7-year-old edition.",
     liveUrl: "https://k-idols7.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=24",
@@ -205,30 +207,84 @@ export const proyectos = [
     category: "education"
   },
   {
-    title: "K-Saber Maya Guardianes (8 Años)",
-    description: "Conviértete en un guardián del saber maya. Edición 8 años.",
+    title: "K-Saber Maya Guardians (8 Years)",
+    description: "Become a guardian of Mayan knowledge. 8-year-old edition.",
     liveUrl: "https://k-idols8.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=2",
-    tags: ["Tools", "Data Analysis"],
-    category: "tools"
+    imageUrl: "https://picsum.photos/400/300?random=25",
+    tags: ["Education", "Kids", "Culture"],
+    category: "education"
   },
   {
     title: "CamilaKids",
-    description: "¡Bienvenido al Mundo del Aprendizaje! Un proyecto educativo de neuralcodelab.com. Aprende las vocales, el abecedario, números y matemáticas de forma divertida.",
+    description: "Welcome to the Learning World! An educational project by neuralcodelab.com. Learn vowels, the alphabet, numbers and mathematics in a fun way.",
     liveUrl: "https://camilakids.netlify.app/",
     githubUrl: "",
     imageUrl: "https://picsum.photos/400/300?random=26",
     tags: ["Education", "Kids", "Learning"],
     category: "education"
+  },
+  {
+    title: "Load Balancer Simulator",
+    description: "Load balancer simulator.",
+    liveUrl: "https://simuladordebalanceadordecarga.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "https://picsum.photos/400/300?random=28",
+    tags: ["Tools", "Simulation"],
+    category: "tools"
+  },
+  {
+    title: "Interactive RabbitMQ (AMQP) vs. Kafka Simulator",
+    description: "Interactive simulator to compare RabbitMQ and Kafka messaging systems.",
+    liveUrl: "https://simuladorkafka.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/RabbitmqSimulator",
+    imageUrl: "https://picsum.photos/400/300?random=29",
+    tags: ["Tools", "Simulation", "Messaging"],
+    category: "tools"
+  },
+  {
+    title: "Kafka Simulator",
+    description: "Interactive Kafka messaging system simulator.",
+    liveUrl: "https://simuladorkafka.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/kafkaSimulator",
+    imageUrl: "https://picsum.photos/400/300?random=30",
+    tags: ["Tools", "Simulation", "Messaging"],
+    category: "tools"
+  },
+  {
+    title: "My CV Website",
+    description: "Personal curriculum vitae website.",
+    liveUrl: "https://mycven.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/CurriculumViateWebsite",
+    imageUrl: "https://picsum.photos/400/300?random=31",
+    tags: ["Portfolio", "Personal"],
+    category: "business"
+  },
+  {
+    title: "Ri Nïm Ch'ab'äl Q'aq'",
+    description: "Mayan culture and language educational platform.",
+    liveUrl: "https://ri-n-m-ch-ab-l-q-aq.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/Ri-N-m-Ch-ab-l-Q-aq-",
+    imageUrl: "https://picsum.photos/400/300?random=32",
+    tags: ["Education", "Culture", "Mayan"],
+    category: "education"
+  },
+  {
+    title: "The Magic Creation Machine",
+    description: "Creative storytelling and content generation platform.",
+    liveUrl: "https://lamaquinadecreacionmagica.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/La-M-quina-de-Creaci-n-M-gica",
+    imageUrl: "https://picsum.photos/400/300?random=33",
+    tags: ["Tools", "Creative", "AI"],
+    category: "tools"
   }
 ];
 
 export const categorias = [
-  { id: "todos", nombre: "Todos los proyectos" },
-  { id: "business", nombre: "Negocios" },
-  { id: "tools", nombre: "Herramientas" },
-  { id: "entertainment", nombre: "Entretenimiento" },
-  { id: "lifestyle", nombre: "Estilo de vida" },
-  { id: "education", nombre: "Educación" }
+  { id: "all", nombre: "All Projects" },
+  { id: "business", nombre: "Business" },
+  { id: "tools", nombre: "Tools" },
+  { id: "entertainment", nombre: "Entertainment" },
+  { id: "lifestyle", nombre: "Lifestyle" },
+  { id: "education", nombre: "Education" }
 ];

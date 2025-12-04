@@ -1,20 +1,19 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { Linkedin } from 'lucide-react';
 
 const teamMembers = [
   {
-    name: "Iran Lewis",
-    role: "Fundador & CEO",
-    image: "https://picsum.photos/400/400?random=1"
+    name: 'Iran Lewis',
+    role: 'Founder & Developer',
+    image: '/img/my-profile.jpg'
   }
 ];
 
-export default function About() {
+export default function NosotrosPage() {
   return (
-    <div className="min-h-screen bg-white flex flex-col ">
+    <div>
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 py-24 items-center text-center">
         <div className="max-w-3xl">

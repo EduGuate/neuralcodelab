@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import FeatureCard from '@/components/FeatureCard';
 import { features, stats, testimonials } from '@/data/content';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 export default function Page() {
   return (
@@ -35,7 +36,9 @@ export default function Page() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <div key={i}>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                <AnimatedCounter value={stat.value} />
+              </div>
               <div className="text-sm text-gray-600">{stat.label}</div>
             </div>
           ))}
