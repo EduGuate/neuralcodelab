@@ -18,7 +18,7 @@ export const proyectos = [
     category: "tools"
   },
   {
-    title: "Neural Scraper",
+    title: "NeuraL Scraper",
     description: "High-performance web scraping and monitoring tool with a retro-futuristic terminal UI. Features automatic proxy rotation, real-time data visualization, and stealth extraction capabilities.",
     liveUrl: "https://scraper.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/neural_scraper",
