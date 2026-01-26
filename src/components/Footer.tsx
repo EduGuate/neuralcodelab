@@ -1,0 +1,91 @@
+import React from 'react';
+import { Code, Mail, Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-white border-t border-gray-100 py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Logo y descripción */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white">
+                <Code size={20} />
+              </div>
+              <span className="text-xl font-bold text-gray-900">NeuralCodeLab</span>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Impulsando el software libre en Guatemala para fortalecer comunidades y brindar oportunidades a quienes desean aprender y crecer en tecnología.
+            </p>
+          </div>
+
+          {/* Enlaces Rápidos */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-6">Enlaces Rápidos</h3>
+            <ul className="space-y-4 text-sm text-gray-600">
+              <li>
+                <Link href="/" className="hover:text-gray-900 transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link href="/proyectos" className="hover:text-gray-900 transition-colors">
+                  Proyectos
+                </Link>
+              </li>
+              <li>
+                <Link href="/nosotros" className="hover:text-gray-900 transition-colors">
+                  Nosotros
+                </Link>
+              </li>
+              <li>
+                <Link href="/contacto" className="hover:text-gray-900 transition-colors">
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Redes Sociales */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-6">Síguenos</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/devlewiso"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href="https://gt.linkedin.com/in/devlewiso/es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="mailto:devlewiso@gmail.com"
+                className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                aria-label="Email"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-gray-100 text-center text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} Neural Code Lab. Tecnología con propósito cultural.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
