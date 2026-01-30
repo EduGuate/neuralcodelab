@@ -13,8 +13,8 @@ declare global {
 export default function FloatingWidget() {
     return (
         <div className="fixed bottom-8 right-8 z-50">
-            <elevenlabs-convai agent-id="2mKOFs3BwEKoBUfPUTgb"></elevenlabs-convai>
-            <Script src="https://elevenlabs.io/convai-widget/index.js" strategy="afterInteractive" />
+            <elevenlabs-convai agent-id="agent_8001kezcqpcrfxfsj5a66n5mqbjn"></elevenlabs-convai>
+            <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async strategy="afterInteractive" />
         </div>
     );
 }

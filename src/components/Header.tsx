@@ -29,6 +29,12 @@ export default function Header() {
           <Link href="/proyectos" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
             Proyectos
           </Link>
+          <Link href="/3cx" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+            3CX
+          </Link>
+          <Link href="/contact-center" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+            Contact Center
+          </Link>
           <a
             href="https://infra.neuralcodelab.com/"
             target="_blank"
@@ -85,6 +91,20 @@ export default function Header() {
             onClick={() => setEstaAbierto(false)}
           >
             Proyectos
+          </Link>
+          <Link
+            href="/3cx"
+            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
+            onClick={() => setEstaAbierto(false)}
+          >
+            3CX
+          </Link>
+          <Link
+            href="/contact-center"
+            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
+            onClick={() => setEstaAbierto(false)}
+          >
+            Contact Center
           </Link>
           <a
             href="https://infra.neuralcodelab.com/"
