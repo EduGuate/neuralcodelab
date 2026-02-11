@@ -87,7 +87,7 @@ export default function ThreeCXPage() {
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="tel:18054396103"
+                                    href="tel:+15674061261"
                                     className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                 >
                                     <Phone size={20} /> Llamar Ahora
@@ -114,8 +114,8 @@ export default function ThreeCXPage() {
                                 </div>
                                 <div className="bg-white/5 rounded-lg p-6 mb-4">
                                     <p className="text-sm text-blue-100 mb-2">Número de Demostración:</p>
-                                    <a href="tel:18054396103" className="text-3xl font-bold hover:text-blue-200 transition-colors">
-                                        1-805-439-6103
+                                    <a href="tel:+15674061261" className="text-3xl font-bold hover:text-blue-200 transition-colors">
+                                        +1 567 406 1261
                                     </a>
                                 </div>
                                 <p className="text-sm text-blue-100">
@@ -267,10 +267,10 @@ export default function ThreeCXPage() {
                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 inline-block">
                         <p className="text-sm text-blue-100 mb-2">Número de Demostración</p>
                         <a
-                            href="tel:18054396103"
+                            href="tel:+15674061261"
                             className="text-5xl font-bold hover:text-blue-200 transition-colors block mb-4"
                         >
-                            1-805-439-6103
+                            +1 567 406 1261
                         </a>
                         <p className="text-sm text-blue-100">
                             Disponible 24/7 • Llamada gratuita desde EE.UU.
@@ -293,7 +293,7 @@ export default function ThreeCXPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="tel:18054396103"
+                                href="tel:+15674061261"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-lg hover:shadow-xl"
                             >
                                 <Phone size={20} /> Llamar Ahora

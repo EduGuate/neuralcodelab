@@ -1,0 +1,178 @@
+{
+    "es": {
+        "header": {
+            "home": "Inicio",
+            "about": "Nosotros",
+            "projects": "Proyectos",
+            "contact": "Contacto",
+            "infrastructure": "Infraestructura",
+            "contactCenter": "Contact Center"
+        },
+        "footer": {
+            "description": "Impulsando el software libre en Guatemala para fortalecer comunidades y brindar oportunidades a quienes desean aprender y crecer en tecnología.",
+            "quickLinks": "Enlaces Rápidos",
+            "followUs": "Síguenos",
+            "copyright": "Tecnología con propósito cultural."
+        },
+        "home": {
+            "badge": "Tecnología con propósito cultural",
+            "hero": "Plataformas digitales para comunidades",
+            "description": "Creamos soluciones tecnológicas que respetan la identidad cultural mientras construimos un futuro digital más inclusivo para comunidades indígenas.",
+            "exploreSolutions": "Explorar soluciones",
+            "ourSolutions": "Nuestras soluciones",
+            "solutionsDesc": "Tecnología diseñada para responder a necesidades reales",
+            "realImpact": "Impacto real",
+            "buildTogether": "Construyamos juntos",
+            "joinMission": "Únete a nuestra misión de crear tecnología que potencie la identidad cultural",
+            "contactUs": "Contáctanos"
+        },
+        "contactCenter": {
+            "badge": "Powered by ElevenLabs AI",
+            "hero": "Contact Center Inteligente con IA",
+            "description": "Transformo tu atención al cliente con agentes de IA conversacional que hablan naturalmente, se integran con tus sistemas y trabajan 24/7. Implementación completa con ElevenLabs y automatización N8N.",
+            "requestDemo": "Solicitar Demo",
+            "viewServices": "Ver Servicios",
+            "servicesTitle": "Servicios de Contact Center con IA",
+            "servicesDesc": "Soluciones completas para modernizar tu atención al cliente con tecnología de vanguardia",
+            "demoTitle": "Prueba nuestro agente de IA ahora",
+            "demoDesc": "Llama a nuestra línea demo y experimenta la calidad de nuestro agente de IA conversacional con ElevenLabs.",
+            "demoNumber": "Número de Demostración",
+            "callNow": "Llamar Ahora",
+            "location": "San Luis Obispo, CA, US",
+            "available247": "Disponible 24/7",
+            "aiPowered": "Powered by ElevenLabs AI"
+        }
+    },
+    "en": {
+        "header": {
+            "home": "Home",
+            "about": "About",
+            "projects": "Projects",
+            "contact": "Contact",
+            "infrastructure": "Infrastructure",
+            "contactCenter": "Contact Center"
+        },
+        "footer": {
+            "description": "Promoting free software in Guatemala to strengthen communities and provide opportunities for those who want to learn and grow in technology.",
+            "quickLinks": "Quick Links",
+            "followUs": "Follow Us",
+            "copyright": "Technology with cultural purpose."
+        },
+        "home": {
+            "badge": "Technology with cultural purpose",
+            "hero": "Digital platforms for communities",
+            "description": "We create technological solutions that respect cultural identity while building a more inclusive digital future for indigenous communities.",
+            "exploreSolutions": "Explore solutions",
+            "ourSolutions": "Our solutions",
+            "solutionsDesc": "Technology designed to respond to real needs",
+            "realImpact": "Real impact",
+            "buildTogether": "Let's build together",
+            "joinMission": "Join our mission to create technology that empowers cultural identity",
+            "contactUs": "Contact us"
+        },
+        "contactCenter": {
+            "badge": "Powered by ElevenLabs AI",
+            "hero": "Intelligent AI Contact Center",
+            "description": "Transform your customer service with conversational AI agents that speak naturally, integrate with your systems, and work 24/7. Complete implementation with ElevenLabs and N8N automation.",
+            "requestDemo": "Request Demo",
+            "viewServices": "View Services",
+            "servicesTitle": "AI Contact Center Services",
+            "servicesDesc": "Complete solutions to modernize your customer service with cutting-edge technology",
+            "demoTitle": "Try our AI agent now",
+            "demoDesc": "Call our demo line and experience the quality of our conversational AI agent with ElevenLabs.",
+            "demoNumber": "Demo Number",
+            "callNow": "Call Now",
+            "location": "San Luis Obispo, CA, US",
+            "available247": "Available 24/7",
+            "aiPowered": "Powered by ElevenLabs AI"
+        }
+    },
+    "pt": {
+        "header": {
+            "home": "Início",
+            "about": "Sobre",
+            "projects": "Projetos",
+            "contact": "Contato",
+            "infrastructure": "Infraestrutura",
+            "contactCenter": "Contact Center"
+        },
+        "footer": {
+            "description": "Promovendo software livre na Guatemala para fortalecer comunidades e oferecer oportunidades para quem deseja aprender e crescer em tecnologia.",
+            "quickLinks": "Links Rápidos",
+            "followUs": "Siga-nos",
+            "copyright": "Tecnologia com propósito cultural."
+        },
+        "home": {
+            "badge": "Tecnologia com propósito cultural",
+            "hero": "Plataformas digitais para comunidades",
+            "description": "Criamos soluções tecnológicas que respeitam a identidade cultural enquanto construímos um futuro digital mais inclusivo para comunidades indígenas.",
+            "exploreSolutions": "Explorar soluções",
+            "ourSolutions": "Nossas soluções",
+            "solutionsDesc": "Tecnologia projetada para responder a necessidades reais",
+            "realImpact": "Impacto real",
+            "buildTogether": "Vamos construir juntos",
+            "joinMission": "Junte-se à nossa missão de criar tecnologia que potencialize a identidade cultural",
+            "contactUs": "Contate-nos"
+        },
+        "contactCenter": {
+            "badge": "Powered by ElevenLabs AI",
+            "hero": "Contact Center Inteligente com IA",
+            "description": "Transforme seu atendimento ao cliente com agentes de IA conversacional que falam naturalmente, integram-se com seus sistemas e trabalham 24/7. Implementação completa com ElevenLabs e automação N8N.",
+            "requestDemo": "Solicitar Demo",
+            "viewServices": "Ver Serviços",
+            "servicesTitle": "Serviços de Contact Center com IA",
+            "servicesDesc": "Soluções completas para modernizar seu atendimento ao cliente com tecnologia de ponta",
+            "demoTitle": "Experimente nosso agente de IA agora",
+            "demoDesc": "Ligue para nossa linha demo e experimente a qualidade do nosso agente de IA conversacional com ElevenLabs.",
+            "demoNumber": "Número de Demonstração",
+            "callNow": "Ligar Agora",
+            "location": "San Luis Obispo, CA, EUA",
+            "available247": "Disponível 24/7",
+            "aiPowered": "Powered by ElevenLabs AI"
+        }
+    },
+    "zh": {
+        "header": {
+            "home": "首页",
+            "about": "关于我们",
+            "projects": "项目",
+            "contact": "联系我们",
+            "infrastructure": "基础设施",
+            "contactCenter": "联络中心"
+        },
+        "footer": {
+            "description": "在危地马拉推广自由软件，加强社区建设，为希望学习和发展技术的人提供机会。",
+            "quickLinks": "快速链接",
+            "followUs": "关注我们",
+            "copyright": "具有文化目的的技术。"
+        },
+        "home": {
+            "badge": "具有文化目的的技术",
+            "hero": "社区数字平台",
+            "description": "我们创建尊重文化认同的技术解决方案，同时为土著社区构建更具包容性的数字未来。",
+            "exploreSolutions": "探索解决方案",
+            "ourSolutions": "我们的解决方案",
+            "solutionsDesc": "旨在满足实际需求的技术",
+            "realImpact": "真实影响",
+            "buildTogether": "让我们一起建设",
+            "joinMission": "加入我们的使命，创建增强文化认同的技术",
+            "contactUs": "联系我们"
+        },
+        "contactCenter": {
+            "badge": "由 ElevenLabs AI 提供支持",
+            "hero": "智能AI联络中心",
+            "description": "使用自然对话的AI代理转变您的客户服务，与您的系统集成，全天候工作。使用ElevenLabs和N8N自动化完整实施。",
+            "requestDemo": "申请演示",
+            "viewServices": "查看服务",
+            "servicesTitle": "AI联络中心服务",
+            "servicesDesc": "使用尖端技术现代化您的客户服务的完整解决方案",
+            "demoTitle": "立即试用我们的AI代理",
+            "demoDesc": "拨打我们的演示热线，体验我们使用ElevenLabs的对话式AI代理的质量。",
+            "demoNumber": "演示号码",
+            "callNow": "立即致电",
+            "location": "美国加利福尼亚州圣路易斯奥比斯波",
+            "available247": "全天候可用",
+            "aiPowered": "由 ElevenLabs AI 提供支持"
+        }
+    }
+}

@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWidget from '../components/FloatingWidget';
 import Script from 'next/script';
+import { TranslationProvider } from '../lib/useTranslation';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://neuralcodelab.com'),
@@ -86,10 +87,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           `}
         </Script>
 
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingWidget />
+        <TranslationProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <FloatingWidget />
+        </TranslationProvider>
       </body>
     </html>
   );

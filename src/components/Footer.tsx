@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
 import { Code, Mail, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/useTranslation';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-white border-t border-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -16,32 +21,32 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold text-gray-900">NeuralCodeLab</span>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Impulsando el software libre en Guatemala para fortalecer comunidades y brindar oportunidades a quienes desean aprender y crecer en tecnología.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Enlaces Rápidos */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-6">Enlaces Rápidos</h3>
+            <h3 className="font-semibold text-gray-900 mb-6">{t('footer.quickLinks')}</h3>
             <ul className="space-y-4 text-sm text-gray-600">
               <li>
                 <Link href="/" className="hover:text-gray-900 transition-colors">
-                  Inicio
+                  {t('header.home')}
                 </Link>
               </li>
               <li>
                 <Link href="/proyectos" className="hover:text-gray-900 transition-colors">
-                  Proyectos
+                  {t('header.projects')}
                 </Link>
               </li>
               <li>
                 <Link href="/nosotros" className="hover:text-gray-900 transition-colors">
-                  Nosotros
+                  {t('header.about')}
                 </Link>
               </li>
               <li>
                 <Link href="/contacto" className="hover:text-gray-900 transition-colors">
-                  Contacto
+                  {t('header.contact')}
                 </Link>
               </li>
             </ul>
@@ -49,7 +54,7 @@ const Footer: React.FC = () => {
 
           {/* Redes Sociales */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-6">Síguenos</h3>
+            <h3 className="font-semibold text-gray-900 mb-6">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a
                 href="https://github.com/devlewiso"
@@ -81,7 +86,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-16 pt-8 border-t border-gray-100 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Neural Code Lab. Tecnología con propósito cultural.</p>
+          <p>© {new Date().getFullYear()} Neural Code Lab. {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

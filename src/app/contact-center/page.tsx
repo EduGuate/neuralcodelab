@@ -386,7 +386,36 @@ export default function ContactCenterPage() {
                 </div>
             </section>
 
-            {/* Benefits Section */}
+            {/* Demo Phone Section */}
+            <section id="demo" className="bg-gradient-to-br from-purple-900 to-indigo-900 text-white py-20">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <Headphones className="w-16 h-16 mx-auto mb-6 opacity-90" />
+                    <h2 className="text-4xl font-bold mb-6">
+                        Prueba nuestro agente de IA ahora
+                    </h2>
+                    <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                        Llama a nuestra línea demo y experimenta la calidad de nuestro agente de IA conversacional con ElevenLabs. Disponible 24/7.
+                    </p>
+                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 inline-block mb-4">
+                        <p className="text-sm text-purple-100 mb-2">Número de Demostración</p>
+                        <a
+                            href="tel:+18054396103"
+                            className="text-5xl font-bold hover:text-purple-200 transition-colors block mb-4"
+                        >
+                            +1 805 439 6103
+                        </a>
+                        <p className="text-sm text-purple-100 mb-2">
+                            📍 San Luis Obispo, CA, US
+                        </p>
+                        <p className="text-xs text-purple-200 mt-4 flex items-center justify-center gap-2">
+                            <Bot className="w-4 h-4" />
+                            Powered by ElevenLabs AI
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Demo CTA */}
             <section className="max-w-6xl mx-auto px-6 py-20">
                 <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-200">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
