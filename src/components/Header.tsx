@@ -44,6 +44,9 @@ export default function Header() {
           <Link href="/contact-center" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
             {t('header.contactCenter')}
           </Link>
+          <Link href="/chat-demo" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+            {t('header.chatDemo')}
+          </Link>
           <a
             href="https://infra.neuralcodelab.com/"
             target="_blank"
@@ -145,6 +148,13 @@ export default function Header() {
           >
             {t('header.contactCenter')}
           </Link>
+          <Link
+            href="/chat-demo"
+            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
+            onClick={() => setEstaAbierto(false)}
+          >
+            {t('header.chatDemo')}
+          </Link>
           <a
             href="https://infra.neuralcodelab.com/"
             target="_blank"
@@ -180,8 +190,8 @@ export default function Header() {
                     setEstaAbierto(false);
                   }}
                   className={`px-3 py-2 text-sm rounded-lg border transition-colors ${language === lang.code
-                      ? 'bg-gray-900 text-white border-gray-900'
-                      : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                    ? 'bg-gray-900 text-white border-gray-900'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
                     }`}
                 >
                   {lang.flag} {lang.name}

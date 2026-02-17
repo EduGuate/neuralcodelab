@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import FloatingWidget from '../../components/FloatingWidget';
 import {
     Phone,
     Bot,
@@ -391,10 +392,10 @@ export default function ContactCenterPage() {
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <Headphones className="w-16 h-16 mx-auto mb-6 opacity-90" />
                     <h2 className="text-4xl font-bold mb-6">
-                        Prueba nuestro agente de IA ahora
+                        Prueba Neuralie, nuestro agente de IA
                     </h2>
                     <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                        Llama a nuestra línea demo y experimenta la calidad de nuestro agente de IA conversacional con ElevenLabs. Disponible 24/7.
+                        Llama a nuestra línea demo y experimenta la calidad de Neuralie, nuestro agente de IA conversacional con ElevenLabs. Disponible 24/7.
                     </p>
                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 inline-block mb-4">
                         <p className="text-sm text-purple-100 mb-2">Número de Demostración</p>
@@ -513,6 +514,7 @@ export default function ContactCenterPage() {
                     </div>
                 </div>
             </section>
+            <FloatingWidget />
         </div>
     );
 }

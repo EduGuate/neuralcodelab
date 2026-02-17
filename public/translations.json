@@ -6,7 +6,8 @@
             "projects": "Proyectos",
             "contact": "Contacto",
             "infrastructure": "Infraestructura",
-            "contactCenter": "Contact Center"
+            "contactCenter": "Contact Center",
+            "chatDemo": "Chat Demo"
         },
         "footer": {
             "description": "Impulsando el software libre en Guatemala para fortalecer comunidades y brindar oportunidades a quienes desean aprender y crecer en tecnología.",
@@ -50,7 +51,8 @@
             "projects": "Projects",
             "contact": "Contact",
             "infrastructure": "Infrastructure",
-            "contactCenter": "Contact Center"
+            "contactCenter": "Contact Center",
+            "chatDemo": "Chat Demo"
         },
         "footer": {
             "description": "Promoting free software in Guatemala to strengthen communities and provide opportunities for those who want to learn and grow in technology.",
@@ -94,7 +96,8 @@
             "projects": "Projetos",
             "contact": "Contato",
             "infrastructure": "Infraestrutura",
-            "contactCenter": "Contact Center"
+            "contactCenter": "Contact Center",
+            "chatDemo": "Chat Demo"
         },
         "footer": {
             "description": "Promovendo software livre na Guatemala para fortalecer comunidades e oferecer oportunidades para quem deseja aprender e crescer em tecnologia.",
@@ -138,7 +141,8 @@
             "projects": "项目",
             "contact": "联系我们",
             "infrastructure": "基础设施",
-            "contactCenter": "联络中心"
+            "contactCenter": "联络中心",
+            "chatDemo": "聊天演示"
         },
         "footer": {
             "description": "在危地马拉推广自由软件，加强社区建设，为希望学习和发展技术的人提供机会。",
