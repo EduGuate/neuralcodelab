@@ -66,7 +66,7 @@ export default function ThreeCXPage() {
             description: "Gestiona grandes volúmenes de llamadas con herramientas profesionales."
         },
         {
-            title: "Emprendedores",
+            title: "Emprendedoress",
             description: "Comienza con una línea profesional sin costos iniciales."
         }
     ];
