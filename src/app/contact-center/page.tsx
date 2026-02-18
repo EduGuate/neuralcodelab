@@ -1,6 +1,5 @@
 'use client';
 
-'use client';
 import React from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -527,7 +526,14 @@ export default function ContactCenterPage() {
                     </div>
                 </div>
             </section>
-            <FloatingWidget />
+            
+            {/* ElevenLabs Widget */}
+            {agentId && (
+                <div className="fixed bottom-8 right-8 z-50">
+                    <elevenlabs-convai agent-id={agentId}></elevenlabs-convai>
+                    <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async strategy="afterInteractive" />
+                </div>
+            )}
         </div>
     );
 }
