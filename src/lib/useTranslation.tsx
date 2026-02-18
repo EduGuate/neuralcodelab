@@ -7,7 +7,7 @@ type Language = 'en' | 'es' | 'pt' | 'zh';
 interface TranslationContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (key: string) => string;
+    t: (key: string) => any;
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
@@ -69,21 +69,21 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
         }
     };
 
-    const t = (key: string): string => {
-        if (!isLoaded) return key;
+    const t = <T = any>(key: string): T => {
+        if (!isLoaded || !translations[language]) return key as unknown as T;
 
         const keys = key.split('.');
         let value: any = translations[language];
 
         for (const k of keys) {
-            if (value && typeof value === 'object') {
+            if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
-                return key; // Return key if translation not found
+                return key as unknown as T; // Return key if translation not found
             }
         }
 
-        return typeof value === 'string' ? value : key;
+        return (value !== undefined ? value : key) as T;
     };
 
     return (

@@ -41,6 +41,7 @@ export const features = [
     }
 ];
 
+
 export const stats = [
     { value: "12+", label: "Comunidades" },
     { value: "5", label: "Lenguas Mayas" },

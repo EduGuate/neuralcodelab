@@ -1,24 +1,32 @@
 'use client';
 
-import { Mail, Globe, HeartHandshake, ArrowRight } from 'lucide-react';
+import { Mail, Globe, HeartHandshake } from 'lucide-react';
+import { useTranslation } from '@/lib/useTranslation';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 export default function Contact() {
+  const { t } = useTranslation();
+
+  const servicesData = t('contact.services');
+  const services = Array.isArray(servicesData) ? servicesData : [];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="max-w-3xl text-center mx-auto">
-          <div className="inline-flex items-center justify-center p-3 bg-gray-100 rounded-full mb-6">
-            <Globe size={24} className="text-gray-900" />
+          <div className="inline-flex items-center justify-center p-3 bg-muted rounded-full mb-6">
+            <Globe size={24} className="text-foreground" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Tejiendo Código con las Comunidades
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            {t('contact.hero')}
           </h1>
 
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            En NeuralCode, creamos herramientas digitales libres para preservar saberes ancestrales.
-            ¿Tienes un proyecto comunitario? Hablemos.
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            {t('contact.description')}
           </p>
         </div>
       </section>
@@ -29,65 +37,58 @@ export default function Contact() {
           {/* Info */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                <HeartHandshake className="text-gray-900" />
-                Colaboración Comunitaria
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <HeartHandshake className="text-foreground" />
+                {t('contact.collaboration')}
               </h2>
-              <p className="text-gray-600 mb-6">
-                Estamos comprometidos con el desarrollo tecnológico accesible. Ofrecemos:
+              <p className="text-muted-foreground mb-6">
+                {t('contact.collaborationDesc')}
               </p>
               <ul className="space-y-4">
-                {[
-                  'Desarrollo de software libre para proyectos indígenas',
-                  'Capacitación tecnológica en lenguas originarias',
-                  'Plataformas para documentación cultural'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gray-900 mt-2.5" />
+                {services.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
-              <h3 className="font-semibold text-gray-900 mb-4">Idiomas disponibles</h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
-                  Español
-                </span>
-                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
-                  Kaqchikel
-                </span>
-                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
-                  K'iche'
-                </span>
-                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600">
-                  English
-                </span>
-              </div>
-            </div>
+            <Card className="bg-muted/50 border-none">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold text-foreground mb-4">{t('contact.availableLanguages')}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {['Español', 'Kaqchikel', 'K\'iche\'', 'English'].map((lang) => (
+                    <Badge key={lang} variant="outline" className="bg-background">
+                      {lang}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Action Card */}
-          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Inicia una conversación</h3>
-            <p className="text-gray-600 mb-8">
-              Cuéntanos sobre tu proyecto o idea. Estamos aquí para escuchar y colaborar.
-            </p>
+          <Card className="shadow-lg border">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold">{t('contact.startConversation')}</CardTitle>
+              <CardDescription>
+                {t('contact.conversationDesc')}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full py-6 text-lg gap-2">
+                <a href={`mailto:devlewiso@gmail.com?subject=${encodeURIComponent(t('contact.subject'))}`}>
+                  <Mail size={20} />
+                  {t('contact.sendEmail')}
+                </a>
+              </Button>
 
-            <a
-              href={`mailto:devlewiso@gmail.com?subject=${encodeURIComponent('Proyecto Comunitario')}`}
-              className="flex items-center justify-center gap-2 w-full bg-gray-900 text-white px-6 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
-            >
-              <Mail size={20} />
-              Enviar Correo
-            </a>
-
-            <p className="text-center text-sm text-gray-500 mt-4">
-              Respondemos usualmente en 24-48 horas
-            </p>
-          </div>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                {t('contact.responseTime')}
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

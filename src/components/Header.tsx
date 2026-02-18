@@ -2,15 +2,26 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ExternalLink, Briefcase, Globe } from 'lucide-react';
+import { Menu, ExternalLink, Briefcase, Globe } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
+import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 export default function Header() {
   const [estaAbierto, setEstaAbierto] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const { language, setLanguage, t } = useTranslation();
-  const [langMenuOpen, setLangMenuOpen] = useState(false);
-
-  const alternarMenu = () => setEstaAbierto(!estaAbierto);
 
   const languages = [
     { code: 'es' as const, name: 'Español', flag: '🇪🇸' },
@@ -19,196 +30,202 @@ export default function Header() {
     { code: 'zh' as const, name: '中文', flag: '🇨🇳' }
   ];
 
+  const currentLanguage = languages.find(l => l.code === language);
+
+  const navLinks = [
+    { href: '/', label: t('header.home') },
+    { href: '/nosotros', label: t('header.about') },
+    { href: '/proyectos', label: t('header.projects') },
+    { href: '/3cx', label: '3CX' },
+    { href: '/contact-center', label: t('header.contactCenter') },
+    { href: '/chat-demo', label: t('header.chatServices') },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="text-xl font-bold text-gray-900">NeuralCodeLab</div>
+          <div className="text-xl font-bold">NeuralCodeLab</div>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            {t('header.home')}
-          </Link>
-          <Link href="/nosotros" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            {t('header.about')}
-          </Link>
-          <Link href="/proyectos" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            {t('header.projects')}
-          </Link>
-          <Link href="/3cx" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            3CX
-          </Link>
-          <Link href="/contact-center" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            {t('header.contactCenter')}
-          </Link>
-          <Link href="/chat-demo" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-            {t('header.chatDemo')}
-          </Link>
+        <nav
+          className="hidden md:flex items-center gap-1"
+          onMouseLeave={() => setHoveredLink(null)}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+              onMouseEnter={() => setHoveredLink(link.href)}
+            >
+              {/* Animated background pill */}
+              <AnimatePresence>
+                {hoveredLink === link.href && (
+                  <motion.span
+                    layoutId="nav-hover-bg"
+                    className="absolute inset-0 rounded-md bg-muted"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+              </AnimatePresence>
+              <span className="relative z-10">{link.label}</span>
+            </Link>
+          ))}
+
+          {/* External: Infrastructure */}
           <a
             href="https://infra.neuralcodelab.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            className="relative px-3 py-1.5 flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+            onMouseEnter={() => setHoveredLink('infra')}
           >
-            {t('header.infrastructure')}
-            <ExternalLink size={14} />
+            <AnimatePresence>
+              {hoveredLink === 'infra' && (
+                <motion.span
+                  layoutId="nav-hover-bg"
+                  className="absolute inset-0 rounded-md bg-muted"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </AnimatePresence>
+            <span className="relative z-10 flex items-center gap-1">
+              {t('header.infrastructure')}
+              <ExternalLink size={14} />
+            </span>
           </a>
+
+          {/* External: CV */}
           <a
             href="https://mycven.neuralcodelab.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className="relative p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md"
             title="Ver mi CV"
+            onMouseEnter={() => setHoveredLink('cv')}
           >
-            <Briefcase size={20} />
+            <AnimatePresence>
+              {hoveredLink === 'cv' && (
+                <motion.span
+                  layoutId="nav-hover-bg"
+                  className="absolute inset-0 rounded-md bg-muted"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </AnimatePresence>
+            <Briefcase size={20} className="relative z-10" />
           </a>
 
           {/* Language Switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
-            >
-              <Globe size={18} />
-              <span>{languages.find(l => l.code === language)?.flag}</span>
-            </button>
-            {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setLangMenuOpen(false);
-                    }}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 flex items-center gap-2 ${language === lang.code ? 'bg-gray-50 font-semibold' : ''
-                      }`}
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.name}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Globe size={18} />
+                <span>{currentLanguage?.flag}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {languages.map((lang) => (
+                <DropdownMenuItem
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={language === lang.code ? 'bg-muted font-semibold' : ''}
+                >
+                  <span className="mr-2">{lang.flag}</span>
+                  <span>{lang.name}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-          <Link href="/contacto" className="px-4 py-2 text-sm bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
-            {t('header.contact')}
-          </Link>
+          <Button asChild size="sm">
+            <Link href="/contacto">
+              {t('header.contact')}
+            </Link>
+          </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={alternarMenu}
-          className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
-          aria-label="Alternar menú"
-        >
-          {estaAbierto ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {estaAbierto && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg py-4 px-6 flex flex-col gap-4">
-          <Link
-            href="/"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.home')}
-          </Link>
-          <Link
-            href="/nosotros"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.about')}
-          </Link>
-          <Link
-            href="/proyectos"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.projects')}
-          </Link>
-          <Link
-            href="/3cx"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            3CX
-          </Link>
-          <Link
-            href="/contact-center"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.contactCenter')}
-          </Link>
-          <Link
-            href="/chat-demo"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.chatDemo')}
-          </Link>
-          <a
-            href="https://infra.neuralcodelab.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.infrastructure')}
-            <ExternalLink size={16} />
-          </a>
-          <a
-            href="https://mycven.neuralcodelab.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            Mi CV
-            <Briefcase size={18} />
-          </a>
-
-          {/* Mobile Language Switcher */}
-          <div className="border-t border-gray-100 pt-4 mt-2">
-            <p className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
-              <Globe size={16} /> Idioma / Language
-            </p>
-            <div className="grid grid-cols-2 gap-2">
+        {/* Mobile Menu */}
+        <div className="md:hidden flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Globe size={18} />
+                <span>{currentLanguage?.flag}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
               {languages.map((lang) => (
-                <button
+                <DropdownMenuItem
                   key={lang.code}
-                  onClick={() => {
-                    setLanguage(lang.code);
-                    setEstaAbierto(false);
-                  }}
-                  className={`px-3 py-2 text-sm rounded-lg border transition-colors ${language === lang.code
-                    ? 'bg-gray-900 text-white border-gray-900'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
-                    }`}
+                  onClick={() => setLanguage(lang.code)}
+                  className={language === lang.code ? 'bg-muted font-semibold' : ''}
                 >
-                  {lang.flag} {lang.name}
-                </button>
+                  <span className="mr-2">{lang.flag}</span>
+                  <span>{lang.name}</span>
+                </DropdownMenuItem>
               ))}
-            </div>
-          </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-          <Link
-            href="/contacto"
-            className="text-base font-medium text-gray-600 hover:text-gray-900 py-2"
-            onClick={() => setEstaAbierto(false)}
-          >
-            {t('header.contact')}
-          </Link>
+          <Sheet open={estaAbierto} onOpenChange={setEstaAbierto}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu size={24} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="flex flex-col gap-4 pt-12">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-muted"
+                  onClick={() => setEstaAbierto(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="https://infra.neuralcodelab.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-muted"
+                onClick={() => setEstaAbierto(false)}
+              >
+                {t('header.infrastructure')}
+                <ExternalLink size={18} />
+              </a>
+              <a
+                href="https://mycven.neuralcodelab.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-muted"
+                onClick={() => setEstaAbierto(false)}
+              >
+                Mi CV
+                <Briefcase size={18} />
+              </a>
+              <Button asChild className="mt-4">
+                <Link href="/contacto" onClick={() => setEstaAbierto(false)}>
+                  {t('header.contact')}
+                </Link>
+              </Button>
+            </SheetContent>
+          </Sheet>
         </div>
-      )}
+      </div>
     </header>
   );
 }
