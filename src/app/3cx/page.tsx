@@ -62,7 +62,7 @@ export default function ThreeCXPage() {
             description: "Mantén a tu equipo conectado sin importar dónde se encuentren."
         },
         {
-            title: "Call Centerss",
+            title: "Call Centers",
             description: "Gestiona grandes volúmenes de llamadas con herramientas profesionales."
         },
         {
