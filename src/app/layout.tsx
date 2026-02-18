@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FloatingWidget from '../components/FloatingWidget';
+
 import Script from 'next/script';
 import { TranslationProvider } from '../lib/useTranslation';
 

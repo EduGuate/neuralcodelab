@@ -1,8 +1,19 @@
 'use client';
 
+'use client';
 import React from 'react';
 import Link from 'next/link';
-import FloatingWidget from '../../components/FloatingWidget';
+import Script from 'next/script';
+
+// Add proper typing for the custom element
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id': string }, HTMLElement>;
+        }
+    }
+}
+
 import {
     Phone,
     Bot,
@@ -160,6 +171,8 @@ export default function ContactCenterPage() {
         "Analytics detallados y mejora continua",
         "Soporte técnico especializado en español"
     ];
+
+    const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
