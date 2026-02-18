@@ -3,8 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { Phone, CheckCircle, Smartphone, Building2, Users, Headphones, ArrowRight, MessageSquare, Shield, Zap } from 'lucide-react';
+import { useTranslation } from '@/lib/useTranslation';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function ThreeCXPage() {
+    const { t } = useTranslation();
     const features = [
         {
             icon: <Smartphone className="w-8 h-8" />,
@@ -57,7 +62,7 @@ export default function ThreeCXPage() {
             description: "Mantén a tu equipo conectado sin importar dónde se encuentren."
         },
         {
-            title: "Call Centers",
+            title: "Call Centerss",
             description: "Gestiona grandes volúmenes de llamadas con herramientas profesionales."
         },
         {
@@ -67,246 +72,236 @@ export default function ThreeCXPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <div className="min-h-screen bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+            <section className="relative overflow-hidden bg-primary text-primary-foreground">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-foreground/10 via-transparent to-transparent opacity-30"></div>
 
                 <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
+                            <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5">
                                 <Phone className="w-4 h-4" />
-                                Sistema de Comunicaciones Profesional
-                            </div>
+                                {t('threeCX.badge')}
+                            </Badge>
                             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                                3CX Gratis en tu Teléfono
+                                {t('threeCX.hero')}
                             </h1>
-                            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                                Transforma tu smartphone en un sistema telefónico empresarial. Te ayudo a configurar 3CX gratis y a integrarlo en tu negocio.
+                            <p className="text-xl text-primary-foreground/80 mb-10 leading-relaxed">
+                                {t('threeCX.description')}
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <a
-                                    href="tel:+15674061261"
-                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                                >
-                                    <Phone size={20} /> Llamar Ahora
-                                </a>
-                                <a
-                                    href="#demo"
-                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold border border-white/20"
-                                >
-                                    Ver Demo <ArrowRight size={20} />
-                                </a>
+                                <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg">
+                                    <a href="tel:+15674061261">
+                                        <Phone size={20} /> {t('threeCX.callNow')}
+                                    </a>
+                                </Button>
+                                <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 hover:bg-primary-foreground/10 px-8 py-6 text-lg">
+                                    <a href="#demo">
+                                        {t('threeCX.viewDemo')} <ArrowRight size={20} />
+                                    </a>
+                                </Button>
                             </div>
                         </div>
 
                         <div className="relative">
-                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-primary-foreground shadow-2xl">
+                                <CardHeader className="flex flex-row items-center gap-4">
+                                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                                         <Phone className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-lg">Línea Demo Activa</p>
-                                        <p className="text-blue-100 text-sm">Prueba el sistema ahora</p>
+                                        <p className="font-bold text-xl">{t('threeCX.demoLineActive')}</p>
+                                        <p className="text-primary-foreground/70 text-sm">{t('threeCX.trySystemNow')}</p>
                                     </div>
-                                </div>
-                                <div className="bg-white/5 rounded-lg p-6 mb-4">
-                                    <p className="text-sm text-blue-100 mb-2">Número de Demostración:</p>
-                                    <a href="tel:+15674061261" className="text-3xl font-bold hover:text-blue-200 transition-colors">
-                                        +1 567 406 1261
-                                    </a>
-                                </div>
-                                <p className="text-sm text-blue-100">
-                                    Llama para experimentar la calidad de 3CX en tiempo real
-                                </p>
-                            </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="bg-white/5 rounded-2xl p-6 mb-6 border border-white/10">
+                                        <p className="text-sm text-primary-foreground/70 mb-2">{t('threeCX.demoNumber')}</p>
+                                        <a href="tel:+15674061261" className="text-3xl md:text-4xl font-bold hover:text-white transition-colors block">
+                                            +1 567 406 1261
+                                        </a>
+                                    </div>
+                                    <p className="text-sm text-primary-foreground/80 italic">
+                                        {t('threeCX.demoQualityDesc')}
+                                    </p>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Features Grid */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
+            <section className="max-w-6xl mx-auto px-6 py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        ¿Por qué elegir 3CX?
+                    <h2 className="text-4xl font-bold text-foreground mb-4">
+                        {t('threeCX.whyChoose')}
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Un sistema completo de comunicaciones empresariales al alcance de tu mano
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        {t('threeCX.whyChooseDesc')}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <div
+                        <Card
                             key={index}
-                            className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-blue-500 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                            className="group hover:border-primary transition-all duration-300 transform hover:-translate-y-1 border-none shadow-md"
                         >
-                            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                                {feature.icon}
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                {feature.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                {feature.description}
-                            </p>
-                        </div>
+                            <CardHeader>
+                                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                                    {feature.icon}
+                                </div>
+                                <CardTitle className="text-xl font-bold">
+                                    {feature.title}
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </CardContent>
+                        </Card>
                     ))}
                 </div>
             </section>
 
             {/* Benefits Section */}
-            <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
+            <section className="bg-muted/30 py-24 border-y">
                 <div className="max-w-6xl mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                                Beneficios que transforman tu negocio
+                            <h2 className="text-4xl font-bold text-foreground mb-8">
+                                {t('threeCX.benefitsTitle')}
                             </h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                3CX no es solo un sistema telefónico, es una solución completa que moderniza tu forma de comunicarte.
+                            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                                {t('threeCX.benefitsDesc')}
                             </p>
                             <div className="space-y-4">
                                 {benefits.map((benefit, index) => (
-                                    <div key={index} className="flex items-start gap-3">
-                                        <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <p className="text-gray-700 text-lg">{benefit}</p>
+                                    <div key={index} className="flex items-start gap-4">
+                                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                            <CheckCircle className="w-4 h-4 text-primary" />
+                                        </div>
+                                        <p className="text-foreground text-lg leading-tight">{benefit}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                                Lo que incluye tu configuración:
-                            </h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-blue-600 font-bold">1</span>
+                        <Card className="shadow-2xl border-none">
+                            <CardHeader>
+                                <CardTitle className="text-2xl font-bold">
+                                    {t('threeCX.whatIncluded')}
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-8">
+                                {[
+                                    { title: "Instalación en tu dispositivo", desc: "App configurada y lista para usar" },
+                                    { title: "Capacitación básica", desc: "Aprende a usar todas las funciones" },
+                                    { title: "Soporte inicial", desc: "Asistencia durante la configuración" },
+                                    { title: "Consultoría de integración", desc: "Orientación para tu negocio" }
+                                ].map((step, i) => (
+                                    <div key={i} className="flex items-start gap-4 relative group">
+                                        {i < 3 && <div className="absolute left-5 top-10 w-0.5 h-10 bg-primary/20"></div>}
+                                        <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg group-hover:scale-110 transition-transform">
+                                            <span className="text-white font-bold">{i + 1}</span>
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-foreground text-lg">{step.title}</p>
+                                            <p className="text-muted-foreground">{step.desc}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Instalación en tu dispositivo</p>
-                                        <p className="text-sm text-gray-600">App configurada y lista para usar</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-blue-600 font-bold">2</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Capacitación básica</p>
-                                        <p className="text-sm text-gray-600">Aprende a usar todas las funciones</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-blue-600 font-bold">3</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Soporte inicial</p>
-                                        <p className="text-sm text-gray-600">Asistencia durante la configuración</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-blue-600 font-bold">4</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Consultoría de integración</p>
-                                        <p className="text-sm text-gray-600">Orientación para tu negocio</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                ))}
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
             </section>
 
             {/* Use Cases */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
+            <section className="max-w-6xl mx-auto px-6 py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Ideal para todo tipo de negocios
+                    <h2 className="text-4xl font-bold text-foreground mb-4">
+                        {t('threeCX.idealFor')}
                     </h2>
-                    <p className="text-xl text-gray-600">
-                        Sin importar el tamaño de tu empresa, 3CX se adapta a tus necesidades
+                    <p className="text-xl text-muted-foreground">
+                        {t('threeCX.idealForDesc')}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {useCases.map((useCase, index) => (
-                        <div
+                        <Card
                             key={index}
-                            className="p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all"
+                            className="p-2 hover:shadow-lg transition-all border-muted-foreground/10"
                         >
-                            <h3 className="text-lg font-bold text-gray-900 mb-3">
-                                {useCase.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                                {useCase.description}
-                            </p>
-                        </div>
+                            <CardHeader>
+                                <CardTitle className="text-lg font-bold">
+                                    {useCase.title}
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {useCase.description}
+                                </p>
+                            </CardContent>
+                        </Card>
                     ))}
                 </div>
             </section>
 
             {/* Demo Section */}
-            <section id="demo" className="bg-gradient-to-br from-blue-900 to-blue-800 text-white py-20">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <Headphones className="w-16 h-16 mx-auto mb-6 opacity-90" />
+            <section id="demo" className="bg-primary text-primary-foreground py-24 relative overflow-hidden">
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <Headphones className="w-20 h-20 mx-auto mb-8 opacity-90" />
                     <h2 className="text-4xl font-bold mb-6">
-                        Prueba el sistema ahora mismo
+                        {t('threeCX.tryRightNow')}
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                        Llama a nuestra línea demo y experimenta la calidad de 3CX. Sin compromisos, solo para que veas cómo funciona.
+                    <p className="text-xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+                        {t('threeCX.tryRightNowDesc')}
                     </p>
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 inline-block">
-                        <p className="text-sm text-blue-100 mb-2">Número de Demostración</p>
+                    <Card className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border-white/20 inline-block text-primary-foreground shadow-2xl">
+                        <p className="text-sm text-primary-foreground/70 mb-4 uppercase tracking-widest">{t('threeCX.demoNumber')}</p>
                         <a
                             href="tel:+15674061261"
-                            className="text-5xl font-bold hover:text-blue-200 transition-colors block mb-4"
+                            className="text-4xl md:text-6xl font-bold hover:text-white transition-colors block mb-6"
                         >
                             +1 567 406 1261
                         </a>
-                        <p className="text-sm text-blue-100">
-                            Disponible 24/7 • Llamada gratuita desde EE.UU.
+                        <p className="text-sm text-primary-foreground/80">
+                            {t('threeCX.available247')}
                         </p>
-                    </div>
+                    </Card>
                 </div>
             </section>
 
             {/* Final CTA */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-50"></div>
-
+            <section className="max-w-6xl mx-auto px-6 py-24">
+                <Card className="bg-primary text-primary-foreground p-12 md:p-16 text-center border-none overflow-hidden relative shadow-2xl">
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                            Moderniza tu comunicación empresarial hoy
+                            {t('threeCX.modernizeToday')}
                         </h2>
-                        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                            No esperes más para tener un sistema telefónico profesional. Es gratis, es fácil y te ayudo en todo el proceso.
+                        <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+                            {t('threeCX.modernizeDesc')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="tel:+15674061261"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-lg hover:shadow-xl"
-                            >
-                                <Phone size={20} /> Llamar Ahora
-                            </a>
-                            <Link
-                                href="/contacto"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold border border-white/20"
-                            >
-                                Más Información <ArrowRight size={20} />
-                            </Link>
+                            <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg font-bold">
+                                <a href="tel:+15674061261">
+                                    <Phone size={20} /> {t('threeCX.callNow')}
+                                </a>
+                            </Button>
+                            <Button asChild size="lg" variant="outline" className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-6 text-lg">
+                                <Link href="/contacto">
+                                    {t('threeCX.moreInfo')} <ArrowRight size={20} />
+                                </Link>
+                            </Button>
                         </div>
                     </div>
-                </div>
+                </Card>
             </section>
         </div>
     );

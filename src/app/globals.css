@@ -2,39 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff; /* Fondo blanco */
-  --foreground: #1a73e8; /* Texto azul brillante */
-  --card: #ffffff;
-  --card-foreground: #1a73e8;
-  --popover: #ffffff;
-  --popover-foreground: #1a73e8;
-  --primary: #1a73e8; /* Azul primario */
-  --primary-foreground: #ffffff; /* Texto blanco sobre el azul */
-  --secondary: #e3f2fd; /* Azul claro */
-  --secondary-foreground: #0d47a1; /* Azul oscuro para texto en fondo claro */
-  --muted: #e3f2fd; /* Azul claro para elementos secundarios */
-  --muted-foreground: #0d47a1; /* Azul oscuro para texto en fondo claro */
-  --accent: #0288d1; /* Azul más oscuro para acentos */
-  --accent-foreground: #ffffff; /* Texto blanco sobre el azul oscuro */
-  --destructive: #f44336; /* Rojo para acciones destructivas */
-  --destructive-foreground: #ffffff; /* Texto blanco sobre el rojo */
-  --border: #b0bec5; /* Gris claro para bordes */
-  --input: #ffffff; /* Fondo blanco para inputs */
-  --ring: #1a73e8; /* Azul brillante para anillos de enfoque */
-  --chart-1: #1a73e8; /* Azul para gráficos */
-  --chart-2: #0288d1; /* Azul más oscuro para gráficos */
-  --chart-3: #e3f2fd; /* Azul claro para gráficos */
-  --chart-4: #b0bec5; /* Gris claro para gráficos */
-  --radius: 8px;
-  --font-geist-sans: 'Arial', sans-serif;
-  --font-geist-mono: 'Courier New', monospace;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 214 82% 51%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 214 82% 51%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer utilities {
@@ -42,5 +80,3 @@ body {
     text-wrap: balance;
   }
 }
-
-

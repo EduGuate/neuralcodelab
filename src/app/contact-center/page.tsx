@@ -2,17 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Script from 'next/script';
-
-// Add proper typing for the custom element
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id': string }, HTMLElement>;
-        }
-    }
-}
-
+import FloatingWidget from '@/components/FloatingWidget';
 import {
     Phone,
     Bot,
@@ -30,11 +20,16 @@ import {
     Settings,
     Database,
     Code,
-    Smartphone,
     Monitor
 } from 'lucide-react';
+import { useTranslation } from '@/lib/useTranslation';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 export default function ContactCenterPage() {
+    const { t } = useTranslation();
+
     const services = [
         {
             icon: <Bot className="w-8 h-8" />,
@@ -153,7 +148,7 @@ export default function ContactCenterPage() {
         {
             title: "Encuestas y Feedback",
             description: "Recopilación automática de opiniones de clientes con análisis de sentimiento y reportes detallados.",
-            benefits: ["Insights accionables", "Mayor tasa de respuesta", "Análisis automático"]
+            benefits: ["Insights accionables", "Mayor tasa de response", "Análisis automático"]
         },
         {
             title: "Soporte Técnico",
@@ -171,369 +166,347 @@ export default function ContactCenterPage() {
         "Soporte técnico especializado en español"
     ];
 
-    const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
-
     return (
-        <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <div className="min-h-screen bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-900 text-white">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+            <section className="relative overflow-hidden bg-primary text-primary-foreground">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-foreground/10 via-transparent to-transparent opacity-30"></div>
 
                 <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
+                        <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5">
                             <Bot className="w-4 h-4" />
-                            Powered by ElevenLabs AI
-                        </div>
+                            {t('contactCenter.badge')}
+                        </Badge>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                            Contact Center Inteligente con IA
+                            {t('contactCenter.hero')}
                         </h1>
-                        <p className="text-xl text-purple-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-                            Transformo tu atención al cliente con agentes de IA conversacional que hablan naturalmente, se integran con tus sistemas y trabajan 24/7. Implementación completa con ElevenLabs y automatización N8N.
+                        <p className="text-xl text-primary-foreground/80 mb-10 leading-relaxed max-w-3xl mx-auto">
+                            {t('contactCenter.description')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                href="/contacto"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                            >
-                                Solicitar Demo <ArrowRight size={20} />
-                            </Link>
-                            <a
-                                href="#servicios"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold border border-white/20"
-                            >
-                                Ver Servicios
-                            </a>
+                            <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg">
+                                <Link href="/contacto">
+                                    {t('contactCenter.requestDemo')} <ArrowRight size={20} />
+                                </Link>
+                            </Button>
+                            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 hover:bg-primary-foreground/10 px-8 py-6 text-lg">
+                                <a href="#servicios">
+                                    {t('contactCenter.viewServices')}
+                                </a>
+                            </Button>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Services Grid */}
-            <section id="servicios" className="max-w-6xl mx-auto px-6 py-20">
+            <section id="servicios" className="max-w-6xl mx-auto px-6 py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Servicios de Contact Center con IA
+                    <h2 className="text-4xl font-bold text-foreground mb-4">
+                        {t('contactCenter.servicesTitle')}
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Soluciones completas para modernizar tu atención al cliente con tecnología de vanguardia
+                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        {t('contactCenter.servicesDesc')}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div
+                        <Card
                             key={index}
-                            className="group p-8 bg-white rounded-2xl border border-gray-200 hover:border-purple-500 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                            className="group hover:border-primary hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                         >
-                            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                                {service.icon}
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                {service.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                {service.description}
-                            </p>
-                        </div>
+                            <CardHeader>
+                                <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center text-primary-foreground mb-4 group-hover:scale-110 transition-transform">
+                                    {service.icon}
+                                </div>
+                                <CardTitle className="text-xl font-bold">
+                                    {service.title}
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    {service.description}
+                                </p>
+                            </CardContent>
+                        </Card>
                     ))}
                 </div>
             </section>
 
             {/* Capabilities Section */}
-            <section className="bg-gradient-to-br from-gray-50 to-purple-50 py-20">
+            <section className="bg-muted/30 py-24 border-y">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Capacidades de la Plataforma ElevenLabs
+                        <h2 className="text-4xl font-bold text-foreground mb-4">
+                            {t('contactCenter.capabilitiesTitle')}
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Todo lo que necesitas para construir, desplegar y optimizar agentes de IA a escala
+                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                            {t('contactCenter.capabilitiesDesc')}
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {capabilities.map((capability, index) => (
-                            <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                                        <span className="text-purple-600 font-bold">{index + 1}</span>
-                                    </div>
-                                    {capability.category}
-                                </h3>
-                                <ul className="space-y-3">
-                                    {capability.items.map((item, itemIndex) => (
-                                        <li key={itemIndex} className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-700">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <Card key={index} className="shadow-lg border-none bg-background">
+                                <CardHeader>
+                                    <CardTitle className="text-2xl font-bold flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                            <span className="text-primary font-bold">{index + 1}</span>
+                                        </div>
+                                        {capability.category}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-3">
+                                        {capability.items.map((item, itemIndex) => (
+                                            <li key={itemIndex} className="flex items-start gap-3">
+                                                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                                <span className="text-muted-foreground">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* N8N Integration Section */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
+            <section className="max-w-6xl mx-auto px-6 py-24">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-sm font-semibold text-purple-700 mb-4">
+                    <Badge variant="outline" className="mb-4 gap-2">
                         <Workflow className="w-4 h-4" />
                         Automatización Avanzada
-                    </div>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Integración con N8N
+                    </Badge>
+                    <h2 className="text-4xl font-bold text-foreground mb-4">
+                        {t('contactCenter.n8nTitle')}
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Conecto tus agentes de IA con cualquier sistema mediante workflows visuales sin código
+                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        {t('contactCenter.n8nDesc')}
                     </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-900 to-indigo-900 rounded-3xl p-8 md:p-12 mb-12 text-white">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 className="text-3xl font-bold mb-4">¿Qué es N8N?</h3>
-                            <p className="text-purple-100 text-lg mb-6 leading-relaxed">
-                                N8N es una plataforma de automatización que permite conectar tus agentes de IA con más de 400 aplicaciones y servicios. Creo workflows personalizados que automatizan procesos completos sin escribir código.
-                            </p>
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-3">
-                                    <Zap className="w-5 h-5 text-yellow-400" />
-                                    <span>Automatización en tiempo real</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Shield className="w-5 h-5 text-green-400" />
-                                    <span>Seguro y confiable</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Clock className="w-5 h-5 text-blue-400" />
-                                    <span>Ahorra horas de trabajo manual</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                            <h4 className="text-xl font-bold mb-4">Ejemplo de Workflow</h4>
-                            <div className="space-y-3 text-sm">
-                                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-xs">1</div>
-                                        <span className="font-semibold">Cliente llama al agente</span>
+                <Card className="bg-primary text-primary-foreground border-none shadow-2xl overflow-hidden mb-12">
+                    <CardContent className="p-8 md:p-12 relative">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
+                        <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                            <div>
+                                <h3 className="text-3xl font-bold mb-6">¿Qué es N8N?</h3>
+                                <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
+                                    N8N es una plataforma de automatización que permite conectar tus agentes de IA con más de 400 aplicaciones y servicios. Creo workflows personalizados que automatizan procesos completos sin escribir código.
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <Zap className="w-5 h-5 text-yellow-400" />
+                                        <span>Automatización en tiempo real</span>
                                     </div>
-                                </div>
-                                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-xs">2</div>
-                                        <span className="font-semibold">Agente consulta CRM automáticamente</span>
+                                    <div className="flex items-center gap-3">
+                                        <Shield className="w-5 h-5 text-green-400" />
+                                        <span>Seguro y confiable</span>
                                     </div>
-                                </div>
-                                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-xs">3</div>
-                                        <span className="font-semibold">Crea ticket en sistema de soporte</span>
-                                    </div>
-                                </div>
-                                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-xs">4</div>
-                                        <span className="font-semibold">Envía resumen por email y WhatsApp</span>
+                                    <div className="flex items-center gap-3">
+                                        <Clock className="w-5 h-5 text-blue-400" />
+                                        <span>Ahorra horas de trabajo manual</span>
                                     </div>
                                 </div>
                             </div>
+                            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-primary-foreground">
+                                <CardHeader>
+                                    <CardTitle className="text-xl">Ejemplo de Workflow</CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
+                                    {[
+                                        "Cliente llama al agente",
+                                        "Agente consulta CRM automáticamente",
+                                        "Crea ticket en sistema de soporte",
+                                        "Envía resumen por email y WhatsApp"
+                                    ].map((step, i) => (
+                                        <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/10 flex items-center gap-3">
+                                            <div className="w-6 h-6 bg-primary-foreground/20 rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</div>
+                                            <span className="font-medium">{step}</span>
+                                        </div>
+                                    ))}
+                                </CardContent>
+                            </Card>
                         </div>
-                    </div>
-                </div>
+                    </CardContent>
+                </Card>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {n8nIntegrations.map((integration, index) => (
-                        <div
+                        <Card
                             key={index}
-                            className="p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-500 hover:shadow-lg transition-all"
+                            className="hover:border-primary transition-all duration-300"
                         >
-                            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-4">
-                                {integration.icon}
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">
-                                {integration.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm">
-                                {integration.description}
-                            </p>
-                        </div>
+                            <CardHeader>
+                                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-2">
+                                    {integration.icon}
+                                </div>
+                                <CardTitle className="text-lg font-bold">
+                                    {integration.title}
+                                </CardTitle>
+                                <CardDescription>
+                                    {integration.description}
+                                </CardDescription>
+                            </CardHeader>
+                        </Card>
                     ))}
                 </div>
             </section>
 
             {/* Use Cases */}
-            <section className="bg-gradient-to-br from-gray-50 to-purple-50 py-20">
+            <section className="bg-muted/30 py-24 border-y">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-4xl font-bold text-foreground mb-4">
                             Casos de Uso
                         </h2>
-                        <p className="text-xl text-gray-600">
+                        <p className="text-xl text-muted-foreground">
                             Soluciones probadas para diferentes necesidades empresariales
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
                         {useCases.map((useCase, index) => (
-                            <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                                    {useCase.title}
-                                </h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    {useCase.description}
-                                </p>
-                                <div className="space-y-2">
-                                    {useCase.benefits.map((benefit, benefitIndex) => (
-                                        <div key={benefitIndex} className="flex items-center gap-2">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                                            <span className="text-gray-700 text-sm">{benefit}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            <Card key={index} className="hover:shadow-lg transition-shadow border-none shadow-md bg-background">
+                                <CardHeader>
+                                    <CardTitle className="text-2xl font-bold">
+                                        {useCase.title}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
+                                        {useCase.description}
+                                    </p>
+                                    <div className="space-y-3">
+                                        {useCase.benefits.map((benefit, benefitIndex) => (
+                                            <div key={benefitIndex} className="flex items-center gap-2">
+                                                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                                                <span className="text-foreground">{benefit}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* Demo Phone Section */}
-            <section id="demo" className="bg-gradient-to-br from-purple-900 to-indigo-900 text-white py-20">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <Headphones className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                    <h2 className="text-4xl font-bold mb-6">
-                        Prueba Neuralie, nuestro agente de IA
+            <section id="demo" className="bg-primary text-primary-foreground py-24 relative overflow-hidden">
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <Headphones className="w-20 h-20 mx-auto mb-8 opacity-90" />
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                        {t('contactCenter.demoTitle')}
                     </h2>
-                    <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                        Llama a nuestra línea demo y experimenta la calidad de Neuralie, nuestro agente de IA conversacional con ElevenLabs. Disponible 24/7.
+                    <p className="text-xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+                        {t('contactCenter.demoDesc')}
                     </p>
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 inline-block mb-4">
-                        <p className="text-sm text-purple-100 mb-2">Número de Demostración</p>
+                    <Card className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border-white/20 inline-block text-primary-foreground shadow-2xl">
+                        <p className="text-sm text-primary-foreground/70 mb-4 uppercase tracking-widest">{t('contactCenter.demoNumber')}</p>
                         <a
                             href="tel:+18054396103"
-                            className="text-5xl font-bold hover:text-purple-200 transition-colors block mb-4"
+                            className="text-4xl md:text-6xl font-bold hover:text-white transition-colors block mb-6"
                         >
                             +1 805 439 6103
                         </a>
-                        <p className="text-sm text-purple-100 mb-2">
-                            📍 San Luis Obispo, CA, US
-                        </p>
-                        <p className="text-xs text-purple-200 mt-4 flex items-center justify-center gap-2">
-                            <Bot className="w-4 h-4" />
-                            Powered by ElevenLabs AI
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Demo CTA */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
-                <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                                ¿Por qué elegir mis servicios?
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                No solo implemento la tecnología, te acompaño en todo el proceso para asegurar que tu contact center con IA sea un éxito.
+                        <div className="flex flex-col gap-2 items-center text-primary-foreground/80">
+                            <p className="flex items-center gap-2">
+                                <Globe className="w-4 h-4" />
+                                {t('contactCenter.location')}
                             </p>
-                            <div className="space-y-4">
-                                {benefits.map((benefit, index) => (
-                                    <div key={index} className="flex items-start gap-3">
-                                        <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <p className="text-gray-700 text-lg">{benefit}</p>
-                                    </div>
-                                ))}
-                            </div>
+                            <Badge variant="secondary" className="gap-2 px-4 py-1.5 mt-4">
+                                <Bot className="w-4 h-4" />
+                                {t('contactCenter.aiPowered')}
+                            </Badge>
                         </div>
-
-                        <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-200">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                                Mi Proceso de Implementación
-                            </h3>
-                            <div className="space-y-4">
-                                <div className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white font-bold text-sm">1</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Análisis de Necesidades</p>
-                                        <p className="text-sm text-gray-600">Entiendo tu negocio y objetivos</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white font-bold text-sm">2</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Diseño de Solución</p>
-                                        <p className="text-sm text-gray-600">Creo workflows y configuro agentes</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white font-bold text-sm">3</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Implementación</p>
-                                        <p className="text-sm text-gray-600">Despliegue e integración con tus sistemas</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white font-bold text-sm">4</span>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900">Capacitación y Soporte</p>
-                                        <p className="text-sm text-gray-600">Te enseño a usar y optimizar el sistema</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </Card>
                 </div>
             </section>
 
-            {/* Demo CTA */}
-            <section className="max-w-6xl mx-auto px-6 py-20">
-                <div className="bg-gradient-to-br from-purple-900 to-indigo-900 text-white rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-50"></div>
-
-                    <div className="relative z-10">
-                        <Headphones className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                            ¿Listo para revolucionar tu atención al cliente?
+            {/* Benefits & Process */}
+            <section className="max-w-6xl mx-auto px-6 py-24">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 className="text-4xl font-bold text-foreground mb-8">
+                            {t('contactCenter.whyChoose')}
                         </h2>
-                        <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                            Agenda una demo personalizada y descubre cómo un contact center con IA puede transformar tu negocio.
+                        <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                            {t('contactCenter.whyChooseDesc')}
+                        </p>
+                        <div className="space-y-4">
+                            {benefits.map((benefit, index) => (
+                                <div key={index} className="flex items-start gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <CheckCircle className="w-4 h-4 text-primary" />
+                                    </div>
+                                    <p className="text-foreground text-lg leading-tight">{benefit}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <Card className="border-none shadow-2xl bg-muted/30">
+                        <CardHeader className="pb-4">
+                            <CardTitle className="text-2xl font-bold">
+                                {t('contactCenter.implementationProcess')}
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-8">
+                            {[
+                                { title: "Análisis de Necesidades", desc: "Entiendo tu negocio y objetivos" },
+                                { title: "Diseño de Solución", desc: "Creo workflows y configuro agentes" },
+                                { title: "Implementación", desc: "Despliegue e integración con tus sistemas" },
+                                { title: "Capacitación y Soporte", desc: "Te enseño a usar y optimizar el sistema" }
+                            ].map((step, i) => (
+                                <div key={i} className="flex items-start gap-4 relative group">
+                                    {i < 3 && <div className="absolute left-5 top-10 w-0.5 h-10 bg-primary/20"></div>}
+                                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg group-hover:scale-110 transition-transform text-white">
+                                        <span className="font-bold">{i + 1}</span>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-foreground text-lg">{step.title}</p>
+                                        <p className="text-muted-foreground">{step.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </CardContent>
+                    </Card>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="max-w-6xl mx-auto px-6 py-24">
+                <Card className="bg-primary text-primary-foreground p-12 md:p-16 text-center border-none overflow-hidden relative shadow-2xl">
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+                    <div className="relative z-10">
+                        <Headphones className="w-16 h-16 mx-auto mb-8 opacity-90" />
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                            {t('contactCenter.readyToRevolutionize')}
+                        </h2>
+                        <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+                            {t('contactCenter.readyToRevolutionizeDesc')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                href="/contacto"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-all font-semibold shadow-lg hover:shadow-xl"
-                            >
-                                Solicitar Demo Gratuita <ArrowRight size={20} />
-                            </Link>
-                            <a
-                                href="#servicios"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all font-semibold border border-white/20"
-                            >
-                                Ver Más Detalles
-                            </a>
+                            <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg font-bold">
+                                <Link href="/contacto">
+                                    Solicitar Demo Gratuita <ArrowRight size={20} />
+                                </Link>
+                            </Button>
+                            <Button asChild size="lg" variant="outline" className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-6 text-lg">
+                                <a href="#servicios">
+                                    Ver Más Detalles
+                                </a>
+                            </Button>
                         </div>
                     </div>
-                </div>
+                </Card>
             </section>
-            
-            {/* ElevenLabs Widget */}
-            {agentId && (
-                <div className="fixed bottom-8 right-8 z-50">
-                    <elevenlabs-convai agent-id={agentId}></elevenlabs-convai>
-                    <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async strategy="afterInteractive" />
-                </div>
-            )}
+            <FloatingWidget />
         </div>
     );
 }
