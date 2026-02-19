@@ -270,83 +270,83 @@
             "moreInfo": "Más Información"
         },
         "chatServices": {
-            "badge": "Powered by Dialogflow ES",
-            "hero": "Servicios de Chat para Ciberseguridad",
-            "description": "Experimenta cómo Neuralie, nuestro agente conversacional de IA, puede ayudar a tus clientes a entender servicios de seguridad, evaluar riesgos y conectar con expertos en tiempo real.",
-            "tryChatNow": "Probar Chat Ahora",
-            "howItWorks": "¿Cómo Funciona?",
-            "featuresTitle": "¿Qué puede hacer este chatbot?",
-            "featuresDesc": "Diseñado para AuraLink AI Security — consultas sobre servicios de ciberseguridad proativa",
+            "badge": "Demo con Dialogflow ES",
+            "hero": "Integración de Chats e IA a tu medida",
+            "description": "Esto es un ejemplo real de lo que puedo construir para ti: un chatbot integrado con IA que responde preguntas, guía a tus clientes y se conecta con tus canales existentes. Sin complicaciones, adaptado a lo que necesitas.",
+            "tryChatNow": "Contactar",
+            "howItWorks": "¿Cómo funciona?",
+            "featuresTitle": "¿Qué puede hacer un chatbot así?",
+            "featuresDesc": "Este es un ejemplo integrado con Dialogflow — lo que ves aquí se puede adaptar a tu negocio",
             "features": [
                 {
-                    "title": "Consultas de Seguridad 24/7",
-                    "description": "Respuestas instantáneas sobre servicios de ciberseguridad, monitoreo AI, pentesting y protección de infraestructura crítica."
+                    "title": "Responde preguntas frecuentes",
+                    "description": "Configuro el bot para que responda automáticamente las preguntas más comunes de tus clientes, sin que tengas que estar disponible todo el tiempo."
                 },
                 {
-                    "title": "Evaluación de Amenazas",
-                    "description": "Ayudamos a identificar vulnerabilidades potenciales y recomienda servicios específicos según el nivel de riesgo."
+                    "title": "Guía al usuario paso a paso",
+                    "description": "Puede llevar al cliente por un flujo: cotización, agendamiento, información de servicios — lo que necesites."
                 },
                 {
-                    "title": "Información sobre Monitoreo AI",
-                    "description": "Detalles sobre cómo funciona el monitoreo 24/7 con machine learning para detección de anomalías en tiempo real."
+                    "title": "Integración con tus canales",
+                    "description": "Lo conecto a tu sitio web, WhatsApp o donde tengas presencia. Sin cambiar tu infraestructura."
                 },
                 {
-                    "title": "Servicios de Pentesting",
-                    "description": "Información sobre pruebas de penetración automatizadas y validación manual por expertos en seguridad ética."
+                    "title": "Escalamiento a persona real",
+                    "description": "Cuando el bot no puede resolver algo, redirige al cliente contigo o tu equipo directo."
                 },
                 {
-                    "title": "Respuesta a Incidentes",
-                    "description": "Guía sobre cómo activar el servicio de respuesta rápida ante amenazas activas y análisis forense."
+                    "title": "Fácil de mantener",
+                    "description": "Te entrego todo configurado y te explico cómo actualizar las respuestas tú mismo si así lo prefieres."
                 },
                 {
-                    "title": "CISO as a Service",
-                    "description": "Consultas sobre liderazgo estratégico en seguridad, evaluaciones de riesgo y cumplimiento ISO 27001."
+                    "title": "Adaptado a tu caso",
+                    "description": "No es un producto genérico. Lo construyo según lo que tu cliente necesita saber y cómo quieres comunicarte."
                 }
             ],
-            "howItWorksTitle": "¿Cómo funciona el chatbot de seguridad?",
-            "howItWorksDesc": "Un proceso inteligente que conecta clientes con soluciones de ciberseguridad",
+            "howItWorksTitle": "¿Cómo sería el proceso?",
+            "howItWorksDesc": "Simple y directo, sin procesos largos",
             "steps": [
                 {
                     "number": "1",
-                    "title": "Describe su situación",
-                    "description": "Identificamos si es una consulta general, evaluación de riesgo o emergencia activa."
+                    "title": "Me cuentas qué necesitas",
+                    "description": "Hablamos de tu caso: qué preguntas recibe tu negocio, qué quieres automatizar y dónde lo quieres integrar."
                 },
                 {
                     "number": "2",
-                    "title": "Análisis inteligente",
-                    "description": "Basado en la información, recomendamos servicios específicos adaptados."
+                    "title": "Te propongo una solución",
+                    "description": "Según lo que me digas, te digo qué puedo hacer, cómo quedaría y cuánto costaría. Sin compromisos."
                 },
                 {
                     "number": "3",
-                    "title": "Información detallada",
-                    "description": "Reciba detalles sobre monitoreo AI, pentesting, CISO as a Service, etc."
+                    "title": "Construyo e integro",
+                    "description": "Desarrollo el chatbot, lo configuro con tus flujos y lo conecto donde lo necesites."
                 },
                 {
                     "number": "4",
-                    "title": "Conexión con expertos",
-                    "description": "Para casos complejos o emergencias, conectamos con un especialista en ciberseguridad."
+                    "title": "Te lo entrego funcionando",
+                    "description": "Lo pruebas, ajustamos lo que haga falta y te queda listo para usar."
                 }
             ],
-            "liveDemoTitle": "Prueba Neuralie ahora mismo",
-            "liveDemoDesc": "Consulta sobre servicios de monitoreo AI, pentesting, respuesta a incidentes o CISO as a Service.",
-            "tryAsking": "💬 Prueba preguntar:",
-            "poweredBy": "Powered by Google Dialogflow ES",
-            "searchIconDesc": "👇 Consulta más detalles abajo",
-            "automateTitle": "Automatiza consultas de ciberseguridad",
-            "automateDesc": "Implementamos chatbots inteligentes para empresas de seguridad que educan clientes, califican leads y conectan con expertos en tiempo real.",
+            "liveDemoTitle": "Este es un ejemplo real",
+            "liveDemoDesc": "El chat que ves en esta página fue construido con Dialogflow ES. Así puede quedar el tuyo.",
+            "tryAsking": "💬 Prueba preguntarle algo:",
+            "poweredBy": "Ejemplo con Google Dialogflow ES",
+            "searchIconDesc": "👇 Prueba el chat abajo",
+            "automateTitle": "¿Qué puedo implementarte?",
+            "automateDesc": "Integro chatbots y soluciones de IA adaptadas a lo que tu negocio necesita — sin vender humo ni prometerte cosas que no voy a cumplir.",
             "benefits": [
-                "Respuestas inmediatas sobre servicios de ciberseguridad",
-                "Evaluación preliminar de necesidades de seguridad",
-                "Información sobre precios y planes personalizados",
-                "Guía para activar servicios de emergencia",
-                "Disponibilidad 24/7 sin tiempos de espera",
-                "Escalamiento directo a especialistas cuando sea necesario"
+                "Chatbot en tu sitio web o WhatsApp",
+                "Flujos personalizados según tu negocio",
+                "Integración con herramientas que ya usas",
+                "Respuestas automáticas a preguntas frecuentes",
+                "Escalamiento a persona real cuando sea necesario",
+                "Entrega funcional, sin procesos eternos"
             ],
-            "wantChatbot": "¿Quieres un chatbot así para tu empresa?",
-            "wantChatbotDesc": "Diseñamos e implementamos chatbots con Dialogflow adaptados a servicios de ciberseguridad, compliance, y consultoría técnica.",
-            "requestImplementation": "Solicitar Implementación",
-            "readyToAutomate": "¿Listo para automatizar consultas de seguridad?",
-            "readyToAutomateDesc": "Mejora la experiencia de tus clientes con chatbots de IA especializados en ciberseguridad, compliance y servicios técnicos.",
+            "wantChatbot": "¿Te interesa algo así?",
+            "wantChatbotDesc": "Cuéntame qué necesitas y vemos si puedo ayudarte. Sin compromisos, sin propuestas exageradas.",
+            "requestImplementation": "Escribeme",
+            "readyToAutomate": "¿Listo para probarlo?",
+            "readyToAutomateDesc": "Si tienes un negocio y quieres automatizar algo concreto, hablemos. Lo evaluamos juntos.",
             "viewContactCenter": "Ver Contact Center con IA"
         },
         "policies": {
@@ -672,83 +672,83 @@
             "moreInfo": "More Information"
         },
         "chatServices": {
-            "badge": "Powered by Dialogflow ES",
-            "hero": "Cybersecurity Chat Services",
-            "description": "Experience how Neuralie, our AI conversational agent, can help your customers understand security services, evaluate risks, and connect with experts in real time.",
-            "tryChatNow": "Try Chat Now",
-            "howItWorks": "How It Works?",
-            "featuresTitle": "What can this chatbot do?",
-            "featuresDesc": "Designed for AuraLink AI Security — consultations on proactive cybersecurity services",
+            "badge": "Demo with Dialogflow ES",
+            "hero": "Chat Integration & AI, Built for You",
+            "description": "This is a real example of what I can build for you: a chatbot powered by AI that answers questions, guides your customers, and plugs into your existing channels. No fluff — built around what you actually need.",
+            "tryChatNow": "Get in Touch",
+            "howItWorks": "How does it work?",
+            "featuresTitle": "What can a chatbot like this do?",
+            "featuresDesc": "This is a live example using Dialogflow — everything you see can be adapted to your business",
             "features": [
                 {
-                    "title": "24/7 Security Consultations",
-                    "description": "Instant answers on cybersecurity services, AI monitoring, pentesting, and critical infrastructure protection."
+                    "title": "Answers common questions automatically",
+                    "description": "I set up the bot to handle the most frequent questions from your customers, so you don't have to be available around the clock."
                 },
                 {
-                    "title": "Threat Assessment",
-                    "description": "We help identify potential vulnerabilities and recommend specific services based on risk level."
+                    "title": "Guides users step by step",
+                    "description": "It can walk customers through a flow: quotes, bookings, service info — whatever fits your business."
                 },
                 {
-                    "title": "AI Monitoring Information",
-                    "description": "Details on how 24/7 monitoring with machine learning works for real-time anomaly detection."
+                    "title": "Integrates with your channels",
+                    "description": "I connect it to your website, WhatsApp, or wherever you're present. No need to change your existing setup."
                 },
                 {
-                    "title": "Pentesting Services",
-                    "description": "Information on automated penetration tests and manual validation by ethical security experts."
+                    "title": "Hands off to a real person",
+                    "description": "When the bot can't handle something, it redirects the customer directly to you or your team."
                 },
                 {
-                    "title": "Incident Response",
-                    "description": "Guide on how to activate rapid response service for active threats and forensic analysis."
+                    "title": "Easy to maintain",
+                    "description": "I deliver it fully configured and show you how to update responses yourself if you prefer."
                 },
                 {
-                    "title": "CISO as a Service",
-                    "description": "Consultations on strategic security leadership, risk assessments, and ISO 27001 compliance."
+                    "title": "Tailored to your case",
+                    "description": "Not a generic product. I build it around what your customers need to know and how you want to communicate."
                 }
             ],
-            "howItWorksTitle": "How does the security chatbot work?",
-            "howItWorksDesc": "An intelligent process that connects customers with cybersecurity solutions",
+            "howItWorksTitle": "What does the process look like?",
+            "howItWorksDesc": "Simple and direct — no long drawn-out processes",
             "steps": [
                 {
                     "number": "1",
-                    "title": "Describe your situation",
-                    "description": "We identify if it's a general inquiry, risk assessment, or active emergency."
+                    "title": "You tell me what you need",
+                    "description": "We talk through your case: what questions your business gets, what you want to automate, and where to integrate it."
                 },
                 {
                     "number": "2",
-                    "title": "Intelligent analysis",
-                    "description": "Based on the information, we recommend specific adapted services."
+                    "title": "I propose a solution",
+                    "description": "Based on what you share, I tell you what I can do, how it would look, and what it would cost. No commitment needed."
                 },
                 {
                     "number": "3",
-                    "title": "Detailed information",
-                    "description": "Receive details on AI monitoring, pentesting, CISO as a Service, etc."
+                    "title": "I build and integrate it",
+                    "description": "I develop the chatbot, configure your flows, and connect it wherever you need it."
                 },
                 {
                     "number": "4",
-                    "title": "Connection with experts",
-                    "description": "For complex cases or emergencies, we connect with a cybersecurity specialist."
+                    "title": "You get it ready to use",
+                    "description": "You test it, we tweak what needs adjusting, and it's yours to go live with."
                 }
             ],
-            "liveDemoTitle": "Try Neuralie right now",
-            "liveDemoDesc": "Ask about AI monitoring, pentesting, incident response, or CISO as a Service.",
-            "tryAsking": "💬 Try asking:",
-            "poweredBy": "Powered by Google Dialogflow ES",
-            "searchIconDesc": "👇 See details below",
-            "automateTitle": "Automate cybersecurity inquiries",
-            "automateDesc": "We implement intelligent chatbots for security companies that educate customers, qualify leads, and connect with experts in real time.",
+            "liveDemoTitle": "This is a real example",
+            "liveDemoDesc": "The chat on this page was built with Dialogflow ES. Yours can look just like this.",
+            "tryAsking": "💬 Try asking it something:",
+            "poweredBy": "Example built with Google Dialogflow ES",
+            "searchIconDesc": "👇 Try the chat below",
+            "automateTitle": "What can I build for you?",
+            "automateDesc": "I implement chatbots and AI solutions tailored to what your business actually needs — no overselling, no promises I can't keep.",
             "benefits": [
-                "Immediate responses on cybersecurity services",
-                "Preliminary assessment of security needs",
-                "Information on pricing and personalized plans",
-                "Guide to activate emergency services",
-                "24/7 availability with no wait times",
-                "Direct escalation to specialists when necessary"
+                "Chatbot on your website or WhatsApp",
+                "Custom flows for your specific business",
+                "Integration with tools you already use",
+                "Automated answers to frequent questions",
+                "Handoff to a real person when needed",
+                "Working delivery, no endless back and forth"
             ],
-            "wantChatbot": "Want a chatbot like this for your company?",
-            "wantChatbotDesc": "We design and implement Dialogflow chatbots adapted to cybersecurity services, compliance, and technical consulting.",
-            "requestImplementation": "Request Implementation",
-            "readyToAutomate": "Ready to automate security queries?",
-            "readyToAutomateDesc": "Improve your customer experience with AI chatbots specialized in cybersecurity, compliance, and technical services.",
+            "wantChatbot": "Interested in something like this?",
+            "wantChatbotDesc": "Tell me what you need and we'll see if I can help. No commitments, no oversized proposals.",
+            "requestImplementation": "Message Me",
+            "readyToAutomate": "Ready to try it?",
+            "readyToAutomateDesc": "If you have a business and want to automate something specific, let's talk. We'll figure out together if it makes sense.",
             "viewContactCenter": "View AI Contact Center"
         },
         "policies": {
