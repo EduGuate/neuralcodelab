@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, ExternalLink, Briefcase, Globe } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
 import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,6 +20,7 @@ import {
 
 export default function Header() {
   const [estaAbierto, setEstaAbierto] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const { language, setLanguage, t } = useTranslation();
 
   const languages = [
@@ -48,33 +50,82 @@ export default function Header() {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav
+          className="hidden md:flex items-center gap-1"
+          onMouseLeave={() => setHoveredLink(null)}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+              onMouseEnter={() => setHoveredLink(link.href)}
             >
-              {link.label}
+              {/* Animated background pill */}
+              <AnimatePresence>
+                {hoveredLink === link.href && (
+                  <motion.span
+                    layoutId="nav-hover-bg"
+                    className="absolute inset-0 rounded-md bg-muted"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+              </AnimatePresence>
+              <span className="relative z-10">{link.label}</span>
             </Link>
           ))}
+
+          {/* External: Infrastructure */}
           <a
             href="https://infra.neuralcodelab.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="relative px-3 py-1.5 flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+            onMouseEnter={() => setHoveredLink('infra')}
           >
-            {t('header.infrastructure')}
-            <ExternalLink size={14} />
+            <AnimatePresence>
+              {hoveredLink === 'infra' && (
+                <motion.span
+                  layoutId="nav-hover-bg"
+                  className="absolute inset-0 rounded-md bg-muted"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </AnimatePresence>
+            <span className="relative z-10 flex items-center gap-1">
+              {t('header.infrastructure')}
+              <ExternalLink size={14} />
+            </span>
           </a>
+
+          {/* External: CV */}
           <a
             href="https://mycven.neuralcodelab.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="relative p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md"
             title="Ver mi CV"
+            onMouseEnter={() => setHoveredLink('cv')}
           >
-            <Briefcase size={20} />
+            <AnimatePresence>
+              {hoveredLink === 'cv' && (
+                <motion.span
+                  layoutId="nav-hover-bg"
+                  className="absolute inset-0 rounded-md bg-muted"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </AnimatePresence>
+            <Briefcase size={20} className="relative z-10" />
           </a>
 
           {/* Language Switcher */}
@@ -160,7 +211,7 @@ export default function Header() {
                 href="https://mycven.neuralcodelab.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-muted"
+                className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-muted"
                 onClick={() => setEstaAbierto(false)}
               >
                 Mi CV

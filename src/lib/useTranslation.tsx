@@ -69,8 +69,8 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
         }
     };
 
-    const t = (key: string): any => {
-        if (!isLoaded || !translations[language]) return key;
+    const t = <T = any>(key: string): T => {
+        if (!isLoaded || !translations[language]) return key as unknown as T;
 
         const keys = key.split('.');
         let value: any = translations[language];
@@ -79,11 +79,11 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
-                return key; // Return key if translation not found
+                return key as unknown as T; // Return key if translation not found
             }
         }
 
-        return value !== undefined ? value : key;
+        return (value !== undefined ? value : key) as T;
     };
 
     return (

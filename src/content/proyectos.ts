@@ -1,4 +1,19 @@
-export const proyectos = [
+export interface Project {
+  title: string;
+  description: string;
+  liveUrl: string;
+  githubUrl: string;
+  imageUrl: string;
+  tags: string[];
+  category: string;
+}
+
+export interface Category {
+  id: string;
+  nombre: string;
+}
+
+export const proyectos: Project[] = [
   {
     title: "My Professional CV",
     description: "Personal curriculum vitae website showcasing professional experience, skills, and projects in a minimalist and elegant design.",
@@ -316,7 +331,7 @@ export const proyectos = [
   }
 ];
 
-export const categorias = [
+export const categorias: Category[] = [
   { id: "all", nombre: "All Projects" },
   { id: "business", nombre: "Business" },
   { id: "tools", nombre: "Tools" },

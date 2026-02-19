@@ -6,6 +6,7 @@ import { useTranslation } from '@/lib/useTranslation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import AnimeStats from '@/components/AnimeStats';
 
 export default function NosotrosPage() {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ export default function NosotrosPage() {
       role: 'Founder & Developer',
       image: '/img/my-profile.jpg',
       bio: t('about.memberBio'),
-      skills: ['Open Source']
+      skills: Array.isArray(t('about.specialtiesList')) ? t('about.specialtiesList') : ['Open Source']
     }
   ];
 
@@ -42,9 +43,7 @@ export default function NosotrosPage() {
   ];
 
   const stats = [
-    { value: '12+', label: t('home.stats.communities') },
-    { value: '200+', label: t('home.stats.trained') },
-    { value: '8', label: t('home.stats.projects') },
+    { value: '35+', label: t('home.stats.projects') },
     { value: '5', label: t('home.stats.languages') }
   ];
 
@@ -72,17 +71,8 @@ export default function NosotrosPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="max-w-6xl mx-auto px-6 -mt-12 relative z-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+      <section className="max-w-4xl mx-auto -mt-12 relative z-20">
+        <AnimeStats stats={stats} />
       </section>
 
       {/* Mission Section */}
@@ -174,7 +164,7 @@ export default function NosotrosPage() {
                     <div className="mb-8">
                       <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">{t('about.specialties')}</h4>
                       <div className="flex flex-wrap gap-2">
-                        {member.skills.map((skill, skillIndex) => (
+                        {member.skills.map((skill: string, skillIndex: number) => (
                           <Badge key={skillIndex} variant="secondary">
                             {skill}
                           </Badge>

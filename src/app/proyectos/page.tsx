@@ -100,7 +100,7 @@ export default function Projects() {
               >
                 <div className="relative h-48 bg-muted shrink-0 overflow-hidden">
                   <Image
-                    src={project.imageUrl || "https://picsum.photos/400/300"}
+                    src={project.imageUrl && !project.imageUrl.startsWith('https://picsum.photos') ? project.imageUrl : "/img/logo.png"}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

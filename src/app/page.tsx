@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Leaf, Users, Code2, Database, Zap } from 'lucide-react';
 import FeatureCard from '@/components/FeatureCard';
-import AnimatedCounter from '@/components/AnimatedCounter';
+import AnimeStats from '@/components/AnimeStats';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -54,10 +54,8 @@ export default function Page() {
   ];
 
   const stats = [
-    { value: "12+", label: t('home.stats.communities') },
     { value: "5", label: t('home.stats.languages') },
-    { value: "200+", label: t('home.stats.trained') },
-    { value: "8", label: t('home.stats.projects') }
+    { value: "35+", label: t('home.stats.projects') }
   ];
 
   const testimonialsData = t('home.testimonials');
@@ -85,17 +83,21 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="max-w-6xl mx-auto px-6 py-16 border-t">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, i) => (
-            <div key={i}>
-              <div className="text-3xl font-bold text-foreground mb-2">
-                <AnimatedCounter value={stat.value} />
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
+      {/* Stats & Tech Stack */}
+      <section className="border-t">
+        <AnimeStats stats={stats} />
+
+        <div className="max-w-6xl mx-auto px-6 pb-20">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-8">
+            {t('home.techStack')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {['Next.js', 'TypeScript', 'Tailwind', 'Python', 'Node.js', 'PostgreSQL', 'Docker'].map((tech) => (
+              <span key={tech} className="tech-tag opacity-0 text-xl md:text-2xl font-bold tracking-tighter text-foreground">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

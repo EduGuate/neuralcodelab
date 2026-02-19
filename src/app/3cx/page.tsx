@@ -10,65 +10,26 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function ThreeCXPage() {
     const { t } = useTranslation();
-    const features = [
-        {
-            icon: <Smartphone className="w-8 h-8" />,
-            title: "3CX Gratis en tu Teléfono",
-            description: "Configura 3CX en tu smartphone Android o iOS sin costo. Llamadas profesionales desde cualquier lugar."
-        },
-        {
-            icon: <Building2 className="w-8 h-8" />,
-            title: "Integración Empresarial",
-            description: "Te orientamos en la implementación de 3CX en tu negocio, optimizando tu sistema de comunicaciones."
-        },
-        {
-            icon: <Users className="w-8 h-8" />,
-            title: "Soporte Personalizado",
-            description: "Acompañamiento completo desde la instalación hasta la configuración avanzada de tu sistema."
-        },
-        {
-            icon: <Shield className="w-8 h-8" />,
-            title: "Seguro y Confiable",
-            description: "Sistema de comunicaciones empresarial con encriptación y alta disponibilidad."
-        },
-        {
-            icon: <Zap className="w-8 h-8" />,
-            title: "Fácil de Usar",
-            description: "Interfaz intuitiva que no requiere conocimientos técnicos avanzados para operar."
-        },
-        {
-            icon: <MessageSquare className="w-8 h-8" />,
-            title: "Múltiples Canales",
-            description: "Voz, video, chat y SMS integrados en una sola plataforma de comunicación."
-        }
-    ];
 
-    const benefits = [
-        "Reduce costos de telefonía hasta un 80%",
-        "Trabaja desde cualquier lugar con internet",
-        "Integración con CRM y herramientas empresariales",
-        "Grabación de llamadas y análisis de métricas",
-        "Extensiones ilimitadas según tu plan",
-        "Soporte técnico en español"
-    ];
+    const featuresData = t('threeCX.features');
+    const features = Array.isArray(featuresData) ? featuresData : [];
 
-    const useCases = [
-        {
-            title: "Pequeños Negocios",
-            description: "Profesionaliza tu atención al cliente sin invertir en infraestructura costosa."
-        },
-        {
-            title: "Equipos Remotos",
-            description: "Mantén a tu equipo conectado sin importar dónde se encuentren."
-        },
-        {
-            title: "Call Centers",
-            description: "Gestiona grandes volúmenes de llamadas con herramientas profesionales."
-        },
-        {
-            title: "Emprendedoress",
-            description: "Comienza con una línea profesional sin costos iniciales."
-        }
+    const benefitsData = t('threeCX.benefits');
+    const benefits = Array.isArray(benefitsData) ? benefitsData : [];
+
+    const stepsData = t('threeCX.steps');
+    const steps = Array.isArray(stepsData) ? stepsData : [];
+
+    const useCasesData = t('threeCX.useCases');
+    const useCases = Array.isArray(useCasesData) ? useCasesData : [];
+
+    const featureIcons = [
+        <Smartphone key="0" className="w-8 h-8" />,
+        <Building2 key="1" className="w-8 h-8" />,
+        <Users key="2" className="w-8 h-8" />,
+        <Shield key="3" className="w-8 h-8" />,
+        <Zap key="4" className="w-8 h-8" />,
+        <MessageSquare key="5" className="w-8 h-8" />
     ];
 
     return (
@@ -144,14 +105,14 @@ export default function ThreeCXPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
+                    {features.map((feature: any, index: number) => (
                         <Card
                             key={index}
                             className="group hover:border-primary transition-all duration-300 transform hover:-translate-y-1 border-none shadow-md"
                         >
                             <CardHeader>
                                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
-                                    {feature.icon}
+                                    {featureIcons[index % featureIcons.length]}
                                 </div>
                                 <CardTitle className="text-xl font-bold">
                                     {feature.title}
@@ -179,7 +140,7 @@ export default function ThreeCXPage() {
                                 {t('threeCX.benefitsDesc')}
                             </p>
                             <div className="space-y-4">
-                                {benefits.map((benefit, index) => (
+                                {benefits.map((benefit: string, index: number) => (
                                     <div key={index} className="flex items-start gap-4">
                                         <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                                             <CheckCircle className="w-4 h-4 text-primary" />
@@ -197,14 +158,9 @@ export default function ThreeCXPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-8">
-                                {[
-                                    { title: "Instalación en tu dispositivo", desc: "App configurada y lista para usar" },
-                                    { title: "Capacitación básica", desc: "Aprende a usar todas las funciones" },
-                                    { title: "Soporte inicial", desc: "Asistencia durante la configuración" },
-                                    { title: "Consultoría de integración", desc: "Orientación para tu negocio" }
-                                ].map((step, i) => (
+                                {steps.map((step: any, i: number) => (
                                     <div key={i} className="flex items-start gap-4 relative group">
-                                        {i < 3 && <div className="absolute left-5 top-10 w-0.5 h-10 bg-primary/20"></div>}
+                                        {i < steps.length - 1 && <div className="absolute left-5 top-10 w-0.5 h-10 bg-primary/20"></div>}
                                         <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg group-hover:scale-110 transition-transform">
                                             <span className="text-white font-bold">{i + 1}</span>
                                         </div>

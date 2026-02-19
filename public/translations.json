@@ -26,6 +26,7 @@
             "buildTogether": "Construyamos juntos",
             "joinMission": "Únete a nuestra misión de crear tecnología que potencie la identidad cultural",
             "contactUs": "Contáctanos",
+            "techStack": "Tecnologías que utilizamos",
             "features": {
                 "agro": {
                     "title": "Agrotecnología Maya",
@@ -53,9 +54,7 @@
                 }
             },
             "stats": {
-                "communities": "Comunidades",
                 "languages": "Lenguas Mayas",
-                "trained": "Jóvenes Capacitados",
                 "projects": "Proyectos"
             },
             "testimonials": [
@@ -125,6 +124,7 @@
             "teamSubtitle": "Apasionados por la tecnología y el impacto social",
             "memberBio": "Desarrollador apasionado por crear tecnología que empodera comunidades. Especializado en IA, desarrollo web y soluciones de código abierto.",
             "specialties": "Especialidades:",
+            "specialtiesList": ["Desarrollo Full-Stack", "IA/ML", "Arquitectura Cloud", "Open Source"],
             "readyToCollaborate": "¿Listo para colaborar?",
             "collaborateDesc": "Únete a nuestra misión de crear tecnología que potencie la identidad cultural y fortalezca comunidades"
         },
@@ -185,11 +185,69 @@
             "demoQualityDesc": "Llama para experimentar la calidad de 3CX en tiempo real",
             "whyChoose": "¿Por qué elegir 3CX?",
             "whyChooseDesc": "Un sistema completo de comunicaciones empresariales al alcance de tu mano",
+            "features": [
+                {
+                    "title": "3CX Gratis en tu Teléfono",
+                    "description": "Configura 3CX en tu smartphone Android o iOS sin costo. Llamadas profesionales desde cualquier lugar."
+                },
+                {
+                    "title": "Integración Empresarial",
+                    "description": "Te orientamos en la implementación de 3CX en tu negocio, optimizando tu sistema de comunicaciones."
+                },
+                {
+                    "title": "Soporte Personalizado",
+                    "description": "Acompañamiento completo desde la instalación hasta la configuración avanzada de tu sistema."
+                },
+                {
+                    "title": "Seguro y Confiable",
+                    "description": "Sistema de comunicaciones empresarial con encriptación y alta disponibilidad."
+                },
+                {
+                    "title": "Fácil de Usar",
+                    "description": "Interfaz intuitiva que no requiere conocimientos técnicos avanzados para operar."
+                },
+                {
+                    "title": "Múltiples Canales",
+                    "description": "Voz, video, chat y SMS integrados en una sola plataforma de comunicación."
+                }
+            ],
+            "benefits": [
+                "Reduce costos de telefonía hasta un 80%",
+                "Trabaja desde cualquier lugar con internet",
+                "Integración con CRM y herramientas empresariales",
+                "Grabación de llamadas y análisis de métricas",
+                "Extensiones ilimitadas según tu plan",
+                "Soporte técnico en español"
+            ],
             "benefitsTitle": "Beneficios que transforman tu negocio",
             "benefitsDesc": "3CX no es solo un sistema telefónico, es una solución completa que moderniza tu forma de comunicarte.",
             "whatIncluded": "Lo que incluye tu configuración:",
+            "steps": [
+                { "title": "Instalación en tu dispositivo", "desc": "App configurada y lista para usar" },
+                { "title": "Capacitación básica", "desc": "Aprende a usar todas las funciones" },
+                { "title": "Soporte inicial", "desc": "Asistencia durante la configuración" },
+                { "title": "Consultoría de integración", "desc": "Orientación para tu negocio" }
+            ],
             "idealFor": "Ideal para todo tipo de negocios",
             "idealForDesc": "Sin importar el tamaño de tu empresa, 3CX se adapta a tus necesidades",
+            "useCases": [
+                {
+                    "title": "Pequeños Negocios",
+                    "description": "Profesionaliza tu atención al cliente sin invertir en infraestructura costosa."
+                },
+                {
+                    "title": "Equipos Remotos",
+                    "description": "Mantén a tu equipo conectado sin importar dónde se encuentren."
+                },
+                {
+                    "title": "Call Centers",
+                    "description": "Gestiona grandes volúmenes de llamadas con herramientas profesionales."
+                },
+                {
+                    "title": "Emprendedores",
+                    "description": "Comienza con una línea profesional sin costos iniciales."
+                }
+            ],
             "tryRightNow": "Prueba el sistema ahora mismo",
             "tryRightNowDesc": "Llama a nuestra línea demo y experimenta la calidad de 3CX. Sin compromisos, solo para que veas cómo funciona.",
             "available247": "Disponible 24/7 • Llamada gratuita desde EE.UU.",
@@ -204,9 +262,57 @@
             "tryChatNow": "Probar Chat Ahora",
             "howItWorks": "¿Cómo Funciona?",
             "featuresTitle": "¿Qué puede hacer este chatbot?",
-            "featuresDesc": "Diseñado para AuraLink AI Security — consultas sobre servicios de ciberseguridad proactiva",
+            "featuresDesc": "Diseñado para AuraLink AI Security — consultas sobre servicios de ciberseguridad proativa",
+            "features": [
+                {
+                    "title": "Consultas de Seguridad 24/7",
+                    "description": "Respuestas instantáneas sobre servicios de ciberseguridad, monitoreo AI, pentesting y protección de infraestructura crítica."
+                },
+                {
+                    "title": "Evaluación de Amenazas",
+                    "description": "Ayudamos a identificar vulnerabilidades potenciales y recomienda servicios específicos según el nivel de riesgo."
+                },
+                {
+                    "title": "Información sobre Monitoreo AI",
+                    "description": "Detalles sobre cómo funciona el monitoreo 24/7 con machine learning para detección de anomalías en tiempo real."
+                },
+                {
+                    "title": "Servicios de Pentesting",
+                    "description": "Información sobre pruebas de penetración automatizadas y validación manual por expertos en seguridad ética."
+                },
+                {
+                    "title": "Respuesta a Incidentes",
+                    "description": "Guía sobre cómo activar el servicio de respuesta rápida ante amenazas activas y análisis forense."
+                },
+                {
+                    "title": "CISO as a Service",
+                    "description": "Consultas sobre liderazgo estratégico en seguridad, evaluaciones de riesgo y cumplimiento ISO 27001."
+                }
+            ],
             "howItWorksTitle": "¿Cómo funciona el chatbot de seguridad?",
             "howItWorksDesc": "Un proceso inteligente que conecta clientes con soluciones de ciberseguridad",
+            "steps": [
+                {
+                    "number": "1",
+                    "title": "Describe su situación",
+                    "description": "Identificamos si es una consulta general, evaluación de riesgo o emergencia activa."
+                },
+                {
+                    "number": "2",
+                    "title": "Análisis inteligente",
+                    "description": "Basado en la información, recomendamos servicios específicos adaptados."
+                },
+                {
+                    "number": "3",
+                    "title": "Información detallada",
+                    "description": "Reciba detalles sobre monitoreo AI, pentesting, CISO as a Service, etc."
+                },
+                {
+                    "number": "4",
+                    "title": "Conexión con expertos",
+                    "description": "Para casos complejos o emergencias, conectamos con un especialista en ciberseguridad."
+                }
+            ],
             "liveDemoTitle": "Prueba Neuralie ahora mismo",
             "liveDemoDesc": "Consulta sobre servicios de monitoreo AI, pentesting, respuesta a incidentes o CISO as a Service.",
             "tryAsking": "💬 Prueba preguntar:",
@@ -214,6 +320,14 @@
             "searchIconDesc": "👇 Consulta más detalles abajo",
             "automateTitle": "Automatiza consultas de ciberseguridad",
             "automateDesc": "Implementamos chatbots inteligentes para empresas de seguridad que educan clientes, califican leads y conectan con expertos en tiempo real.",
+            "benefits": [
+                "Respuestas inmediatas sobre servicios de ciberseguridad",
+                "Evaluación preliminar de necesidades de seguridad",
+                "Información sobre precios y planes personalizados",
+                "Guía para activar servicios de emergencia",
+                "Disponibilidad 24/7 sin tiempos de espera",
+                "Escalamiento directo a especialistas cuando sea necesario"
+            ],
             "wantChatbot": "¿Quieres un chatbot así para tu empresa?",
             "wantChatbotDesc": "Diseñamos e implementamos chatbots con Dialogflow adaptados a servicios de ciberseguridad, compliance, y consultoría técnica.",
             "requestImplementation": "Solicitar Implementación",
@@ -300,6 +414,7 @@
             "buildTogether": "Let's build together",
             "joinMission": "Join our mission to create technology that empowers cultural identity",
             "contactUs": "Contact us",
+            "techStack": "Technologies we use",
             "features": {
                 "agro": {
                     "title": "Maya Agrotech",
@@ -327,9 +442,7 @@
                 }
             },
             "stats": {
-                "communities": "Communities",
                 "languages": "Maya Languages",
-                "trained": "Trained Youth",
                 "projects": "Projects"
             },
             "testimonials": [
@@ -399,6 +512,7 @@
             "teamSubtitle": "Passionate about technology and social impact",
             "memberBio": "Developer passionate about creating technology that empowers communities. Specialized in AI, web development, and open-source solutions.",
             "specialties": "Specialties:",
+            "specialtiesList": ["Full-Stack Development", "AI/ML", "Cloud Architecture", "Open Source"],
             "readyToCollaborate": "Ready to collaborate?",
             "collaborateDesc": "Join our mission to create technology that empowers cultural identity and strengthens communities"
         },
@@ -459,11 +573,69 @@
             "demoQualityDesc": "Call to experience 3CX quality in real time",
             "whyChoose": "Why choose 3CX?",
             "whyChooseDesc": "A complete business communications system at your fingertips",
+            "features": [
+                {
+                    "title": "Free 3CX on your Phone",
+                    "description": "Configure 3CX on your Android or iOS smartphone at no cost. Professional calls from anywhere."
+                },
+                {
+                    "title": "Business Integration",
+                    "description": "We guide you in implementing 3CX in your business, optimizing your communications system."
+                },
+                {
+                    "title": "Personalized Support",
+                    "description": "Complete guidance from installation to advanced configuration of your system."
+                },
+                {
+                    "title": "Safe and Reliable",
+                    "description": "Business communications system with encryption and high availability."
+                },
+                {
+                    "title": "Easy to Use",
+                    "description": "Intuitive interface that doesn't require advanced technical knowledge to operate."
+                },
+                {
+                    "title": "Multiple Channels",
+                    "description": "Voice, video, chat, and SMS integrated into a single communication platform."
+                }
+            ],
+            "benefits": [
+                "Reduce telephony costs by up to 80%",
+                "Work from anywhere with internet",
+                "Integration with CRM and business tools",
+                "Call recording and metrics analysis",
+                "Unlimited extensions according to your plan",
+                "Technical support in Spanish/English"
+            ],
             "benefitsTitle": "Benefits that transform your business",
             "benefitsDesc": "3CX is not just a phone system, it's a complete solution that modernizes the way you communicate.",
-            "whatIncluded": "What's included in your setup:",
+            "whatIncluded": "What's included in your configuration:",
+            "steps": [
+                { "title": "Installation on your device", "desc": "App configured and ready to use" },
+                { "title": "Basic training", "desc": "Learn to use all functions" },
+                { "title": "Initial support", "desc": "Assistance during setup" },
+                { "title": "Integration consulting", "desc": "Guidance for your business" }
+            ],
             "idealFor": "Ideal for all types of businesses",
             "idealForDesc": "No matter the size of your company, 3CX adapts to your needs",
+            "useCases": [
+                {
+                    "title": "Small Businesses",
+                    "description": "Professionalize your customer service without investing in expensive infrastructure."
+                },
+                {
+                    "title": "Remote Teams",
+                    "description": "Keep your team connected no matter where they are."
+                },
+                {
+                    "title": "Call Centers",
+                    "description": "Manage large volumes of calls with professional tools."
+                },
+                {
+                    "title": "Entrepreneurs",
+                    "description": "Start with a professional line with no initial costs."
+                }
+            ],
             "tryRightNow": "Try the system right now",
             "tryRightNowDesc": "Call our demo line and experience the quality of 3CX. No commitments, just to see how it works.",
             "available247": "Available 24/7 • Free call from the US.",
@@ -479,8 +651,56 @@
             "howItWorks": "How It Works?",
             "featuresTitle": "What can this chatbot do?",
             "featuresDesc": "Designed for AuraLink AI Security — consultations on proactive cybersecurity services",
+            "features": [
+                {
+                    "title": "24/7 Security Consultations",
+                    "description": "Instant answers on cybersecurity services, AI monitoring, pentesting, and critical infrastructure protection."
+                },
+                {
+                    "title": "Threat Assessment",
+                    "description": "We help identify potential vulnerabilities and recommend specific services based on risk level."
+                },
+                {
+                    "title": "AI Monitoring Information",
+                    "description": "Details on how 24/7 monitoring with machine learning works for real-time anomaly detection."
+                },
+                {
+                    "title": "Pentesting Services",
+                    "description": "Information on automated penetration tests and manual validation by ethical security experts."
+                },
+                {
+                    "title": "Incident Response",
+                    "description": "Guide on how to activate rapid response service for active threats and forensic analysis."
+                },
+                {
+                    "title": "CISO as a Service",
+                    "description": "Consultations on strategic security leadership, risk assessments, and ISO 27001 compliance."
+                }
+            ],
             "howItWorksTitle": "How does the security chatbot work?",
             "howItWorksDesc": "An intelligent process that connects customers with cybersecurity solutions",
+            "steps": [
+                {
+                    "number": "1",
+                    "title": "Describe your situation",
+                    "description": "We identify if it's a general inquiry, risk assessment, or active emergency."
+                },
+                {
+                    "number": "2",
+                    "title": "Intelligent analysis",
+                    "description": "Based on the information, we recommend specific adapted services."
+                },
+                {
+                    "number": "3",
+                    "title": "Detailed information",
+                    "description": "Receive details on AI monitoring, pentesting, CISO as a Service, etc."
+                },
+                {
+                    "number": "4",
+                    "title": "Connection with experts",
+                    "description": "For complex cases or emergencies, we connect with a cybersecurity specialist."
+                }
+            ],
             "liveDemoTitle": "Try Neuralie right now",
             "liveDemoDesc": "Ask about AI monitoring, pentesting, incident response, or CISO as a Service.",
             "tryAsking": "💬 Try asking:",
@@ -488,6 +708,14 @@
             "searchIconDesc": "👇 See details below",
             "automateTitle": "Automate cybersecurity inquiries",
             "automateDesc": "We implement intelligent chatbots for security companies that educate customers, qualify leads, and connect with experts in real time.",
+            "benefits": [
+                "Immediate responses on cybersecurity services",
+                "Preliminary assessment of security needs",
+                "Information on pricing and personalized plans",
+                "Guide to activate emergency services",
+                "24/7 availability with no wait times",
+                "Direct escalation to specialists when necessary"
+            ],
             "wantChatbot": "Want a chatbot like this for your company?",
             "wantChatbotDesc": "We design and implement Dialogflow chatbots adapted to cybersecurity services, compliance, and technical consulting.",
             "requestImplementation": "Request Implementation",
@@ -601,9 +829,7 @@
                 }
             },
             "stats": {
-                "communities": "Comunidades",
                 "languages": "Línguas Maias",
-                "trained": "Jovens Capacitados",
                 "projects": "Projetos"
             },
             "testimonials": [
@@ -733,11 +959,69 @@
             "demoQualityDesc": "Ligue para experimentar a qualidade do 3CX em tempo real",
             "whyChoose": "Por que escolher o 3CX?",
             "whyChooseDesc": "Um sistema completo de comunicações empresariais ao seu alcance",
+            "features": [
+                {
+                    "title": "3CX Grátis no seu Telefone",
+                    "description": "Configure o 3CX no seu smartphone Android ou iOS sem custos. Chamadas profissionais de qualquer lugar."
+                },
+                {
+                    "title": "Integração Empresarial",
+                    "description": "Orientamos você na implementação do 3CX no seu negócio, otimizando seu sistema de comunicações."
+                },
+                {
+                    "title": "Suporte Personalizado",
+                    "description": "Acompanhamento completo desde a instalação até a configuração avançada do seu sistema."
+                },
+                {
+                    "title": "Seguro e Confiável",
+                    "description": "Sistema de comunicações empresarial com criptografia e alta disponibilidade."
+                },
+                {
+                    "title": "Fácil de Usar",
+                    "description": "Interface intuitiva que não requer conhecimentos técnicos avançados para operar."
+                },
+                {
+                    "title": "Múltiplos Canais",
+                    "description": "Voz, vídeo, chat e SMS integrados em uma única plataforma de comunicação."
+                }
+            ],
+            "benefits": [
+                "Reduza os custos de telefonia em até 80%",
+                "Trabalhe de qualquer lugar com internet",
+                "Integração com CRM e ferramentas empresariais",
+                "Gravação de chamadas e análise de métricas",
+                "Ramais ilimitados de acordo com o seu plano",
+                "Suporte técnico em espanhol/inglês"
+            ],
             "benefitsTitle": "Benefícios que transformam o seu negócio",
             "benefitsDesc": "O 3CX não é apenas um sistema telefônico, é uma solução completa que moderniza a forma como você se comunica.",
             "whatIncluded": "O que está incluído na sua configuração:",
+            "steps": [
+                { "title": "Instalação no seu dispositivo", "desc": "App configurada e pronta para usar" },
+                { "title": "Treinamento básico", "desc": "Aprenda a usar todas as funções" },
+                { "title": "Suporte inicial", "desc": "Assistência durante a configuração" },
+                { "title": "Consultoria de integração", "desc": "Orientação para o seu negócio" }
+            ],
             "idealFor": "Ideal para todos os tipos de negócios",
             "idealForDesc": "Não importa o tamanho da sua empresa, o 3CX se adapta às suas necessidades",
+            "useCases": [
+                {
+                    "title": "Pequenos Negócios",
+                    "description": "Profissionalize seu atendimento ao cliente sem investir em infraestrutura cara."
+                },
+                {
+                    "title": "Equipes Remotas",
+                    "description": "Mantenha sua equipe conectada, não importa onde estejam."
+                },
+                {
+                    "title": "Call Centers",
+                    "description": "Gerencie grandes volumes de chamadas com ferramentas profissionais."
+                },
+                {
+                    "title": "Empreendedores",
+                    "description": "Comece com uma linha profissional sem custos iniciais."
+                }
+            ],
             "tryRightNow": "Teste o sistema agora mesmo",
             "tryRightNowDesc": "Ligue para a nossa linha demo e experimente a qualidade do 3CX. Sem compromissos, apenas para você ver como funciona.",
             "available247": "Disponível 24/7 • Ligação gratuita dos EUA.",
@@ -753,8 +1037,56 @@
             "howItWorks": "Como Funciona?",
             "featuresTitle": "O que este chatbot pode fazer?",
             "featuresDesc": "Projetado para AuraLink AI Security — consultas sobre serviços de ciberseguridad proativa",
+            "features": [
+                {
+                    "title": "Consultas de Segurança 24/7",
+                    "description": "Respostas instantâneas sobre serviços de cibersegurança, monitoramento AI, pentesting e proteção de infraestrutura crítica."
+                },
+                {
+                    "title": "Avaliação de Ameaças",
+                    "description": "Ajudamos a identificar vulnerabilidades potenciais e recomendamos serviços específicos com base no nível de risco."
+                },
+                {
+                    "title": "Informações sobre Monitoramento AI",
+                    "description": "Detalhes sobre como funciona o monitoramento 24/7 com aprendizado de máquina para detecção de anomalias em tempo real."
+                },
+                {
+                    "title": "Serviços de Pentesting",
+                    "description": "Informações sobre testes de penetração automatizados e validação manual por especialistas em segurança ética."
+                },
+                {
+                    "title": "Resposta a Incidentes",
+                    "description": "Guia sobre como ativar o serviço de resposta rápida a ameaças ativas e análise forense."
+                },
+                {
+                    "title": "CISO as a Service",
+                    "description": "Consultas sobre liderança estratégica em segurança, avaliações de risco e conformidade com a ISO 27001."
+                }
+            ],
             "howItWorksTitle": "Como funciona o chatbot de segurança?",
             "howItWorksDesc": "Um processo inteligente que conecta clientes a soluções de cibersegurança",
+            "steps": [
+                {
+                    "number": "1",
+                    "title": "Descreva sua situação",
+                    "description": "Identificamos se é uma consulta geral, avaliação de risco ou emergência ativa."
+                },
+                {
+                    "number": "2",
+                    "title": "Análise inteligente",
+                    "description": "Com base nas informações, recomendamos serviços específicos adaptados."
+                },
+                {
+                    "number": "3",
+                    "title": "Informações detalhadas",
+                    "description": "Receba detalhes sobre monitoramento por IA, pentesting, CISO as a Service, etc."
+                },
+                {
+                    "number": "4",
+                    "title": "Conexão com especialistas",
+                    "description": "Para casos complexos ou emergências, conectamos você a um especialista em cibersegurança."
+                }
+            ],
             "liveDemoTitle": "Teste a Neuralie agora mesmo",
             "liveDemoDesc": "Pergunte sobre monitoramento por IA, pentesting, response a incidentes ou CISO as a Service.",
             "tryAsking": "💬 Tente perguntar:",
@@ -762,6 +1094,14 @@
             "searchIconDesc": "👇 Veja detalhes abaixo",
             "automateTitle": "Automatize consultas de ciberseguridad",
             "automateDesc": "Implementamos chatbots inteligentes para empresas de segurança que educam clientes, qualificam leads e se conectam com especialistas em tempo real.",
+            "benefits": [
+                "Respostas imediatas sobre serviços de cibersegurança",
+                "Avaliação preliminar das necessidades de segurança",
+                "Informações sobre preços e planos personalizados",
+                "Guia para ativar serviços de emergência",
+                "Disponibilidade 24/7 sem tempos de espera",
+                "Escalonamento direto para especialistas quando necessário"
+            ],
             "wantChatbot": "Quer um chatbot assim para a sua empresa?",
             "wantChatbotDesc": "Projetamos e implementamos chatbots com Dialogflow adaptados a serviços de ciberseguridad, compliance e consultoria técnica.",
             "requestImplementation": "Solicitar Implementação",
@@ -813,7 +1153,7 @@
             "modificationsTitle": "Modificações",
             "modificationsDesc": "Reservamo-nos o direito de modificar estes termos a qualquer momento. Notificaremos você sobre quaisquer mudanças importantes por meio de nossos canais de comunicação.",
             "donationPolicyTitle": "Políticas de Doações",
-            "donationFinancingTitle": "Doações e Financiamento",
+            "donationFinancingTitle": "Doações e Financiamiento",
             "donationDesc": "O Neural Code Lab oferece aplicativos gratuitos e pagos. Agradecemos e dependemos de doações para manter e melhorar nossos aplicativos gratuitos.",
             "donationsTitle": "Donações",
             "donationsDetail": "As doações são usadas exclusivamente para o desenvolvimento e manutenção de nossos aplicativos. Você pode fazer uma doação por meio de nossa página no Patreon.",
@@ -875,9 +1215,7 @@
                 }
             },
             "stats": {
-                "communities": "社区",
                 "languages": "玛雅语言",
-                "trained": "培训青年",
                 "projects": "项目"
             },
             "testimonials": [
@@ -1007,11 +1345,69 @@
             "demoQualityDesc": "致电体验 3CX 的实时质量",
             "whyChoose": "为什么选择 3CX？",
             "whyChooseDesc": "触手可及的完整商业通讯系统",
+            "features": [
+                {
+                    "title": "手机免费使用 3CX",
+                    "description": "在 Android 或 iOS 智能手机上免费配置 3CX。随时随地进行专业通话。"
+                },
+                {
+                    "title": "商业集成",
+                    "description": "我们指导您在业务中实施 3CX，优化您的通信系统。"
+                },
+                {
+                    "title": "个性化支持",
+                    "description": "从安装到系统高级配置的全程指导。"
+                },
+                {
+                    "title": "安全可靠",
+                    "description": "具有加密和高可用性的商业通讯系统。"
+                },
+                {
+                    "title": "易于使用",
+                    "description": "直观的界面，无需高级技术知识即可操作。"
+                },
+                {
+                    "title": "多渠道",
+                    "description": "语音、视频、聊天和短信集成在单一通信平台中。"
+                }
+            ],
+            "benefits": [
+                "降低高达 80% 的通话成本",
+                "在任何有网络的地方工作",
+                "与 CRM 和商业工具集成",
+                "通话录音和指标分析",
+                "根据您的方案提供无限分机",
+                "西班牙语/英语技术支持"
+            ],
             "benefitsTitle": "改变您业务的益处",
             "benefitsDesc": "3CX 不仅仅是一个电话系统，它是一个现代化的完整通信解决方案。",
             "whatIncluded": "您的配置包含：",
+            "steps": [
+                { "title": "在您的设备上安装", "desc": "应用程序配置完成并可供使用" },
+                { "title": "基础培训", "desc": "学习使用所有功能" },
+                { "title": "初始支持", "desc": "设置期间的协助" },
+                { "title": "集成咨询", "desc": "针对您业务的指导" }
+            ],
             "idealFor": "适用于各类业务",
             "idealForDesc": "无论您的公司规模如何，3CX 都能满足您的需求",
+            "useCases": [
+                {
+                    "title": "小微企业",
+                    "description": "无需投资昂贵的基础设施即可实现客户服务专业化。"
+                },
+                {
+                    "title": "远程团队",
+                    "description": "无论团队成员身在何处，都能保持连接。"
+                },
+                {
+                    "title": "呼叫中心",
+                    "description": "使用专业工具管理大量通话。"
+                },
+                {
+                    "title": "创业者",
+                    "description": "以零初始成本开启专业线路。"
+                }
+            ],
             "tryRightNow": "立即体验系统",
             "tryRightNowDesc": "拨打我们的演示热线体验 3CX 的质量。无任何约束，只为让您了解其运作方式。",
             "available247": "全天候可用 • 从美国拨打免费。",
@@ -1027,8 +1423,56 @@
             "howItWorks": "如何运作？",
             "featuresTitle": "这个聊天机器人能做什么？",
             "featuresDesc": "专为 AuraLink AI Security 设计 — 主动网络安全服务咨询",
+            "features": [
+                {
+                    "title": "24/7 安全咨询",
+                    "description": "针对网络安全服务、AI 监控、渗透测试和关键基础设施保护的即时回答。"
+                },
+                {
+                    "title": "威胁评估",
+                    "description": "我们协助识别潜在漏洞，并根据风险级别推荐特定服务。"
+                },
+                {
+                    "title": "AI 监控信息",
+                    "description": "关于如何使用机器学习进行 24/7 监控以实现实时异常检测的详情。"
+                },
+                {
+                    "title": "渗透测试服务",
+                    "description": "关于自动化渗透测试和道德安全专家手动验证的信息。"
+                },
+                {
+                    "title": "事件响应",
+                    "description": "针对活跃威胁的快速响应服务及取证分析的激活指南。"
+                },
+                {
+                    "title": "CISO 顾问服务",
+                    "description": "关于战略安全领导、风险评估和 ISO 27001 合规性的咨询。"
+                }
+            ],
             "howItWorksTitle": "安全聊天机器人如何运作？",
             "howItWorksDesc": "将客户与网络安全解决方案连接起来的智能流程",
+            "steps": [
+                {
+                    "number": "1",
+                    "title": "描述您的情况",
+                    "description": "我们确定是常规查询、风险评估还是活跃的紧急情况。"
+                },
+                {
+                    "number": "2",
+                    "title": "智能分析",
+                    "description": "根据提供的信息，我们推荐量身定制的特定服务。"
+                },
+                {
+                    "number": "3",
+                    "title": "详细信息",
+                    "description": "获取有关 AI 监控、渗透测试、CISO 服务等的详情。"
+                },
+                {
+                    "number": "4",
+                    "title": "专家对接",
+                    "description": "对于复杂案例或紧急情况，我们会为您对接网络安全专家。"
+                }
+            ],
             "liveDemoTitle": "立即试用 Neuralie",
             "liveDemoDesc": "询问有关 AI 监控、渗透测试、事件响应或 CISO 服务的信息。",
             "tryAsking": "💬 尝试询问：",
@@ -1036,6 +1480,14 @@
             "searchIconDesc": "👇 查看下面详情",
             "automateTitle": "自动化网络安全查询",
             "automateDesc": "我们为安全公司实施智能聊天机器人，实时教育客户、限定潜在客户并连接专家。",
+            "benefits": [
+                "网络安全服务的即时响应",
+                "安全需求的初步评估",
+                "价格信息及个性化方案",
+                "激活紧急服务的指南",
+                "24/7 全天候可用，无需等待",
+                "必要时直接转接至专家"
+            ],
             "wantChatbot": "想为您的公司配备这样的聊天机器人吗？",
             "wantChatbotDesc": "我们设计并实施适应网络安全服务、合规性和技术咨询的 Dialogflow 聊天机器人。",
             "requestImplementation": "请求实施",

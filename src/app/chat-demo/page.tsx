@@ -23,70 +23,23 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function ChatServicesPage() {
     const { t } = useTranslation();
 
-    const features = [
-        {
-            icon: <Shield className="w-8 h-8" />,
-            title: "Consultas de Seguridad 24/7",
-            description: "Respuestas instantáneas sobre servicios de ciberseguridad, monitoreo AI, pentesting y protección de infraestructura crítica."
-        },
-        {
-            icon: <AlertTriangle className="w-8 h-8" />,
-            title: "Evaluación de Amenazas",
-            description: "Ayudamos a identificar vulnerabilidades potenciales y recomienda servicios específicos según el nivel de riesgo."
-        },
-        {
-            icon: <Eye className="w-8 h-8" />,
-            title: "Información sobre Monitoreo AI",
-            description: "Detalles sobre cómo funciona el monitoreo 24/7 con machine learning para detección de anomalías en tiempo real."
-        },
-        {
-            icon: <Lock className="w-8 h-8" />,
-            title: "Servicios de Pentesting",
-            description: "Información sobre pruebas de penetración automatizadas y validación manual por expertos en seguridad ética."
-        },
-        {
-            icon: <Activity className="w-8 h-8" />,
-            title: "Respuesta a Incidentes",
-            description: "Guía sobre cómo activar el servicio de respuesta rápida ante amenazas activas y análisis forense."
-        },
-        {
-            icon: <ShieldCheck className="w-8 h-8" />,
-            title: "CISO as a Service",
-            description: "Consultas sobre liderazgo estratégico en seguridad, evaluaciones de riesgo y cumplimiento ISO 27001."
-        }
+    const featuresData = t('chatServices.features');
+    const features = Array.isArray(featuresData) ? featuresData : [];
+
+    const featureIcons = [
+        <Shield key="0" className="w-8 h-8" />,
+        <AlertTriangle key="1" className="w-8 h-8" />,
+        <Eye key="2" className="w-8 h-8" />,
+        <Lock key="3" className="w-8 h-8" />,
+        <Activity key="4" className="w-8 h-8" />,
+        <ShieldCheck key="5" className="w-8 h-8" />
     ];
 
-    const benefits = [
-        "Respuestas inmediatas sobre servicios de ciberseguridad",
-        "Evaluación preliminar de necesidades de seguridad",
-        "Información sobre precios y planes personalizados",
-        "Guía para activar servicios de emergencia",
-        "Disponibilidad 24/7 sin tiempos de espera",
-        "Escalamiento directo a especialistas cuando sea necesario"
-    ];
+    const benefitsData = t('chatServices.benefits');
+    const benefits = Array.isArray(benefitsData) ? benefitsData : [];
 
-    const steps = [
-        {
-            number: "1",
-            title: "Describe su situación",
-            description: "Identificamos si es una consulta general, evaluación de riesgo o emergencia activa."
-        },
-        {
-            number: "2",
-            title: "Análisis inteligente",
-            description: "Basado en la información, recomendamos servicios específicos adaptados."
-        },
-        {
-            number: "3",
-            title: "Información detallada",
-            description: "Reciba detalles sobre monitoreo AI, pentesting, CISO as a Service, etc."
-        },
-        {
-            number: "4",
-            title: "Conexión con expertos",
-            description: "Para casos complejos o emergencias, conectamos con un especialista en ciberseguridad."
-        }
-    ];
+    const stepsData = t('chatServices.steps');
+    const steps = Array.isArray(stepsData) ? stepsData : [];
 
     return (
         <div className="min-h-screen bg-background text-foreground">
@@ -134,14 +87,14 @@ export default function ChatServicesPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
+                    {features.map((feature: any, index: number) => (
                         <Card
                             key={index}
                             className="group hover:border-primary transition-all duration-300 transform hover:-translate-y-1 border-none shadow-md"
                         >
                             <CardHeader>
                                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
-                                    {feature.icon}
+                                    {featureIcons[index % featureIcons.length]}
                                 </div>
                                 <CardTitle className="text-xl font-bold">
                                     {feature.title}
@@ -170,7 +123,7 @@ export default function ChatServicesPage() {
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-6">
-                        {steps.map((step, index) => (
+                        {steps.map((step: any, index: number) => (
                             <div key={index} className="relative group">
                                 <Card className="text-center h-full border-none shadow-lg group-hover:shadow-xl transition-shadow bg-background">
                                     <CardContent className="pt-8">
