@@ -224,7 +224,7 @@ export const proyectos: Project[] = [
   {
     title: "HealthTrack Website",
     description: "A platform to track health and fitness progress.",
-    liveUrl: "https://healthtrackfit.netlify.app/",
+    liveUrl: "https://healthtrackfit.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/healthtrack.png",
     tags: ["Health", "Fitness"],
