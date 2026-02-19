@@ -89,7 +89,7 @@ export const proyectos: Project[] = [
   {
     title: "Data Tool",
     description: "A tool for data analysis and visualization.",
-    liveUrl: "https://datasightool.netlify.app/",
+    liveUrl: "https://datasightool.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/DataSight",
     imageUrl: "/img/data-tool.png",
     tags: ["Tools", "Data Analysis"],
@@ -206,7 +206,7 @@ export const proyectos: Project[] = [
   {
     title: "Image to WebP",
     description: "A tool to convert images to WebP format.",
-    liveUrl: "https://flowfix.netlify.app/",
+    liveUrl: "https://pixelflow.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/image-to-webp.png",
     tags: ["Tools", "Image Processing"],
