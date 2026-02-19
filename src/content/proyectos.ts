@@ -64,7 +64,7 @@ export const proyectos: Project[] = [
     description: "Efficient natural language to Oryx token translator.",
     liveUrl: "https://oryx-studio.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/oryx-parser",
-    imageUrl: "https://picsum.photos/400/300?random=27",
+    imageUrl: "/img/oryx-studio.png",
     tags: ["Tools", "Compiler", "AI"],
     category: "tools"
   },
@@ -73,7 +73,7 @@ export const proyectos: Project[] = [
     description: "Efficient natural language to Oryx token translator.",
     liveUrl: "https://oryx-parser.neuralcodelab.com/",
     githubUrl: "https://oryx-parser.neuralcodelab.com/",
-    imageUrl: "https://picsum.photos/400/300?random=27",
+    imageUrl: "/img/oryx-parser.png",
     tags: ["Tools", "Compiler", "AI"],
     category: "tools"
   },
@@ -82,7 +82,7 @@ export const proyectos: Project[] = [
     description: "Professional carpet cleaning service website with booking system.",
     liveUrl: "https://etsteamcarpetcleaning.com/",
     githubUrl: "https://github.com/devlewiso/etcc",
-    imageUrl: "https://picsum.photos/400/300?random=1",
+    imageUrl: "/img/ets-carpet.png",
     tags: ["Business", "Web Design"],
     category: "business"
   },
@@ -91,7 +91,7 @@ export const proyectos: Project[] = [
     description: "A tool for data analysis and visualization.",
     liveUrl: "https://datasightool.netlify.app/",
     githubUrl: "https://github.com/devlewiso/DataSight",
-    imageUrl: "https://picsum.photos/400/300?random=2",
+    imageUrl: "/img/data-tool.png",
     tags: ["Tools", "Data Analysis"],
     category: "tools"
   },
@@ -100,7 +100,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a car cleaning service.",
     liveUrl: "https://cleancarprogt.shop/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=3",
+    imageUrl: "/img/cleancarprogt.png",
     tags: ["Landing Page", "Business"],
     category: "business"
   },
@@ -109,7 +109,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a retro gaming platform.",
     liveUrl: "https://retrox.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=4",
+    imageUrl: "/img/retrox-gaming.png",
     tags: ["Landing Page", "Entertainment"],
     category: "entertainment"
   },
@@ -118,7 +118,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a skateboarding community.",
     liveUrl: "https://skatevibes.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=5",
+    imageUrl: "/img/skatevibes.png",
     tags: ["Landing Page", "Lifestyle"],
     category: "lifestyle"
   },
@@ -127,7 +127,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a sports-related product or service.",
     liveUrl: "https://eclectic-jalebi-ffb392.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=6",
+    imageUrl: "/img/sport-landing.png",
     tags: ["Landing Page", "Lifestyle"],
     category: "lifestyle"
   },
@@ -136,7 +136,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a tech-related product or service.",
     liveUrl: "https://techprofree.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=7",
+    imageUrl: "/img/techprofree.png",
     tags: ["Landing Page", "Tools"],
     category: "tools"
   },
@@ -145,7 +145,7 @@ export const proyectos: Project[] = [
     description: "A platform for health and wellness tips.",
     liveUrl: "https://slimvita.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=8",
+    imageUrl: "/img/slimvita.png",
     tags: ["Health", "Lifestyle"],
     category: "lifestyle"
   },
@@ -154,7 +154,7 @@ export const proyectos: Project[] = [
     description: "Learn the ancestral languages of Guatemala in a fun and free way!",
     liveUrl: "https://phenomenal-gnome-b602ac.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=9",
+    imageUrl: "/img/learn-mayan.png",
     tags: ["Education", "Learning"],
     category: "education"
   },
@@ -163,7 +163,7 @@ export const proyectos: Project[] = [
     description: "A landing page for a cryptocurrency token.",
     liveUrl: "https://beautiful-croissant-631a28.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=10",
+    imageUrl: "/img/moonpug-token.png",
     tags: ["Crypto", "Blockchain"],
     category: "tools"
   },
@@ -172,7 +172,7 @@ export const proyectos: Project[] = [
     description: "A platform to search and discover movies.",
     liveUrl: "",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=15",
+    imageUrl: "/img/movies-searcher.png",
     tags: ["Landing Page", "Events"],
     category: "business"
   },
@@ -181,7 +181,7 @@ export const proyectos: Project[] = [
     description: "Landing page for a water-related product or service.",
     liveUrl: "https://delicate-crisp-c5f8e3.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=16",
+    imageUrl: "/img/water-landing.png",
     tags: ["Landing Page", "Lifestyle"],
     category: "lifestyle"
   },
@@ -190,7 +190,7 @@ export const proyectos: Project[] = [
     description: "Landing page for wedding planning services.",
     liveUrl: "https://classy-donut-0c9792.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=17",
+    imageUrl: "/img/wedding-landing.png",
     tags: ["Landing Page", "Events"],
     category: "lifestyle"
   },
@@ -199,7 +199,7 @@ export const proyectos: Project[] = [
     description: "A fun landing page for discovering random YouTube videos.",
     liveUrl: "https://randomyd.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=18",
+    imageUrl: "/img/random-youtube.png",
     tags: ["Entertainment", "YouTube"],
     category: "entertainment"
   },
@@ -208,7 +208,7 @@ export const proyectos: Project[] = [
     description: "A tool to convert images to WebP format.",
     liveUrl: "https://flowfix.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=19",
+    imageUrl: "/img/image-to-webp.png",
     tags: ["Tools", "Image Processing"],
     category: "tools"
   },
@@ -217,7 +217,7 @@ export const proyectos: Project[] = [
     description: "A tool to calculate your life path number based on numerology.",
     liveUrl: "https://numerodevida.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=20",
+    imageUrl: "/img/life-path-calculator.png",
     tags: ["Tools", "Lifestyle"],
     category: "lifestyle"
   },
@@ -226,7 +226,7 @@ export const proyectos: Project[] = [
     description: "A platform to track health and fitness progress.",
     liveUrl: "https://healthtrackfit.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=21",
+    imageUrl: "/img/healthtrack.png",
     tags: ["Health", "Fitness"],
     category: "lifestyle"
   },
@@ -235,7 +235,7 @@ export const proyectos: Project[] = [
     description: "A platform to learn Mayan languages.",
     liveUrl: "https://astromaya.neuralcodelab.com/",
     githubUrl: "https://github.com/neuralcodelab/astromaya",
-    imageUrl: "https://picsum.photos/400/300?random=21",
+    imageUrl: "/img/astromaya.png",
     tags: ["Education", "Culture"],
     category: "education"
   },
@@ -244,7 +244,7 @@ export const proyectos: Project[] = [
     description: "Interactive learning platform for 5-year-old children.",
     liveUrl: "https://k-idols.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=22",
+    imageUrl: "/img/k-idols-5.png",
     tags: ["Education", "Kids"],
     category: "education"
   },
@@ -253,7 +253,7 @@ export const proyectos: Project[] = [
     description: "Learning adventure for 6-year-old children.",
     liveUrl: "https://k-idols6.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=23",
+    imageUrl: "/img/k-idols-6.png",
     tags: ["Education", "Kids"],
     category: "education"
   },
@@ -262,7 +262,7 @@ export const proyectos: Project[] = [
     description: "Discover the secrets of Mayan education. 7-year-old edition.",
     liveUrl: "https://k-idols7.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=24",
+    imageUrl: "/img/k-saber-7.png",
     tags: ["Education", "Kids", "Culture"],
     category: "education"
   },
@@ -271,7 +271,7 @@ export const proyectos: Project[] = [
     description: "Become a guardian of Mayan knowledge. 8-year-old edition.",
     liveUrl: "https://k-idols8.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=25",
+    imageUrl: "/img/k-saber-8.png",
     tags: ["Education", "Kids", "Culture"],
     category: "education"
   },
@@ -280,7 +280,7 @@ export const proyectos: Project[] = [
     description: "Welcome to the Learning World! An educational project by neuralcodelab.com. Learn vowels, the alphabet, numbers and mathematics in a fun way.",
     liveUrl: "https://camilakids.netlify.app/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=26",
+    imageUrl: "/img/camilakids.png",
     tags: ["Education", "Kids", "Learning"],
     category: "education"
   },
@@ -289,7 +289,7 @@ export const proyectos: Project[] = [
     description: "Load balancer simulator.",
     liveUrl: "https://simuladordebalanceadordecarga.neuralcodelab.com/",
     githubUrl: "",
-    imageUrl: "https://picsum.photos/400/300?random=28",
+    imageUrl: "/img/load-balancer.png",
     tags: ["Tools", "Simulation"],
     category: "tools"
   },
@@ -298,7 +298,7 @@ export const proyectos: Project[] = [
     description: "Interactive simulator to compare RabbitMQ and Kafka messaging systems.",
     liveUrl: "https://simuladorkafka.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/RabbitmqSimulator",
-    imageUrl: "https://picsum.photos/400/300?random=29",
+    imageUrl: "/img/rabbitmq-kafka.png",
     tags: ["Tools", "Simulation", "Messaging"],
     category: "tools"
   },
@@ -307,7 +307,7 @@ export const proyectos: Project[] = [
     description: "Interactive Kafka messaging system simulator.",
     liveUrl: "https://simuladorkafka.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/kafkaSimulator",
-    imageUrl: "https://picsum.photos/400/300?random=30",
+    imageUrl: "/img/kafka-simulator.png",
     tags: ["Tools", "Simulation", "Messaging"],
     category: "tools"
   },
@@ -316,7 +316,7 @@ export const proyectos: Project[] = [
     description: "Mayan culture and language educational platform.",
     liveUrl: "https://ri-n-m-ch-ab-l-q-aq.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/Ri-N-m-Ch-ab-l-Q-aq-",
-    imageUrl: "https://picsum.photos/400/300?random=32",
+    imageUrl: "/img/ri-nim.png",
     tags: ["Education", "Culture", "Mayan"],
     category: "education"
   },
@@ -325,7 +325,7 @@ export const proyectos: Project[] = [
     description: "Creative storytelling and content generation platform.",
     liveUrl: "https://lamaquinadecreacionmagica.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/La-M-quina-de-Creaci-n-M-gica",
-    imageUrl: "https://picsum.photos/400/300?random=33",
+    imageUrl: "/img/magic-machine.png",
     tags: ["Tools", "Creative", "AI"],
     category: "tools"
   }
