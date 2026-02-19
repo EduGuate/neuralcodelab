@@ -124,7 +124,9 @@
             "teamSubtitle": "Apasionados por la tecnología y el impacto social",
             "memberBio": "Desarrollador apasionado por crear tecnología que empodera comunidades. Especializado en IA, desarrollo web y soluciones de código abierto.",
             "specialties": "Especialidades:",
-            "specialtiesList": ["Desarrollo Full-Stack", "IA/ML", "Arquitectura Cloud", "Open Source"],
+            "specialtiesList": [
+                "Open Source"
+            ],
             "readyToCollaborate": "¿Listo para colaborar?",
             "collaborateDesc": "Únete a nuestra misión de crear tecnología que potencie la identidad cultural y fortalezca comunidades"
         },
@@ -223,10 +225,22 @@
             "benefitsDesc": "3CX no es solo un sistema telefónico, es una solución completa que moderniza tu forma de comunicarte.",
             "whatIncluded": "Lo que incluye tu configuración:",
             "steps": [
-                { "title": "Instalación en tu dispositivo", "desc": "App configurada y lista para usar" },
-                { "title": "Capacitación básica", "desc": "Aprende a usar todas las funciones" },
-                { "title": "Soporte inicial", "desc": "Asistencia durante la configuración" },
-                { "title": "Consultoría de integración", "desc": "Orientación para tu negocio" }
+                {
+                    "title": "Instalación en tu dispositivo",
+                    "desc": "App configurada y lista para usar"
+                },
+                {
+                    "title": "Capacitación básica",
+                    "desc": "Aprende a usar todas las funciones"
+                },
+                {
+                    "title": "Soporte inicial",
+                    "desc": "Asistencia durante la configuración"
+                },
+                {
+                    "title": "Consultoría de integración",
+                    "desc": "Orientación para tu negocio"
+                }
             ],
             "idealFor": "Ideal para todo tipo de negocios",
             "idealForDesc": "Sin importar el tamaño de tu empresa, 3CX se adapta a tus necesidades",
@@ -512,7 +526,9 @@
             "teamSubtitle": "Passionate about technology and social impact",
             "memberBio": "Developer passionate about creating technology that empowers communities. Specialized in AI, web development, and open-source solutions.",
             "specialties": "Specialties:",
-            "specialtiesList": ["Full-Stack Development", "AI/ML", "Cloud Architecture", "Open Source"],
+            "specialtiesList": [
+                "Open Source"
+            ],
             "readyToCollaborate": "Ready to collaborate?",
             "collaborateDesc": "Join our mission to create technology that empowers cultural identity and strengthens communities"
         },
@@ -611,10 +627,22 @@
             "benefitsDesc": "3CX is not just a phone system, it's a complete solution that modernizes the way you communicate.",
             "whatIncluded": "What's included in your configuration:",
             "steps": [
-                { "title": "Installation on your device", "desc": "App configured and ready to use" },
-                { "title": "Basic training", "desc": "Learn to use all functions" },
-                { "title": "Initial support", "desc": "Assistance during setup" },
-                { "title": "Integration consulting", "desc": "Guidance for your business" }
+                {
+                    "title": "Installation on your device",
+                    "desc": "App configured and ready to use"
+                },
+                {
+                    "title": "Basic training",
+                    "desc": "Learn to use all functions"
+                },
+                {
+                    "title": "Initial support",
+                    "desc": "Assistance during setup"
+                },
+                {
+                    "title": "Integration consulting",
+                    "desc": "Guidance for your business"
+                }
             ],
             "idealFor": "Ideal for all types of businesses",
             "idealForDesc": "No matter the size of your company, 3CX adapts to your needs",
@@ -997,10 +1025,22 @@
             "benefitsDesc": "O 3CX não é apenas um sistema telefônico, é uma solução completa que moderniza a forma como você se comunica.",
             "whatIncluded": "O que está incluído na sua configuração:",
             "steps": [
-                { "title": "Instalação no seu dispositivo", "desc": "App configurada e pronta para usar" },
-                { "title": "Treinamento básico", "desc": "Aprenda a usar todas as funções" },
-                { "title": "Suporte inicial", "desc": "Assistência durante a configuração" },
-                { "title": "Consultoria de integração", "desc": "Orientação para o seu negócio" }
+                {
+                    "title": "Instalação no seu dispositivo",
+                    "desc": "App configurada e pronta para usar"
+                },
+                {
+                    "title": "Treinamento básico",
+                    "desc": "Aprenda a usar todas as funções"
+                },
+                {
+                    "title": "Suporte inicial",
+                    "desc": "Assistência durante a configuração"
+                },
+                {
+                    "title": "Consultoria de integração",
+                    "desc": "Orientação para o seu negócio"
+                }
             ],
             "idealFor": "Ideal para todos os tipos de negócios",
             "idealForDesc": "Não importa o tamanho da sua empresa, o 3CX se adapta às suas necessidades",
@@ -1383,10 +1423,22 @@
             "benefitsDesc": "3CX 不仅仅是一个电话系统，它是一个现代化的完整通信解决方案。",
             "whatIncluded": "您的配置包含：",
             "steps": [
-                { "title": "在您的设备上安装", "desc": "应用程序配置完成并可供使用" },
-                { "title": "基础培训", "desc": "学习使用所有功能" },
-                { "title": "初始支持", "desc": "设置期间的协助" },
-                { "title": "集成咨询", "desc": "针对您业务的指导" }
+                {
+                    "title": "在您的设备上安装",
+                    "desc": "应用程序配置完成并可供使用"
+                },
+                {
+                    "title": "基础培训",
+                    "desc": "学习使用所有功能"
+                },
+                {
+                    "title": "初始支持",
+                    "desc": "设置期间的协助"
+                },
+                {
+                    "title": "集成咨询",
+                    "desc": "针对您业务的指导"
+                }
             ],
             "idealFor": "适用于各类业务",
             "idealForDesc": "无论您的公司规模如何，3CX 都能满足您的需求",
