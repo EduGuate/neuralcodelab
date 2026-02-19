@@ -14,7 +14,7 @@ export default function NosotrosPage() {
   const teamMembers = [
     {
       name: 'Iran Lewis',
-      role: 'Founder & Developer',
+      role: 'Founder & Developers',
       image: '/img/my-profile.jpg',
       bio: t('about.memberBio'),
       skills: Array.isArray(t('about.specialtiesList')) ? t('about.specialtiesList') : ['Full-Stack Development', 'AI/ML', 'Cloud Architecture', 'Open Source']
