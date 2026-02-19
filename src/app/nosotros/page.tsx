@@ -16,7 +16,7 @@ export default function NosotrosPage() {
       role: 'Founder & Developer',
       image: '/img/my-profile.jpg',
       bio: t('about.memberBio'),
-      skills: ['Full-Stack Development', 'AI/ML', 'Cloud Architecture', 'Open Source']
+      skills: ['Open Source']
     }
   ];
 
