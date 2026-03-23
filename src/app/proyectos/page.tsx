@@ -1,6 +1,6 @@
 "use client";
-
 import React, { useState } from 'react';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { ExternalLink, Github, Search } from 'lucide-react';
 import { proyectos } from '@/content/proyectos';
@@ -9,6 +9,16 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+
+export const metadata: Metadata = {
+  title: 'Proyectos | Neural Code Lab - Soluciones de Software Abierto',
+  description: 'Explora nuestros proyectos de software libre. Desarrollo web, herramientas comunitarias, IA y más tecnología accesible para Guatemala.',
+  keywords: ['proyectos', 'portfolio', 'casos de exito', 'desarrollo web', 'open source', 'guatemala'],
+  openGraph: {
+    title: 'Proyectos | Neural Code Lab',
+    description: 'Soluciones de software abierto y tecnología comunitaria.',
+  },
+};
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -67,7 +77,6 @@ export default function Projects() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-
           <div className="flex flex-wrap gap-2 justify-center md:justify-end">
             {categorias.map((categoria) => (
               <Button
@@ -94,10 +103,7 @@ export default function Projects() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card
-                key={index}
-                className="group flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 border-muted-foreground/10"
-              >
+              <Card key={index} className="group flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 border-muted-foreground/10">
                 <div className="relative h-48 bg-muted shrink-0 overflow-hidden">
                   <Image
                     src={project.imageUrl && !project.imageUrl.startsWith('https://picsum.photos') ? project.imageUrl : "/img/logo.png"}
@@ -109,20 +115,14 @@ export default function Projects() {
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                      <Badge
-                        key={tagIndex}
-                        variant="secondary"
-                        className="font-normal"
-                      >
+                      <Badge key={tagIndex} variant="secondary" className="font-normal">
                         {tag}
                       </Badge>
                     ))}
                   </div>
-
                   <h2 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h2>
-
                   <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
@@ -130,29 +130,18 @@ export default function Projects() {
                 <CardFooter className="px-6 pb-6 pt-0 gap-3">
                   {project.liveUrl ? (
                     <Button asChild size="sm" className="flex-1 gap-2">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink size={16} />
-                        {t('projects.viewProject')}
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={16} /> {t('projects.viewProject')}
                       </a>
                     </Button>
                   ) : null}
-
                   {project.githubUrl ? (
                     <Button asChild variant="outline" size="icon" title={t('projects.viewCode')}>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github size={20} />
                       </a>
                     </Button>
                   ) : null}
-
                   {!project.liveUrl && !project.githubUrl && (
                     <Badge variant="outline" className="w-full justify-center py-2 text-muted-foreground border-dashed italic">
                       {t('projects.comingSoon')}

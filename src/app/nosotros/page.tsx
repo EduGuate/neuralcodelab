@@ -1,12 +1,22 @@
 'use client';
-
 import Image from 'next/image';
+import { Metadata } from 'next';
 import { Linkedin, Code2, Heart, Rocket, Users, Globe2, Sparkles, Github, Mail } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import AnimeStats from '@/components/AnimeStats';
+
+export const metadata: Metadata = {
+  title: 'Nosotros | Neural Code Lab - Software Libre y Tecnología Comunitaria',
+  description: 'Conoce al equipo de Neural Code Lab. Desarrollamos software libre y soluciones tecnológicas adaptadas a las necesidades de comunidades en Guatemala.',
+  keywords: ['nosotros', 'equipo', 'mision', 'vision', 'neural code lab', 'guatemala', 'software libre'],
+  openGraph: {
+    title: 'Nosotros | Neural Code Lab',
+    description: 'Desarrollamos software libre y soluciones tecnológicas adaptadas a las necesidades de comunidades.',
+  },
+};
 
 export default function NosotrosPage() {
   const { t } = useTranslation();
@@ -17,34 +27,19 @@ export default function NosotrosPage() {
       role: 'Founder &',
       image: '/img/my-profile.jpg',
       bio: t('about.memberBio'),
-      skills: Array.isArray(t('about.specialtiesList')) ? t('about.specialtiesList') : ['Open Source']
-    }
+      skills: Array.isArray(t('about.specialtiesList')) ? t('about.specialtiesList') : ['Open Source'],
+    },
   ];
 
   const values = [
-    {
-      icon: Rocket,
-      title: t('about.values.innovation.title'),
-      desc: t('about.values.innovation.desc'),
-      color: 'text-blue-500 bg-blue-50'
-    },
-    {
-      icon: Heart,
-      title: t('about.values.transparency.title'),
-      desc: t('about.values.transparency.desc'),
-      color: 'text-purple-500 bg-purple-50'
-    },
-    {
-      icon: Users,
-      title: t('about.values.collaboration.title'),
-      desc: t('about.values.collaboration.desc'),
-      color: 'text-orange-500 bg-orange-50'
-    }
+    { icon: Rocket, title: t('about.values.innovation.title'), desc: t('about.values.innovation.desc'), color: 'text-blue-500 bg-blue-50' },
+    { icon: Heart, title: t('about.values.transparency.title'), desc: t('about.values.transparency.desc'), color: 'text-purple-500 bg-purple-50' },
+    { icon: Users, title: t('about.values.collaboration.title'), desc: t('about.values.collaboration.desc'), color: 'text-orange-500 bg-orange-50' },
   ];
 
   const stats = [
     { value: '35+', label: t('home.stats.projects') },
-    { value: '5', label: t('home.stats.languages') }
+    { value: '5', label: t('home.stats.languages') },
   ];
 
   const missionHighlightsData = t('about.highlights');
@@ -57,8 +52,7 @@ export default function NosotrosPage() {
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5">
-              <Code2 className="w-4 h-4" />
-              {t('home.badge')}
+              <Code2 className="w-4 h-4" /> {t('home.badge')}
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               {t('about.hero')}
@@ -80,8 +74,7 @@ export default function NosotrosPage() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold text-foreground mb-8 flex items-center gap-3">
-              <Sparkles className="w-10 h-10 text-primary" />
-              {t('about.mission')}
+              <Sparkles className="w-10 h-10 text-primary" /> {t('about.mission')}
             </h2>
             <div className="space-y-4">
               {missionHighlights.map((highlight, index) => (
@@ -142,25 +135,18 @@ export default function NosotrosPage() {
             {t('about.teamSubtitle')}
           </p>
         </div>
-
         <div className="max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card key={index} className="overflow-hidden border-none shadow-2xl">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 relative h-80 md:h-auto min-h-[400px]">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
+                    <Image src={member.image} alt={member.name} fill className="object-cover" />
                   </div>
                   <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="text-3xl font-bold text-foreground mb-1">{member.name}</h3>
                     <p className="text-xl text-primary font-semibold mb-6">{member.role}</p>
                     <p className="text-muted-foreground leading-relaxed mb-8 text-lg">{member.bio}</p>
-
                     <div className="mb-8">
                       <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">{t('about.specialties')}</h4>
                       <div className="flex flex-wrap gap-2">
@@ -171,24 +157,20 @@ export default function NosotrosPage() {
                         ))}
                       </div>
                     </div>
-
                     <div className="flex flex-wrap gap-3">
                       <Button asChild size="sm" className="gap-2">
                         <a href="https://www.linkedin.com/in/devlewiso" target="_blank" rel="noopener noreferrer">
-                          <Linkedin size={18} />
-                          LinkedIn
+                          <Linkedin size={18} /> LinkedIn
                         </a>
                       </Button>
                       <Button asChild variant="outline" size="sm" className="gap-2">
                         <a href="https://github.com/devlewiso" target="_blank" rel="noopener noreferrer">
-                          <Github size={18} />
-                          GitHub
+                          <Github size={18} /> GitHub
                         </a>
                       </Button>
                       <Button asChild variant="ghost" size="sm" className="gap-2">
                         <a href="mailto:devlewiso@gmail.com">
-                          <Mail size={18} />
-                          Email
+                          <Mail size={18} /> Email
                         </a>
                       </Button>
                     </div>
@@ -211,8 +193,7 @@ export default function NosotrosPage() {
             </p>
             <Button asChild variant="secondary" size="lg" className="gap-2 px-8 py-6 text-lg">
               <a href="/contacto">
-                {t('home.contactUs')}
-                <Sparkles size={20} />
+                {t('home.contactUs')} <Sparkles size={20} />
               </a>
             </Button>
           </div>

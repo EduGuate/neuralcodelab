@@ -1,10 +1,20 @@
 'use client';
-
+import { Metadata } from 'next';
 import { Mail, Globe, HeartHandshake } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+
+export const metadata: Metadata = {
+  title: 'Contacto | Neural Code Lab - Hablemos de tu Proyecto',
+  description: '¿Necesitas una solución tecnológica? Contáctanos. Desarrollamos software a medida para comunidades y empresas en Guatemala.',
+  keywords: ['contacto', 'presupuesto', 'cotizar', 'desarrollo a medida', 'consultoria', 'guatemala'],
+  openGraph: {
+    title: 'Contacto | Neural Code Lab',
+    description: 'Hablemos de tu próximo proyecto de tecnología.',
+  },
+};
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -20,11 +30,9 @@ export default function Contact() {
           <div className="inline-flex items-center justify-center p-3 bg-muted rounded-full mb-6">
             <Globe size={24} className="text-foreground" />
           </div>
-
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             {t('contact.hero')}
           </h1>
-
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             {t('contact.description')}
           </p>
@@ -38,8 +46,7 @@ export default function Contact() {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-                <HeartHandshake className="text-foreground" />
-                {t('contact.collaboration')}
+                <HeartHandshake className="text-foreground" /> {t('contact.collaboration')}
               </h2>
               <p className="text-muted-foreground mb-6">
                 {t('contact.collaborationDesc')}
@@ -53,12 +60,11 @@ export default function Contact() {
                 ))}
               </ul>
             </div>
-
             <Card className="bg-muted/50 border-none">
               <CardContent className="pt-6">
                 <h3 className="font-semibold text-foreground mb-4">{t('contact.availableLanguages')}</h3>
                 <div className="flex flex-wrap gap-3">
-                  {['Español', 'Kaqchikel', 'K\'iche\'', 'English'].map((lang) => (
+                  {['Español', 'Kaqchikel', "K'iche'", 'English'].map((lang) => (
                     <Badge key={lang} variant="outline" className="bg-background">
                       {lang}
                     </Badge>
@@ -79,11 +85,9 @@ export default function Contact() {
             <CardContent>
               <Button asChild className="w-full py-6 text-lg gap-2">
                 <a href={`mailto:devlewiso@gmail.com?subject=${encodeURIComponent(t('contact.subject'))}`}>
-                  <Mail size={20} />
-                  {t('contact.sendEmail')}
+                  <Mail size={20} /> {t('contact.sendEmail')}
                 </a>
               </Button>
-
               <p className="text-center text-sm text-muted-foreground mt-4">
                 {t('contact.responseTime')}
               </p>
