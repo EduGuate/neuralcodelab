@@ -107,7 +107,7 @@ export default function Projects() {
                 <div className="relative h-48 bg-muted shrink-0 overflow-hidden">
                   <Image
                     src={project.imageUrl && !project.imageUrl.startsWith('https://picsum.photos') ? project.imageUrl : "/img/logo.png"}
-                    alt={project.title}
+                    alt={project.imageUrl && !project.imageUrl.startsWith('https://picsum.photos') ? project.title : "Logo de Neural Code Lab"}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />

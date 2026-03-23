@@ -141,7 +141,7 @@ export default function NosotrosPage() {
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 relative h-80 md:h-auto min-h-[400px]">
-                    <Image src={member.image} alt={member.name} fill className="object-cover" />
+                    <Image src={member.image} alt={`${member.name} - Fundador de Neural Code Lab`} fill className="object-cover" />
                   </div>
                   <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="text-3xl font-bold text-foreground mb-1">{member.name}</h3>
