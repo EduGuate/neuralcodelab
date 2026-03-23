@@ -1,38 +1,27 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://neuralcodelab.com';
+  const baseUrl = 'https://neuralcodelab.com';
+  
+  // Rutas estáticas principales
+  const staticRoutes = [
+    '',
+    '/nosotros',
+    '/proyectos',
+    '/contacto',
+    '/chat-demo',
+    '/contact-center',
+    '/3cx',
+    '/privacy-policy',
+    '/politicasappA',
+  ];
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/nosotros`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/proyectos`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/contacto`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/chat-demo`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-    ];
+  const routes = staticRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'daily' : 'monthly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }));
+
+  return routes;
 }
