@@ -5,23 +5,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // Rutas estáticas principales
   const staticRoutes = [
-    '',
-    '/nosotros',
-    '/proyectos',
-    '/contacto',
-    '/chat-demo',
-    '/contact-center',
-    '/3cx',
-    '/privacy-policy',
-    '/politicasappA',
+    { url: '', priority: 1, changeFrequency: 'daily' as const },
+    { url: '/nosotros', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/proyectos', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/contacto', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/chat-demo', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/contact-center', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/3cx', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/privacy-policy', priority: 0.5, changeFrequency: 'yearly' as const },
+    { url: '/politicasappA', priority: 0.5, changeFrequency: 'yearly' as const },
   ];
 
-  const routes = staticRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
+  return staticRoutes.map((route) => ({
+    url: `${baseUrl}${route.url}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
-
-  return routes;
 }
