@@ -26,26 +26,18 @@ const detectBrowserLanguage = (): Language => {
     return 'es'; // Default fallback
 };
 
-export function TranslationProvider({ children }: { children: React.ReactNode }) {
-    const [language, setLanguageState] = useState<Language>('es');
-    const [translations, setTranslations] = useState<any>({});
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    // Load translations
-    useEffect(() => {
-        const loadTranslations = async () => {
-            try {
-                const response = await fetch('/translations.json');
-                const data = await response.json();
-                setTranslations(data);
-                setIsLoaded(true);
-            } catch (error) {
-                console.error('Failed to load translations:', error);
-                setIsLoaded(true);
-            }
-        };
-        loadTranslations();
-    }, []);
+export function TranslationProvider({
+    children,
+    initialLanguage = 'es',
+    initialTranslations = {}
+}: {
+    children: React.ReactNode;
+    initialLanguage?: Language;
+    initialTranslations?: any;
+}) {
+    const [language, setLanguageState] = useState<Language>(initialLanguage);
+    const [translations, setTranslations] = useState<any>(initialTranslations);
+    const [isLoaded, setIsLoaded] = useState(Object.keys(initialTranslations).length > 0);
 
     // Initialize language from localStorage or browser
     useEffect(() => {
@@ -60,6 +52,24 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
             }
         }
     }, []);
+
+    // Load translations if not provided (fallback)
+    useEffect(() => {
+        if (!isLoaded) {
+            const loadTranslations = async () => {
+                try {
+                    const response = await fetch('/translations.json');
+                    const data = await response.json();
+                    setTranslations(data);
+                    setIsLoaded(true);
+                } catch (error) {
+                    console.error('Failed to load translations:', error);
+                    setIsLoaded(true);
+                }
+            };
+            loadTranslations();
+        }
+    }, [isLoaded]);
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);

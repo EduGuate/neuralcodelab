@@ -17,8 +17,8 @@
         },
         "home": {
             "badge": "Tecnología con propósito cultural",
-            "hero": "Plataformas digitales para comunidades",
-            "description": "Creamos soluciones tecnológicas que respetan la identidad cultural mientras construimos un futuro digital más inclusivo para comunidades indígenas.",
+            "hero": "Software Libre y Tecnología para Comunidades en Guatemala",
+            "description": "Creamos plataformas digitales que respetan la identidad cultural mientras construimos un futuro digital más inclusivo.",
             "exploreSolutions": "Explorar soluciones",
             "ourSolutions": "Nuestras soluciones",
             "solutionsDesc": "Tecnología diseñada para responder a necesidades reales",
@@ -55,7 +55,9 @@
             },
             "stats": {
                 "languages": "Lenguas Mayas",
-                "projects": "Proyectos"
+                "projects": "Proyectos",
+                "communities": "Comunidades",
+                "youth": "Jóvenes Capacitados"
             },
             "testimonials": [
                 {
@@ -457,7 +459,9 @@
             },
             "stats": {
                 "languages": "Maya Languages",
-                "projects": "Projects"
+                "projects": "Projects",
+                "communities": "Communities",
+                "youth": "Youth Trained"
             },
             "testimonials": [
                 {
@@ -858,7 +862,9 @@
             },
             "stats": {
                 "languages": "Línguas Maias",
-                "projects": "Projetos"
+                "projects": "Projetos",
+                "communities": "Comunidades",
+                "youth": "Jovens Capacitados"
             },
             "testimonials": [
                 {
@@ -1256,7 +1262,9 @@
             },
             "stats": {
                 "languages": "玛雅语言",
-                "projects": "项目"
+                "projects": "项目",
+                "communities": "社区",
+                "youth": "培训青年"
             },
             "testimonials": [
                 {

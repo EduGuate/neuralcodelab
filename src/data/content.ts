@@ -46,7 +46,7 @@ export const stats = [
     { value: "12+", label: "Comunidades" },
     { value: "5", label: "Lenguas Mayas" },
     { value: "200+", label: "Jóvenes Capacitados" },
-    { value: "8", label: "Proyectos" }
+    { value: "35+", label: "Proyectos" }
 ];
 
 export const testimonials = [

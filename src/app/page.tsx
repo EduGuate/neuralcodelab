@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Leaf, Users, Code2, Database, Zap } from 'lucide-react';
@@ -8,11 +6,12 @@ import AnimeStats from '@/components/AnimeStats';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { useTranslation } from '@/lib/useTranslation';
+import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { colors } from '@/data/content';
 
-export default function Page() {
-  const { t } = useTranslation();
+export default async function Page() {
+  const lang = await getLanguage();
+  const t = getServerTranslation(lang);
 
   const features = [
     {
@@ -54,8 +53,10 @@ export default function Page() {
   ];
 
   const stats = [
+    { value: "12+", label: t('home.stats.communities') },
     { value: "5", label: t('home.stats.languages') },
-    { value: "35+", label: t('home.stats.projects') }
+    { value: "200+", label: t('home.stats.youth') },
+    { value: "35+", label: t('home.stats.projects') },
   ];
 
   const testimonialsData = t('home.testimonials');
@@ -118,7 +119,7 @@ export default function Page() {
       <section className="max-w-6xl mx-auto px-6 py-24 border-t">
         <h2 className="text-3xl font-bold text-foreground mb-12">{t('home.realImpact')}</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((item, i) => (
+          {testimonials.map((item: any, i: number) => (
             <Card key={i} className="bg-muted/50 border-none">
               <CardContent className="pt-6">
                 <p className="text-foreground mb-4 leading-relaxed italic">"{item.quote}"</p>

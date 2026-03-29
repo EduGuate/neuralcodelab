@@ -1,12 +1,12 @@
-'use client';
 import { Mail, Globe, HeartHandshake } from 'lucide-react';
-import { useTranslation } from '@/lib/useTranslation';
+import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
-export default function ContactContent() {
-  const { t } = useTranslation();
+export default async function ContactContent() {
+  const lang = await getLanguage();
+  const t = getServerTranslation(lang);
 
   const servicesData = t('contact.services');
   const services = Array.isArray(servicesData) ? servicesData : [];

@@ -1,19 +1,19 @@
-'use client';
 import Image from 'next/image';
 import { Linkedin, Code2, Heart, Rocket, Users, Globe2, Sparkles, Github, Mail } from 'lucide-react';
-import { useTranslation } from '@/lib/useTranslation';
+import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import AnimeStats from '@/components/AnimeStats';
 
-export default function NosotrosContent() {
-  const { t } = useTranslation();
+export default async function NosotrosContent() {
+  const lang = await getLanguage();
+  const t = getServerTranslation(lang);
 
   const teamMembers = [
     {
       name: 'Iran Lewis',
-      role: 'Founder &',
+      role: 'Founder & Lead Developer',
       image: '/img/my-profile.jpg',
       bio: t('about.memberBio'),
       skills: Array.isArray(t('about.specialtiesList')) ? t('about.specialtiesList') : ['Open Source'],
@@ -130,7 +130,7 @@ export default function NosotrosContent() {
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 relative h-80 md:h-auto min-h-[400px]">
-                    <Image src={member.image} alt={`${member.name} - Fundador de Neural Code Lab`} fill className="object-cover" />
+                    <Image src={member.image} alt={`${member.name} - Fundador de Neural Code Lab, desarrollador de software libre en Guatemala`} fill className="object-cover" />
                   </div>
                   <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="text-3xl font-bold text-foreground mb-1">{member.name}</h3>
