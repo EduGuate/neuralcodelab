@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import FloatingWidget from '@/components/FloatingWidget';
 import {
     Phone,
@@ -450,7 +451,16 @@ export default function ContactCenterContent() {
                         </div>
                     </div>
 
-                    <Card className="border-none shadow-2xl bg-muted/30">
+                    <div className="space-y-8">
+                        <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
+                            <Image
+                                src="/img/contact-center-dashboard.jpg"
+                                alt="Dashboard de Contact Center IA con análisis de conversaciones en tiempo real"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <Card className="border-none shadow-2xl bg-muted/30">
                         <CardHeader className="pb-4">
                             <CardTitle className="text-2xl font-bold">
                                 {t('contactCenter.implementationProcess')}
@@ -476,6 +486,7 @@ export default function ContactCenterContent() {
                             ))}
                         </CardContent>
                     </Card>
+                </div>
                 </div>
             </section>
 

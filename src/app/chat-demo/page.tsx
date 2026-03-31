@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     MessageSquare,
     Bot,
@@ -171,6 +172,15 @@ export default function ChatServicesPage() {
                         </div>
                     </div>
 
+                    <div className="space-y-8">
+                    <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
+                        <Image
+                            src="/img/chat-demo-ui.jpg"
+                            alt="Interfaz de chatbot IA - widget de conversación automatizada para sitios web"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                     <Card className="border-none shadow-2xl bg-muted/30">
                         <CardHeader>
                             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-primary-foreground mb-6 shadow-lg">
@@ -191,6 +201,7 @@ export default function ChatServicesPage() {
                             </Button>
                         </CardContent>
                     </Card>
+                    </div>
                 </div>
             </section>
 

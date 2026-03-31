@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, CheckCircle, Smartphone, Building2, Users, Headphones, ArrowRight, MessageSquare, Shield, Zap } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
 import { Button } from '@/components/ui/button';
@@ -151,6 +152,15 @@ export default function ThreeCXContent() {
                             </div>
                         </div>
 
+                        <div className="space-y-8">
+                        <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
+                            <Image
+                                src="/img/3cx-system.jpg"
+                                alt="Sistema de telefonía empresarial 3CX - panel de control y gestión de llamadas"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <Card className="shadow-2xl border-none">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold">
@@ -172,6 +182,7 @@ export default function ThreeCXContent() {
                                 ))}
                             </CardContent>
                         </Card>
+                    </div>
                     </div>
                 </div>
             </section>

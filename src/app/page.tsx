@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Leaf, Users, Code2, Database, Zap } from 'lucide-react';
 import FeatureCard from '@/components/FeatureCard';
 import AnimeStats from '@/components/AnimeStats';
@@ -66,21 +67,32 @@ export default async function Page() {
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="max-w-2xl">
-          <Badge variant="secondary" className="mb-4">
-            {t('home.badge')}
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            {t('home.hero')}
-          </h1>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            {t('home.description')}
-          </p>
-          <Button asChild size="lg">
-            <Link href="/proyectos">
-              {t('home.exploreSolutions')} <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Badge variant="secondary" className="mb-4">
+              {t('home.badge')}
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              {t('home.hero')}
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              {t('home.description')}
+            </p>
+            <Button asChild size="lg">
+              <Link href="/proyectos">
+                {t('home.exploreSolutions')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="relative h-80 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/img/hero-home.jpg"
+              alt="NeuralCodeLab - IA y tecnología con identidad cultural guatemalteca"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Linkedin, Code2, Heart, Rocket, Users, Globe2, Sparkles, Github, Mail } from 'lucide-react';
+import { Linkedin, Code2, Heart, Rocket, Users, Sparkles, Github, Mail } from 'lucide-react';
 import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -76,16 +76,14 @@ export default async function NosotrosContent() {
               ))}
             </div>
           </div>
-          <Card className="bg-muted/50 border-none relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500"></div>
-            <CardContent className="p-8 relative z-10">
-              <Globe2 className="w-16 h-16 text-primary mb-6" />
-              <h3 className="text-2xl font-bold text-foreground mb-4">{t('about.globalImpact')}</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                {t('about.globalImpactDesc')}
-              </p>
-            </CardContent>
-          </Card>
+          <div className="relative h-80 md:h-full min-h-[360px] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/img/community-tech.jpg"
+              alt="Comunidad guatemalteca y tecnología - NeuralCodeLab impacto en comunidades indígenas"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
