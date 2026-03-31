@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Mail, Globe, HeartHandshake } from 'lucide-react';
 import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -14,17 +15,29 @@ export default async function ContactContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="max-w-3xl text-center mx-auto">
-          <div className="inline-flex items-center justify-center p-3 bg-muted rounded-full mb-6">
-            <Globe size={24} className="text-foreground" />
+      <section className="relative overflow-hidden rounded-2xl mx-6 mt-8 group">
+        <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <Image
+            src="/img/contact-bg.webp"
+            alt="NeuralCodeLab - Conectando comunidades con tecnología"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-28 md:py-36 text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="inline-flex items-center justify-center p-3 bg-muted/80 rounded-full mb-6">
+              <Globe size={24} className="text-foreground" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              {t('contact.hero')}
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              {t('contact.description')}
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            {t('contact.hero')}
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            {t('contact.description')}
-          </p>
         </div>
       </section>
 

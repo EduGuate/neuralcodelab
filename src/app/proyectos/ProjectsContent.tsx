@@ -40,8 +40,18 @@ export default function ProjectsContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative py-24 overflow-hidden border-b bg-muted/30">
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden rounded-2xl mx-6 mt-8 group">
+        <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <Image
+            src="/img/projects-bg.webp"
+            alt="NeuralCodeLab - Proyectos de tecnología para comunidades"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-28 md:py-36 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-8 tracking-tight">
               {t('projects.hero').split(' ')[0]} <span className="text-primary">{t('projects.hero').split(' ').slice(1).join(' ')}</span>

@@ -37,16 +37,26 @@ export default async function NosotrosContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <section className="relative overflow-hidden rounded-2xl mx-6 mt-8 group">
+        <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <Image
+            src="/img/about-bg.webp"
+            alt="NeuralCodeLab - Software libre para comunidades"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-28 md:py-36">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5">
               <Code2 className="w-4 h-4" /> {t('home.badge')}
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               {t('about.hero')}
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               {t('about.missionDesc')}
             </p>
           </div>

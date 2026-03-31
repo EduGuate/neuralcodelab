@@ -66,9 +66,19 @@ export default async function Page() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+      <section className="relative overflow-hidden rounded-2xl mx-6 mt-8 group">
+        <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
+          <Image
+            src="/img/hero-bg.webp"
+            alt="NeuralCodeLab - IA y tecnología con identidad cultural guatemalteca"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-8 py-28 md:py-36">
+          <div className="max-w-2xl">
             <Badge variant="secondary" className="mb-4">
               {t('home.badge')}
             </Badge>
@@ -83,16 +93,6 @@ export default async function Page() {
                 {t('home.exploreSolutions')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
-          <div className="relative h-80 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
-            <Image
-              src="/img/hero-home.jpg"
-              alt="NeuralCodeLab - IA y tecnología con identidad cultural guatemalteca"
-              fill
-              className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-              priority
-            />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         </div>
       </section>
