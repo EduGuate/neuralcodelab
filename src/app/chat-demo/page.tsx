@@ -49,28 +49,40 @@ export default function ChatServicesPage() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-foreground/10 via-transparent to-transparent opacity-30"></div>
 
                 <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5 border-primary-foreground/20">
-                            <Bot className="w-4 h-4" />
-                            {t('chatServices.badge')}
-                        </Badge>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                            {t('chatServices.hero')}
-                        </h1>
-                        <p className="text-xl text-primary-foreground/80 mb-10 leading-relaxed max-w-3xl mx-auto">
-                            {t('chatServices.description')}
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg">
-                                <Link href="/contacto">
-                                    <MessageSquare size={20} /> {t('chatServices.tryChatNow')}
-                                </Link>
-                            </Button>
-                            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 hover:bg-primary-foreground/10 px-8 py-6 text-lg">
-                                <a href="#como-funciona">
-                                    {t('chatServices.howItWorks')}
-                                </a>
-                            </Button>
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Badge variant="secondary" className="mb-6 gap-2 px-4 py-1.5 border-primary-foreground/20">
+                                <Bot className="w-4 h-4" />
+                                {t('chatServices.badge')}
+                            </Badge>
+                            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                                {t('chatServices.hero')}
+                            </h1>
+                            <p className="text-xl text-primary-foreground/80 mb-10 leading-relaxed">
+                                {t('chatServices.description')}
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button asChild size="lg" variant="secondary" className="gap-2 px-8 py-6 text-lg">
+                                    <Link href="/contacto">
+                                        <MessageSquare size={20} /> {t('chatServices.tryChatNow')}
+                                    </Link>
+                                </Button>
+                                <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 hover:bg-primary-foreground/10 px-8 py-6 text-lg">
+                                    <a href="#como-funciona">
+                                        {t('chatServices.howItWorks')}
+                                    </a>
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="relative h-72 md:h-[420px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                            <Image
+                                src="/img/chat-demo-ui.jpg"
+                                alt="Interfaz de chatbot IA - widget de conversación automatizada para sitios web"
+                                fill
+                                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                                priority
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         </div>
                     </div>
                 </div>

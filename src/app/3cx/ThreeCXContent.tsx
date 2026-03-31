@@ -66,29 +66,33 @@ export default function ThreeCXContent() {
                             </div>
                         </div>
 
-                        <div className="relative">
-                            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-primary-foreground shadow-2xl">
-                                <CardHeader className="flex flex-row items-center gap-4">
-                                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                                        <Phone className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="font-bold text-xl">{t('threeCX.demoLineActive')}</p>
-                                        <p className="text-primary-foreground/70 text-sm">{t('threeCX.trySystemNow')}</p>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="bg-white/5 rounded-2xl p-6 mb-6 border border-white/10">
-                                        <p className="text-sm text-primary-foreground/70 mb-2">{t('threeCX.demoNumber')}</p>
-                                        <a href="tel:+15674061261" className="text-3xl md:text-4xl font-bold hover:text-white transition-colors block">
+                        <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                            <Image
+                                src="/img/3cx-system.jpg"
+                                alt="Sistema de telefonía empresarial 3CX - panel de control y gestión de llamadas"
+                                fill
+                                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                                priority
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+                            <div className="absolute bottom-4 left-4 right-4">
+                                <Card className="bg-white/10 backdrop-blur-md border-white/20 text-primary-foreground shadow-2xl">
+                                    <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                                            <Phone className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-lg">{t('threeCX.demoLineActive')}</p>
+                                            <p className="text-primary-foreground/70 text-xs">{t('threeCX.trySystemNow')}</p>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="pt-0">
+                                        <a href="tel:+15674061261" className="text-2xl md:text-3xl font-bold hover:text-white transition-colors block">
                                             +1 567 406 1261
                                         </a>
-                                    </div>
-                                    <p className="text-sm text-primary-foreground/80 italic">
-                                        {t('threeCX.demoQualityDesc')}
-                                    </p>
-                                </CardContent>
-                            </Card>
+                                    </CardContent>
+                                </Card>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -84,14 +84,15 @@ export default async function Page() {
               </Link>
             </Button>
           </div>
-          <div className="relative h-80 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-80 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
             <Image
               src="/img/hero-home.jpg"
               alt="NeuralCodeLab - IA y tecnología con identidad cultural guatemalteca"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
               priority
             />
+            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         </div>
       </section>
