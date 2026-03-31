@@ -1,6 +1,7 @@
 export interface Project {
+  id: string; // Added ID for translation lookups
   title: string;
-  description: string;
+  descriptionKey: string; // Key for translations.json
   liveUrl: string;
   githubUrl: string;
   imageUrl: string;
@@ -10,13 +11,14 @@ export interface Project {
 
 export interface Category {
   id: string;
-  nombre: string;
+  nombreKey: string; // Key for translations.json
 }
 
 export const proyectos: Project[] = [
   {
+    id: "cv",
     title: "My Professional CV",
-    description: "Personal curriculum vitae website showcasing professional experience, skills, and projects in a minimalist and elegant design.",
+    descriptionKey: "projects.items.cv.description",
     liveUrl: "https://mycven.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/CurriculumViateWebsite",
     imageUrl: "/img/cv-website.png",
@@ -24,8 +26,9 @@ export const proyectos: Project[] = [
     category: "business"
   },
   {
+    id: "uml",
     title: "Neural UML Studio",
-    description: "AI-powered UML visualization tool that transforms architectural thoughts into diagrams instantly. Features a neural engine for real-time relationship suggestions and live visualization.",
+    descriptionKey: "projects.items.uml.description",
     liveUrl: "https://neuralumlstudio.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/neuralumlstudio",
     imageUrl: "/img/neural-uml-studio.png",
@@ -33,8 +36,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "scraper",
     title: "NeuraL Scraper",
-    description: "High-performance web scraping and monitoring tool with a retro-futuristic terminal UI. Features automatic proxy rotation, real-time data visualization, and stealth extraction capabilities.",
+    descriptionKey: "projects.items.scraper.description",
     liveUrl: "https://scraper.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/neural_scraper",
     imageUrl: "/img/neural-scraper.png",
@@ -42,8 +46,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "ridemotohub",
     title: "RideMotoHub",
-    description: "Central community hub for motorcyclists in Guatemala. Features routes, events, tips, and a high-performance blog built with Astro.",
+    descriptionKey: "projects.items.ridemotohub.description",
     liveUrl: "https://ridemotohub.com/",
     githubUrl: "https://github.com/devlewiso/ridemotohub",
     imageUrl: "/img/ridemotohub.png",
@@ -51,8 +56,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "infra",
     title: "Infrastructure Lab",
-    description: "Production-grade homelab for experimenting with AI, DevOps, and secure access. Features zero-trust architecture, local AI inference, and infrastructure observability.",
+    descriptionKey: "projects.items.infra.description",
     liveUrl: "https://infra.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/infra-lab.png",
@@ -60,8 +66,9 @@ export const proyectos: Project[] = [
     category: "infrastructure"
   },
   {
+    id: "oryx-studio",
     title: "Oryx Studio",
-    description: "Efficient natural language to Oryx token translator.",
+    descriptionKey: "projects.items.oryx_studio.description",
     liveUrl: "https://oryx-studio.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/oryx-parser",
     imageUrl: "/img/oryx-studio.png",
@@ -69,8 +76,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "oryx-parser",
     title: "Oryx Parser",
-    description: "Efficient natural language to Oryx token translator.",
+    descriptionKey: "projects.items.oryx_parser.description",
     liveUrl: "https://oryx-parser.neuralcodelab.com/",
     githubUrl: "https://oryx-parser.neuralcodelab.com/",
     imageUrl: "/img/oryx-parser.png",
@@ -78,8 +86,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "ets",
     title: "ETS Steam Carpet Cleaning",
-    description: "Professional carpet cleaning service website with booking system.",
+    descriptionKey: "projects.items.ets.description",
     liveUrl: "https://etsteamcarpetcleaning.com/",
     githubUrl: "https://github.com/devlewiso/etcc",
     imageUrl: "/img/ets-carpet.png",
@@ -87,8 +96,9 @@ export const proyectos: Project[] = [
     category: "business"
   },
   {
+    id: "data-tool",
     title: "Data Tool",
-    description: "A tool for data analysis and visualization.",
+    descriptionKey: "projects.items.data_tool.description",
     liveUrl: "https://datasightool.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/DataSight",
     imageUrl: "/img/data-tool.png",
@@ -96,8 +106,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "cleancarpro",
     title: "CleanCarPro GT Landing Page",
-    description: "Landing page for a car cleaning service.",
+    descriptionKey: "projects.items.cleancarpro.description",
     liveUrl: "https://cleancarprogt.shop/",
     githubUrl: "",
     imageUrl: "/img/cleancarprogt.png",
@@ -105,8 +116,9 @@ export const proyectos: Project[] = [
     category: "business"
   },
   {
+    id: "retrox",
     title: "RetroX Gaming Landing Page",
-    description: "Landing page for a retro gaming platform.",
+    descriptionKey: "projects.items.retrox.description",
     liveUrl: "https://retrox.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/retrox-gaming.png",
@@ -114,8 +126,9 @@ export const proyectos: Project[] = [
     category: "entertainment"
   },
   {
+    id: "skatevibes",
     title: "SkateVibes Landing Page",
-    description: "Landing page for a skateboarding community.",
+    descriptionKey: "projects.items.skatevibes.description",
     liveUrl: "https://skatevibes.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/skatevibes.png",
@@ -123,8 +136,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "sport",
     title: "Sport Landing Page",
-    description: "Landing page for a sports-related product or service.",
+    descriptionKey: "projects.items.sport.description",
     liveUrl: "https://eclectic-jalebi-ffb392.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/sport-landing.png",
@@ -132,8 +146,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "techpro",
     title: "TechProFree Landing Page",
-    description: "Landing page for a tech-related product or service.",
+    descriptionKey: "projects.items.techpro.description",
     liveUrl: "https://techprofree.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/techprofree.png",
@@ -141,8 +156,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "slimvita",
     title: "SlimVita",
-    description: "A platform for health and wellness tips.",
+    descriptionKey: "projects.items.slimvita.description",
     liveUrl: "https://slimvita.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/slimvita.png",
@@ -150,8 +166,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "learn-mayan",
     title: "Learn Mayan Languages",
-    description: "Learn the ancestral languages of Guatemala in a fun and free way!",
+    descriptionKey: "projects.items.learn_mayan.description",
     liveUrl: "https://phenomenal-gnome-b602ac.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/learn-mayan.png",
@@ -159,8 +176,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "moonpug",
     title: "MoonPug Token",
-    description: "A landing page for a cryptocurrency token.",
+    descriptionKey: "projects.items.moonpug.description",
     liveUrl: "https://beautiful-croissant-631a28.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/moonpug-token.png",
@@ -168,8 +186,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "movies",
     title: "Movies Searcher",
-    description: "A platform to search and discover movies.",
+    descriptionKey: "projects.items.movies.description",
     liveUrl: "",
     githubUrl: "",
     imageUrl: "/img/movies-searcher.png",
@@ -177,8 +196,9 @@ export const proyectos: Project[] = [
     category: "business"
   },
   {
+    id: "water",
     title: "Water Landing Page",
-    description: "Landing page for a water-related product or service.",
+    descriptionKey: "projects.items.water.description",
     liveUrl: "https://delicate-crisp-c5f8e3.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/water-landing.png",
@@ -186,8 +206,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "wedding",
     title: "Wedding Assistance Landing Page",
-    description: "Landing page for wedding planning services.",
+    descriptionKey: "projects.items.wedding.description",
     liveUrl: "https://classy-donut-0c9792.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/wedding-landing.png",
@@ -195,8 +216,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "random-yt",
     title: "Random YouTube Landing Page",
-    description: "A fun landing page for discovering random YouTube videos.",
+    descriptionKey: "projects.items.random_yt.description",
     liveUrl: "https://randomyd.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/random-youtube.png",
@@ -204,8 +226,9 @@ export const proyectos: Project[] = [
     category: "entertainment"
   },
   {
+    id: "img-webp",
     title: "Image to WebP",
-    description: "A tool to convert images to WebP format.",
+    descriptionKey: "projects.items.img_webp.description",
     liveUrl: "https://pixelflow.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/image-to-webp.png",
@@ -213,8 +236,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "life-path",
     title: "Life Path Number Calculator",
-    description: "A tool to calculate your life path number based on numerology.",
+    descriptionKey: "projects.items.life_path.description",
     liveUrl: "https://numerodevida.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/life-path-calculator.png",
@@ -222,8 +246,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "healthtrack",
     title: "HealthTrack Website",
-    description: "A platform to track health and fitness progress.",
+    descriptionKey: "projects.items.healthtrack.description",
     liveUrl: "https://healthtrackfit.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/healthtrack.png",
@@ -231,8 +256,9 @@ export const proyectos: Project[] = [
     category: "lifestyle"
   },
   {
+    id: "astromaya",
     title: "AstroMaya Mayan Languages",
-    description: "A platform to learn Mayan languages.",
+    descriptionKey: "projects.items.astromaya.description",
     liveUrl: "https://astromaya.neuralcodelab.com/",
     githubUrl: "https://github.com/neuralcodelab/astromaya",
     imageUrl: "/img/astromaya.png",
@@ -240,8 +266,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "kidols5",
     title: "K-Idols Kids Learning",
-    description: "Interactive learning platform for 5-year-old children.",
+    descriptionKey: "projects.items.kidols5.description",
     liveUrl: "https://k-idols.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/k-idols-5.png",
@@ -249,8 +276,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "kidols6",
     title: "K-Idols Warriors (6 Years)",
-    description: "Learning adventure for 6-year-old children.",
+    descriptionKey: "projects.items.kidols6.description",
     liveUrl: "https://k-idols6.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/k-idols-6.png",
@@ -258,8 +286,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "ksaber7",
     title: "K-Saber Maya Guardians (7 Years)",
-    description: "Discover the secrets of Mayan education. 7-year-old edition.",
+    descriptionKey: "projects.items.ksaber7.description",
     liveUrl: "https://k-idols7.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/k-saber-7.png",
@@ -267,8 +296,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "ksaber8",
     title: "K-Saber Maya Guardians (8 Years)",
-    description: "Become a guardian of Mayan knowledge. 8-year-old edition.",
+    descriptionKey: "projects.items.ksaber8.description",
     liveUrl: "https://k-idols8.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/k-saber-8.png",
@@ -276,8 +306,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "camilakids",
     title: "CamilaKids",
-    description: "Welcome to the Learning World! An educational project by neuralcodelab.com. Learn vowels, the alphabet, numbers and mathematics in a fun way.",
+    descriptionKey: "projects.items.camilakids.description",
     liveUrl: "https://camilakids.netlify.app/",
     githubUrl: "",
     imageUrl: "/img/camilakids.png",
@@ -285,8 +316,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "load-balancer",
     title: "Load Balancer Simulator",
-    description: "Load balancer simulator.",
+    descriptionKey: "projects.items.load_balancer.description",
     liveUrl: "https://simuladordebalanceadordecarga.neuralcodelab.com/",
     githubUrl: "",
     imageUrl: "/img/load-balancer.png",
@@ -294,8 +326,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "rabbitmq",
     title: "Interactive RabbitMQ (AMQP) vs. Kafka Simulator",
-    description: "Interactive simulator to compare RabbitMQ and Kafka messaging systems.",
+    descriptionKey: "projects.items.rabbitmq.description",
     liveUrl: "https://simuladorkafka.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/RabbitmqSimulator",
     imageUrl: "/img/rabbitmq-kafka.png",
@@ -303,8 +336,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "kafka",
     title: "Kafka Simulator",
-    description: "Interactive Kafka messaging system simulator.",
+    descriptionKey: "projects.items.kafka.description",
     liveUrl: "https://simuladorkafka.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/kafkaSimulator",
     imageUrl: "/img/kafka-simulator.png",
@@ -312,8 +346,9 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
+    id: "ri-nim",
     title: "Ri Nïm Ch'ab'äl Q'aq'",
-    description: "Mayan culture and language educational platform.",
+    descriptionKey: "projects.items.ri_nim.description",
     liveUrl: "https://ri-n-m-ch-ab-l-q-aq.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/Ri-N-m-Ch-ab-l-Q-aq-",
     imageUrl: "/img/ri-nim.png",
@@ -321,8 +356,9 @@ export const proyectos: Project[] = [
     category: "education"
   },
   {
+    id: "magic-machine",
     title: "The Magic Creation Machine",
-    description: "Creative storytelling and content generation platform.",
+    descriptionKey: "projects.items.magic_machine.description",
     liveUrl: "https://lamaquinadecreacionmagica.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/La-M-quina-de-Creaci-n-M-gica",
     imageUrl: "/img/magic-machine.png",
@@ -332,11 +368,11 @@ export const proyectos: Project[] = [
 ];
 
 export const categorias: Category[] = [
-  { id: "all", nombre: "All Projects" },
-  { id: "business", nombre: "Business" },
-  { id: "tools", nombre: "Tools" },
-  { id: "infrastructure", nombre: "Infrastructure" },
-  { id: "entertainment", nombre: "Entertainment" },
-  { id: "lifestyle", nombre: "Lifestyle" },
-  { id: "education", nombre: "Education" }
+  { id: "all", nombreKey: "projects.categories.all" },
+  { id: "business", nombreKey: "projects.categories.business" },
+  { id: "tools", nombreKey: "projects.categories.tools" },
+  { id: "infrastructure", nombreKey: "projects.categories.infrastructure" },
+  { id: "entertainment", nombreKey: "projects.categories.entertainment" },
+  { id: "lifestyle", nombreKey: "projects.categories.lifestyle" },
+  { id: "education", nombreKey: "projects.categories.education" }
 ];

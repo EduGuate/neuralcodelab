@@ -1,5 +1,35 @@
 {
     "es": {
+        "seo": {
+            "home": {
+                "title": "Neural Code Lab | Software Libre & Tecnología Comunitaria en Guatemala",
+                "description": "Creamos plataformas digitales que respetan la identidad cultural y construyen un futuro digital inclusivo para comunidades indígenas en Guatemala."
+            },
+            "about": {
+                "title": "Sobre Nosotros | Misión y Valores de Neural Code Lab",
+                "description": "Conoce nuestra misión de crear software libre que beneficie a las comunidades y promueva la tecnología accesible en Guatemala."
+            },
+            "projects": {
+                "title": "Nuestros Proyectos | Soluciones Tecnológicas Comunitarias",
+                "description": "Explora nuestra cartera de proyectos, desde agrotecnología hasta educación bilingüe y herramientas de IA culturalmente adaptadas."
+            },
+            "contact": {
+                "title": "Contacto | Colabora con Neural Code Lab",
+                "description": "¿Tienes un proyecto comunitario en mente? Inicia una conversación con nosotros para tejer código con identidad cultural."
+            },
+            "contactCenter": {
+                "title": "Contact Center IA | Atención al Cliente Inteligente",
+                "description": "Transforma tu atención al cliente con agentes de IA conversacional que trabajan 24/7. Implementación completa con ElevenLabs y N8N."
+            },
+            "threeCX": {
+                "title": "Sistema Telefónico 3CX | Telefonía IP para Empresas",
+                "description": "Moderniza tu telefonía con 3CX. Central telefónica IP, videollamadas y chat unificado para empresas en Guatemala."
+            },
+            "privacyPolicy": {
+                "title": "Política de Privacidad | Neural Code Lab",
+                "description": "Detalles sobre cómo manejamos tus datos e información personal con total transparencia y seguridad."
+            }
+        },
         "header": {
             "home": "Inicio",
             "about": "Nosotros",
@@ -66,7 +96,7 @@
                     "role": "Directora de Escuela"
                 },
                 {
-                    "quote": "El sistema de monitoreo agrícola nos ayuda a predecir ciclos y mejorar la producción respetando tradiciones.",
+                    "quote": "El sistema de monitoreo agrícola nos ayuda a prever ciclos y mejorar la producción respetando tradiciones.",
                     "author": "Juan Tzul",
                     "role": "Agricultor"
                 },
@@ -81,7 +111,7 @@
             "hero": "Tejiendo Código con las Comunidades",
             "description": "En NeuralCode, creamos herramientas digitales libres para preservar saberes ancestrales. ¿Tienes un proyecto comunitario? Hablemos.",
             "collaboration": "Colaboración Comunitaria",
-            "collaborationDesc": "Estamos comprometidos con el desarrollo tecnológico accesible. Ofrecemos:",
+            "collaborationDesc": "Estamos comprometidos con el desarrollo tecnológico accesible. Oferecemos:",
             "services": [
                 "Desarrollo de software libre para proyectos indígenas",
                 "Capacitación tecnológica en lenguas originarias",
@@ -150,6 +180,43 @@
                 "entertainment": "Entretenimiento",
                 "lifestyle": "Estilo de Vida",
                 "education": "Educación"
+            },
+            "items": {
+                "cv": { "description": "Sitio web de currículum profesional que muestra experiencia, habilidades y proyectos con un diseño minimalista y elegante." },
+                "uml": { "description": "Herramienta de visualización UML impulsada por IA que transforma pensamientos arquitectónicos en diagramas instantáneamente." },
+                "scraper": { "description": "Herramienta de monitoreo y web scraping de alto rendimiento con una interfaz de terminal retro-futurista." },
+                "ridemotohub": { "description": "Centro comunitario central para motociclistas en Guatemala. Incluye rutas, eventos, consejos y un blog de alto rendimiento." },
+                "infra": { "description": "Laboratorio doméstico de grado de producción para experimentar con IA, DevOps y acceso seguro." },
+                "oryx_studio": { "description": "Traductor eficiente de lenguaje natural a tokens Oryx." },
+                "oryx_parser": { "description": "Analizador y traductor eficiente para el lenguaje Oryx." },
+                "ets": { "description": "Sitio web de servicio profesional de limpieza de alfombras con sistema de reservas." },
+                "data_tool": { "description": "Una herramienta para el análisis y la visualización de datos." },
+                "cleancarpro": { "description": "Página de destino para un servicio de limpieza de automóviles." },
+                "retrox": { "description": "Página de destino para una plataforma de juegos retro." },
+                "skatevibes": { "description": "Página de destino para una comunidad de skate." },
+                "sport": { "description": "Página de destino para un producto o servicio relacionado con el deporte." },
+                "techpro": { "description": "Página de destino para un producto o servicio relacionado con la tecnología." },
+                "slimvita": { "description": "Una plataforma para consejos de salud y bienestar." },
+                "learn_mayan": { "description": "¡Aprende los idiomas ancestrales de Guatemala de una manera divertida y gratuita!" },
+                "moonpug": { "description": "Una página de destino para un token de criptomoneda." },
+                "movies": { "description": "Una plataforma para buscar y descubrir películas." },
+                "water": { "description": "Página de destino para un producto o servicio relacionado con el agua." },
+                "wedding": { "description": "Página de destino para servicios de planificación de bodas." },
+                "random_yt": { "description": "Una divertida página de destino para descubrir videos aleatorios de YouTube." },
+                "img_webp": { "description": "Una herramienta para convertir imágenes al formato WebP." },
+                "life_path": { "description": "Una herramienta para calcular tu número de camino de vida basado en numerología." },
+                "healthtrack": { "description": "Una plataforma para seguir el progreso de salud y estado físico." },
+                "astromaya": { "description": "Una plataforma para aprender idiomas mayas." },
+                "kidols5": { "description": "Plataforma de aprendizaje interactivo para niños de 5 años." },
+                "kidols6": { "description": "Aventura de aprendizaje para niños de 6 años." },
+                "ksaber7": { "description": "Descubre los secretos de la educación maya. Edición para 7 años." },
+                "ksaber8": { "description": "Conviértete en un guardián del conocimiento maya. Edición para 8 años." },
+                "camilakids": { "description": "¡Bienvenidos al Mundo del Aprendizaje! Aprende vocales, el alfabeto, números y matemáticas." },
+                "load_balancer": { "description": "Simulador de balanceador de carga." },
+                "rabbitmq": { "description": "Simulador interactivo para comparar los sistemas de mensajería RabbitMQ y Kafka." },
+                "kafka": { "description": "Simulador interactivo del sistema de mensajería Kafka." },
+                "ri_nim": { "description": "Plataforma educativa de cultura e idiomas mayas." },
+                "magic_machine": { "description": "Plataforma de generación de contenido y narración creativa." }
             }
         },
         "contactCenter": {
@@ -181,7 +248,7 @@
             "badge": "Sistema de Comunicaciones Profesional",
             "hero": "3CX Gratis en tu Teléfono",
             "description": "Transforma tu smartphone en un sistema telefónico empresarial. Te ayudo a configurar 3CX gratis y a integrarlo en tu negocio.",
-            "callNow": "Llamar Ahora",
+            "callNow": "Lamar Ahora",
             "viewDemo": "Ver Demo",
             "demoLineActive": "Línea Demo Activa",
             "trySystemNow": "Prueba el sistema ahora",
@@ -404,6 +471,36 @@
         }
     },
     "en": {
+        "seo": {
+            "home": {
+                "title": "Neural Code Lab | Free Software & Community Technology in Guatemala",
+                "description": "We create digital platforms that respect cultural identity and build an inclusive digital future for indigenous communities in Guatemala."
+            },
+            "about": {
+                "title": "About Us | Mission and Values of Neural Code Lab",
+                "description": "Learn about our mission to create free software that benefits communities and promotes accessible technology in Guatemala."
+            },
+            "projects": {
+                "title": "Our Projects | Community Technological Solutions",
+                "description": "Explore our project portfolio, from agrotechnology to bilingual education and culturally adapted AI tools."
+            },
+            "contact": {
+                "title": "Contact | Collaborate with Neural Code Lab",
+                "description": "Have a community project in mind? Start a conversation with us to weave code with cultural identity."
+            },
+            "contactCenter": {
+                "title": "AI Contact Center | Intelligent Customer Service",
+                "description": "Transform your customer service with conversational AI agents that work 24/7. Full implementation with ElevenLabs and N8N."
+            },
+            "threeCX": {
+                "title": "3CX Phone System | IP Telephony for Business",
+                "description": "Modernize your telephony with 3CX. IP PBX, video calls, and unified chat for businesses in Guatemala."
+            },
+            "privacyPolicy": {
+                "title": "Privacy Policy | Neural Code Lab",
+                "description": "Details on how we handle your data and personal information with total transparency and security."
+            }
+        },
         "header": {
             "home": "Home",
             "about": "About",
@@ -554,6 +651,43 @@
                 "entertainment": "Entertainment",
                 "lifestyle": "Lifestyle",
                 "education": "Education"
+            },
+            "items": {
+                "cv": { "description": "Personal curriculum vitae website showcasing professional experience, skills, and projects in a minimalist and elegant design." },
+                "uml": { "description": "AI-powered UML visualization tool that transforms architectural thoughts into diagrams instantly." },
+                "scraper": { "description": "High-performance web scraping and monitoring tool with a retro-futuristic terminal UI." },
+                "ridemotohub": { "description": "Central community hub for motorcyclists in Guatemala. Features routes, events, tips, and a high-performance blog." },
+                "infra": { "description": "Production-grade homelab for experimenting with AI, DevOps, and secure access." },
+                "oryx_studio": { "description": "Efficient natural language to Oryx token translator." },
+                "oryx_parser": { "description": "Efficient parser and translator for the Oryx language." },
+                "ets": { "description": "Professional carpet cleaning service website with booking system." },
+                "data_tool": { "description": "A tool for data analysis and visualization." },
+                "cleancarpro": { "description": "Landing page for a car cleaning service." },
+                "retrox": { "description": "Landing page for a retro gaming platform." },
+                "skatevibes": { "description": "Landing page for a skateboarding community." },
+                "sport": { "description": "Landing page for a sports-related product or service." },
+                "techpro": { "description": "Landing page for a tech-related product or service." },
+                "slimvita": { "description": "A platform for health and wellness tips." },
+                "learn_mayan": { "description": "Learn the ancestral languages of Guatemala in a fun and free way!" },
+                "moonpug": { "description": "A landing page for a cryptocurrency token." },
+                "movies": { "description": "A platform to search and discover movies." },
+                "water": { "description": "Landing page for a water-related product or service." },
+                "wedding": { "description": "Landing page for wedding planning services." },
+                "random_yt": { "description": "A fun landing page for discovering random YouTube videos." },
+                "img_webp": { "description": "A tool to convert images to WebP format." },
+                "life_path": { "description": "A tool to calculate your life path number based on numerology." },
+                "healthtrack": { "description": "A platform to track health and fitness progress." },
+                "astromaya": { "description": "A platform to learn Mayan languages." },
+                "kidols5": { "description": "Interactive learning platform for 5-year-old children." },
+                "kidols6": { "description": "Learning adventure for 6-year-old children." },
+                "ksaber7": { "description": "Discover the secrets of Mayan education. 7-year-old edition." },
+                "ksaber8": { "description": "Become a guardian of Mayan knowledge. 8-year-old edition." },
+                "camilakids": { "description": "Welcome to the Learning World! Learn vowels, the alphabet, numbers and mathematics." },
+                "load_balancer": { "description": "Load balancer simulator." },
+                "rabbitmq": { "description": "Interactive simulator to compare RabbitMQ and Kafka messaging systems." },
+                "kafka": { "description": "Interactive Kafka messaging system simulator." },
+                "ri_nim": { "description": "Mayan culture and language educational platform." },
+                "magic_machine": { "description": "Creative storytelling and content generation platform." }
             }
         },
         "contactCenter": {
@@ -805,806 +939,6 @@
             "donationsDetail": "Donations are used exclusively for the development and maintenance of our applications. You can make a donation through our Patreon page.",
             "transparencyTitle": "Transparency",
             "transparencyDesc": "We will publish periodic reports on how donations are used to ensure transparency and accountability in the use of funds."
-        }
-    },
-    "pt": {
-        "header": {
-            "home": "Início",
-            "about": "Sobre",
-            "projects": "Projetos",
-            "contact": "Contato",
-            "infrastructure": "Infraestrutura",
-            "contactCenter": "Contact Center",
-            "chatServices": "Dialogflow"
-        },
-        "footer": {
-            "description": "Promovendo software livre na Guatemala para fortalecer comunidades e oferecer oportunidades para quem deseja aprender e crescer em tecnologia.",
-            "quickLinks": "Links Rápidos",
-            "followUs": "Siga-nos",
-            "copyright": "Tecnologia com propósito cultural."
-        },
-        "home": {
-            "badge": "Tecnologia com propósito cultural",
-            "hero": "Plataformas digitais para comunidades",
-            "description": "Criamos soluções tecnológicas que respeitam a identidade cultural enquanto construímos um futuro digital más inclusivo para comunidades indígenas.",
-            "exploreSolutions": "Explorar soluciones",
-            "ourSolutions": "Nuestras soluciones",
-            "solutionsDesc": "Tecnologia projetada para responder a necesidades reais",
-            "realImpact": "Impacto real",
-            "buildTogether": "Vamos construir juntos",
-            "joinMission": "Junte-se à nossa missão de criar tecnologia que potencialize a identidade cultural",
-            "contactUs": "Contate-nos",
-            "features": {
-                "agro": {
-                    "title": "Agrotecnologia Maia",
-                    "description": "Sistemas inteligentes para agricultura sustentável baseados em conhecimentos ancestrais."
-                },
-                "edu": {
-                    "title": "Educação Bilíngue",
-                    "description": "Plataformas que preservam línguas maias com tecnologia avanzada."
-                },
-                "ia": {
-                    "title": "IA Culturalmente Adaptada",
-                    "description": "Inteligencia artificial que incorpora visão de mundo e valores culturais."
-                },
-                "preservation": {
-                    "title": "Preservação Digital",
-                    "description": "Digitalização segura de conhecimentos tradicionais."
-                },
-                "sustainable": {
-                    "title": "Computação Sustentável",
-                    "description": "Infraestrutura optimizada para bajo consumo e acesso rural."
-                },
-                "dev": {
-                    "title": "Desenvolvimento Comunitário",
-                    "description": "Formação em programação para jovens indígenas."
-                }
-            },
-            "stats": {
-                "languages": "Línguas Maias",
-                "projects": "Projetos",
-                "communities": "Comunidades",
-                "youth": "Jovens Capacitados"
-            },
-            "testimonials": [
-                {
-                    "quote": "A plataforma educacional transformou nossa escola, permitindo o aprendizado em espanhol e q'eqchi'.",
-                    "author": "María Caal",
-                    "role": "Diretora de Escola"
-                },
-                {
-                    "quote": "O sistema de monitoramento agrícola nos ajuda a prever ciclos e mejorar a produção respeitando as tradições.",
-                    "author": "Juan Tzul",
-                    "role": "Agricultor"
-                },
-                {
-                    "quote": "Jovens de nossa comunidade agora desenvolvem soluções tecnológicas para nossos desafíos.",
-                    "author": "Pedro Ixcoy",
-                    "role": "Líder Comunitário"
-                }
-            ]
-        },
-        "contact": {
-            "hero": "Tecendo Código com as Comunidades",
-            "description": "Na NeuralCode, criamos ferramentas digitais livres para preservar saberes ancestrais. Tem um projeto comunitário? Vamos conversar.",
-            "collaboration": "Colaboração Comunitaria",
-            "collaborationDesc": "Estamos comprometidos com o desenvolvimento tecnológico acessível. Oferecemos:",
-            "services": [
-                "Desenvolvimento de software livre para proyectos indígenas",
-                "Capacitação tecnológica em línguas nativas",
-                "Plataformas para documentação cultural"
-            ],
-            "availableLanguages": "Idiomas disponíveis",
-            "startConversation": "Inicie uma conversa",
-            "conversationDesc": "Conte-nos sobre seu projeto ou ideia. Estamos aqui para ouvir e colaborar.",
-            "sendEmail": "Enviar E-mail",
-            "responseTime": "Geralmente respondemos em 24-48 horas",
-            "subject": "Projeto Comunitário"
-        },
-        "about": {
-            "hero": "Sobre o Neural Code Lab",
-            "mission": "Nuestra Missão",
-            "missionDesc": "Criar software livre que beneficie as comunidades e pessoas interessadas em tecnologia, tornando as ferramentas acessíveis e úteis para todos.",
-            "highlights": [
-                "Desenvolvimento de plataformas digitais personalizadas",
-                "Capacitación tecnológica em comunidades",
-                "Preservação cultural através da tecnologia",
-                "Promoción do software livre na Guatemala"
-            ],
-            "globalImpact": "Impacto Global, Raíces Locales",
-            "globalImpactDesc": "Da Guatemala, trabalhamos com comunidades indígenas para criar soluções tecnológicas que respeitam e potencializam sua identidade cultural, enquanto construímos um futuro digital mais inclusivo.",
-            "valuesTitle": "Nossos Valores",
-            "valuesSubtitle": "Os princípios que guiam cada projeto e decisión que tomamos",
-            "values": {
-                "innovation": {
-                    "title": "Inovação",
-                    "desc": "Buscamos constantemente novas formas de resolver problemas comunitários com tecnologia de ponta."
-                },
-                "transparency": {
-                    "title": "Transparência",
-                    "desc": "Código aberto e processos claros para gerar confianza e colaboración em cada proyecto."
-                },
-                "collaboration": {
-                    "title": "Colaboração",
-                    "desc": "Acreditamos no poder do trabalho em equipe e na construção de soluções junto com as comunidades."
-                }
-            },
-            "teamTitle": "Nossa Equipe",
-            "teamSubtitle": "Apaixonados por tecnologia e impacto social",
-            "memberBio": "Desenvolvedor apaixonado por criar tecnologia que empodera comunidades. Especializado em IA, desenvolvimento web e soluções de código aberto.",
-            "specialties": "Especialidades:",
-            "readyToCollaborate": "Pronto para colaborar?",
-            "collaborateDesc": "Junte-se à nossa missão de criar tecnologia que potencialize a identidade cultural e fortaleça as comunidades"
-        },
-        "projects": {
-            "hero": "Nuestros Projetos",
-            "heroDesc": "No Neural Code Lab, trabalhamos em projetos revolucionários que transformam a tecnologia em soluções acessíveis e eficazes para todos.",
-            "searchPlaceholder": "Pesquisar projetos...",
-            "allCategories": "Todos os Projetos",
-            "noProjects": "Nenhum projeto encontrado",
-            "tryAnotherSearch": "Tente outra pesquisa ou categoria",
-            "viewProject": "Ver Projeto",
-            "viewCode": "Ver Código",
-            "comingSoon": "Em breve",
-            "categories": {
-                "all": "Todos",
-                "business": "Negócios",
-                "tools": "Ferramentas",
-                "infrastructure": "Infraestrutura",
-                "entertainment": "Entretenimento",
-                "lifestyle": "Estilo de Vida",
-                "education": "Educação"
-            }
-        },
-        "contactCenter": {
-            "badge": "Powered by ElevenLabs AI",
-            "hero": "Contact Center Inteligente com IA",
-            "description": "Transforme seu atendimento ao cliente com agentes de IA conversacional que falam naturalmente, integram-se com seus sistemas e trabalham 24/7. Implementação completa com ElevenLabs e automação N8N.",
-            "requestDemo": "Solicitar Demo",
-            "viewServices": "Ver Serviços",
-            "servicesTitle": "Servicós de Contact Center com IA",
-            "servicesDesc": "Soluções completas para modernizar seu atendimento ao cliente com tecnologia de ponta",
-            "demoTitle": "Teste a Neuralie, nossa agente de IA",
-            "demoDesc": "Ligue para nossa línea demo e experimente a qualidade da Neuralie, nossa agente de IA conversacional com ElevenLabs. Disponível 24/7.",
-            "demoNumber": "Número de Demonstração",
-            "callNow": "Ligar Agora",
-            "location": "San Luis Obispo, CA, EUA",
-            "available247": "Disponível 24/7",
-            "aiPowered": "Powered by ElevenLabs AI",
-            "capabilitiesTitle": "Capacidades da Plataforma ElevenLabs",
-            "capabilitiesDesc": "Tudo o que você precisa para construir, implantar e otimizar agentes de IA em escala",
-            "n8nTitle": "Integração com N8N",
-            "n8nDesc": "Conecto seus agentes de IA com qualquer sistema usando workflows visuais sem código",
-            "whyChoose": "Por que escolher meus serviços?",
-            "whyChooseDesc": "Não apenas implemento a tecnologia, acompanho você em todo o processo para garantir que seu contact center com IA seja um sucesso.",
-            "implementationProcess": "Meu Processo de Implementação",
-            "readyToRevolutionize": "Pronto para revolucionar seu atendimento ao cliente?",
-            "readyToRevolutionizeDesc": "Agende uma demo personalizada e descubra como um contact center com IA pode transformar seu negócio."
-        },
-        "threeCX": {
-            "badge": "Sistema de Comunicações Profissional",
-            "hero": "3CX Grátis no seu Telefone",
-            "description": "Transforme seu smartphone em um sistema telefónico empresarial. Eu ajudo você a configurar o 3CX gratuitamente e a integrá-lo ao seu negócio.",
-            "callNow": "Ligar Agora",
-            "viewDemo": "Ver Demo",
-            "demoLineActive": "Linha Demo Activa",
-            "trySystemNow": "Teste o sistema agora",
-            "demoNumber": "Número de Demonstração:",
-            "demoQualityDesc": "Ligue para experimentar a qualidade do 3CX em tempo real",
-            "whyChoose": "Por que escolher o 3CX?",
-            "whyChooseDesc": "Um sistema completo de comunicações empresariais ao seu alcance",
-            "features": [
-                {
-                    "title": "3CX Grátis no seu Telefone",
-                    "description": "Configure o 3CX no seu smartphone Android ou iOS sem custos. Chamadas profissionais de qualquer lugar."
-                },
-                {
-                    "title": "Integração Empresarial",
-                    "description": "Orientamos você na implementação do 3CX no seu negócio, otimizando seu sistema de comunicações."
-                },
-                {
-                    "title": "Suporte Personalizado",
-                    "description": "Acompanhamento completo desde a instalação até a configuração avançada do seu sistema."
-                },
-                {
-                    "title": "Seguro e Confiável",
-                    "description": "Sistema de comunicações empresarial com criptografia e alta disponibilidade."
-                },
-                {
-                    "title": "Fácil de Usar",
-                    "description": "Interface intuitiva que não requer conhecimentos técnicos avançados para operar."
-                },
-                {
-                    "title": "Múltiplos Canais",
-                    "description": "Voz, vídeo, chat e SMS integrados em uma única plataforma de comunicação."
-                }
-            ],
-            "benefits": [
-                "Reduza os custos de telefonia em até 80%",
-                "Trabalhe de qualquer lugar com internet",
-                "Integração com CRM e ferramentas empresariais",
-                "Gravação de chamadas e análise de métricas",
-                "Ramais ilimitados de acordo com o seu plano",
-                "Suporte técnico em espanhol/inglês"
-            ],
-            "benefitsTitle": "Benefícios que transformam o seu negócio",
-            "benefitsDesc": "O 3CX não é apenas um sistema telefônico, é uma solução completa que moderniza a forma como você se comunica.",
-            "whatIncluded": "O que está incluído na sua configuração:",
-            "steps": [
-                {
-                    "title": "Instalação no seu dispositivo",
-                    "desc": "App configurada e pronta para usar"
-                },
-                {
-                    "title": "Treinamento básico",
-                    "desc": "Aprenda a usar todas as funções"
-                },
-                {
-                    "title": "Suporte inicial",
-                    "desc": "Assistência durante a configuração"
-                },
-                {
-                    "title": "Consultoria de integração",
-                    "desc": "Orientação para o seu negócio"
-                }
-            ],
-            "idealFor": "Ideal para todos os tipos de negócios",
-            "idealForDesc": "Não importa o tamanho da sua empresa, o 3CX se adapta às suas necessidades",
-            "useCases": [
-                {
-                    "title": "Pequenos Negócios",
-                    "description": "Profissionalize seu atendimento ao cliente sem investir em infraestrutura cara."
-                },
-                {
-                    "title": "Equipes Remotas",
-                    "description": "Mantenha sua equipe conectada, não importa onde estejam."
-                },
-                {
-                    "title": "Call Centers",
-                    "description": "Gerencie grandes volumes de chamadas com ferramentas profissionais."
-                },
-                {
-                    "title": "Empreendedores",
-                    "description": "Comece com uma linha profissional sem custos iniciais."
-                }
-            ],
-            "tryRightNow": "Teste o sistema agora mesmo",
-            "tryRightNowDesc": "Ligue para a nossa linha demo e experimente a qualidade do 3CX. Sem compromissos, apenas para você ver como funciona.",
-            "available247": "Disponível 24/7 • Ligação gratuita dos EUA.",
-            "modernizeToday": "Modernize sua comunicação empresarial hoje",
-            "modernizeDesc": "Não espere mais para ter um sistema telefônico profissional. É grátis, é fácil e eu ajudo você em todo o processo.",
-            "moreInfo": "Mais Informações"
-        },
-        "chatServices": {
-            "badge": "Powered by Dialogflow ES",
-            "hero": "Serviços de Chat para Ciberseguridad",
-            "description": "Experimente como a Neuralie, nossa agente de IA conversacional, pode ajudar seus clientes a entender serviços de segurança, avaliar riscos e se conectar com especialistas em tempo real.",
-            "tryChatNow": "Testar Chat Agora",
-            "howItWorks": "Como Funciona?",
-            "featuresTitle": "O que este chatbot pode fazer?",
-            "featuresDesc": "Projetado para AuraLink AI Security — consultas sobre serviços de ciberseguridad proativa",
-            "features": [
-                {
-                    "title": "Consultas de Segurança 24/7",
-                    "description": "Respostas instantâneas sobre serviços de cibersegurança, monitoramento AI, pentesting e proteção de infraestrutura crítica."
-                },
-                {
-                    "title": "Avaliação de Ameaças",
-                    "description": "Ajudamos a identificar vulnerabilidades potenciais e recomendamos serviços específicos com base no nível de risco."
-                },
-                {
-                    "title": "Informações sobre Monitoramento AI",
-                    "description": "Detalhes sobre como funciona o monitoramento 24/7 com aprendizado de máquina para detecção de anomalias em tempo real."
-                },
-                {
-                    "title": "Serviços de Pentesting",
-                    "description": "Informações sobre testes de penetração automatizados e validação manual por especialistas em segurança ética."
-                },
-                {
-                    "title": "Resposta a Incidentes",
-                    "description": "Guia sobre como ativar o serviço de resposta rápida a ameaças ativas e análise forense."
-                },
-                {
-                    "title": "CISO as a Service",
-                    "description": "Consultas sobre liderança estratégica em segurança, avaliações de risco e conformidade com a ISO 27001."
-                }
-            ],
-            "howItWorksTitle": "Como funciona o chatbot de segurança?",
-            "howItWorksDesc": "Um processo inteligente que conecta clientes a soluções de cibersegurança",
-            "steps": [
-                {
-                    "number": "1",
-                    "title": "Descreva sua situação",
-                    "description": "Identificamos se é uma consulta geral, avaliação de risco ou emergência ativa."
-                },
-                {
-                    "number": "2",
-                    "title": "Análise inteligente",
-                    "description": "Com base nas informações, recomendamos serviços específicos adaptados."
-                },
-                {
-                    "number": "3",
-                    "title": "Informações detalhadas",
-                    "description": "Receba detalhes sobre monitoramento por IA, pentesting, CISO as a Service, etc."
-                },
-                {
-                    "number": "4",
-                    "title": "Conexão com especialistas",
-                    "description": "Para casos complexos ou emergências, conectamos você a um especialista em cibersegurança."
-                }
-            ],
-            "liveDemoTitle": "Teste a Neuralie agora mesmo",
-            "liveDemoDesc": "Pergunte sobre monitoramento por IA, pentesting, response a incidentes ou CISO as a Service.",
-            "tryAsking": "💬 Tente perguntar:",
-            "poweredBy": "Powered by Google Dialogflow ES",
-            "searchIconDesc": "👇 Veja detalhes abaixo",
-            "automateTitle": "Automatize consultas de ciberseguridad",
-            "automateDesc": "Implementamos chatbots inteligentes para empresas de segurança que educam clientes, qualificam leads e se conectam com especialistas em tempo real.",
-            "benefits": [
-                "Respostas imediatas sobre serviços de cibersegurança",
-                "Avaliação preliminar das necessidades de segurança",
-                "Informações sobre preços e planos personalizados",
-                "Guia para ativar serviços de emergência",
-                "Disponibilidade 24/7 sem tempos de espera",
-                "Escalonamento direto para especialistas quando necessário"
-            ],
-            "wantChatbot": "Quer um chatbot assim para a sua empresa?",
-            "wantChatbotDesc": "Projetamos e implementamos chatbots com Dialogflow adaptados a serviços de ciberseguridad, compliance e consultoria técnica.",
-            "requestImplementation": "Solicitar Implementação",
-            "readyToAutomate": "Pronto para automatizar consultas de segurança?",
-            "readyToAutomateDesc": "Melhore a experiência de seus clientes com chatbots de IA especializados em ciberseguridad, compliance e serviços técnicos.",
-            "viewContactCenter": "Ver Contact Center com IA"
-        },
-        "policies": {
-            "privacyTitle": "Política de Privacidade",
-            "appPoliciesTitle": "Políticas de Aplicativos",
-            "privacyDesc": "No Neural Code Lab, sua privacidade é muito importante para nós. Esta política detalha como lidamos com seus dados e informações pessoais.",
-            "appPoliciesDesc": "Consulte as políticas de nossos aplicativos gratuitos e pagos.",
-            "privacyProtectionTitle": "Privacidade e Proteção de Dados",
-            "privacyProtectionDesc": "No Neural Code Lab, valorizamos sua privacidade e estamos comprometidos a proteger seus dados pessoais. Esta política de privacidade explica como coletamos, usamos e protegemos suas informações.",
-            "infoCollectionTitle": "Coleta de Informações",
-            "infoCollectionDesc": "Coletamos informações pessoais quando você se registra em nossos serviços, usa nossos aplicativos ou interage conosco. Essas informações podem incluir seu nome, endereço de e-mail e outras informações relevantes.",
-            "usageTitle": "Uso das Informações",
-            "usageDesc": "Usamos as informações coletadas para fornecer nossos serviços, melhorar nossos aplicativos e comunicar atualizações e ofertas relevantes.",
-            "dataProtectionTitle": "Proteção de Dados",
-            "dataProtectionDesc": "Implementamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração e divulgação.",
-            "userRightsTitle": "Direitos do Usuário",
-            "userRightsDesc": "Você tem o direito de acessar, corrigir e excluir suas informações pessoais. Você pode entrar em contato conosco a qualquer momento para exercer esses direitos.",
-            "section1Title": "1. Coleta de Informações",
-            "section1Desc": "Coletamos informações pessoais quando você se registra em nossos aplicativos, navega em nosso site ou faz uma compra. Essas informações podem incluir seu nome, endereço de e-mail e detalhes de pagamento no caso de aplicativos pagos.",
-            "cookiesDesc": "Usamos cookies e tecnologias semelhantes para melhorar a experiência do usuário e obter dados de navegação em nosso site.",
-            "section2Title": "2. Uso das Informações",
-            "section2Desc": "As informações coletadas são usadas para fornecer, manter e melhorar nossos serviços. Também podem ser usadas para personalizar sua experiência ou para fins de marketing direto, caso você tenha dado seu consentimento.",
-            "paymentDesc": "No caso de aplicativos pagos, as informações de pagamento são processadas com segurança por meio de plataformas de terceiros.",
-            "section3Title": "3. Aplicativos Gratuitos e Pagos",
-            "section3Desc": "Nossos aplicativos gratuitos funcionam sob um modelo de doações, e todas as informações fornecidas pelos usuários são tratadas com o mesmo sigilo que em nossos aplicativos pagos.",
-            "freeAppsTitle": "Aplicativos Gratuitos",
-            "freeAppsDesc": "Os aplicativos gratuitos são mantidos graças às contribuições da comunidade. Você pode nos apoiar por meio de plataformas como o Patreon.",
-            "paidAppsTitle": "Aplicativos Pagos",
-            "paidAppsDesc": "Os aplicativos pagos oferecem recursos avançados e suporte adicional. Todas as informações de pagamento são tratadas com segurança.",
-            "section4Title": "4. Compartilhamento de Informações",
-            "section4Desc": "Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros sem o seu consentimento, a menos que seja exigido por lei. Compartilhamos informações apenas com provedores de serviços que nos ajudam a operar nossos aplicativos, sempre sob rigorosos acordos de confidencialidade.",
-            "section5Title": "5. Segurança da Informação",
-            "section5Desc": "Implementamos uma variedade de medidas de segurança para garantir a proteção de suas informações pessoais. Usamos tecnologias de criptografia e sistemas de autenticação para proteger dados confidenciais.",
-            "downloadTitle": "Baixar Políticas Completas",
-            "downloadDesc": "Você pode baixar uma cópia completa de nossas políticas no seguinte link:",
-            "downloadButton": "Baixar PDF",
-            "termsTitle": "Termos de Serviço",
-            "termsGeneral": "Termos Gerais",
-            "termsDesc": "Ao usar nossos aplicativos, você aceita estes termos de serviço. Se você não concordar com algum destes termos, não deve usar nossos aplicativos.",
-            "useAppsTitle": "Uso de Aplicativos",
-            "useAppsDesc": "Nossos aplicativos são fornecidos para uso pessoal e não comercial. Você não deve modificar, copiar ou distribuir o software sem nossa permissão.",
-            "liabilityTitle": "Limitação de Responsabilidade",
-            "liabilityDesc": "Não somos responsáveis por quaisquer danos ou perdas que possam surgir do uso de nossos aplicativos. Você usa nossos aplicativos por sua conta e risco.",
-            "modificationsTitle": "Modificações",
-            "modificationsDesc": "Reservamo-nos o direito de modificar estes termos a qualquer momento. Notificaremos você sobre quaisquer mudanças importantes por meio de nossos canais de comunicação.",
-            "donationPolicyTitle": "Políticas de Doações",
-            "donationFinancingTitle": "Doações e Financiamiento",
-            "donationDesc": "O Neural Code Lab oferece aplicativos gratuitos e pagos. Agradecemos e dependemos de doações para manter e melhorar nossos aplicativos gratuitos.",
-            "donationsTitle": "Donações",
-            "donationsDetail": "As doações são usadas exclusivamente para o desenvolvimento e manutenção de nossos aplicativos. Você pode fazer uma doação por meio de nossa página no Patreon.",
-            "transparencyTitle": "Transparência",
-            "transparencyDesc": "Publicaremos relatórios periódicos sobre como as doações são usadas para garantir a transparência e a responsabilidade no uso dos fundos."
-        }
-    },
-    "zh": {
-        "header": {
-            "home": "首页",
-            "about": "关于我们",
-            "projects": "项目",
-            "contact": "联系我们",
-            "infrastructure": "基础设施",
-            "contactCenter": "联络中心",
-            "chatServices": "Dialogflow"
-        },
-        "footer": {
-            "description": "在危地马拉推广自由软件，加强社区建设，为希望学习和发展技术的人提供机会。",
-            "quickLinks": "快速链接",
-            "followUs": "关注我们",
-            "copyright": "具有文化目的的技术。"
-        },
-        "home": {
-            "badge": "具有文化目的的技术",
-            "hero": "社区数字平台",
-            "description": "我们创建尊重文化认同的技术解决方案，同时为土著社区构建更具包容性的数字未来。",
-            "exploreSolutions": "探索解决方案",
-            "ourSolutions": "我们的解决方案",
-            "solutionsDesc": "旨在满足实际需求的技术",
-            "realImpact": "真实影响",
-            "buildTogether": "让我们一起建设",
-            "joinMission": "加入我们的使命，创建增强文化认同的技术",
-            "contactUs": "联系我们",
-            "features": {
-                "agro": {
-                    "title": "玛雅农业科技",
-                    "description": "基于祖传知识的智能可持续农业系统。"
-                },
-                "edu": {
-                    "title": "双语教育",
-                    "description": "利用先进技术保护玛雅语言的平台。"
-                },
-                "ia": {
-                    "title": "文化适应的人工智能",
-                    "description": "结合了世界观和文化价值观的人工智能。"
-                },
-                "preservation": {
-                    "title": "数字保存",
-                    "description": "传统知识的安全数字化。"
-                },
-                "sustainable": {
-                    "title": "可持续计算",
-                    "description": "为低功耗和农村接入而优化的基础设施。"
-                },
-                "dev": {
-                    "title": "社区发展",
-                    "description": "为土著青年提供编程培训。"
-                }
-            },
-            "stats": {
-                "languages": "玛雅语言",
-                "projects": "项目",
-                "communities": "社区",
-                "youth": "培训青年"
-            },
-            "testimonials": [
-                {
-                    "quote": "该教育平台改变了我们的学校，允许使用西班牙语和凯克其语进行学习。",
-                    "author": "María Caal",
-                    "role": "校长"
-                },
-                {
-                    "quote": "农业监测系统帮助我们预测周期，在尊重传统的同时提高产量。",
-                    "author": "Juan Tzul",
-                    "role": "农民"
-                },
-                {
-                    "quote": "来自我们社区的年轻人现在正在为我们的挑战开发技术解决方案。",
-                    "author": "Pedro Ixcoy",
-                    "role": "社区领袖"
-                }
-            ]
-        },
-        "contact": {
-            "hero": "与社区编织代码",
-            "description": "在 NeuralCode，我们创建免费的数字工具来保护祖传知识. 有社区项目吗？让我们谈谈。",
-            "collaboration": "社区协作",
-            "collaborationDesc": "我们致力于可访问的技术开发。我们提供：",
-            "services": [
-                "针对土著项目的免费软件开发",
-                "母语技术培训",
-                "文化记录平台"
-            ],
-            "availableLanguages": "可用语言",
-            "startConversation": "开始对话",
-            "conversationDesc": "告诉我们您的项目或想法。我们在这里倾听并协作。",
-            "sendEmail": "发送电子邮件",
-            "responseTime": "我们通常在 24-48 小时内回复",
-            "subject": "社区项目"
-        },
-        "about": {
-            "hero": "关于 Neural Code Lab",
-            "mission": "我们的使命",
-            "missionDesc": "创建造福社区和对技术感兴趣的人的自由软件，让每个人都能获得并使用这些工具。",
-            "highlights": [
-                "开发个性化数字平台",
-                "在社区开展技术培训",
-                "通过技术保护文化",
-                "在危地马拉推广自由软件"
-            ],
-            "globalImpact": "全球影响，本土根源",
-            "globalImpactDesc": "在危地马拉，我们与土著社区合作，创建尊重并增强其文化认同的技术解决方案，同时构建一个更具包容性的数字未来。",
-            "valuesTitle": "我们的价值观",
-            "valuesSubtitle": "指导我们每个项目和决策的原则",
-            "values": {
-                "innovation": {
-                    "title": "创新",
-                    "desc": "我们不断寻求利用前沿技术解决社区问题的新方法。"
-                },
-                "transparency": {
-                    "title": "透明度",
-                    "desc": "开源和清晰的流程，在每个项目中建立信任和协作。"
-                },
-                "collaboration": {
-                    "title": "协作",
-                    "desc": "我们相信团队合作的力量，并与社区一起构建解决方案。"
-                }
-            },
-            "teamTitle": "我们的团队",
-            "teamSubtitle": "热爱技术和社会影响",
-            "memberBio": "热衷于创建赋能社区的技术的开发人员。专注于人工智能、网络开发和开源解决方案。",
-            "specialties": "专业领域：",
-            "readyToCollaborate": "准备好协作了吗？",
-            "collaborateDesc": "加入我们的使命，创建增强文化认同并加强社区的技术"
-        },
-        "projects": {
-            "hero": "我们的项目",
-            "heroDesc": "在 Neural Code Lab，我们致力于改变技术的革命性项目，为每个人提供易于获取且有效的解决方案。",
-            "searchPlaceholder": "搜索项目...",
-            "allCategories": "所有项目",
-            "noProjects": "未找到项目",
-            "tryAnotherSearch": "尝试其他搜索或类别",
-            "viewProject": "查看项目",
-            "viewCode": "查看代码",
-            "comingSoon": "敬请期待",
-            "categories": {
-                "all": "所有",
-                "business": "商业",
-                "tools": "工具",
-                "infrastructure": "基础设施",
-                "entertainment": "娱乐",
-                "lifestyle": "生活方式",
-                "education": "教育"
-            }
-        },
-        "contactCenter": {
-            "badge": "由 ElevenLabs AI 提供支持",
-            "hero": "智能AI联络中心",
-            "description": "使用自然对话的AI代理转变您的客户服务，与您的系统集成，全天候工作。使用ElevenLabs和N8N自动化完整实施。",
-            "requestDemo": "申请演示",
-            "viewServices": "查看服务",
-            "servicesTitle": "AI联络中心服务",
-            "servicesDesc": "使用尖端技术现代化您的客户服务的完整解决方案",
-            "demoTitle": "试用我们的AI代理 Neuralie",
-            "demoDesc": "拨打我们的演示热线，体验我们使用ElevenLabs的对话式AI代理 Neuralie 的质量。全天候可用。",
-            "demoNumber": "演示号码",
-            "callNow": "立即致电",
-            "location": "美国加利福尼亚州圣路易斯奥比斯波",
-            "available247": "全天候可用",
-            "aiPowered": "由 ElevenLabs AI 提供支持",
-            "capabilitiesTitle": "ElevenLabs 平台能力",
-            "capabilitiesDesc": "构建、部署和优化大规模 AI 代理所需的一切",
-            "n8nTitle": "N8N 集成",
-            "n8nDesc": "我使用可视化的无代码工作流将您的 AI 代理与任何系统连接起来",
-            "whyChoose": "为什么选择我的服务？",
-            "whyChooseDesc": "我不只是实施技术，我会在整个过程中陪伴您，确保您的 AI 联络中心取得成功。",
-            "implementationProcess": "我的实施流程",
-            "readyToRevolutionize": "准备好革新您的客户服务了吗？",
-            "readyToRevolutionizeDesc": "预约个性化演示，了解 AI 联络中心如何改变您的业务。"
-        },
-        "threeCX": {
-            "badge": "专业通讯系统",
-            "hero": "手机免费使用 3CX",
-            "description": "将您的智能手机转变为商业电话系统。我将帮助您免费设置 3CX 并将其集成到您的业务中。",
-            "callNow": "立即致电",
-            "viewDemo": "查看演示",
-            "demoLineActive": "演示线路已激活",
-            "trySystemNow": "立即测试系统",
-            "demoNumber": "演示号码：",
-            "demoQualityDesc": "致电体验 3CX 的实时质量",
-            "whyChoose": "为什么选择 3CX？",
-            "whyChooseDesc": "触手可及的完整商业通讯系统",
-            "features": [
-                {
-                    "title": "手机免费使用 3CX",
-                    "description": "在 Android 或 iOS 智能手机上免费配置 3CX。随时随地进行专业通话。"
-                },
-                {
-                    "title": "商业集成",
-                    "description": "我们指导您在业务中实施 3CX，优化您的通信系统。"
-                },
-                {
-                    "title": "个性化支持",
-                    "description": "从安装到系统高级配置的全程指导。"
-                },
-                {
-                    "title": "安全可靠",
-                    "description": "具有加密和高可用性的商业通讯系统。"
-                },
-                {
-                    "title": "易于使用",
-                    "description": "直观的界面，无需高级技术知识即可操作。"
-                },
-                {
-                    "title": "多渠道",
-                    "description": "语音、视频、聊天和短信集成在单一通信平台中。"
-                }
-            ],
-            "benefits": [
-                "降低高达 80% 的通话成本",
-                "在任何有网络的地方工作",
-                "与 CRM 和商业工具集成",
-                "通话录音和指标分析",
-                "根据您的方案提供无限分机",
-                "西班牙语/英语技术支持"
-            ],
-            "benefitsTitle": "改变您业务的益处",
-            "benefitsDesc": "3CX 不仅仅是一个电话系统，它是一个现代化的完整通信解决方案。",
-            "whatIncluded": "您的配置包含：",
-            "steps": [
-                {
-                    "title": "在您的设备上安装",
-                    "desc": "应用程序配置完成并可供使用"
-                },
-                {
-                    "title": "基础培训",
-                    "desc": "学习使用所有功能"
-                },
-                {
-                    "title": "初始支持",
-                    "desc": "设置期间的协助"
-                },
-                {
-                    "title": "集成咨询",
-                    "desc": "针对您业务的指导"
-                }
-            ],
-            "idealFor": "适用于各类业务",
-            "idealForDesc": "无论您的公司规模如何，3CX 都能满足您的需求",
-            "useCases": [
-                {
-                    "title": "小微企业",
-                    "description": "无需投资昂贵的基础设施即可实现客户服务专业化。"
-                },
-                {
-                    "title": "远程团队",
-                    "description": "无论团队成员身在何处，都能保持连接。"
-                },
-                {
-                    "title": "呼叫中心",
-                    "description": "使用专业工具管理大量通话。"
-                },
-                {
-                    "title": "创业者",
-                    "description": "以零初始成本开启专业线路。"
-                }
-            ],
-            "tryRightNow": "立即体验系统",
-            "tryRightNowDesc": "拨打我们的演示热线体验 3CX 的质量。无任何约束，只为让您了解其运作方式。",
-            "available247": "全天候可用 • 从美国拨打免费。",
-            "modernizeToday": "立即实现商业通讯现代化",
-            "modernizeDesc": "不要再等待拥有专业的电话系统。它免费、简便，且我会在整个过程中为您提供帮助。",
-            "moreInfo": "更多信息"
-        },
-        "chatServices": {
-            "badge": "由 Google Dialogflow ES 提供支持",
-            "hero": "网络安全聊天服务",
-            "description": "体验我们的 AI 会话代理 Neuralie 如何帮助您的客户了解安全服务、评估风险并实时连接专家。",
-            "tryChatNow": "立即尝试聊天",
-            "howItWorks": "如何运作？",
-            "featuresTitle": "这个聊天机器人能做什么？",
-            "featuresDesc": "专为 AuraLink AI Security 设计 — 主动网络安全服务咨询",
-            "features": [
-                {
-                    "title": "24/7 安全咨询",
-                    "description": "针对网络安全服务、AI 监控、渗透测试和关键基础设施保护的即时回答。"
-                },
-                {
-                    "title": "威胁评估",
-                    "description": "我们协助识别潜在漏洞，并根据风险级别推荐特定服务。"
-                },
-                {
-                    "title": "AI 监控信息",
-                    "description": "关于如何使用机器学习进行 24/7 监控以实现实时异常检测的详情。"
-                },
-                {
-                    "title": "渗透测试服务",
-                    "description": "关于自动化渗透测试和道德安全专家手动验证的信息。"
-                },
-                {
-                    "title": "事件响应",
-                    "description": "针对活跃威胁的快速响应服务及取证分析的激活指南。"
-                },
-                {
-                    "title": "CISO 顾问服务",
-                    "description": "关于战略安全领导、风险评估和 ISO 27001 合规性的咨询。"
-                }
-            ],
-            "howItWorksTitle": "安全聊天机器人如何运作？",
-            "howItWorksDesc": "将客户与网络安全解决方案连接起来的智能流程",
-            "steps": [
-                {
-                    "number": "1",
-                    "title": "描述您的情况",
-                    "description": "我们确定是常规查询、风险评估还是活跃的紧急情况。"
-                },
-                {
-                    "number": "2",
-                    "title": "智能分析",
-                    "description": "根据提供的信息，我们推荐量身定制的特定服务。"
-                },
-                {
-                    "number": "3",
-                    "title": "详细信息",
-                    "description": "获取有关 AI 监控、渗透测试、CISO 服务等的详情。"
-                },
-                {
-                    "number": "4",
-                    "title": "专家对接",
-                    "description": "对于复杂案例或紧急情况，我们会为您对接网络安全专家。"
-                }
-            ],
-            "liveDemoTitle": "立即试用 Neuralie",
-            "liveDemoDesc": "询问有关 AI 监控、渗透测试、事件响应或 CISO 服务的信息。",
-            "tryAsking": "💬 尝试询问：",
-            "poweredBy": "由 Google Dialogflow ES 提供支持",
-            "searchIconDesc": "👇 查看下面详情",
-            "automateTitle": "自动化网络安全查询",
-            "automateDesc": "我们为安全公司实施智能聊天机器人，实时教育客户、限定潜在客户并连接专家。",
-            "benefits": [
-                "网络安全服务的即时响应",
-                "安全需求的初步评估",
-                "价格信息及个性化方案",
-                "激活紧急服务的指南",
-                "24/7 全天候可用，无需等待",
-                "必要时直接转接至专家"
-            ],
-            "wantChatbot": "想为您的公司配备这样的聊天机器人吗？",
-            "wantChatbotDesc": "我们设计并实施适应网络安全服务、合规性和技术咨询的 Dialogflow 聊天机器人。",
-            "requestImplementation": "请求实施",
-            "readyToAutomate": "准备好自动化安全查询了吗？",
-            "readyToAutomateDesc": "通过专门从事网络安全、合规性和技术服务的 AI 聊天机器人改善您的客户体验。",
-            "viewContactCenter": "查看 AI 联络中心"
-        },
-        "policies": {
-            "privacyTitle": "隐私政策",
-            "appPoliciesTitle": "应用程序政策",
-            "privacyDesc": "在 Neural Code Lab，您的隐私对我们非常重要。本政策详细说明了我们如何处理您的数据和个人信息。",
-            "appPoliciesDesc": "查阅我们免费和付费应用程序的政策。",
-            "privacyProtectionTitle": "隐私与数据保护",
-            "privacyProtectionDesc": "在 Neural Code Lab，我们重视您的隐私并致力于保护您的个人数据。本隐私政策说明了我们如何收集、使用和保护您的信息。",
-            "infoCollectionTitle": "信息收集",
-            "infoCollectionDesc": "当您注册我们的服务、使用我们的应用程序或与我们互动时，我们会收集个人信息。此信息可能包括您的姓名、电子邮件地址和其他相关信息。",
-            "usageTitle": "信息使用",
-            "usageDesc": "我们使用收集的信息为您提供服务、改进我们的应用程序并传达相关的更新和优惠。",
-            "dataProtectionTitle": "数据保护",
-            "dataProtectionDesc": "我们实施适当的安全措施来保护您的个人信息，防止未经授权的访问、更改和披露。",
-            "userRightsTitle": "用户权利",
-            "userRightsDesc": "您有权访问、更正和删除您的个人信息。您可以随时联系我们行使这些权利。",
-            "section1Title": "1. 信息收集",
-            "section1Desc": "当您注册我们的应用程序、浏览我们的网站或进行购买时，我们会收集个人信息。这些信息可能包括您的姓名、电子邮件地址以及付费应用程序情况下的付款详情。",
-            "cookiesDesc": "我们使用 cookie 和类似技术来改善用户体验并获取我们网站上的浏览数据。",
-            "section2Title": "2. 信息使用",
-            "section2Desc": "收集的信息用于提供、维护和改进我们的服务。如果您已同意，它还可能用于个性化您的体验或用于直接营销目的。",
-            "paymentDesc": "在付费应用程序的情况下，付款信息通过第三方平台安全处理。",
-            "section3Title": "3. 免费和付费应用程序",
-            "section3Desc": "我们的免费应用程序在捐赠模式下运行，用户提供的所有信息都与我们的付费应用程序一样受到同等程度的保密对待。",
-            "freeAppsTitle": "免费应用程序",
-            "freeAppsDesc": "免费应用程序的维护得益于社区的贡献。您可以通过 Patreon 等平台支持我们。",
-            "paidAppsTitle": "付费应用程序",
-            "paidAppsDesc": "付费应用程序提供高级功能和额外支持。所有付款信息都经过安全处理。",
-            "section4Title": "4. 信息共享",
-            "section4Desc": "除非法律要求，否则未经您的同意，我们不会向第三方出售、交易或转让您的个人信息。我们仅与帮助我们运营应用程序的服务提供商共享信息，且始终遵守严格的保密协议。",
-            "section5Title": "5. 信息安全",
-            "section5Desc": "我们实施了多种安全措施以确保您的个人信息得到保护。我们使用加密技术和身份验证系统来保护敏感数据。",
-            "downloadTitle": "下载完整政策",
-            "downloadDesc": "您可以通过以下链接下载我们政策的完整副本：",
-            "downloadButton": "下载 PDF",
-            "termsTitle": "服务条款",
-            "termsGeneral": "通用条款",
-            "termsDesc": "使用我们的应用程序即表示您接受这些服务条款。如果您不同意这些条款中的任何一项，则不得使用我们的应用程序。",
-            "useAppsTitle": "应用程序使用",
-            "useAppsDesc": "我们的应用程序供个人及非商业用途使用。未经我们的许可，您不得修改、复制或分发该软件。",
-            "liabilityTitle": "责任限制",
-            "liabilityDesc": "对于因使用我们的应用程序而可能产生的任何损害或损失，我们概不负责。您自行承担使用我们应用程序的风险。",
-            "modificationsTitle": "修改",
-            "modificationsDesc": "我们保留随时修改这些条款的权利。我们将通过我们的沟通渠道通知您任何重大变更。",
-            "donationPolicyTitle": "捐赠政策",
-            "donationFinancingTitle": "捐赠与融资",
-            "donationDesc": "Neural Code Lab 提供免费和付费应用程序。我们感谢并依赖捐赠来维护和改进我们的免费应用程序。",
-            "donationsTitle": "捐赠",
-            "donationsDetail": "捐赠仅用于我们应用程序的开发和维护。您可以通过我们的 Patreon 页面进行捐赠。",
-            "transparencyTitle": "透明度",
-            "transparencyDesc": "我们将定期发布有关如何使用捐赠的报告，以确保资金使用的透明度和问责制。"
         }
     }
 }

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ExternalLink, Github, Search } from 'lucide-react';
-import { proyectos } from '@/content/proyectos';
+import { proyectos, Project, Category } from '@/content/proyectos';
 import { useTranslation } from '@/lib/useTranslation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,7 @@ export default function ProjectsContent() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categorias = [
+  const categorias: {id: string, nombre: string}[] = [
     { id: "all", nombre: t('projects.categories.all') },
     { id: "business", nombre: t('projects.categories.business') },
     { id: "tools", nombre: t('projects.categories.tools') },
@@ -27,11 +27,12 @@ export default function ProjectsContent() {
   const filteredProjects = proyectos
     .filter(project => activeCategory === 'all' || project.category === activeCategory)
     .filter(project => {
+      const description = t(project.descriptionKey);
       if (!searchTerm.trim()) return true;
       const searchLower = searchTerm.toLowerCase();
       return (
         project.title.toLowerCase().includes(searchLower) ||
-        project.description.toLowerCase().includes(searchLower) ||
+        description.toLowerCase().includes(searchLower) ||
         project.tags.some(tag => tag.toLowerCase().includes(searchLower))
       );
     });
@@ -113,7 +114,7 @@ export default function ProjectsContent() {
                     {project.title}
                   </h2>
                   <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed">
-                    {project.description}
+                    {t(project.descriptionKey)}
                   </p>
                 </CardContent>
                 <CardFooter className="px-6 pb-6 pt-0 gap-3">
