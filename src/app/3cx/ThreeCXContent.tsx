@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, CheckCircle, Smartphone, Building2, Users, Headphones, ArrowRight, MessageSquare, Shield, Zap } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
+import ThreeCXUseCases from '@/components/ThreeCXUseCases';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -202,25 +203,7 @@ export default function ThreeCXContent() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {useCases.map((useCase, index) => (
-                        <Card
-                            key={index}
-                            className="p-2 hover:shadow-lg transition-all border-muted-foreground/10"
-                        >
-                            <CardHeader>
-                                <CardTitle className="text-lg font-bold">
-                                    {useCase.title}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
-                                    {useCase.description}
-                                </p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
+                <ThreeCXUseCases useCases={useCases} />
             </section>
 
             {/* Demo Section */}

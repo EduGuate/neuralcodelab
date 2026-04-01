@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Linkedin, Code2, Heart, Rocket, Users, Sparkles, Github, Mail } from 'lucide-react';
+import MissionHighlights from '@/components/MissionHighlights';
 import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -75,16 +76,7 @@ export default async function NosotrosContent() {
             <h2 className="text-4xl font-bold text-foreground mb-8 flex items-center gap-3">
               <Sparkles className="w-10 h-10 text-primary" /> {t('about.mission')}
             </h2>
-            <div className="space-y-4">
-              {missionHighlights.map((highlight, index) => (
-                <div key={index} className="flex items-start gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                    <div className="w-2 h-2 bg-primary-foreground rounded-full"></div>
-                  </div>
-                  <p className="text-foreground text-lg">{highlight}</p>
-                </div>
-              ))}
-            </div>
+            <MissionHighlights highlights={missionHighlights} />
           </div>
           <div className="relative h-80 md:h-full min-h-[360px] rounded-2xl overflow-hidden shadow-2xl">
             <Image

@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Leaf, Users, Code2, Database, Zap } from 'lucide-react';
-import FeatureCard from '@/components/FeatureCard';
+import { ArrowRight } from 'lucide-react';
+import FeaturesSection from '@/components/FeaturesSection';
 import AnimeStats from '@/components/AnimeStats';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -15,42 +15,12 @@ export default async function Page() {
   const t = getServerTranslation(lang);
 
   const features = [
-    {
-      icon: Leaf,
-      title: t('home.features.agro.title'),
-      description: t('home.features.agro.description'),
-      color: colors[0]
-    },
-    {
-      icon: Users,
-      title: t('home.features.edu.title'),
-      description: t('home.features.edu.description'),
-      color: colors[1]
-    },
-    {
-      icon: Code2,
-      title: t('home.features.ia.title'),
-      description: t('home.features.ia.description'),
-      color: colors[2]
-    },
-    {
-      icon: Database,
-      title: t('home.features.preservation.title'),
-      description: t('home.features.preservation.description'),
-      color: colors[3]
-    },
-    {
-      icon: Zap,
-      title: t('home.features.sustainable.title'),
-      description: t('home.features.sustainable.description'),
-      color: colors[4]
-    },
-    {
-      icon: Code2,
-      title: t('home.features.dev.title'),
-      description: t('home.features.dev.description'),
-      color: colors[5]
-    }
+    { iconName: 'Leaf',     title: t('home.features.agro.title'),         description: t('home.features.agro.description'),         colorIndex: 0, summaryKey: 'agro' },
+    { iconName: 'Users',    title: t('home.features.edu.title'),          description: t('home.features.edu.description'),          colorIndex: 1, summaryKey: 'edu' },
+    { iconName: 'Code2',    title: t('home.features.ia.title'),           description: t('home.features.ia.description'),           colorIndex: 2, summaryKey: 'ia' },
+    { iconName: 'Database', title: t('home.features.preservation.title'), description: t('home.features.preservation.description'), colorIndex: 3, summaryKey: 'preservation' },
+    { iconName: 'Zap',      title: t('home.features.sustainable.title'),  description: t('home.features.sustainable.description'),  colorIndex: 4, summaryKey: 'sustainable' },
+    { iconName: 'Code2',    title: t('home.features.dev.title'),          description: t('home.features.dev.description'),          colorIndex: 5, summaryKey: 'dev' },
   ];
 
   const stats = [
@@ -121,11 +91,7 @@ export default async function Page() {
           <h2 className="text-3xl font-bold text-foreground mb-2">{t('home.ourSolutions')}</h2>
           <p className="text-muted-foreground">{t('home.solutionsDesc')}</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, i) => (
-            <FeatureCard key={i} {...feature} />
-          ))}
-        </div>
+        <FeaturesSection features={features} />
       </section>
 
       {/* Testimonials */}
