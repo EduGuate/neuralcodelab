@@ -80,10 +80,13 @@ export function TranslationProvider({
     };
 
     const t = <T = any>(key: string): T => {
-        if (!isLoaded || !translations[language]) return key as unknown as T;
+        if (!isLoaded) return key as unknown as T;
+
+        const activeLang = translations[language] ? language : 'es';
+        if (!translations[activeLang]) return key as unknown as T;
 
         const keys = key.split('.');
-        let value: any = translations[language];
+        let value: any = translations[activeLang];
 
         for (const k of keys) {
             if (value && typeof value === 'object' && k in value) {
