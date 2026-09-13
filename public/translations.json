@@ -50,6 +50,7 @@
             "hero": "Software Libre y Tecnología para Comunidades en Guatemala",
             "description": "Creamos plataformas digitales que respetan la identidad cultural mientras construimos un futuro digital más inclusivo.",
             "exploreSolutions": "Explorar soluciones",
+            "secondaryCta": "Ver proyectos",
             "ourSolutions": "Nuestras soluciones",
             "solutionsDesc": "Tecnología diseñada para responder a necesidades reales",
             "realImpact": "Impacto real",
@@ -85,10 +86,17 @@
             },
             "stats": {
                 "languages": "Lenguas Mayas",
-                "projects": "Proyectos",
+                "projects": "Proyectos Publicados",
                 "communities": "Comunidades",
-                "youth": "Jóvenes Capacitados"
+                "youth": "Jóvenes Capacitados",
+                "repos": "Repositorios en GitHub",
+                "langs": "Lenguajes de Programación",
+                "openSource": "Código Abierto"
             },
+            "featuredProjects": "Proyectos Open Source Destacados",
+            "featuredProjectsDesc": "Un vistazo a lo que ya estamos construyendo en público",
+            "viewProject": "Ver proyecto",
+            "viewCode": "Ver código",
             "testimonials": [
                 {
                     "quote": "La plataforma educativa ha transformado nuestra escuela, permitiendo aprender en español y q'eqchi'.",
@@ -521,6 +529,7 @@
             "hero": "Digital platforms for communities",
             "description": "We create technological solutions that respect cultural identity while building a more inclusive digital future for indigenous communities.",
             "exploreSolutions": "Explore solutions",
+            "secondaryCta": "View projects",
             "ourSolutions": "Our solutions",
             "solutionsDesc": "Technology designed to respond to real needs",
             "realImpact": "Real impact",
@@ -556,10 +565,17 @@
             },
             "stats": {
                 "languages": "Maya Languages",
-                "projects": "Projects",
+                "projects": "Published Projects",
                 "communities": "Communities",
-                "youth": "Youth Trained"
+                "youth": "Youth Trained",
+                "repos": "GitHub Repositories",
+                "langs": "Programming Languages",
+                "openSource": "Open Source"
             },
+            "featuredProjects": "Featured Open Source Projects",
+            "featuredProjectsDesc": "A look at what we're already building in public",
+            "viewProject": "View project",
+            "viewCode": "View code",
             "testimonials": [
                 {
                     "quote": "The educational platform has transformed our school, allowing learning in Spanish and Q'eqchi'.",

@@ -6,6 +6,7 @@ import { createTimeline, animate, stagger } from 'animejs';
 interface Stat {
     value: string;
     label: string;
+    color?: string;
 }
 
 export default function AnimeStats({ stats }: { stats: Stat[] }) {
@@ -46,7 +47,10 @@ export default function AnimeStats({ stats }: { stats: Stat[] }) {
             <div className="grid grid-cols-2 gap-12 max-w-2xl mx-auto text-center relative z-10">
                 {stats.map((stat, i) => (
                     <div key={i} className="stat-item opacity-0 group">
-                        <div className="stat-value text-4xl md:text-5xl font-black text-primary mb-3 tracking-tighter">
+                        <div
+                            className="stat-value font-display text-4xl md:text-5xl font-bold mb-3 tracking-tighter"
+                            style={{ color: stat.color ?? 'hsl(var(--primary))' }}
+                        >
                             {stat.value}
                         </div>
                         <div className="text-sm uppercase tracking-widest font-semibold text-muted-foreground group-hover:text-foreground transition-colors">

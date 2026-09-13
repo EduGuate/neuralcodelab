@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/private/', '/admin/'], // Rutas privadas si las hubiera
       },
     ],
     sitemap: 'https://neuralcodelab.com/sitemap.xml',

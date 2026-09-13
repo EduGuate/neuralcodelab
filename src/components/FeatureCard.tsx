@@ -60,15 +60,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     const summary = language === 'en' ? summaryEn : summaryEs;
 
     return (
-        <Card className="flex flex-col h-full transition-all hover:border-primary/50 hover:shadow-md">
+        <Card className="flex flex-col h-full bg-card border-border transition-all hover:border-primary/40 hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.1),0_16px_40px_-16px_hsl(var(--primary)/0.35)]">
             <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${color}20`, color }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: `${color}1f`, color }}
                 >
                     <Icon size={24} />
                 </div>
-                <CardTitle className="text-lg font-semibold">{title}</CardTitle>
+                <CardTitle className="text-lg font-display font-semibold">{title}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 flex-1">
                 <p className="text-sm text-muted-foreground">{description}</p>

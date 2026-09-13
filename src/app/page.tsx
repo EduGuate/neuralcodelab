@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Github, ExternalLink } from 'lucide-react';
 import FeaturesSection from '@/components/FeaturesSection';
 import AnimeStats from '@/components/AnimeStats';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { getServerTranslation, getLanguage } from '@/lib/i18n';
 import { colors } from '@/data/content';
+import { proyectos } from '@/content/proyectos';
 
 export default async function Page() {
   const lang = await getLanguage();
@@ -24,60 +25,89 @@ export default async function Page() {
   ];
 
   const stats = [
-    { value: "12+", label: t('home.stats.communities') },
-    { value: "5", label: t('home.stats.languages') },
-    { value: "200+", label: t('home.stats.youth') },
-    { value: "35+", label: t('home.stats.projects') },
+    { value: String(proyectos.length), label: t('home.stats.projects'), color: colors[7] },
+    { value: "104+", label: t('home.stats.repos'), color: colors[1] },
+    { value: "7", label: t('home.stats.langs'), color: colors[5] },
+    { value: "100%", label: t('home.stats.openSource'), color: colors[2] },
   ];
 
-  const testimonialsData = t('home.testimonials');
-  const testimonials = Array.isArray(testimonialsData) ? testimonialsData : [];
+  const featuredProjectIds = ['ri-nim', 'uml', 'kafka'];
+  const featuredProjects = featuredProjectIds
+    .map((id) => proyectos.find((p) => p.id === id))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-2xl mx-6 mt-8 group">
-        <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
-          <Image
-            src="/img/hero-bg.webp"
-            alt="NeuralCodeLab - IA y tecnología con identidad cultural guatemalteca"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-background/75" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-8 py-28 md:py-36">
-          <div className="max-w-2xl">
-            <Badge variant="secondary" className="mb-4">
+      <section className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute -top-24 right-0 h-[520px] w-[720px] opacity-40"
+          style={{
+            background:
+              'radial-gradient(480px 320px at 70% 20%, hsl(var(--primary) / 0.22), transparent 70%), radial-gradient(360px 280px at 10% 60%, #FFC93C22, transparent 70%)',
+          }}
+        />
+        <div className="relative max-w-6xl mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Badge variant="secondary" className="mb-5 gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold border border-border">
+              <Sparkles size={13} className="text-primary" />
               {t('home.badge')}
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.05]">
               {t('home.hero')}
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
               {t('home.description')}
             </p>
-            <Button asChild size="lg">
-              <Link href="/proyectos">
-                {t('home.exploreSolutions')} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild size="lg">
+                <Link href="/proyectos">
+                  {t('home.exploreSolutions')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/proyectos">{t('home.secondaryCta')}</Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-2xl">
+              <Image
+                src="/img/hero-home.jpg"
+                alt="Máscara maya estilizada, símbolo de identidad cultural y tecnología"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            </div>
+            <svg className="absolute -top-6 -left-6 w-20 h-20 opacity-60" viewBox="0 0 100 100" fill="none" stroke="#FFC93C" strokeWidth="2">
+              <path d="M50 4 90 50 50 96 10 50Z" />
+              <path d="M50 24 70 50 50 76 30 50Z" />
+            </svg>
+            <svg className="absolute -bottom-7 -right-6 w-28 h-28 opacity-60" viewBox="0 0 100 100" fill="none" stroke="hsl(var(--accent))" strokeWidth="2">
+              <circle cx="50" cy="50" r="46" />
+              <path d="M50 4v20M50 76v20M4 50h20M76 50h20" />
+            </svg>
           </div>
         </div>
       </section>
 
       {/* Stats & Tech Stack */}
-      <section className="border-t">
+      <section className="border-t border-border">
         <AnimeStats stats={stats} />
 
         <div className="max-w-6xl mx-auto px-6 pb-20">
-          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-8">
+          <p className="text-center font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground/60 mb-8">
             {t('home.techStack')}
           </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center gap-3">
             {['Next.js', 'TypeScript', 'Tailwind', 'Python', 'Node.js', 'PostgreSQL', 'Docker'].map((tech) => (
-              <span key={tech} className="tech-tag opacity-0 text-xl md:text-2xl font-bold tracking-tighter text-foreground">
+              <span
+                key={tech}
+                className="tech-tag opacity-0 font-mono text-sm text-muted-foreground border border-border bg-card rounded-lg px-4 py-2"
+              >
                 {tech}
               </span>
             ))}
@@ -86,25 +116,64 @@ export default async function Page() {
       </section>
 
       {/* Features */}
-      <section className="max-w-6xl mx-auto px-6 py-24 border-t">
-        <div className="mb-12">
+      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-border">
+        <div className="mb-12 max-w-xl">
           <h2 className="text-3xl font-bold text-foreground mb-2">{t('home.ourSolutions')}</h2>
           <p className="text-muted-foreground">{t('home.solutionsDesc')}</p>
         </div>
         <FeaturesSection features={features} />
       </section>
 
-      {/* Testimonials */}
-      <section className="max-w-6xl mx-auto px-6 py-24 border-t">
-        <h2 className="text-3xl font-bold text-foreground mb-12">{t('home.realImpact')}</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((item: any, i: number) => (
-            <Card key={i} className="bg-muted/50 border-none">
-              <CardContent className="pt-6">
-                <p className="text-foreground mb-4 leading-relaxed italic">"{item.quote}"</p>
-                <div>
-                  <p className="font-semibold text-foreground">{item.author}</p>
-                  <p className="text-sm text-muted-foreground">{item.role}</p>
+      {/* Featured open source projects */}
+      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-border">
+        <div className="mb-12 max-w-xl">
+          <h2 className="text-3xl font-bold text-foreground mb-2">{t('home.featuredProjects')}</h2>
+          <p className="text-muted-foreground">{t('home.featuredProjectsDesc')}</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {featuredProjects.map((project) => (
+            <Card key={project.id} className="bg-card border-border overflow-hidden flex flex-col">
+              <div className="relative aspect-video bg-muted">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardContent className="pt-6 flex flex-col flex-1">
+                <h3 className="font-display font-semibold text-lg text-foreground mb-2">{project.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  {t(project.descriptionKey)}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="font-mono text-[11px] text-muted-foreground border border-border rounded-md px-2 py-0.5">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center gap-4 text-sm">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <Github size={15} /> {t('home.viewCode')}
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
+                    >
+                      <ExternalLink size={15} /> {t('home.viewProject')}
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -113,13 +182,16 @@ export default async function Page() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-24 border-t">
-        <div className="bg-primary text-primary-foreground rounded-lg p-12 md:p-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('home.buildTogether')}</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto text-lg">
+      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-border">
+        <div
+          className="rounded-2xl p-12 md:p-16 text-center border border-primary/25"
+          style={{ background: 'linear-gradient(135deg, hsl(var(--primary) / 0.16), hsl(var(--accent) / 0.12)), hsl(var(--card))' }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">{t('home.buildTogether')}</h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto text-lg">
             {t('home.joinMission')}
           </p>
-          <Button asChild variant="secondary" size="lg">
+          <Button asChild size="lg">
             <Link href="/contacto">
               {t('home.contactUs')} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

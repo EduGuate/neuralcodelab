@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, ExternalLink, Briefcase, Globe } from 'lucide-react';
+import { Menu, Briefcase, Globe, Code } from 'lucide-react';
 import { useTranslation } from '@/lib/useTranslation';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,17 +36,17 @@ export default function Header() {
     { href: '/', label: t('header.home') },
     { href: '/nosotros', label: t('header.about') },
     { href: '/proyectos', label: t('header.projects') },
-    { href: '/3cx', label: '3CX' },
-    { href: '/contact-center', label: t('header.contactCenter') },
-    { href: '/chat-demo', label: t('header.chatServices') },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <header className="sticky top-0 z-50 bg-background/75 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <div className="text-xl font-bold">NeuralCodeLab</div>
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground flex-shrink-0">
+            <Code size={18} />
+          </div>
+          <div className="text-lg font-display font-bold tracking-tight">NeuralCodeLab</div>
         </Link>
 
         {/* Desktop Menu */}
@@ -77,32 +77,6 @@ export default function Header() {
               <span className="relative z-10">{link.label}</span>
             </Link>
           ))}
-
-          {/* External: Infrastructure */}
-          <a
-            href="https://infra.neuralcodelab.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative px-3 py-1.5 flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
-            onMouseEnter={() => setHoveredLink('infra')}
-          >
-            <AnimatePresence>
-              {hoveredLink === 'infra' && (
-                <motion.span
-                  layoutId="nav-hover-bg"
-                  className="absolute inset-0 rounded-md bg-muted"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                />
-              )}
-            </AnimatePresence>
-            <span className="relative z-10 flex items-center gap-1">
-              {t('header.infrastructure')}
-              <ExternalLink size={14} />
-            </span>
-          </a>
 
           {/* External: CV */}
           <a
@@ -197,16 +171,6 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="https://infra.neuralcodelab.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground py-2 border-b border-muted"
-                onClick={() => setEstaAbierto(false)}
-              >
-                {t('header.infrastructure')}
-                <ExternalLink size={18} />
-              </a>
               <a
                 href="https://mycven.neuralcodelab.com/"
                 target="_blank"

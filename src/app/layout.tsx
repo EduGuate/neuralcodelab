@@ -1,6 +1,7 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { Manrope, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -10,6 +11,15 @@ import { TranslationProvider } from '../lib/useTranslation';
 import translations from '../../public/translations.json';
 import { headers } from 'next/headers';
 import { getLanguage, getServerTranslation } from '../lib/i18n';
+
+const fontSans = Manrope({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const fontDisplay = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
+const fontMono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-mono', display: 'swap' });
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#0a0e15',
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getLanguage();
@@ -25,12 +35,6 @@ export async function generateMetadata(): Promise<Metadata> {
     publisher: 'Neural Code Lab',
     alternates: {
       canonical: 'https://neuralcodelab.com',
-      languages: {
-        'es-GT': 'https://neuralcodelab.com',
-        'en-US': 'https://neuralcodelab.com',
-        'pt-BR': 'https://neuralcodelab.com',
-        'zh-CN': 'https://neuralcodelab.com',
-      },
     },
     openGraph: {
       title: t('seo.home.title'),
@@ -85,7 +89,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       logo: 'https://neuralcodelab.com/icon.png',
       description: t('footer.description'),
       sameAs: [
-        'https://github.com/neuralcodelab',
+        'https://github.com/EduGuate',
         'https://www.linkedin.com/in/devlewiso'
       ]
     },
@@ -145,29 +149,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       areaServed: 'Guatemala',
       serviceType: 'Digital Preservation'
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: t('header.contactCenter'),
-      description: t('contactCenter.description'),
-      provider: { '@id': 'https://neuralcodelab.com/#organization' },
-      url: 'https://neuralcodelab.com/contact-center',
-      serviceType: 'AI Contact Center'
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: t('threeCX.hero'),
-      description: t('threeCX.description'),
-      provider: { '@id': 'https://neuralcodelab.com/#organization' },
-      url: 'https://neuralcodelab.com/3cx',
-      serviceType: 'Business Telephony'
-    }
   ];
 
   return (
-    <html lang={lang} suppressHydrationWarning>
-      <body suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable}`}>
+      <body suppressHydrationWarning className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

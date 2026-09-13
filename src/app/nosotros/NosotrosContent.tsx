@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import AnimeStats from '@/components/AnimeStats';
+import { proyectos } from '@/content/proyectos';
 
 export default async function NosotrosContent() {
   const lang = await getLanguage();
@@ -22,14 +23,14 @@ export default async function NosotrosContent() {
   ];
 
   const values = [
-    { icon: Rocket, title: t('about.values.innovation.title'), desc: t('about.values.innovation.desc'), color: 'text-blue-500 bg-blue-50' },
-    { icon: Heart, title: t('about.values.transparency.title'), desc: t('about.values.transparency.desc'), color: 'text-purple-500 bg-purple-50' },
-    { icon: Users, title: t('about.values.collaboration.title'), desc: t('about.values.collaboration.desc'), color: 'text-orange-500 bg-orange-50' },
+    { icon: Rocket, title: t('about.values.innovation.title'), desc: t('about.values.innovation.desc'), color: '#00D2FC' },
+    { icon: Heart, title: t('about.values.transparency.title'), desc: t('about.values.transparency.desc'), color: '#845EC2' },
+    { icon: Users, title: t('about.values.collaboration.title'), desc: t('about.values.collaboration.desc'), color: '#FF6767' },
   ];
 
   const stats = [
-    { value: '35+', label: t('home.stats.projects') },
-    { value: '5', label: t('home.stats.languages') },
+    { value: String(proyectos.length), label: t('home.stats.projects'), color: '#00D2FC' },
+    { value: '104+', label: t('home.stats.repos'), color: '#FFC93C' },
   ];
 
   const missionHighlightsData = t('about.highlights');
@@ -100,12 +101,15 @@ export default async function NosotrosContent() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-none">
+              <Card key={index} className="bg-card border-border hover:border-primary/40 transition-all duration-300">
                 <CardHeader>
-                  <div className={`w-14 h-14 ${value.color} rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
+                    style={{ backgroundColor: `${value.color}1f`, color: value.color }}
+                  >
                     <value.icon className="w-8 h-8" />
                   </div>
-                  <CardTitle className="text-2xl">{value.title}</CardTitle>
+                  <CardTitle className="text-2xl font-display">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed text-lg">{value.desc}</p>

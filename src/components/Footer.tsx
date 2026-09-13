@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground">
                 <Code size={20} />
               </div>
-              <span className="text-xl font-bold text-foreground">NeuralCodeLab</span>
+              <span className="text-xl font-display font-bold tracking-tight text-foreground">NeuralCodeLab</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               {t('footer.description')}

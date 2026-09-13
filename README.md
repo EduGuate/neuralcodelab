@@ -39,25 +39,26 @@
 - 🏛️ **Preservación cultural a través de la tecnología**
 - 🔓 **Promoción del software libre en Guatemala**
 
-### 📊 Impacto
+### 📊 En números
 
 <div align="center">
 
-| 🏘️ Comunidades | 👨‍🎓 Jóvenes Capacitados | 🚀 Proyectos Activos | 🗣️ Lenguas Mayas |
+| 🚀 Proyectos Publicados | 🐙 Repositorios en GitHub | 💻 Lenguajes de Programación | 🔓 Código Abierto |
 |:---:|:---:|:---:|:---:|
-| **12+** | **200+** | **8** | **5** |
+| **35+** | **104+** | **7** | **100%** |
 
 </div>
+
+> Cifras reales tomadas del portafolio de proyectos del sitio y del perfil público de GitHub — el proyecto está recién arrancando: todavía no hemos capacitado formalmente a comunidades, así que preferimos mostrar lo que ya es verificable hoy en vez de metas futuras.
 
 ---
 
 ## ✨ Características Principales
 
 ### 🌐 Multi-Idioma
-- **4 idiomas soportados**: Español, English, Português, 中文
+- **Español e English completos**; Português y 中文 en el selector (por ahora hacen fallback a Español)
 - Detección automática del idioma del navegador
 - Selector manual de idioma con persistencia en localStorage
-- Traducciones completas de la interfaz
 
 ### 🤖 Agente de IA Conversacional
 - Integración con **ElevenLabs ConvAI**
@@ -84,13 +85,19 @@
 ### 🏠 Página de Inicio
 <div align="center">
   <img src="docs/screenshots/home-page.png" alt="Home Page" width="800"/>
-  <p><em>Página principal con hero section y características destacadas</em></p>
+  <p><em>Hero oscuro con acentos cian/teal y estadísticas reales del proyecto</em></p>
+</div>
+
+### 🧩 Proyectos Open Source Destacados
+<div align="center">
+  <img src="docs/screenshots/featured-projects.png" alt="Featured Open Source Projects" width="800"/>
+  <p><em>Proyectos reales del portafolio, con enlace a código y demo en vivo</em></p>
 </div>
 
 ### 👥 Sobre Nosotros
 <div align="center">
   <img src="docs/screenshots/about-hero.png" alt="About Hero Section" width="800"/>
-  <p><em>Sección hero con estadísticas de impacto</em></p>
+  <p><em>Sección hero de la página Nosotros</em></p>
 </div>
 
 <div align="center">
@@ -101,13 +108,7 @@
 ### 🌍 Selector de Idiomas
 <div align="center">
   <img src="docs/screenshots/language-switcher.png" alt="Language Switcher" width="800"/>
-  <p><em>Selector de idioma con 4 opciones: Español, English, Português, 中文</em></p>
-</div>
-
-### 📞 Centro de Contacto con IA
-<div align="center">
-  <img src="docs/screenshots/contact-center-demo.png" alt="Contact Center Demo" width="800"/>
-  <p><em>Número demo con integración de ElevenLabs AI</em></p>
+  <p><em>Selector de idioma (Español/English completos; Português/中文 usan fallback a Español por ahora)</em></p>
 </div>
 
 ---
@@ -132,7 +133,7 @@
 - **[N8N](https://n8n.io/)** - Automatización de workflows
 
 ### Infraestructura
-- **[Vercel](https://vercel.com/)** - Hosting y despliegue
+- **[Netlify](https://www.netlify.com/)** - Hosting y despliegue (`@netlify/plugin-nextjs`)
 - **CDN** - Distribución de contenido global
 - **SSL/TLS** - Seguridad de conexiones
 
@@ -148,8 +149,8 @@ El sitio soporta 4 idiomas con detección automática y cambio manual:
 |--------|--------|------|--------|
 | Español | `es` | 🇪🇸 | ✅ Completo |
 | English | `en` | 🇺🇸 | ✅ Completo |
-| Português | `pt` | 🇧🇷 | ✅ Completo |
-| 中文 | `zh` | 🇨🇳 | ✅ Completo |
+| Português | `pt` | 🇧🇷 | ⏳ Fallback a Español (traducciones pendientes) |
+| 中文 | `zh` | 🇨🇳 | ⏳ Fallback a Español (traducciones pendientes) |
 
 ### Implementación
 
@@ -212,7 +213,8 @@ gtag('config', 'G-L2S3KDPQ94');
 
 - 🌐 Website: [neuralcodelab.com](https://neuralcodelab.com)
 - 💼 LinkedIn: [@devlewiso](https://www.linkedin.com/in/devlewiso)
-- 🐙 GitHub: [@devlewiso](https://github.com/devlewiso)
+- 🐙 GitHub (personal): [@devlewiso](https://github.com/devlewiso)
+- 🏢 GitHub (org): [@EduGuate](https://github.com/EduGuate) · [este repo](https://github.com/EduGuate/neuralcodelab)
 - 📧 Email: devlewiso@gmail.com
 - 📞 Demo Line: +1 805 439 6103
 
