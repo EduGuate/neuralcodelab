@@ -21,7 +21,8 @@ export default function ProjectsContent() {
     { id: "infrastructure", nombre: t('projects.categories.infrastructure') },
     { id: "entertainment", nombre: t('projects.categories.entertainment') },
     { id: "lifestyle", nombre: t('projects.categories.lifestyle') },
-    { id: "education", nombre: t('projects.categories.education') }
+    { id: "education", nombre: t('projects.categories.education') },
+    { id: "templates", nombre: t('projects.categories.templates') }
   ];
 
   const filteredProjects = proyectos

@@ -364,6 +364,16 @@ export const proyectos: Project[] = [
     imageUrl: "/img/magic-machine.png",
     tags: ["Tools", "Creative", "AI"],
     category: "tools"
+  },
+  {
+    id: "cloudnest-template",
+    title: "CloudNest — Free Hosting Landing Page Template",
+    descriptionKey: "projects.items.cloudnest_template.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/CloudNestTemplate",
+    imageUrl: "/img/cloudnest-template.png",
+    tags: ["Free Template", "Landing Page", "GSAP"],
+    category: "templates"
   }
 ];
 
@@ -374,5 +384,6 @@ export const categorias: Category[] = [
   { id: "infrastructure", nombreKey: "projects.categories.infrastructure" },
   { id: "entertainment", nombreKey: "projects.categories.entertainment" },
   { id: "lifestyle", nombreKey: "projects.categories.lifestyle" },
-  { id: "education", nombreKey: "projects.categories.education" }
+  { id: "education", nombreKey: "projects.categories.education" },
+  { id: "templates", nombreKey: "projects.categories.templates" }
 ];

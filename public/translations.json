@@ -187,7 +187,8 @@
                 "infrastructure": "Infraestructura",
                 "entertainment": "Entretenimiento",
                 "lifestyle": "Estilo de Vida",
-                "education": "Educación"
+                "education": "Educación",
+                "templates": "Templates Gratis"
             },
             "items": {
                 "cv": { "description": "Sitio web de currículum profesional que muestra experiencia, habilidades y proyectos con un diseño minimalista y elegante." },
@@ -224,7 +225,8 @@
                 "rabbitmq": { "description": "Simulador interactivo para comparar los sistemas de mensajería RabbitMQ y Kafka." },
                 "kafka": { "description": "Simulador interactivo del sistema de mensajería Kafka." },
                 "ri_nim": { "description": "Plataforma educativa de cultura e idiomas mayas." },
-                "magic_machine": { "description": "Plataforma de generación de contenido y narración creativa." }
+                "magic_machine": { "description": "Plataforma de generación de contenido y narración creativa." },
+                "cloudnest_template": { "description": "Template gratuito de landing page para hosting, con diseño glassmorphism, modo oscuro y animaciones GSAP. Clonalo desde GitHub y usalo en tu propio proyecto." }
             }
         },
         "contactCenter": {
@@ -666,7 +668,8 @@
                 "infrastructure": "Infrastructure",
                 "entertainment": "Entertainment",
                 "lifestyle": "Lifestyle",
-                "education": "Education"
+                "education": "Education",
+                "templates": "Free Templates"
             },
             "items": {
                 "cv": { "description": "Personal curriculum vitae website showcasing professional experience, skills, and projects in a minimalist and elegant design." },
@@ -703,7 +706,8 @@
                 "rabbitmq": { "description": "Interactive simulator to compare RabbitMQ and Kafka messaging systems." },
                 "kafka": { "description": "Interactive Kafka messaging system simulator." },
                 "ri_nim": { "description": "Mayan culture and language educational platform." },
-                "magic_machine": { "description": "Creative storytelling and content generation platform." }
+                "magic_machine": { "description": "Creative storytelling and content generation platform." },
+                "cloudnest_template": { "description": "Free hosting landing page template with a glassmorphism design, dark mode, and GSAP animations. Clone it from GitHub and use it in your own project." }
             }
         },
         "contactCenter": {
