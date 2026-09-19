@@ -1009,9 +1009,9 @@ export const proyectos: Project[] = [
     id: "shoes-theme",
     title: "StepStyle Shoes",
     descriptionKey: "projects.items.shoes_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/ShoesStoreBootstrap/",
     githubUrl: "https://github.com/EduGuate/ShoesStoreBootstrap",
-    imageUrl: "",
+    imageUrl: "/img/shoes-theme.png",
     tags: ["Free Template", "Bootstrap", "Store"],
     category: "templates"
   },
