@@ -1029,9 +1029,9 @@ export const proyectos: Project[] = [
     id: "realestate-theme",
     title: "RealEstate Hub",
     descriptionKey: "projects.items.realestate_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/realstateTheme/",
     githubUrl: "https://github.com/EduGuate/realstateTheme",
-    imageUrl: "",
+    imageUrl: "/img/realestate-theme.png",
     tags: ["Free Template", "Bootstrap", "Real Estate"],
     category: "templates"
   },
