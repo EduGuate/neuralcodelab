@@ -1019,9 +1019,9 @@ export const proyectos: Project[] = [
     id: "dental-theme",
     title: "Smile Bright Dental",
     descriptionKey: "projects.items.dental_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/DenthalBootstrapTheme/",
     githubUrl: "https://github.com/EduGuate/DenthalBootstrapTheme",
-    imageUrl: "",
+    imageUrl: "/img/dental-theme.png",
     tags: ["Free Template", "Bootstrap", "Health"],
     category: "templates"
   },
