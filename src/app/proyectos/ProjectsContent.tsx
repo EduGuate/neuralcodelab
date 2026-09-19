@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ExternalLink, Github, Search } from 'lucide-react';
 import { proyectos, Project, Category } from '@/content/proyectos';
 import { useTranslation } from '@/lib/useTranslation';
@@ -22,11 +23,12 @@ export default function ProjectsContent() {
     { id: "entertainment", nombre: t('projects.categories.entertainment') },
     { id: "lifestyle", nombre: t('projects.categories.lifestyle') },
     { id: "education", nombre: t('projects.categories.education') },
-    { id: "templates", nombre: t('projects.categories.templates') }
+    { id: "templates", nombre: t('projects.categories.templates') },
+    { id: "eduguate", nombre: t('projects.categories.eduguate') }
   ];
 
   const filteredProjects = proyectos
-    .filter(project => activeCategory === 'all' || project.category === activeCategory)
+    .filter(project => activeCategory === 'all' || (activeCategory === 'eduguate' ? project.githubUrl.includes('github.com/EduGuate/') : project.category === activeCategory))
     .filter(project => {
       const description = t(project.descriptionKey);
       if (!searchTerm.trim()) return true;
@@ -92,6 +94,14 @@ export default function ProjectsContent() {
             ))}
           </div>
         </div>
+
+        {activeCategory === 'templates' && (
+          <p className="text-center mb-8">
+            <Link href="/plantillas-gratis" className="text-primary font-semibold underline underline-offset-4 hover:opacity-80">
+              {t('seo.templates.heading')} →
+            </Link>
+          </p>
+        )}
 
         {/* Grid */}
         {filteredProjects.length === 0 ? (

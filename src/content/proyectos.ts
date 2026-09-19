@@ -60,7 +60,7 @@ export const proyectos: Project[] = [
     title: "Infrastructure Lab",
     descriptionKey: "projects.items.infra.description",
     liveUrl: "https://infra.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/infralab",
     imageUrl: "/img/infra-lab.png",
     tags: ["Infrastructure", "Homelab", "DevOps", "AI"],
     category: "infrastructure"
@@ -70,7 +70,7 @@ export const proyectos: Project[] = [
     title: "Oryx Studio",
     descriptionKey: "projects.items.oryx_studio.description",
     liveUrl: "https://oryx-studio.neuralcodelab.com/",
-    githubUrl: "https://github.com/devlewiso/oryx-parser",
+    githubUrl: "https://github.com/devlewiso/oryx-studio",
     imageUrl: "/img/oryx-studio.png",
     tags: ["Tools", "Compiler", "AI"],
     category: "tools"
@@ -110,7 +110,7 @@ export const proyectos: Project[] = [
     title: "CleanCarPro GT Landing Page",
     descriptionKey: "projects.items.cleancarpro.description",
     liveUrl: "https://cleancarprogt.shop/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/cleancarprogt",
     imageUrl: "/img/cleancarprogt.png",
     tags: ["Landing Page", "Business"],
     category: "business"
@@ -120,7 +120,7 @@ export const proyectos: Project[] = [
     title: "RetroX Gaming Landing Page",
     descriptionKey: "projects.items.retrox.description",
     liveUrl: "https://retrox.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/retrox",
     imageUrl: "/img/retrox-gaming.png",
     tags: ["Landing Page", "Entertainment"],
     category: "entertainment"
@@ -130,7 +130,7 @@ export const proyectos: Project[] = [
     title: "SkateVibes Landing Page",
     descriptionKey: "projects.items.skatevibes.description",
     liveUrl: "https://skatevibes.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/SkateVibe",
     imageUrl: "/img/skatevibes.png",
     tags: ["Landing Page", "Lifestyle"],
     category: "lifestyle"
@@ -150,7 +150,7 @@ export const proyectos: Project[] = [
     title: "TechProFree Landing Page",
     descriptionKey: "projects.items.techpro.description",
     liveUrl: "https://techprofree.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/freecomputerTheme",
     imageUrl: "/img/techprofree.png",
     tags: ["Landing Page", "Tools"],
     category: "tools"
@@ -160,7 +160,7 @@ export const proyectos: Project[] = [
     title: "SlimVita",
     descriptionKey: "projects.items.slimvita.description",
     liveUrl: "https://slimvita.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/slimvita",
     imageUrl: "/img/slimvita.png",
     tags: ["Health", "Lifestyle"],
     category: "lifestyle"
@@ -190,7 +190,7 @@ export const proyectos: Project[] = [
     title: "Movies Searcher",
     descriptionKey: "projects.items.movies.description",
     liveUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/cinehub",
     imageUrl: "/img/movies-searcher.png",
     tags: ["Landing Page", "Events"],
     category: "business"
@@ -220,7 +220,7 @@ export const proyectos: Project[] = [
     title: "Random YouTube Landing Page",
     descriptionKey: "projects.items.random_yt.description",
     liveUrl: "https://randomyd.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/yt-random-comment",
     imageUrl: "/img/random-youtube.png",
     tags: ["Entertainment", "YouTube"],
     category: "entertainment"
@@ -230,7 +230,7 @@ export const proyectos: Project[] = [
     title: "Image to WebP",
     descriptionKey: "projects.items.img_webp.description",
     liveUrl: "https://pixelflow.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/PixelFlow",
     imageUrl: "/img/image-to-webp.png",
     tags: ["Tools", "Image Processing"],
     category: "tools"
@@ -240,7 +240,7 @@ export const proyectos: Project[] = [
     title: "Life Path Number Calculator",
     descriptionKey: "projects.items.life_path.description",
     liveUrl: "https://numerodevida.netlify.app/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/numerodevida",
     imageUrl: "/img/life-path-calculator.png",
     tags: ["Tools", "Lifestyle"],
     category: "lifestyle"
@@ -250,7 +250,7 @@ export const proyectos: Project[] = [
     title: "HealthTrack Website",
     descriptionKey: "projects.items.healthtrack.description",
     liveUrl: "https://healthtrackfit.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/healthtrack",
     imageUrl: "/img/healthtrack.png",
     tags: ["Health", "Fitness"],
     category: "lifestyle"
@@ -270,7 +270,7 @@ export const proyectos: Project[] = [
     title: "K-Idols Kids Learning",
     descriptionKey: "projects.items.kidols5.description",
     liveUrl: "https://k-idols.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/K-IDOLS-WARRIORS",
     imageUrl: "/img/k-idols-5.png",
     tags: ["Education", "Kids"],
     category: "education"
@@ -280,7 +280,7 @@ export const proyectos: Project[] = [
     title: "K-Idols Warriors (6 Years)",
     descriptionKey: "projects.items.kidols6.description",
     liveUrl: "https://k-idols6.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/k-idols6",
     imageUrl: "/img/k-idols-6.png",
     tags: ["Education", "Kids"],
     category: "education"
@@ -290,7 +290,7 @@ export const proyectos: Project[] = [
     title: "K-Saber Maya Guardians (7 Years)",
     descriptionKey: "projects.items.ksaber7.description",
     liveUrl: "https://k-idols7.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/k-idols7",
     imageUrl: "/img/k-saber-7.png",
     tags: ["Education", "Kids", "Culture"],
     category: "education"
@@ -300,7 +300,7 @@ export const proyectos: Project[] = [
     title: "K-Saber Maya Guardians (8 Years)",
     descriptionKey: "projects.items.ksaber8.description",
     liveUrl: "https://k-idols8.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/k-idols8",
     imageUrl: "/img/k-saber-8.png",
     tags: ["Education", "Kids", "Culture"],
     category: "education"
@@ -320,7 +320,7 @@ export const proyectos: Project[] = [
     title: "Load Balancer Simulator",
     descriptionKey: "projects.items.load_balancer.description",
     liveUrl: "https://simuladordebalanceadordecarga.neuralcodelab.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/devlewiso/simulador-de-balanceador-de-carga",
     imageUrl: "/img/load-balancer.png",
     tags: ["Tools", "Simulation"],
     category: "tools"
@@ -369,10 +369,680 @@ export const proyectos: Project[] = [
     id: "cloudnest-template",
     title: "CloudNest — Free Hosting Landing Page Template",
     descriptionKey: "projects.items.cloudnest_template.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/CloudNestTemplate/",
     githubUrl: "https://github.com/EduGuate/CloudNestTemplate",
     imageUrl: "/img/cloudnest-template.png",
     tags: ["Free Template", "Landing Page", "GSAP"],
+    category: "templates"
+  },
+  {
+    id: "ayudagt",
+    title: "Ayuda Niños GT",
+    descriptionKey: "projects.items.ayudagt.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/ayudagt",
+    imageUrl: "",
+    tags: ["Education", "Kids", "Guatemala", "Safety"],
+    category: "education"
+  },
+  {
+    id: "empleosdelatlantico",
+    title: "Empleos del Atlántico",
+    descriptionKey: "projects.items.empleosdelatlantico.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/empleosdelatlantico",
+    imageUrl: "",
+    tags: ["Jobs", "Community", "Next.js"],
+    category: "business"
+  },
+  {
+    id: "delatlanticoempleos",
+    title: "Empleos del Atlántico (MVP)",
+    descriptionKey: "projects.items.delatlanticoempleos.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/delatlanticoempleos",
+    imageUrl: "",
+    tags: ["Jobs", "Community", "MVP"],
+    category: "business"
+  },
+  {
+    id: "empleosdelatlantico-v1",
+    title: "Empleos del Atlántico (v1)",
+    descriptionKey: "projects.items.empleosdelatlantico_v1.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/empleosdelatlantico",
+    imageUrl: "",
+    tags: ["Jobs", "Vite", "React"],
+    category: "business"
+  },
+  {
+    id: "ecommerce-delatlantico",
+    title: "Del Atlántico Ecommerce",
+    descriptionKey: "projects.items.ecommerce_delatlantico.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/ecommerce-delatlantico",
+    imageUrl: "",
+    tags: ["Ecommerce", "Next.js", "Supabase"],
+    category: "business"
+  },
+  {
+    id: "agentesgt",
+    title: "Agentes GT",
+    descriptionKey: "projects.items.agentesgt.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/agentesgt",
+    imageUrl: "",
+    tags: ["AI", "Agents", "Next.js"],
+    category: "tools"
+  },
+  {
+    id: "agentiq",
+    title: "AgentIQ",
+    descriptionKey: "projects.items.agentiq.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/agentiq",
+    imageUrl: "",
+    tags: ["AI", "Call Center", "Next.js"],
+    category: "tools"
+  },
+  {
+    id: "hermes-dashboard",
+    title: "Hermes Dashboard",
+    descriptionKey: "projects.items.hermes_dashboard.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/hermes-dashboard",
+    imageUrl: "",
+    tags: ["Dashboard", "AI Agents", "Next.js"],
+    category: "tools"
+  },
+  {
+    id: "sinapsis-explorer",
+    title: "Sinapsis Explorer",
+    descriptionKey: "projects.items.sinapsis_explorer.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/sinapsis-explorer",
+    imageUrl: "",
+    tags: ["Education", "Science", "Interactive"],
+    category: "education"
+  },
+  {
+    id: "vertex-marketing",
+    title: "Vertex Marketing",
+    descriptionKey: "projects.items.vertex_marketing.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/vertex-marketing",
+    imageUrl: "",
+    tags: ["Marketing", "Next.js"],
+    category: "business"
+  },
+  {
+    id: "auralink",
+    title: "AuraLink AI Security",
+    descriptionKey: "projects.items.auralink.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/auralink.live",
+    imageUrl: "",
+    tags: ["Security", "AI", "Astro"],
+    category: "business"
+  },
+  {
+    id: "e46-heritage",
+    title: "E46 Heritage",
+    descriptionKey: "projects.items.e46_heritage.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/E46-Heritage",
+    imageUrl: "",
+    tags: ["Cars", "BMW", "Community"],
+    category: "lifestyle"
+  },
+  {
+    id: "irancorner",
+    title: "Iran's Corner",
+    descriptionKey: "projects.items.irancorner.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/irancorner",
+    imageUrl: "",
+    tags: ["Personal", "Next.js"],
+    category: "business"
+  },
+  {
+    id: "neuralcodelab-blog",
+    title: "Neural Code Lab Blog",
+    descriptionKey: "projects.items.neuralcodelab_blog.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/blog_neuralcodelab.com",
+    imageUrl: "",
+    tags: ["Blog", "Astro"],
+    category: "business"
+  },
+  {
+    id: "cargolegends",
+    title: "Cargo Legends RP",
+    descriptionKey: "projects.items.cargolegends.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/cargolegendsRP",
+    imageUrl: "",
+    tags: ["Gaming", "Astro"],
+    category: "entertainment"
+  },
+  {
+    id: "microsaas-analisis",
+    title: "MicroSaaS Análisis",
+    descriptionKey: "projects.items.microsaas_analisis.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/microsaasAnalisis",
+    imageUrl: "",
+    tags: ["SaaS", "Astro", "Analysis"],
+    category: "business"
+  },
+  {
+    id: "plasticycle",
+    title: "PlastiCycle",
+    descriptionKey: "projects.items.plasticycle.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/PlastiCycle",
+    imageUrl: "",
+    tags: ["Recycling", "Guatemala", "Next.js"],
+    category: "business"
+  },
+  {
+    id: "miel-pura",
+    title: "Miel Pura de Abejas",
+    descriptionKey: "projects.items.miel_pura.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Miel-Pura-de-Abejas",
+    imageUrl: "",
+    tags: ["Landing Page", "Food"],
+    category: "business"
+  },
+  {
+    id: "coffee",
+    title: "Aromatic Coffee",
+    descriptionKey: "projects.items.coffee.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/coffe_dialogflow",
+    imageUrl: "",
+    tags: ["Landing Page", "Coffee", "Dialogflow"],
+    category: "business"
+  },
+  {
+    id: "rentauto",
+    title: "Sistema de Alquiler de Vehículos",
+    descriptionKey: "projects.items.rentauto.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/rentauto-landingpage",
+    imageUrl: "",
+    tags: ["Landing Page", "Cars", "Rental"],
+    category: "business"
+  },
+  {
+    id: "cafeantigua",
+    title: "Café Antigua",
+    descriptionKey: "projects.items.cafeantigua.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Cafeantigua",
+    imageUrl: "",
+    tags: ["Landing Page", "Coffee", "Guatemala"],
+    category: "business"
+  },
+  {
+    id: "wavestoregt",
+    title: "WaveStore GT",
+    descriptionKey: "projects.items.wavestoregt.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/WavestoreGT",
+    imageUrl: "",
+    tags: ["Store", "Guatemala"],
+    category: "business"
+  },
+  {
+    id: "cine-hub",
+    title: "CineHub",
+    descriptionKey: "projects.items.cine_hub.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/cinehub",
+    imageUrl: "",
+    tags: ["Movies", "Search", "React"],
+    category: "entertainment"
+  },
+  {
+    id: "music-player",
+    title: "Music Player",
+    descriptionKey: "projects.items.music_player.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/music-player",
+    imageUrl: "",
+    tags: ["Music", "React"],
+    category: "entertainment"
+  },
+  {
+    id: "futuristic-audio-player",
+    title: "Futuristic Audio Player",
+    descriptionKey: "projects.items.futuristic_audio_player.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/futuristic-audio-player",
+    imageUrl: "",
+    tags: ["Audio", "Visualizer"],
+    category: "entertainment"
+  },
+  {
+    id: "itzamma",
+    title: "Itzamma",
+    descriptionKey: "projects.items.itzamma.description",
+    liveUrl: "https://itzamma.vercel.app",
+    githubUrl: "https://github.com/devlewiso/itzamma",
+    imageUrl: "",
+    tags: ["Next.js", "Vercel"],
+    category: "business"
+  },
+  {
+    id: "imgsocial",
+    title: "ImgSocial",
+    descriptionKey: "projects.items.imgsocial.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/ImgSocial",
+    imageUrl: "",
+    tags: ["Images", "Social", "React"],
+    category: "tools"
+  },
+  {
+    id: "webradar",
+    title: "WebRadar",
+    descriptionKey: "projects.items.webradar.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/WebRadar",
+    imageUrl: "",
+    tags: ["Dashboard", "Monitoring"],
+    category: "tools"
+  },
+  {
+    id: "image-to-webp",
+    title: "Conversor Futurista de Imagen a WebP",
+    descriptionKey: "projects.items.image_to_webp.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/img-webp",
+    imageUrl: "",
+    tags: ["Images", "WebP"],
+    category: "tools"
+  },
+  {
+    id: "imagestowebp",
+    title: "Conversor de Imágenes a WebP",
+    descriptionKey: "projects.items.imagestowebp.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/imagestowebp",
+    imageUrl: "",
+    tags: ["Images", "WebP", "Python"],
+    category: "tools"
+  },
+  {
+    id: "timer-tracker",
+    title: "Time Tracker",
+    descriptionKey: "projects.items.timer_tracker.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/timer-tracker",
+    imageUrl: "",
+    tags: ["Productivity", "Time"],
+    category: "tools"
+  },
+  {
+    id: "tasker-manager",
+    title: "Task Manager Pro",
+    descriptionKey: "projects.items.tasker_manager.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/tasker-manager",
+    imageUrl: "",
+    tags: ["Productivity", "Tasks"],
+    category: "tools"
+  },
+  {
+    id: "ccai-ops-hub",
+    title: "CCAI Ops Hub",
+    descriptionKey: "projects.items.ccai_ops_hub.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Todo_ProjectName",
+    imageUrl: "",
+    tags: ["Task Manager", "Contact Center"],
+    category: "tools"
+  },
+  {
+    id: "excel-tool",
+    title: "Excel File Visualizer",
+    descriptionKey: "projects.items.excel_tool.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/excel-tool",
+    imageUrl: "",
+    tags: ["Excel", "Data"],
+    category: "tools"
+  },
+  {
+    id: "yt-downloader",
+    title: "Descargador de Videos de YouTube",
+    descriptionKey: "projects.items.yt_downloader.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/yt-downloader",
+    imageUrl: "",
+    tags: ["YouTube", "Video"],
+    category: "tools"
+  },
+  {
+    id: "expense-tracker",
+    title: "Expense Tracker Dashboard",
+    descriptionKey: "projects.items.expense_tracker.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/ExpensTracerDash",
+    imageUrl: "",
+    tags: ["Finance", "Dashboard", "Python"],
+    category: "tools"
+  },
+  {
+    id: "cajero-atm",
+    title: "Cajero Automático Seguro",
+    descriptionKey: "projects.items.cajero_atm.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/cajero_atm",
+    imageUrl: "",
+    tags: ["Python", "Simulation"],
+    category: "tools"
+  },
+  {
+    id: "face-detection",
+    title: "Detección de Rostros en Tiempo Real",
+    descriptionKey: "projects.items.face_detection.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Facedetecv1.2",
+    imageUrl: "",
+    tags: ["Computer Vision", "Python"],
+    category: "tools"
+  },
+  {
+    id: "image-metadata-scanner",
+    title: "Escáner de Metadatos de Imágenes",
+    descriptionKey: "projects.items.image_metadata_scanner.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Esc-ner-de-Metadatos-de-Im-genes",
+    imageUrl: "",
+    tags: ["Images", "Metadata", "Python"],
+    category: "tools"
+  },
+  {
+    id: "wordpress-vuln",
+    title: "WordpresVuln",
+    descriptionKey: "projects.items.wordpress_vuln.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/WordpresVuln",
+    imageUrl: "",
+    tags: ["Security", "WordPress", "Python"],
+    category: "tools"
+  },
+  {
+    id: "wordpress-scanner-visual",
+    title: "WordPress Vulnerability Scanner",
+    descriptionKey: "projects.items.wordpress_scanner_visual.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/WordpresScannerVulnVisual",
+    imageUrl: "",
+    tags: ["Security", "WordPress", "Python"],
+    category: "tools"
+  },
+  {
+    id: "web-service-scanner",
+    title: "Web Service Vulnerability Scanner",
+    descriptionKey: "projects.items.web_service_scanner.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Web-Service-Vulnerability-Scanner",
+    imageUrl: "",
+    tags: ["Security", "Web", "Python"],
+    category: "tools"
+  },
+  {
+    id: "pest-simulation",
+    title: "Simulación de Plagas en Cultivos",
+    descriptionKey: "projects.items.pest_simulation.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Simulaci-n-de-Plagas-en-Cultivos",
+    imageUrl: "",
+    tags: ["Agriculture", "Simulation", "Python"],
+    category: "education"
+  },
+  {
+    id: "agricalculo",
+    title: "AgriCálculo",
+    descriptionKey: "projects.items.agricalculo.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/AgriC-lculo-",
+    imageUrl: "",
+    tags: ["Agriculture", "Python"],
+    category: "tools"
+  },
+  {
+    id: "iso-adventure",
+    title: "ISO Adventure",
+    descriptionKey: "projects.items.iso_adventure.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/isointeractiva",
+    imageUrl: "",
+    tags: ["Education", "ISO", "Interactive"],
+    category: "education"
+  },
+  {
+    id: "rcp-paramedico",
+    title: "Entrenamiento RCP de Paramédico",
+    descriptionKey: "projects.items.rcp_paramedico.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Entrenamiento-RCP-de-Param-dico",
+    imageUrl: "",
+    tags: ["Education", "Health", "Training"],
+    category: "education"
+  },
+  {
+    id: "compatibilidad",
+    title: "Calculadora de Compatibilidad de Nombres",
+    descriptionKey: "projects.items.compatibilidad.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/Calculadora_Compatibilidad",
+    imageUrl: "",
+    tags: ["Calculator", "Names", "Fun"],
+    category: "lifestyle"
+  },
+  {
+    id: "numerologia",
+    title: "Calculadora Numerológica de Nombres",
+    descriptionKey: "projects.items.numerologia.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/CalculadoraNumerologicaAstral",
+    imageUrl: "",
+    tags: ["Calculator", "Numerology", "Astral"],
+    category: "lifestyle"
+  },
+  {
+    id: "homelab-dashboard",
+    title: "HomeLab Dashboard",
+    descriptionKey: "projects.items.homelab_dashboard.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/homelabdashboard",
+    imageUrl: "",
+    tags: ["Homelab", "Dashboard"],
+    category: "infrastructure"
+  },
+  {
+    id: "homelab-architecture",
+    title: "Homelab Architecture",
+    descriptionKey: "projects.items.homelab_architecture.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/homelab-architecture",
+    imageUrl: "",
+    tags: ["Homelab", "Mermaid", "Architecture"],
+    category: "infrastructure"
+  },
+  {
+    id: "g923-fix",
+    title: "Logitech G923 Xbox en Linux",
+    descriptionKey: "projects.items.g923_fix.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/g923-xbox-linux-fix",
+    imageUrl: "",
+    tags: ["Linux", "Gaming", "Shell"],
+    category: "infrastructure"
+  },
+  {
+    id: "g923-fix-linux",
+    title: "G923 Fix Linux",
+    descriptionKey: "projects.items.g923_fix_linux.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/g923-fix-linux",
+    imageUrl: "",
+    tags: ["Linux", "Gaming", "Shell"],
+    category: "infrastructure"
+  },
+  {
+    id: "neuralcodelab-landing-v1",
+    title: "Neural Code Lab Landing (v1)",
+    descriptionKey: "projects.items.neuralcodelab_landing_v1.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/neuralcodelab_landingpage",
+    imageUrl: "",
+    tags: ["Landing Page", "Legacy"],
+    category: "business"
+  },
+  {
+    id: "personal-assistant-landing",
+    title: "Personal Assistant Landing",
+    descriptionKey: "projects.items.personal_assistant_landing.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/LandingPage_PersonalAssistant",
+    imageUrl: "",
+    tags: ["Landing Page", "AI"],
+    category: "business"
+  },
+  {
+    id: "perfil-updated",
+    title: "Mi Perfil",
+    descriptionKey: "projects.items.perfil_updated.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/perfilUpdated",
+    imageUrl: "",
+    tags: ["Portfolio", "Personal"],
+    category: "business"
+  },
+  {
+    id: "irans-corner-dashboard",
+    title: "Iran's Corner Dashboard",
+    descriptionKey: "projects.items.irans_corner_dashboard.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/iranscornerdashboard",
+    imageUrl: "",
+    tags: ["Dashboard", "Tools"],
+    category: "tools"
+  },
+  {
+    id: "nextgentechpro",
+    title: "NextGen TechPro",
+    descriptionKey: "projects.items.nextgentechpro.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/nextgentechpro",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Tech"],
+    category: "templates"
+  },
+  {
+    id: "servicios-tecnologicos",
+    title: "Servicios Tecnológicos Globales",
+    descriptionKey: "projects.items.servicios_tecnologicos.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/Servicios-Tecnol-gicos",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "IT"],
+    category: "templates"
+  },
+  {
+    id: "cleaning-theme",
+    title: "Limpieza de Alfombras Profesional",
+    descriptionKey: "projects.items.cleaning_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/CleaningTema",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Cleaning"],
+    category: "templates"
+  },
+  {
+    id: "hosting-theme",
+    title: "Servicios de Hosting",
+    descriptionKey: "projects.items.hosting_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/hostingserrvicebootstrap",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Hosting"],
+    category: "templates"
+  },
+  {
+    id: "dj-theme",
+    title: "DJ Electro",
+    descriptionKey: "projects.items.dj_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/DjBootstrapTheme",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Music"],
+    category: "templates"
+  },
+  {
+    id: "urban-skate-theme",
+    title: "UrbanRide Skateboards",
+    descriptionKey: "projects.items.urban_skate_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/UrbanSkateShopTheme",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Skate"],
+    category: "templates"
+  },
+  {
+    id: "gamer-theme",
+    title: "NeoGamer Hub",
+    descriptionKey: "projects.items.gamer_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/GamerBootstrapTheme",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Gaming"],
+    category: "templates"
+  },
+  {
+    id: "shoes-theme",
+    title: "StepStyle Shoes",
+    descriptionKey: "projects.items.shoes_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/ShoesStoreBootstrap",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Store"],
+    category: "templates"
+  },
+  {
+    id: "dental-theme",
+    title: "Smile Bright Dental",
+    descriptionKey: "projects.items.dental_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/DenthalBootstrapTheme",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Health"],
+    category: "templates"
+  },
+  {
+    id: "realestate-theme",
+    title: "RealEstate Hub",
+    descriptionKey: "projects.items.realestate_theme.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/EduGuate/realstateTheme",
+    imageUrl: "",
+    tags: ["Free Template", "Bootstrap", "Real Estate"],
+    category: "templates"
+  },
+  {
+    id: "pizza-theme",
+    title: "Pizza Viva",
+    descriptionKey: "projects.items.pizza_theme.description",
+    liveUrl: "https://eduguate.github.io/PizzaBootstrapTheme/",
+    githubUrl: "https://github.com/EduGuate/PizzaBootstrapTheme",
+    imageUrl: "/img/pizza-theme.png",
+    tags: ["Free Template", "Bootstrap", "Food"],
     category: "templates"
   }
 ];
@@ -385,5 +1055,6 @@ export const categorias: Category[] = [
   { id: "entertainment", nombreKey: "projects.categories.entertainment" },
   { id: "lifestyle", nombreKey: "projects.categories.lifestyle" },
   { id: "education", nombreKey: "projects.categories.education" },
-  { id: "templates", nombreKey: "projects.categories.templates" }
+  { id: "templates", nombreKey: "projects.categories.templates" },
+  { id: "eduguate", nombreKey: "projects.categories.eduguate" }
 ];
