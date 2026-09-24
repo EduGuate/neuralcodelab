@@ -957,11 +957,11 @@ export const proyectos: Project[] = [
   },
   {
     id: "hosting-theme",
-    title: "Servicios de Hosting",
+    title: "Órbita Hosting",
     descriptionKey: "projects.items.hosting_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/hostingserrvicebootstrap/",
     githubUrl: "https://github.com/EduGuate/hostingserrvicebootstrap",
-    imageUrl: "",
+    imageUrl: "/img/hosting-theme.png",
     tags: ["Free Template", "Bootstrap", "Hosting"],
     category: "templates"
   },
@@ -969,9 +969,9 @@ export const proyectos: Project[] = [
     id: "dj-theme",
     title: "DJ Electro",
     descriptionKey: "projects.items.dj_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/DjBootstrapTheme/",
     githubUrl: "https://github.com/EduGuate/DjBootstrapTheme",
-    imageUrl: "",
+    imageUrl: "/img/dj-theme.png",
     tags: ["Free Template", "Bootstrap", "Music"],
     category: "templates"
   },
