@@ -1,0 +1,1239 @@
+{
+  "name": "Wild Wonders · Fábrica de Shorts de Naturaleza con IA (Veo 3.1 Lite → YouTube y TikTok)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -640
+      ],
+      "id": "93599d93-fd5b-4343-916d-654be82eb051",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "triggerAtHour": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -480
+      ],
+      "id": "565e8ea1-b691-4f21-95ee-4dfefd2023ce",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REEMPLAZAR_ID_TABLA"
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        -496
+      ],
+      "id": "95b3c390-ded8-4120-b22a-cd089a94ce38",
+      "name": "Leer Historial",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepara el brief del día: categoría y tipo de historia al azar (sin repetir las recientes)\n// y la lista de especies ya usadas, leída de la tabla wild_wonders_historial.\nconst CATEGORIAS = [\n  'Aves rapaces', 'Aves marinas y costeras', 'Aves de la selva', 'Mamíferos marinos',\n  'Felinos salvajes', 'Primates', 'Mamíferos de la sabana', 'Animales polares',\n  'Animales del desierto', 'Reptiles', 'Anfibios', 'Peces de arrecife',\n  'Peces de aguas profundas', 'Tiburones y rayas', 'Invertebrados marinos', 'Insectos',\n  'Arácnidos', 'Animales nocturnos', 'Roedores y pequeños mamíferos', 'Animales de montaña',\n  'Animales de ríos y pantanos', 'Cefalópodos',\n];\nconst COMPORTAMIENTOS = [\n  'caza o estrategia para conseguir alimento',\n  'defensa o camuflaje',\n  'uso de herramientas o inteligencia',\n  'récord físico extremo (velocidad, fuerza o tamaño)',\n  'migración o supervivencia extrema',\n  'crianza y cuidado de las crías',\n  'comunicación o cortejo',\n  'sentidos extraordinarios',\n  'simbiosis o alianza entre especies',\n  'mito vs realidad',\n  'longevidad o edad récord (cuánto vive, el individuo más viejo conocido)',\n  'anatomía o característica física asombrosa (algo en su cuerpo que sorprende)',\n  'metamorfosis o cambio drástico durante su vida',\n  'sonido o vocalización única',\n  'dato sorprendente poco conocido (curiosidad que casi nadie sabe)',\n  'adaptación evolutiva extrema (cómo resolvió un problema aparentemente imposible)',\n  'descubrimiento científico reciente sobre la especie',\n  'veneno o toxina (cómo la produce y para qué la usa)',\n  'regeneración o curación extraordinaria del cuerpo',\n  'hibernación o letargo extremo',\n  'territorio y jerarquía social',\n  'juego o comportamiento lúdico',\n  'duelo o luto (evidencia de emociones)',\n  'construcción de nidos, madrigueras o estructuras',\n  'bioluminiscencia o producción de luz propia',\n  'cambio de color o forma para camuflarse',\n  'vuelo, salto o locomoción inusual',\n  'buceo o adaptación a presión extrema',\n  'resistencia a temperaturas extremas (calor o frío)',\n  'dieta extrema o inusual (algo que nadie esperaría que comiera)',\n  'relación simbiótica entre parásito y huésped',\n  'cooperación en manada o comportamiento colectivo',\n  'imitación o mimetismo de otra especie',\n  'sentido del tiempo o navegación (cómo saben cuándo o hacia dónde ir)',\n  'capacidad de sobrevivir mucho tiempo sin agua o comida',\n  'reproducción inusual (partenogénesis, cambio de sexo, etc.)',\n  'tamaño extremo al nacer comparado con el adulto',\n  'velocidad de crecimiento inusual',\n  'uso de electricidad o campos eléctricos propios',\n  'percepción de campos magnéticos o eléctricos ajenos',\n  'autotomía o pérdida voluntaria de partes del cuerpo como defensa',\n  'domesticación o relación histórica con humanos',\n  'especie redescubierta o que se creía extinta',\n  'rol ecológico clave (ingeniero de su ecosistema)',\n  'comportamiento nocturno vs diurno inusual',\n  'muda de piel, caparazón o plumaje',\n  'competencia o pelea territorial',\n  'inteligencia social o reconocimiento entre individuos',\n  'estrategia de escape o huida inusual',\n  'comportamiento aprendido o transmitido culturalmente entre generaciones',\n];\n\nconst REGIONES = [\n  'Amazonía', 'Sudeste Asiático', 'Madagascar', 'Australia y Nueva Guinea', 'Ártico y Antártida',\n  'África central y occidental', 'Andes', 'Himalaya y Asia central', 'Mar profundo', 'Galápagos y islas del Pacífico',\n  'Mediterráneo y Europa', 'Norteamérica templada', 'Centroamérica y el Caribe', 'India y Sri Lanka',\n  'Arrecifes del Indo-Pacífico', 'Desiertos de Asia y Oriente Medio', 'Sabana del sur de África', 'Selvas de Borneo y Sumatra',\n  'Patagonia', 'Océano Atlántico abierto',\n];\n\nconst rows = $input.all().map(i => i.json).filter(r => r && r.especie);\nrows.sort((a, b) => new Date(a.createdAt || 0) - new Date(b.createdAt || 0));\n\nconst pick = (list, recientes) => {\n  const libres = list.filter(x => !recientes.includes(x));\n  const pool = libres.length ? libres : list;\n  return pool[Math.floor(Math.random() * pool.length)];\n};\n\nconst categoria = pick(CATEGORIAS, rows.slice(-6).map(r => r.categoria));\nconst comportamiento = pick(COMPORTAMIENTOS, rows.slice(-3).map(r => r.comportamiento));\n\nreturn [{\n  json: {\n    fecha: new Date().toLocaleDateString('en-CA'),\n    semilla: Math.floor(Math.random() * 1000000),\n    categoria,\n    region: REGIONES[Math.floor(Math.random() * REGIONES.length)],\n    comportamiento,\n    total: rows.length,\n    usadas: rows.length ? rows.map(r => r.especie).join(' | ') : '(ninguna todavía)',\n  },\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        -496
+      ],
+      "id": "5d75a77c-593e-4192-9b27-8d741ee78246",
+      "name": "Preparar Brief"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Genera el video de hoy para Wild Wonders Revealed.\nFecha: {{ $json.fecha }} | Semilla: {{ $json.semilla }}\nCATEGORÍA OBLIGATORIA de hoy: {{ $json.categoria }}\nTIPO DE HISTORIA obligatorio: {{ $json.comportamiento }}\nESPECIES YA USADAS (prohibido repetir: ni la misma especie con otro nombre, ni otra especie del mismo género): {{ $json.usadas }}\nLARGO DE LA NARRACIÓN: entre 48 y 56 palabras en inglés (cuéntalas; menos de 45 se rechaza).\nREGIÓN sugerida (prefiere especies de aquí): {{ $json.region }}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "Eres el Director de Documental de Naturaleza, guionista y prompt engineer del canal Wild Wonders Revealed. Cada ejecución produces UN video vertical hiperrealista de vida salvaje que revela un comportamiento, una habilidad o un dato asombroso de un animal, contado como una mini historia con desenlace. Tono profesional, directo y cálido. Todo lo que ve o escucha el público va en inglés (título, descripción, hashtags, narración y prompt de video). Solo dato_central y fuente_confianza van en español, para revisión interna.\n\nPROCESO: antes de responder, decide internamente (1) elegir una especie y UN solo dato o comportamiento central que sea verificable y no repita lo que hay en la memoria, (2) comprobar que el dato es real y (3) planear los planos. Si un dato es incierto, no lo afirmes: elige otro.\n\nREGLAS:\n- Un solo comportamiento central. Estructura: gancho en los primeros 3 s, presentación y contexto, tensión y revelación, cierre con dato memorable que enlace con el gancho.\n- Fidelidad a la especie: anatomía, tamaño, hábitat y comportamiento reales. Nada de híbridos ni habilidades inventadas.\n- Identidad fija del animal en todo el video: especie, patrón de color y marcas siempre iguales. Una sola locación y clima constantes.\n- Solo animales reales que existen hoy en la naturaleza (nada de criaturas míticas como fénix o dragones, ni animales extintos). Si dudas de un dato, elige otro animal.\n- Solo animales, sin personas. Sin gore ni sufrimiento visible: el peligro se sugiere con cámara y sonido.\n- Estilo de fotografía de naturaleza de alta gama: teleobjetivo, poca profundidad de campo, luz natural, cámara estable con drift suave o seguimiento. Nada de texto, subtítulos ni marcas de agua en imagen.\n- Audio del video: solo ambiente natural y SFX, sin música ni voz.\n\nreferencia_visual: UNA ficha de identidad del animal en inglés, máximo 250 caracteres, que se repite al inicio de las 4 tomas: especie, tamaño real, patrón de color EXACTO, marcas EXACTAS y en qué lado del cuerpo están, forma de ojos, orejas, hocico o pico, y proporciones. Sin fondo, sin acción, sin cámara. Sé extremadamente preciso: es lo único que mantiene al mismo animal en las 4 tomas.\n\nDIRECCIÓN DE FOTOGRAFÍA Y STORYBOARD (piensas como un cineasta de documentales de naturaleza de alta gama):\n- referencia_escenario: UN párrafo en inglés con la locación VACÍA (sin animales ni personas): geografía, suelo, vegetación, agua o roca, clima, hora del día, dirección de la luz y paleta. Una sola locación coherente con el hábitat real de la especie, con los apoyos físicos que usará el animal en las 4 tomas.\n- storyboard: EXACTAMENTE 4 tomas de 8 s que cuentan la mini historia (toma 1: gancho y presentación del animal; toma 2: hábitat, contexto o tensión; toma 3: revelación del comportamiento o dato; toma 4: remate que enlaza con el gancho). El video final dura 28 s.\n- Cada toma tiene encuadre, ángulo, pose y posición en cuadro DISTINTOS. Progresión: plano general de establecimiento → plano medio → primer plano (ojo, cabeza de perfil o textura) → plano general o medio de cierre.\n- Cortes orgánicos: alterna planos en cada toma (general, medio, primer plano del ojo o la boca, detalle de patas o textura, contraplano, plano del hábitat). Nunca dos tomas seguidas con el mismo encuadre.\n- keyframe: es el PRIMER FOTOGRAMA exacto de la toma, descrito como una foto fija: tipo de plano y lente, altura y ángulo de cámara, dónde está el animal en el cuadro (izquierda, derecha, centro, cerca, lejos), su pose y orientación exactas, qué hace en ese instante, luz y profundidad de campo. Máximo 300 caracteres (keyframe) / 250 (movimiento). El sistema antepone la ficha del animal y la locación a cada toma, así que no las repitas.\n- movimiento: lo que pasa en los 8 s a partir de ese fotograma: UNA acción física suave y lenta (girar la cabeza, parpadear, olfatear, dar unos pasos) en una sola dirección de pantalla, movimiento de cámara lento y continuo, y SFX naturales concretos. Máximo 300 caracteres (keyframe) / 250 (movimiento). La toma 4 termina en calma casi estática.\n- Continuidad entre tomas: misma luz, clima y dirección de pantalla (regla de los 180°). La pose final de una toma debe poder enlazar con la inicial de la siguiente aunque cambie el encuadre.\n- narracion de cada toma: la parte exacta de la narración que suena en ese tramo; las 4 juntas forman el campo narracion completo.\n\nSIMPLICIDAD PARA IA (obligatorio, el modelo de video deforma lo complejo):\n- Cada toma describe UNA sola cosa clara: el animal entero, o UNA parte reconocible, con UNA acción lenta.\n- Primeros planos permitidos, siempre de frente o de perfil y bien iluminados: ojo, cabeza de perfil, cara de frente, textura del pelaje, plumas o escamas. PROHIBIDO: planos en picado o cenitales, patas o cola en ángulos raros, partes cortadas que no se reconocen, varios animales cerca uno de otro.\n- keyframe: máximo 300 caracteres. movimiento: máximo 250 caracteres. referencia_visual: máximo 250 caracteres. referencia_escenario: máximo 220 caracteres. Frases cortas y concretas, sin adjetivos de relleno.\n\nFORMATO DE SALIDA (obligatorio): responde únicamente con UN objeto JSON válido, sin markdown, sin bloques de código, sin títulos ni texto antes o después, y sin llamar a ninguna herramienta. Todos los valores son texto plano: storyboard es una lista de EXACTAMENTE 4 objetos (plano, keyframe, movimiento, narracion). hashtags es una lista de textos.\n\nVARIEDAD (obligatorio): cada video debe ser distinto a todos los anteriores. Respeta la CATEGORÍA y el TIPO DE HISTORIA que te dan en cada mensaje y no uses ninguna especie de la lista de ya usadas. Prefiere especies poco conocidas y sorprendentes antes que las obvias (león, elefante, tiburón blanco, delfín, lobo). En especie escribe el nombre común y el nombre científico entre paréntesis, por ejemplo: Pez arquero (Toxotes jaculatrix).\n\nNARRACIÓN (campo narracion): el guion en inglés que se leerá en voz alta sobre el video de 28 s. Entre 48 y 56 palabras (la voz habla a unas 2 palabras por segundo y el video dura 28 s), texto plano en un solo párrafo, frases cortas. La primera frase es el gancho (los primeros 3 s); el dato central va en la parte media; cierra con una frase memorable que enlace con el gancho. Sin acotaciones, sin emojis y con los números escritos con palabras (two hundred miles per hour). Debe coincidir con lo que se ve en cada toma del storyboard. La descripción del video invita a suscribirse a Wild Wonders Revealed.\n\nORIGINALIDAD (obligatorio): el canal no puede repetir temas muy vistos. Antes de responder piensa 5 candidatos distintos (especie + ángulo) dentro de la CATEGORÍA y el TIPO DE HISTORIA del día, y prefiere especies de la REGIÓN sugerida. Puntúa cada candidato de 1 a 10 en novedad (10 = casi nadie ha hecho videos cortos sobre eso; 1 = viral y repetido) y elige solo uno con novedad de 8 o más y un dato verificable. Escribe los candidatos en `candidatos` y la puntuación del elegido en `novedad`. Busca especies poco conocidas con un comportamiento realmente sorprendente y documentado.\nANIMALES PROHIBIDOS por sobreexpuestos (ni ellos ni sus parientes cercanos): león, elefante, guepardo, tigre, lobo, tiburón, delfín, orca, ballena, pulpo, camarón mantis, perrito de las praderas, suricata, tejón de la miel, perezoso, pingüino, chimpancé, gorila, panda, koala, ajolote, tardígrado, halcón peregrino, ornitorrinco, águila calva, jirafa, hipopótamo, cocodrilo, colibrí, camaleón, búho, oso polar, zorro ártico, medusa y caballito de mar. Si la categoría del día suele estar dominada por uno de ellos, elige otro grupo dentro de la categoría."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        832,
+        -496
+      ],
+      "id": "457ad46f-c613-49ed-b922-700f5618a8d8",
+      "name": "Director de Cine",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "model": "kimi-k3:cloud",
+        "options": {
+          "numCtx": 32768,
+          "numPredict": 8000,
+          "format": "json",
+          "think": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        720,
+        128
+      ],
+      "id": "c3e608a9-3bac-4e13-95c1-0dc30e9bf2d6",
+      "name": "Kimi K3 · guion"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"candidatos\": {\n      \"type\": \"array\",\n      \"minItems\": 4,\n      \"maxItems\": 6,\n      \"description\": \"5 candidate topics you considered, before choosing\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"especie\": {\n            \"type\": \"string\"\n          },\n          \"gancho\": {\n            \"type\": \"string\",\n            \"description\": \"one-line angle, in English\"\n          },\n          \"novedad\": {\n            \"type\": \"integer\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          },\n          \"verificable\": {\n            \"type\": \"boolean\"\n          }\n        },\n        \"required\": [\n          \"especie\",\n          \"gancho\",\n          \"novedad\",\n          \"verificable\"\n        ]\n      }\n    },\n    \"novedad\": {\n      \"type\": \"integer\",\n      \"minimum\": 8,\n      \"maximum\": 10,\n      \"description\": \"Originality score of the CHOSEN topic (must be 8-10; 10 = almost nobody has made short videos about it)\"\n    },\n    \"especie\": {\n      \"type\": \"string\",\n      \"description\": \"Common name and scientific name in parentheses, e.g. Pez arquero (Toxotes jaculatrix). Must NOT be an overexposed animal.\"\n    },\n    \"dato_central\": {\n      \"type\": \"string\",\n      \"description\": \"El dato o comportamiento que revela el video, en español\"\n    },\n    \"fuente_confianza\": {\n      \"type\": \"string\",\n      \"description\": \"Respaldo verificable del dato (estudio, institución o consenso científico)\"\n    },\n    \"titulo\": {\n      \"type\": \"string\",\n      \"description\": \"English title with a hook, max 80 characters\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"English description, 2-3 lines, invites viewers to subscribe to Wild Wonders Revealed\"\n    },\n    \"hashtags\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"description\": \"English hashtags, each starting with #\"\n    },\n    \"narracion\": {\n      \"type\": \"string\",\n      \"description\": \"English narration read aloud over the 30 s video. 48-56 words (about 270-320 characters). One plain paragraph, first sentence is the hook, numbers written as words. Count the words before answering.\",\n      \"minLength\": 230,\n      \"maxLength\": 380\n    },\n    \"referencia_visual\": {\n      \"type\": \"string\",\n      \"description\": \"English identity card of the animal, max 250 characters, repeated at the start of every shot: species, real size, EXACT color pattern and markings (and which side of the body), shape of eyes/ears/snout/beak, proportions. No background, no action, no camera.\"\n    },\n    \"referencia_escenario\": {\n      \"type\": \"string\",\n      \"description\": \"ONE English paragraph, max 220 characters: the single location used in all 4 shots: geography, ground, vegetation/water/rock, weather, time of day, light direction and palette.\"\n    },\n    \"storyboard\": {\n      \"type\": \"array\",\n      \"minItems\": 4,\n      \"maxItems\": 4,\n      \"description\": \"4 shots of 8 s each, planned like a wildlife cinematographer. Every shot has a DIFFERENT framing, camera angle, animal pose and position in frame. Alternate framings so the edit feels organic.\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"plano\": {\n            \"type\": \"string\",\n            \"description\": \"Shot type and lens in English, e.g. \\\"wide establishing, 200mm telephoto, eye level\\\"\"\n          },\n          \"keyframe\": {\n            \"type\": \"string\",\n            \"description\": \"English, max 300 characters: the exact FIRST FRAME of the shot as a still photo: framing, camera height and angle, where the animal is in frame (left/right/center, near/far), its exact pose and body orientation, what it is doing at that instant, light and depth of field.\"\n          },\n          \"movimiento\": {\n            \"type\": \"string\",\n            \"description\": \"English, max 250 characters: what happens in the 8 s starting from that first frame: 1-2 simple physical actions in one screen direction, camera move (slow and continuous), and concrete natural SFX. Shot 4 ends calm and nearly still.\"\n          },\n          \"narracion\": {\n            \"type\": \"string\",\n            \"description\": \"The exact part of the narration heard during this shot\"\n          }\n        },\n        \"required\": [\n          \"plano\",\n          \"keyframe\",\n          \"movimiento\",\n          \"narracion\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"candidatos\",\n    \"novedad\",\n    \"especie\",\n    \"dato_central\",\n    \"fuente_confianza\",\n    \"titulo\",\n    \"descripcion\",\n    \"hashtags\",\n    \"narracion\",\n    \"referencia_visual\",\n    \"referencia_escenario\",\n    \"storyboard\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        976,
+        48
+      ],
+      "id": "1c71c927-a33a-4457-8b2a-8fdad420a55e",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Corta la ejecución ANTES de gastar en Kie si el agente repite una especie (o su género)\n// o entrega una salida inservible.\nconst brief = $('Preparar Brief').first().json;\nconst out = $input.first().json.output || {};\n\nconst norm = s => String(s || '').toLowerCase()\n  .normalize('NFD').replace(/[̀-ͯ]/g, '')\n  .replace(/[^a-z0-9 ()]/g, ' ').replace(/\\s+/g, ' ').trim();\nconst nombre = s => norm(s).replace(/\\(.*?\\)/g, '').trim();\nconst genero = s => {\n  const m = String(s || '').match(/\\(([^)]+)\\)/);\n  return m ? norm(m[1]).split(' ')[0] : null;\n};\n\nif (!out.especie || !out.referencia_visual || !out.referencia_escenario || !Array.isArray(out.storyboard) || out.storyboard.length !== 4) {\n  throw new Error('El agente devolvió una salida incompleta (falta especie, referencias, o el storyboard no tiene 4 tomas).');\n}\n\nconst usadas = brief.usadas === '(ninguna todavía)' ? [] : String(brief.usadas).split(' | ');\nconst g = genero(out.especie);\nconst repetida = usadas.find(u => nombre(u) === nombre(out.especie) || (g && genero(u) === g));\nif (repetida) {\n  throw new Error('Especie repetida: \"' + out.especie + '\" ya se usó (\"' + repetida + '\"). No se gastó nada en Kie; vuelve a ejecutar.');\n}\n\nout.storyboard.forEach((t, i) => {\n  if (!t || !t.keyframe || !t.movimiento) throw new Error('La toma ' + (i + 1) + ' no tiene keyframe o movimiento.');\n});\n\n// La narración (inglés) debe caber en ~28 s de voz: la voz de Gemini habla a ~2 palabras/s.\nconst palabras = String(out.narracion || '').trim().split(/\\s+/).filter(Boolean).length;\nif (palabras < 38 || palabras > 64) {\n  throw new Error('La narración tiene ' + palabras + ' palabras; debe tener entre 38 y 64 (el montaje acelera la voz hasta 1.25× para que entre en 28 s). No se gastó nada en Kie.');\n}\n\n// Nombre base común para todos los archivos del video: 2026-09-20_0900_especie\nconst stamp = new Date().toLocaleString('sv-SE', { hour12: false }).replace(' ', '_').replace(/:/g, '').slice(0, 15);\nconst slug = nombre(out.especie).replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 40) || 'video';\nconst base = stamp + '_' + slug;\n\nreturn $input.all().map(i => ({ json: { ...i.json, base } }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1152,
+        -496
+      ],
+      "id": "7bda2464-ced1-4c90-be6a-35c3de0ca07d",
+      "name": "Validar Nuevo"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kie.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"veo3_lite\",\n  \"prompt\": {{ JSON.stringify($json.prompt_video) }},\n  \"aspect_ratio\": \"9:16\",\n  \"enableTranslation\": false\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1664,
+        -496
+      ],
+      "id": "b87f9be1-c17d-4b62-b127-a95ea28d1fb6",
+      "name": "Crear Toma (Veo Lite)"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1664,
+        -288
+      ],
+      "id": "bec05095-81f0-454c-95ac-3d7863fc2d1d",
+      "name": "Esperar Toma"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.kie.ai/api/v1/veo/record-info?taskId={{ $('Crear Toma (Veo Lite)').first().json.data.taskId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1920,
+        -496
+      ],
+      "id": "886d1028-41fa-4c07-99cf-8426566327cb",
+      "name": "Consultar Toma",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Veo (API clásica de Kie): successFlag 0 = generando, 1 = listo, 2/3 = falló.\nconst d = $input.first().json.data || {};\nconst flag = d.successFlag;\nif (flag === 2 || flag === 3) throw new Error('Veo falló: ' + (d.errorMessage || d.errorCode || 'sin detalle') + ' (taskId ' + d.taskId + ')');\nif ($runIndex > 60) throw new Error('Tiempo de espera agotado. La tarea ' + d.taskId + ' sigue generando; puedes reanudar desde el nodo Consultar Toma.');\nreturn [{ json: { ...$input.first().json, done: flag === 1 } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2192,
+        -496
+      ],
+      "id": "8c7c7fa4-54ac-4f81-bdd4-abf644d5c119",
+      "name": "Estado Toma"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "99176db5-2388-447f-8fe5-e45c630babfa",
+              "leftValue": "={{ $json.done }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2448,
+        -496
+      ],
+      "id": "a4183d02-a8c4-41bc-971b-02936273efcf",
+      "name": "¿Toma lista?"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.response.resultUrls[0] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        384
+      ],
+      "id": "48b77929-2a97-4699-aa52-8f0dc6307d01",
+      "name": "Descargar Toma",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/files/' + $('Storyboard → Tomas').item.json.base + '_' + $('Storyboard → Tomas').item.json.sceneIndex + '.mp4' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        272,
+        384
+      ],
+      "id": "10af099b-f502-4062-89c6-c34eadc1020a",
+      "name": "Guardar Toma"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REEMPLAZAR_ID_TABLA"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fecha": "={{ $('Preparar Brief').first().json.fecha }}",
+            "especie": "={{ $('Director de Cine').first().json.output.especie }}",
+            "titulo": "={{ $('Director de Cine').first().json.output.titulo }}",
+            "categoria": "={{ $('Preparar Brief').first().json.categoria }}",
+            "comportamiento": "={{ $('Preparar Brief').first().json.comportamiento }}",
+            "dato_central": "={{ $('Director de Cine').first().json.output.dato_central }}",
+            "costo_usd": "0.61",
+            "modelo": "kie veo3_lite 720p 4x8s (se usan 7 s) + gemini-2-5-pro-tts"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "especie",
+              "displayName": "especie",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "titulo",
+              "displayName": "titulo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "categoria",
+              "displayName": "categoria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "comportamiento",
+              "displayName": "comportamiento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "dato_central",
+              "displayName": "dato_central",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "costo_usd",
+              "displayName": "costo_usd",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "modelo",
+              "displayName": "modelo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        544,
+        416
+      ],
+      "id": "5e16b8b1-7ea4-41d5-af70-fbbeabb40db1",
+      "name": "Guardar Historial"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kie.ai/api/v1/jobs/createTask",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"google/gemini-2-5-pro-tts\",\n  \"input\": {\n    \"temperature\": 1,\n    \"scene\": \"A calm, atmospheric nature documentary narration recorded in a quiet studio.\",\n    \"sample_context\": \"A wildlife documentary narrator explains an astonishing animal behavior to curious viewers.\",\n    \"speakers\": [\n      {\n        \"speaker_id\": \"Speaker 1\",\n        \"voice_name\": \"Charon\",\n        \"audio_profile\": \"A deep, warm and authoritative nature documentary narrator\",\n        \"style\": \"Empathetic\",\n        \"pace\": \"Natural\",\n        \"accent\": \"American (Gen)\"\n      }\n    ],\n    \"dialogue_turns\": [\n      {\n        \"speaker_id\": \"Speaker 1\",\n        \"text\": {{ JSON.stringify($('Validar Nuevo').first().json.output.narracion) }}\n      }\n    ]\n  }\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        800,
+        384
+      ],
+      "id": "8f17b809-aee9-418a-95d4-b724460407c7",
+      "name": "Create Voice"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1072,
+        592
+      ],
+      "id": "dcb185d3-56fc-4ca0-bd00-f6c2838de2c6",
+      "name": "Wait Voz"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.kie.ai/api/v1/jobs/recordInfo?taskId={{ $('Create Voice').first().json.data.taskId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1344,
+        592
+      ],
+      "id": "881c589f-783d-4215-9634-ab694b7eb160",
+      "name": "Get Voz",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json.data || {};\nconst state = d.state;\nif (state === 'fail') throw new Error('Kie reportó un fallo: ' + (d.failMsg || d.failCode || 'sin detalle') + ' (taskId ' + d.taskId + ')');\nif ($runIndex > 40) throw new Error('Tiempo de espera agotado. La tarea ' + d.taskId + ' sigue en estado ' + state + '; puedes reanudar desde el nodo Get.');\nreturn [{ json: { ...$input.first().json, done: state === 'success' } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        592
+      ],
+      "id": "1a11fb08-b3e2-4159-ad40-7f8ea140f57d",
+      "name": "Estado Voz"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "79def09c-def4-4aa5-9969-fb164a46640a",
+              "leftValue": "={{ $json.done }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1904,
+        624
+      ],
+      "id": "52afe682-ff9e-4a54-8a7e-1520eb1968d7",
+      "name": "¿Voz lista?"
+    },
+    {
+      "parameters": {
+        "url": "={{ JSON.parse($json.data.resultJson).resultUrls[0] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2128,
+        576
+      ],
+      "id": "7cfc4a42-fe75-49b0-9d54-497348ad59f7",
+      "name": "Download Voice",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/files/' + $('Validar Nuevo').first().json.base + '_narr.wav' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        576
+      ],
+      "id": "bdee42b3-4580-4813-bdcd-6171dc933b71",
+      "name": "Save Voice"
+    },
+    {
+      "parameters": {
+        "jsCode": "const v = $('Validar Nuevo').first().json;\nconst b64 = Buffer.from(String(v.output.narracion), 'utf8').toString('base64');\nreturn [{ json: { base: v.base, command: 'node /opt/tools/burn.js ' + v.base + ' ' + b64 } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -16,
+        1104
+      ],
+      "id": "61fbc8fc-c110-4636-bb6e-75f0b3c265f9",
+      "name": "Preparar Montaje"
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.command }}"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        256,
+        1104
+      ],
+      "id": "0959f5da-1881-45b0-94f7-5f15305d0cc2",
+      "name": "Montar Video"
+    },
+    {
+      "parameters": {
+        "jsCode": "const r = $input.first().json;\nlet out;\ntry { out = JSON.parse(String(r.stdout || '').trim().split('\\n').pop()); }\ncatch (e) { throw new Error('El montaje no devolvió una respuesta válida: ' + String(r.stderr || r.stdout || '').slice(-400)); }\nif (!out.ok) throw new Error('Falló el montaje: ' + out.error);\nreturn [{ json: out }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        1104
+      ],
+      "id": "961d39d2-153c-48a4-a0e7-6e906929be95",
+      "name": "Resultado Montaje"
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ '/files/final/' + $('Validar Nuevo').first().json.base + '_final.mp4' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        784,
+        1104
+      ],
+      "id": "db6dd216-bd2a-4ee1-91ac-45a21f66537a",
+      "name": "Leer Final"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Director de Cine').first().json.output.titulo.slice(0, 88) + ' #Shorts' }}",
+        "regionCode": "US",
+        "categoryId": "15",
+        "options": {
+          "defaultLanguage": "en",
+          "description": "={{ $('Director de Cine').first().json.output.descripcion + '\\n\\n' + $('Director de Cine').first().json.output.hashtags.join(' ') + ' #Shorts' }}",
+          "embeddable": true,
+          "notifySubscribers": true,
+          "privacyStatus": "public",
+          "selfDeclaredMadeForKids": false,
+          "tags": "={{ $('Director de Cine').first().json.output.hashtags.map(h => h.replace('#', '')).join(',') }}"
+        }
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        1056,
+        1104
+      ],
+      "id": "3725f25a-4da5-42eb-b234-6d23af39c9c9",
+      "name": "Upload a video"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REEMPLAZAR_ID_TABLA"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "especie",
+              "keyValue": "={{ $('Director de Cine').first().json.output.especie }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "youtube_id": "={{ $json.uploadId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "youtube_id",
+              "displayName": "youtube_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1344,
+        1120
+      ],
+      "id": "75e98047-c6b2-4dc9-8491-1d0212acc72a",
+      "name": "Registrar Subida"
+    },
+    {
+      "parameters": {
+        "content": "## Wild Wonders v8 · Veo 3.1 Lite 720p · 4 tomas\n**Flujo:** Brief → **Director de Cine** (Kimi K3 sin razonamiento; respaldo Nemotron 3 Super gratis por OpenRouter): storyboard de 4 tomas + ficha del animal + locación → Validar → tomas → unir → guardar historial → voz Gemini (Kie) → subtítulos → YouTube (**público**) → TikTok (**privado**; si la app de TikTok no está auditada, va como **borrador**). El video lo genera **Veo 3.1 Lite de Google** por la API clásica de Kie (`/api/v1/veo/generate`, `model: veo3_lite`, clips fijos de 8 s, 720×1280 nativo).\n\n- 4 tomas de 8 s; se usan los primeros 7 s de cada una → video de 28 s.\n- Polling: `/api/v1/veo/record-info` (`successFlag` 0 generando / 1 listo / 2-3 falló; video en `data.response.resultUrls[0]`).\n\n### 💰 Costo por video (medido el 2026-09-23: 30 créditos = $0.15 por clip)\n- 4 × $0.15 = **$0.60** + voz ~$0.01 = **≈ $0.61** (Grok 480p: $0.37)\n",
+        "height": 980,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        -1600
+      ],
+      "id": "00e21dca-331f-4d7b-8824-212cdd813986",
+      "name": "Nota"
+    },
+    {
+      "parameters": {
+        "content": "## 🎬 Modelos de video probados (Kie.ai)\n_Medido el 2026-09-20. Precios de la ficha de cada modelo: 1 crédito = $0.005._\n\n### 🎬 Veo 3.1 Lite (`veo3_lite`, API clásica de Kie): el que usa este flujo\n- Resolución: **720×1280** nativo, clips fijos de **8 s** con audio ambiente\n- Precio: 30 créditos = **$0.15 por clip** (medido el 2026-09-23)\n- **4 clips: $0.60**\n\n### 🥇 Wan 3.0 (`wan/3-0-video`): el mejor en calidad\n- Resolución: 480P → **480×854** · 720P → **720×1280** · 1080P disponible\n- Precio: 480P $0.04/s · 720P $0.08/s · 1080P $0.16/s\n- **30 s: $1.20 (480P) · $2.40 (720P)**. Máximo 30 s por llamada\n- Calidad: el más fotorrealista y fiel a la especie (halcón peregrino con su patrón real, membrana nictitante). Trae audio ambiente real\n- Tiempo: 5 a 13 min\n\n### 💸 Grok Imagine (`grok-imagine/text-to-video`): el más barato\n- Resolución: 480p → **416×752** (se amplía a 720×1280 en el montaje)\n- Precio: 480p $0.012/s · 720p $0.0225/s · 1080p $0.04/s\n- **30 s a 480p: $0.36**. Máximo 30 s por llamada\n- Calidad: aceptable pero más blanda y plana. Con texto en pantalla el texto salió legible pero se duplicó. Trae audio ambiente\n- Tiempo: 2 a 4 min\n\n### Otro probado\n- Seedance 1.5 Pro (720p): nítido, $0.035/s con audio, máximo 12 s por llamada. El animal salió poco fiel y el audio casi mudo (-36 dB)\n\n### 🎞 Salida final del montaje (igual en todos)\n- **720×1280 (9:16)**, 30 fps, H.264 (CRF 20) + AAC 160 kbps\n- Tamaño: ~8 a 17 MB por 28 s\n- El audio ambiente de los clips se descarta al unir las tomas: el video final solo lleva la narración\n- Subtítulos quemados: Liberation Sans Bold, hasta 4 palabras por línea (corta antes en punto o coma)\n- Voz: Gemini 2.5 Pro TTS (Charon), WAV 24 kHz mono, ~$0.009 por narración (si pasa de 28 s se acelera hasta 1.25×)\n- ffmpeg 7.0.2 estático dentro de n8n (`/opt/tools`)",
+        "height": 980,
+        "width": 780,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "7e83940a-00ac-49a9-b916-affa08291104",
+      "name": "Nota modelos",
+      "position": [
+        784,
+        -1600
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Storyboard de 4 tomas → un prompt CORTO por toma para Veo 3.1 Lite (Kie).\n// Los modelos de video rinden mejor con 3-4 ideas claras: sujeto, encuadre, una acción y luz. Cada parte se recorta en frase completa.\nconst v = $('Validar Nuevo').first().json;\nconst o = v.output || {};\nconst sb = o.storyboard;\nif (!Array.isArray(sb) || sb.length !== 4) throw new Error('Se esperaban 4 tomas en el storyboard, llegaron ' + (sb ? sb.length : 0));\nconst limpio = s => String(s || '').replace(/@\\S+/g, m => m.replace('@', '')).replace(/\\s+/g, ' ').trim();\n// recorta a `max` caracteres sin partir frases\nconst corto = (s, max) => {\n  s = limpio(s);\n  if (s.length <= max) return s;\n  const cut = s.slice(0, max);\n  const fin = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '), cut.lastIndexOf(', '));\n  return (fin > max * 0.5 ? cut.slice(0, fin + 1) : cut).trim();\n};\nconst SOLIDEZ = 'One solid, opaque animal with real mass and correct anatomy; no morphing, no ghosting, no extra limbs, no text; natural ambience only.';\n\nreturn sb.map((t, i) => {\n  const prompt_video = [\n    `Vertical 9:16 photorealistic wildlife documentary shot. ${corto(t.plano, 80)}.`,\n    `Subject: ${corto(o.referencia_visual, 260)}`,\n    `Frame: ${corto(t.keyframe, 320)}`,\n    `Action: ${corto(t.movimiento, 260)}`,\n    `Setting: ${corto(o.referencia_escenario, 220)}`,\n    SOLIDEZ,\n  ].join('\\n');\n  return { json: { base: v.base, sceneIndex: i, prompt_video } };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        112
+      ],
+      "id": "46f16b20-ebdc-4934-83b2-b3aeef071cb1",
+      "name": "Storyboard → Tomas"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1424,
+        0
+      ],
+      "id": "f2b6707c-c1ff-4912-bfb5-23d0e4640695",
+      "name": "Loop Tomas"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Une las 4 tomas de Veo (8 s cada una, 720p). De cada toma se usan los primeros 7 s:\n// se descarta el final del clip, que es donde suelen aparecer los errores. Resultado: 4 × 7 s = 28 s.\nconst base = $('Validar Nuevo').first().json.base;\nconst N = 4, SEG = 7;\nconst inputs = Array.from({ length: N }, (_, i) => `-i /files/${base}_${i}.mp4`).join(' ');\nconst cortes = Array.from({ length: N }, (_, i) => `[${i}:v]trim=0:${SEG},setpts=PTS-STARTPTS[v${i}]`).join(';');\nconst unir = Array.from({ length: N }, (_, i) => `[v${i}]`).join('') + `concat=n=${N}:v=1:a=0[outv]`;\nconst command = `/opt/tools/ffmpeg -y ${inputs} -filter_complex \"${cortes};${unir}\" -map \"[outv]\" -c:v libx264 -crf 18 -preset veryfast -an /files/${base}.mp4`;\nreturn [{ json: { command, base } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        768
+      ],
+      "id": "04497a65-9949-46f2-ab3e-d66318290aca",
+      "name": "Unir Tomas"
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.command }}"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1664,
+        768
+      ],
+      "id": "1361ae09-bbb3-434f-bd0b-4eb968c986d3",
+      "name": "Ejecutar Unión"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Caption de TikTok: título + hashtags (máx. 2200 caracteres).\nconst o = $('Director de Cine').first().json.output;\nconst base = $('Validar Nuevo').first().json.base;\nconst caption = [o.titulo, (o.hashtags || []).join(' ') + ' #wildlife #nature'].join('\\n\\n').slice(0, 2200);\nconst b64 = Buffer.from(caption, 'utf8').toString('base64');\nreturn [{ json: { base, command: 'node /opt/tools/tiktok_post.js /files/final/' + base + '_final.mp4 ' + b64 } }];\n"
+      },
+      "id": "45fe34a2-5c86-4676-95ad-39ed4c384d65",
+      "name": "Preparar TikTok",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1568,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.command }}"
+      },
+      "id": "50d754bb-fb36-45a4-a93a-03200298d4e9",
+      "name": "Publicar TikTok",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const r = $input.first().json;\nlet out;\ntry { out = JSON.parse(String(r.stdout || '').trim().split('\\n').pop()); }\ncatch (e) { throw new Error('La publicación en TikTok no devolvió una respuesta válida: ' + String(r.stderr || r.stdout || '').slice(-400)); }\nif (!out.ok) throw new Error('Falló la publicación en TikTok: ' + out.error);\nreturn [{ json: out }];\n"
+      },
+      "id": "f25702ac-941b-4426-a090-6fb4512b522e",
+      "name": "Resultado TikTok",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        1120
+      ]
+    },
+    {
+      "id": "1376fb49-bb0d-479a-8f34-56455eabee34",
+      "name": "Nemotron 3 Super · respaldo (OpenRouter free)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        688,
+        -288
+      ],
+      "parameters": {
+        "model": "nvidia/nemotron-3-super-120b-a12b:free",
+        "options": {
+          "responseFormat": "json_object",
+          "maxTokens": 8000,
+          "temperature": 0.7,
+          "timeout": 180000
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Leer Historial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Leer Historial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer Historial": {
+      "main": [
+        [
+          {
+            "node": "Preparar Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Brief": {
+      "main": [
+        [
+          {
+            "node": "Director de Cine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Kimi K3 · guion": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Director de Cine",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Director de Cine",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Director de Cine": {
+      "main": [
+        [
+          {
+            "node": "Validar Nuevo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Nuevo": {
+      "main": [
+        [
+          {
+            "node": "Storyboard → Tomas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear Toma (Veo Lite)": {
+      "main": [
+        [
+          {
+            "node": "Esperar Toma",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar Toma": {
+      "main": [
+        [
+          {
+            "node": "Consultar Toma",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar Toma": {
+      "main": [
+        [
+          {
+            "node": "Estado Toma",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Estado Toma": {
+      "main": [
+        [
+          {
+            "node": "¿Toma lista?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Toma lista?": {
+      "main": [
+        [
+          {
+            "node": "Descargar Toma",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Esperar Toma",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Toma": {
+      "main": [
+        [
+          {
+            "node": "Guardar Toma",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Toma": {
+      "main": [
+        [
+          {
+            "node": "Loop Tomas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Voice": {
+      "main": [
+        [
+          {
+            "node": "Wait Voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Voz": {
+      "main": [
+        [
+          {
+            "node": "Get Voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Voz": {
+      "main": [
+        [
+          {
+            "node": "Estado Voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Estado Voz": {
+      "main": [
+        [
+          {
+            "node": "¿Voz lista?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Voz lista?": {
+      "main": [
+        [
+          {
+            "node": "Download Voice",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait Voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Voice": {
+      "main": [
+        [
+          {
+            "node": "Save Voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Voice": {
+      "main": [
+        [
+          {
+            "node": "Preparar Montaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Montaje": {
+      "main": [
+        [
+          {
+            "node": "Montar Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar Video": {
+      "main": [
+        [
+          {
+            "node": "Resultado Montaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resultado Montaje": {
+      "main": [
+        [
+          {
+            "node": "Leer Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer Final": {
+      "main": [
+        [
+          {
+            "node": "Upload a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a video": {
+      "main": [
+        [
+          {
+            "node": "Registrar Subida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Historial": {
+      "main": [
+        [
+          {
+            "node": "Create Voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Storyboard → Tomas": {
+      "main": [
+        [
+          {
+            "node": "Loop Tomas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Tomas": {
+      "main": [
+        [
+          {
+            "node": "Unir Tomas",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Crear Toma (Veo Lite)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unir Tomas": {
+      "main": [
+        [
+          {
+            "node": "Ejecutar Unión",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ejecutar Unión": {
+      "main": [
+        [
+          {
+            "node": "Guardar Historial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar Subida": {
+      "main": [
+        [
+          {
+            "node": "Preparar TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar TikTok": {
+      "main": [
+        [
+          {
+            "node": "Publicar TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publicar TikTok": {
+      "main": [
+        [
+          {
+            "node": "Resultado TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nemotron 3 Super · respaldo (OpenRouter free)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Director de Cine",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Guatemala"
+  },
+  "active": false
+}
