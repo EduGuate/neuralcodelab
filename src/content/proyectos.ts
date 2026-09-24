@@ -897,22 +897,22 @@ export const proyectos: Project[] = [
   },
   {
     id: "personal-assistant-landing",
-    title: "Personal Assistant Landing",
+    title: "Aria — Personal Assistant Landing",
     descriptionKey: "projects.items.personal_assistant_landing.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/LandingPage_PersonalAssistant/",
     githubUrl: "https://github.com/EduGuate/LandingPage_PersonalAssistant",
-    imageUrl: "",
-    tags: ["Landing Page", "AI"],
+    imageUrl: "/img/personal-assistant-landing.png",
+    tags: ["Free Template", "Landing Page", "AI"],
     category: "business"
   },
   {
     id: "perfil-updated",
     title: "Mi Perfil",
     descriptionKey: "projects.items.perfil_updated.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/perfilUpdated/",
     githubUrl: "https://github.com/EduGuate/perfilUpdated",
-    imageUrl: "",
-    tags: ["Portfolio", "Personal"],
+    imageUrl: "/img/perfil-updated.png",
+    tags: ["Free Template", "Portfolio", "Personal"],
     category: "business"
   },
   {
