@@ -979,9 +979,9 @@ export const proyectos: Project[] = [
     id: "urban-skate-theme",
     title: "UrbanRide Skateboards",
     descriptionKey: "projects.items.urban_skate_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/UrbanSkateShopTheme/",
     githubUrl: "https://github.com/EduGuate/UrbanSkateShopTheme",
-    imageUrl: "",
+    imageUrl: "/img/urban-skate-theme.png",
     tags: ["Free Template", "Bootstrap", "Skate"],
     category: "templates"
   },
