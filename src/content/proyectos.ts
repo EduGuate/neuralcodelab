@@ -999,9 +999,9 @@ export const proyectos: Project[] = [
     id: "gamer-theme",
     title: "NeoGamer Hub",
     descriptionKey: "projects.items.gamer_theme.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/GamerBootstrapTheme/",
     githubUrl: "https://github.com/EduGuate/GamerBootstrapTheme",
-    imageUrl: "",
+    imageUrl: "/img/gamer-theme.png",
     tags: ["Free Template", "Bootstrap", "Gaming"],
     category: "templates"
   },
