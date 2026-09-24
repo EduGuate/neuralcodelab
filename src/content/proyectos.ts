@@ -919,10 +919,10 @@ export const proyectos: Project[] = [
     id: "irans-corner-dashboard",
     title: "Iran's Corner Dashboard",
     descriptionKey: "projects.items.irans_corner_dashboard.description",
-    liveUrl: "",
+    liveUrl: "https://eduguate.github.io/iranscornerdashboard/",
     githubUrl: "https://github.com/EduGuate/iranscornerdashboard",
-    imageUrl: "",
-    tags: ["Dashboard", "Tools"],
+    imageUrl: "/img/irans-corner-dashboard.png",
+    tags: ["Free Template", "Dashboard", "Tools"],
     category: "tools"
   },
   {
