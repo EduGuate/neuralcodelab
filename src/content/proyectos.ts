@@ -1044,6 +1044,16 @@ export const proyectos: Project[] = [
     imageUrl: "/img/pizza-theme.png",
     tags: ["Free Template", "Bootstrap", "Food"],
     category: "templates"
+  },
+  {
+    id: "wild-wonders",
+    title: "Wild Wonders v3",
+    descriptionKey: "projects.items.wild_wonders.description",
+    liveUrl: "/workflows-n8n",
+    githubUrl: "",
+    imageUrl: "/img/wild-wonders-canvas.webp",
+    tags: ["Free Workflow", "n8n", "IA"],
+    category: "workflows"
   }
 ];
 
@@ -1056,5 +1066,6 @@ export const categorias: Category[] = [
   { id: "lifestyle", nombreKey: "projects.categories.lifestyle" },
   { id: "education", nombreKey: "projects.categories.education" },
   { id: "templates", nombreKey: "projects.categories.templates" },
+  { id: "workflows", nombreKey: "projects.categories.workflows" },
   { id: "eduguate", nombreKey: "projects.categories.eduguate" }
 ];

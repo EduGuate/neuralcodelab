@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink, Github, Search } from 'lucide-react';
-import { proyectos, Project, Category } from '@/content/proyectos';
+import { proyectos, categorias as categoriasBase, Project, Category } from '@/content/proyectos';
 import { useTranslation } from '@/lib/useTranslation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -15,17 +15,7 @@ export default function ProjectsContent() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categorias: {id: string, nombre: string}[] = [
-    { id: "all", nombre: t('projects.categories.all') },
-    { id: "business", nombre: t('projects.categories.business') },
-    { id: "tools", nombre: t('projects.categories.tools') },
-    { id: "infrastructure", nombre: t('projects.categories.infrastructure') },
-    { id: "entertainment", nombre: t('projects.categories.entertainment') },
-    { id: "lifestyle", nombre: t('projects.categories.lifestyle') },
-    { id: "education", nombre: t('projects.categories.education') },
-    { id: "templates", nombre: t('projects.categories.templates') },
-    { id: "eduguate", nombre: t('projects.categories.eduguate') }
-  ];
+  const categorias = categoriasBase.map(c => ({ id: c.id, nombre: t(c.nombreKey) }));
 
   const filteredProjects = proyectos
     .filter(project => activeCategory === 'all' || (activeCategory === 'eduguate' ? project.githubUrl.includes('github.com/EduGuate/') : project.category === activeCategory))
@@ -99,6 +89,14 @@ export default function ProjectsContent() {
           <p className="text-center mb-8">
             <Link href="/plantillas-gratis" className="text-primary font-semibold underline underline-offset-4 hover:opacity-80">
               {t('seo.templates.heading')} →
+            </Link>
+          </p>
+        )}
+
+        {activeCategory === 'workflows' && (
+          <p className="text-center mb-8">
+            <Link href="/workflows-n8n" className="text-primary font-semibold underline underline-offset-4 hover:opacity-80">
+              {t('projects.workflowsLink')} →
             </Link>
           </p>
         )}

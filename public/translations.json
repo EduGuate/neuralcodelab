@@ -188,6 +188,7 @@
             "searchPlaceholder": "Buscar proyectos...",
             "allCategories": "Todos los Proyectos",
             "noProjects": "No se encontraron proyectos",
+            "workflowsLink": "Descarga los workflows de n8n gratis",
             "tryAnotherSearch": "Intenta con otra búsqueda o categoría",
             "viewProject": "Ver Proyecto",
             "viewCode": "Ver Código",
@@ -201,7 +202,8 @@
                 "lifestyle": "Estilo de Vida",
                 "education": "Educación",
                 "templates": "Plantillas Web Gratis",
-                "eduguate": "EduGuate"
+                "eduguate": "EduGuate",
+                "workflows": "Workflows n8n Gratis"
             },
             "items": {
                 "cv": { "description": "Sitio web de currículum profesional que muestra experiencia, habilidades y proyectos con un diseño minimalista y elegante." },
@@ -303,6 +305,7 @@
                 "dj_theme": { "description": "Tema Bootstrap para DJs." },
                 "urban_skate_theme": { "description": "Tema Bootstrap para una tienda de skate." },
                 "gamer_theme": { "description": "Tema Bootstrap para gamers." },
+                "wild_wonders": { "description": "Workflow de n8n gratis que crea y sube YouTube Shorts de vida salvaje con IA por unos $0.37 por video." },
                 "shoes_theme": { "description": "Tema Bootstrap para una tienda de zapatos." },
                 "dental_theme": { "description": "Tema Bootstrap para una clínica dental." },
                 "realestate_theme": { "description": "Tema Bootstrap para bienes raíces." },
@@ -749,6 +752,7 @@
             "searchPlaceholder": "Search projects...",
             "allCategories": "All Projects",
             "noProjects": "No projects found",
+            "workflowsLink": "Download the free n8n workflows",
             "tryAnotherSearch": "Try another search or category",
             "viewProject": "View Project",
             "viewCode": "View Code",
@@ -762,7 +766,8 @@
                 "lifestyle": "Lifestyle",
                 "education": "Education",
                 "templates": "Free Website Templates",
-                "eduguate": "EduGuate"
+                "eduguate": "EduGuate",
+                "workflows": "Free n8n Workflows"
             },
             "items": {
                 "cv": { "description": "Personal curriculum vitae website showcasing professional experience, skills, and projects in a minimalist and elegant design." },
@@ -864,6 +869,7 @@
                 "dj_theme": { "description": "Bootstrap theme for DJs." },
                 "urban_skate_theme": { "description": "Bootstrap theme for a skate shop." },
                 "gamer_theme": { "description": "Bootstrap theme for gamers." },
+                "wild_wonders": { "description": "Free n8n workflow that creates and uploads AI wildlife YouTube Shorts for about $0.37 per video." },
                 "shoes_theme": { "description": "Bootstrap theme for a shoe store." },
                 "dental_theme": { "description": "Bootstrap theme for a dental clinic." },
                 "realestate_theme": { "description": "Bootstrap theme for real estate." },
