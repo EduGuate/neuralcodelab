@@ -896,16 +896,6 @@ export const proyectos: Project[] = [
     category: "infrastructure"
   },
   {
-    id: "neuralcodelab-landing-v1",
-    title: "Neural Code Lab Landing (v1)",
-    descriptionKey: "projects.items.neuralcodelab_landing_v1.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/EduGuate/neuralcodelab_landingpage",
-    imageUrl: "",
-    tags: ["Landing Page", "Legacy"],
-    category: "business"
-  },
-  {
     id: "personal-assistant-landing",
     title: "Personal Assistant Landing",
     descriptionKey: "projects.items.personal_assistant_landing.description",
