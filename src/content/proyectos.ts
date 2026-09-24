@@ -859,20 +859,20 @@ export const proyectos: Project[] = [
     id: "homelab-dashboard",
     title: "HomeLab Dashboard",
     descriptionKey: "projects.items.homelab_dashboard.description",
-    liveUrl: "",
+    liveUrl: "https://devlewiso.github.io/homelabdashboard/",
     githubUrl: "https://github.com/devlewiso/homelabdashboard",
-    imageUrl: "",
-    tags: ["Homelab", "Dashboard"],
+    imageUrl: "/img/homelab-dashboard.png",
+    tags: ["Free Template", "Homelab", "Dashboard"],
     category: "infrastructure"
   },
   {
     id: "homelab-architecture",
     title: "Homelab Architecture",
     descriptionKey: "projects.items.homelab_architecture.description",
-    liveUrl: "",
+    liveUrl: "https://devlewiso.github.io/homelab-architecture/",
     githubUrl: "https://github.com/devlewiso/homelab-architecture",
-    imageUrl: "",
-    tags: ["Homelab", "Mermaid", "Architecture"],
+    imageUrl: "/img/homelab-architecture.png",
+    tags: ["Free Template", "Homelab", "Mermaid", "Architecture"],
     category: "infrastructure"
   },
   {
