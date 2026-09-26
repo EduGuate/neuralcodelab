@@ -839,9 +839,9 @@ export const proyectos: Project[] = [
     id: "compatibilidad",
     title: "Calculadora de Compatibilidad de Nombres",
     descriptionKey: "projects.items.compatibilidad.description",
-    liveUrl: "",
+    liveUrl: "https://devlewiso.github.io/Calculadora_Compatibilidad/",
     githubUrl: "https://github.com/devlewiso/Calculadora_Compatibilidad",
-    imageUrl: "",
+    imageUrl: "/img/calculadora-compatibilidad-duo.png",
     tags: ["Calculator", "Names", "Fun"],
     category: "lifestyle"
   },
@@ -849,9 +849,9 @@ export const proyectos: Project[] = [
     id: "numerologia",
     title: "Calculadora Numerológica de Nombres",
     descriptionKey: "projects.items.numerologia.description",
-    liveUrl: "",
+    liveUrl: "https://devlewiso.github.io/CalculadoraNumerologicaAstral/",
     githubUrl: "https://github.com/devlewiso/CalculadoraNumerologicaAstral",
-    imageUrl: "",
+    imageUrl: "/img/calculadora-numerologica-astral.png",
     tags: ["Calculator", "Numerology", "Astral"],
     category: "lifestyle"
   },
