@@ -656,26 +656,6 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
-    id: "image-to-webp",
-    title: "Conversor Futurista de Imagen a WebP",
-    descriptionKey: "projects.items.image_to_webp.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/img-webp",
-    imageUrl: "",
-    tags: ["Images", "WebP"],
-    category: "tools"
-  },
-  {
-    id: "imagestowebp",
-    title: "Conversor de Imágenes a WebP",
-    descriptionKey: "projects.items.imagestowebp.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/imagestowebp",
-    imageUrl: "",
-    tags: ["Images", "WebP", "Python"],
-    category: "tools"
-  },
-  {
     id: "timer-tracker",
     title: "Time Tracker",
     descriptionKey: "projects.items.timer_tracker.description",
