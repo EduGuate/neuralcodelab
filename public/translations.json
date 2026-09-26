@@ -106,6 +106,13 @@
                 "openSource": "Código Abierto"
             },
             "featuredProjects": "Proyectos Open Source Destacados",
+            "kie": {
+                "badge": "La IA que usamos en nuestros proyectos",
+                "title": "Crea video, imagen y voz con IA en",
+                "description": "Veo 3.1, Kling, Seedance, Nano Banana y ElevenLabs en una sola API, pagando solo lo que usas. Es lo que usamos para los Shorts automáticos de nuestros workflows de n8n.",
+                "cta": "Crear cuenta en Kie.ai",
+                "disclosure": "Enlace de afiliado: si te registras con él, Neural Code Lab recibe una comisión sin costo extra para ti."
+            },
             "featuredProjectsDesc": "Un vistazo a lo que ya estamos construyendo en público",
             "viewProject": "Ver proyecto",
             "viewCode": "Ver código",
@@ -669,6 +676,13 @@
                 "openSource": "Open Source"
             },
             "featuredProjects": "Featured Open Source Projects",
+            "kie": {
+                "badge": "The AI we use in our projects",
+                "title": "Create AI video, images and voice with",
+                "description": "Veo 3.1, Kling, Seedance, Nano Banana and ElevenLabs in a single API, pay only for what you use. It's what powers the automated Shorts in our n8n workflows.",
+                "cta": "Create a Kie.ai account",
+                "disclosure": "Affiliate link: if you sign up with it, Neural Code Lab earns a commission at no extra cost to you."
+            },
             "featuredProjectsDesc": "A look at what we're already building in public",
             "viewProject": "View project",
             "viewCode": "View code",

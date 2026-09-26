@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import KieBanner from '@/components/KieBanner';
 
 const URL = 'https://neuralcodelab.com/workflows-n8n';
 const ZIP = '/workflows/wild-wonders-v8.zip';
@@ -292,6 +293,8 @@ export default function WorkflowsN8nPage() {
           </div>
         </div>
       </section>
+
+      <KieBanner />
 
       {/* Steps */}
       <section className="relative max-w-4xl mx-auto px-6 pb-24" aria-labelledby="steps">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight, Sparkles, Github, ExternalLink } from 'lucide-react';
 import FeaturesSection from '@/components/FeaturesSection';
 import AnimeStats from '@/components/AnimeStats';
+import KieBanner from '@/components/KieBanner';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -123,6 +124,15 @@ export default async function Page() {
         </div>
         <FeaturesSection features={features} />
       </section>
+
+      <KieBanner
+        badge={t('home.kie.badge')}
+        title={t('home.kie.title')}
+        description={t('home.kie.description')}
+        cta={t('home.kie.cta')}
+        disclosure={t('home.kie.disclosure')}
+        className="py-24 border-t border-border"
+      />
 
       {/* Featured open source projects */}
       <section className="max-w-6xl mx-auto px-6 py-24 border-t border-border">
