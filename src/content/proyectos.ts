@@ -837,17 +837,17 @@ export const proyectos: Project[] = [
   },
   {
     id: "compatibilidad",
-    title: "Calculadora de Compatibilidad de Nombres",
+    title: "Dúo · Calculadora de Compatibilidad de Nombres",
     descriptionKey: "projects.items.compatibilidad.description",
     liveUrl: "https://devlewiso.github.io/Calculadora_Compatibilidad/",
     githubUrl: "https://github.com/devlewiso/Calculadora_Compatibilidad",
     imageUrl: "/img/calculadora-compatibilidad-duo.png",
-    tags: ["Calculator", "Names", "Fun"],
+    tags: ["Calculator", "Numerology", "Compatibility"],
     category: "lifestyle"
   },
   {
     id: "numerologia",
-    title: "Calculadora Numerológica de Nombres",
+    title: "Astral · Calculadora Numerológica de Nombres",
     descriptionKey: "projects.items.numerologia.description",
     liveUrl: "https://devlewiso.github.io/CalculadoraNumerologicaAstral/",
     githubUrl: "https://github.com/devlewiso/CalculadoraNumerologicaAstral",
