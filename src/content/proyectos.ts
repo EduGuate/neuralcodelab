@@ -819,9 +819,9 @@ export const proyectos: Project[] = [
     id: "iso-adventure",
     title: "ISO Adventure",
     descriptionKey: "projects.items.iso_adventure.description",
-    liveUrl: "",
+    liveUrl: "https://devlewiso.github.io/isointeractiva/",
     githubUrl: "https://github.com/devlewiso/isointeractiva",
-    imageUrl: "",
+    imageUrl: "/img/iso-adventure.webp",
     tags: ["Education", "ISO", "Interactive"],
     category: "education"
   },
