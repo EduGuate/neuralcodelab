@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, Github, ExternalLink } from 'lucide-react';
 import FeaturesSection from '@/components/FeaturesSection';
 import AnimeStats from '@/components/AnimeStats';
 import KieBanner from '@/components/KieBanner';
+import HiggsfieldBanner from '@/components/HiggsfieldBanner';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -131,6 +132,7 @@ export default async function Page() {
         description={t('home.kie.description')}
         cta={t('home.kie.cta')}
         disclosure={t('home.kie.disclosure')}
+        imageAlt={t('home.kie.imageAlt')}
         className="py-24 border-t border-border"
       />
 
@@ -190,6 +192,17 @@ export default async function Page() {
           ))}
         </div>
       </section>
+
+      <HiggsfieldBanner
+        badge={t('home.higgsfield.badge')}
+        title={t('home.higgsfield.title')}
+        description={t('home.higgsfield.description')}
+        cta={t('home.higgsfield.cta')}
+        disclosure={t('home.higgsfield.disclosure')}
+        imageAlt={t('home.higgsfield.imageAlt')}
+        chipLabels={[t('home.higgsfield.chip1'), t('home.higgsfield.chip2'), t('home.higgsfield.chip3')]}
+        className="py-24 border-t border-border"
+      />
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-6 py-24 border-t border-border">

@@ -4,9 +4,12 @@ import React from 'react';
 import { Code, Mail, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/useTranslation';
+import { openCookieSettings } from '@/components/CookieConsent';
+import { legalUi, toLegalLang } from '@/content/legal';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const legal = legalUi[toLegalLang(language)];
 
   return (
     <footer className="bg-background border-t py-16">
@@ -85,7 +88,15 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-16 pt-8 border-t text-center text-sm text-muted-foreground space-y-4">
+          <nav aria-label={legal.legal} className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-foreground transition-colors">{legal.privacy}</Link>
+            <Link href="/cookie-policy" className="hover:text-foreground transition-colors">{legal.cookies}</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">{legal.terms}</Link>
+            <button type="button" onClick={openCookieSettings} className="hover:text-foreground transition-colors">
+              {legal.cookieSettings}
+            </button>
+          </nav>
           <p>© {new Date().getFullYear()} Neural Code Lab. {t('footer.copyright')}</p>
         </div>
       </div>

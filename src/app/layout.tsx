@@ -3,10 +3,10 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Manrope, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import Header from '../components/Header';
+import CookieConsent from '@/components/CookieConsent';
 import Footer from '../components/Footer';
 
 
-import Script from 'next/script';
 import { TranslationProvider } from '../lib/useTranslation';
 import translations from '../../public/translations.json';
 import { headers } from 'next/headers';
@@ -158,24 +158,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google Analytics Script */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-L2S3KDPQ94"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-L2S3KDPQ94');
-          `}
-        </Script>
-
         <TranslationProvider initialLanguage={lang} initialTranslations={translations}>
           <Header />
           <main>{children}</main>
           <Footer />
+          <CookieConsent />
 
         </TranslationProvider>
       </body>

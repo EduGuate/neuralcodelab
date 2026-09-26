@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/3cx', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/chat-demo', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/privacy-policy', priority: 0.5, changeFrequency: 'yearly' as const },
+    { url: '/cookie-policy', priority: 0.3, changeFrequency: 'yearly' as const },
+    { url: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
 
   return staticRoutes.map((route) => ({

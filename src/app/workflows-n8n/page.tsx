@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import KieBanner from '@/components/KieBanner';
+import HiggsfieldBanner from '@/components/HiggsfieldBanner';
 
 const URL = 'https://neuralcodelab.com/workflows-n8n';
 const ZIP = '/workflows/wild-wonders-v8.zip';
@@ -327,6 +328,8 @@ export default function WorkflowsN8nPage() {
           ))}
         </div>
       </section>
+
+      <HiggsfieldBanner />
 
       {/* Final CTA */}
       <section className="relative max-w-6xl mx-auto px-6 pb-24">

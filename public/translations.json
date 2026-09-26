@@ -111,7 +111,19 @@
                 "title": "Crea video, imagen y voz con IA en",
                 "description": "Veo 3.1, Kling, Seedance, Nano Banana y ElevenLabs en una sola API, pagando solo lo que usas. Es lo que usamos para los Shorts automáticos de nuestros workflows de n8n.",
                 "cta": "Crear cuenta en Kie.ai",
-                "disclosure": "Enlace de afiliado: si te registras con él, Neural Code Lab recibe una comisión sin costo extra para ti."
+                "disclosure": "Enlace de afiliado: si te registras con él, Neural Code Lab recibe una comisión sin costo extra para ti.",
+                "imageAlt": "Kie.ai: API de inteligencia artificial para generar video, imágenes y voz con Veo 3.1, Kling, Seedance y ElevenLabs"
+            },
+            "higgsfield": {
+                "badge": "Para creadores de contenido",
+                "title": "Video cinematográfico con IA en",
+                "description": "Movimientos de cámara de cine, efectos virales y avatares con IA en un solo estudio. Ideal para reels, Shorts y anuncios sin equipo de grabación.",
+                "cta": "Probar Higgsfield",
+                "disclosure": "Enlace de afiliado: si te suscribes con él, Neural Code Lab recibe una comisión sin costo extra para ti.",
+                "imageAlt": "Higgsfield AI: estudio de video cinematográfico con inteligencia artificial para reels, Shorts y anuncios",
+                "chip1": "Cámaras de cine",
+                "chip2": "Efectos virales",
+                "chip3": "Avatares y lipsync"
             },
             "featuredProjectsDesc": "Un vistazo a lo que ya estamos construyendo en público",
             "viewProject": "Ver proyecto",
@@ -681,7 +693,19 @@
                 "title": "Create AI video, images and voice with",
                 "description": "Veo 3.1, Kling, Seedance, Nano Banana and ElevenLabs in a single API, pay only for what you use. It's what powers the automated Shorts in our n8n workflows.",
                 "cta": "Create a Kie.ai account",
-                "disclosure": "Affiliate link: if you sign up with it, Neural Code Lab earns a commission at no extra cost to you."
+                "disclosure": "Affiliate link: if you sign up with it, Neural Code Lab earns a commission at no extra cost to you.",
+                "imageAlt": "Kie.ai: AI API to generate video, images and voice with Veo 3.1, Kling, Seedance and ElevenLabs"
+            },
+            "higgsfield": {
+                "badge": "For content creators",
+                "title": "Cinematic AI video with",
+                "description": "Movie-grade camera moves, viral effects and AI avatars in one studio. Made for reels, Shorts and ads without a film crew.",
+                "cta": "Try Higgsfield",
+                "disclosure": "Affiliate link: if you subscribe with it, Neural Code Lab earns a commission at no extra cost to you.",
+                "imageAlt": "Higgsfield AI: cinematic AI video studio for reels, Shorts and ads",
+                "chip1": "Cinema cameras",
+                "chip2": "Viral effects",
+                "chip3": "Avatars & lipsync"
             },
             "featuredProjectsDesc": "A look at what we're already building in public",
             "viewProject": "View project",
