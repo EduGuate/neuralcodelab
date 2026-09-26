@@ -831,7 +831,7 @@ export const proyectos: Project[] = [
     descriptionKey: "projects.items.rcp_paramedico.description",
     liveUrl: "https://devlewiso.github.io/Entrenamiento-RCP-de-Param-dico/",
     githubUrl: "https://github.com/devlewiso/Entrenamiento-RCP-de-Param-dico",
-    imageUrl: "",
+    imageUrl: "/img/rcp-paramedico-pulso.webp",
     tags: ["Education", "Health", "Training"],
     category: "education"
   },
