@@ -1,10 +1,10 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { Marked } from 'marked';
+import generated from '@/data/blog-posts.generated.json';
 
 // Los posts viven en content/blog/<slug>.json. Los escribe el workflow de n8n
 // (aprobado por Telegram) o se pueden crear a mano con el mismo formato.
-const DIR = path.join(process.cwd(), 'content', 'blog');
+// scripts/build-blog-index.mjs los junta en src/data/blog-posts.generated.json antes de cada build,
+// porque en Cloudflare Workers no se puede leer el disco en tiempo de ejecución.
 
 export const SITE_URL = 'https://neuralcodelab.com';
 
@@ -35,18 +35,19 @@ export function slugify(text: string) {
   return text
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9\s-]/g, '')
     .trim()
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
 }
 
-function readPost(file: string): BlogPost | null {
+type RawPost = Partial<BlogPost> & { slug: string };
+
+function toPost(raw: RawPost): BlogPost | null {
   try {
-    const raw = JSON.parse(fs.readFileSync(path.join(DIR, file), 'utf8'));
     return {
-      slug: raw.slug || file.replace(/\.json$/, ''),
+      slug: raw.slug,
       title: raw.title,
       seoTitle: raw.seoTitle,
       description: raw.description,
@@ -61,20 +62,19 @@ function readPost(file: string): BlogPost | null {
       sources: raw.sources ?? [],
       faq: raw.faq ?? [],
       body: raw.body ?? '',
-    };
+    } as BlogPost;
   } catch {
-    return null; // un JSON roto no debe tumbar el build completo
+    return null; // un post mal formado no debe tumbar el sitio
   }
 }
 
+const POSTS: BlogPost[] = (generated as RawPost[])
+  .map(toPost)
+  .filter((p): p is BlogPost => !!p && !!p.title && !!p.date && !!p.slug)
+  .sort((a, b) => b.date.localeCompare(a.date));
+
 export function getAllPosts(): BlogPost[] {
-  if (!fs.existsSync(DIR)) return [];
-  return fs
-    .readdirSync(DIR)
-    .filter((f) => f.endsWith('.json'))
-    .map(readPost)
-    .filter((p): p is BlogPost => !!p && !!p.title && !!p.date)
-    .sort((a, b) => b.date.localeCompare(a.date));
+  return POSTS;
 }
 
 export function getPost(slug: string): BlogPost | undefined {
