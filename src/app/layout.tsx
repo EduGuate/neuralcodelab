@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Manrope, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import Header from '../components/Header';
 import CookieConsent from '@/components/CookieConsent';
 import Footer from '../components/Footer';
@@ -12,9 +12,26 @@ import translations from '../../public/translations.json';
 import { headers } from 'next/headers';
 import { getLanguage, getServerTranslation } from '../lib/i18n';
 
-const fontSans = Manrope({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
-const fontDisplay = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
-const fontMono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-mono', display: 'swap' });
+// Fuentes alojadas en el repo (paquetes @fontsource-variable): el build no depende de Google Fonts,
+// que falla dentro del entorno de build de Cloudflare.
+const fontSans = localFont({
+  src: '../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2',
+  variable: '--font-sans',
+  weight: '200 800',
+  display: 'swap',
+});
+const fontDisplay = localFont({
+  src: '../../node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2',
+  variable: '--font-display',
+  weight: '300 700',
+  display: 'swap',
+});
+const fontMono = localFont({
+  src: '../../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2',
+  variable: '--font-mono',
+  weight: '100 800',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
