@@ -19,6 +19,8 @@ export type BlogPost = {
   keyword: string;
   keywords: string[];
   category: string;
+  /** Lenguajes, frameworks y herramientas que trata el post (lista cerrada en TECNOLOGIAS). */
+  tecnologias: string[];
   date: string;
   updated?: string;
   author: string;
@@ -30,6 +32,79 @@ export type BlogPost = {
 };
 
 export type BlogHeading = { id: string; text: string };
+
+// ---- Taxonomía del blog ----
+// Categoría = de qué trata (una por post). Tecnologías = lenguajes/frameworks/herramientas (0 a 4 por post).
+// El workflow de n8n usa exactamente estos nombres; si agregas uno aquí, agrégalo también allá.
+
+export type Taxon = { nombre: string; slug: string; descripcion: string };
+
+export const CATEGORIAS: Taxon[] = [
+  { nombre: 'Inteligencia Artificial', slug: 'inteligencia-artificial', descripcion: 'Modelos, agentes y herramientas de IA explicados sin humo.' },
+  { nombre: 'Programación y Desarrollo', slug: 'programacion', descripcion: 'Lenguajes, frameworks, lanzamientos y buenas prácticas para desarrolladores.' },
+  { nombre: 'Tecnología', slug: 'tecnologia', descripcion: 'Gadgets, empresas tecnológicas y tendencias digitales.' },
+  { nombre: 'Ciencia', slug: 'ciencia', descripcion: 'Espacio, investigación y descubrimientos explicados en simple.' },
+  { nombre: 'Internet y Redes', slug: 'internet-y-redes', descripcion: 'Redes sociales, plataformas y lo que pasa en internet.' },
+  { nombre: 'Historias Virales', slug: 'historias-virales', descripcion: 'Lo que se está compartiendo y por qué.' },
+  { nombre: 'Guatemala', slug: 'guatemala', descripcion: 'Tecnología y actualidad con mirada guatemalteca.' },
+  { nombre: 'Negocios Digitales', slug: 'negocios-digitales', descripcion: 'Emprendimiento, automatización y dinero en internet.' },
+];
+
+const tec = (nombre: string, slug: string, tipo: string): Taxon => ({
+  nombre,
+  slug,
+  descripcion: `Artículos sobre ${nombre}: noticias, novedades y guías (${tipo}).`,
+});
+
+export const TECNOLOGIAS: Taxon[] = [
+  tec('Python', 'python', 'lenguaje'),
+  tec('JavaScript', 'javascript', 'lenguaje'),
+  tec('TypeScript', 'typescript', 'lenguaje'),
+  tec('Java', 'java', 'lenguaje'),
+  tec('C#', 'csharp', 'lenguaje'),
+  tec('Go', 'go', 'lenguaje'),
+  tec('Rust', 'rust', 'lenguaje'),
+  tec('C++', 'cpp', 'lenguaje'),
+  tec('PHP', 'php', 'lenguaje'),
+  tec('Kotlin', 'kotlin', 'lenguaje'),
+  tec('Swift', 'swift', 'lenguaje'),
+  tec('SQL', 'sql', 'lenguaje'),
+  tec('Node.js', 'nodejs', 'runtime'),
+  tec('React', 'react', 'framework'),
+  tec('Next.js', 'nextjs', 'framework'),
+  tec('Astro', 'astro', 'framework'),
+  tec('Vue', 'vue', 'framework'),
+  tec('Angular', 'angular', 'framework'),
+  tec('Svelte', 'svelte', 'framework'),
+  tec('Django', 'django', 'framework'),
+  tec('FastAPI', 'fastapi', 'framework'),
+  tec('Laravel', 'laravel', 'framework'),
+  tec('Spring', 'spring', 'framework'),
+  tec('.NET', 'dotnet', 'framework'),
+  tec('Flutter', 'flutter', 'framework'),
+  tec('React Native', 'react-native', 'framework'),
+  tec('Tailwind CSS', 'tailwind', 'framework'),
+  tec('PostgreSQL', 'postgresql', 'base de datos'),
+  tec('Docker', 'docker', 'herramienta'),
+  tec('Kubernetes', 'kubernetes', 'herramienta'),
+  tec('Git', 'git', 'herramienta'),
+  tec('Linux', 'linux', 'sistema'),
+  tec('n8n', 'n8n', 'automatización'),
+  tec('Cloudflare', 'cloudflare', 'nube'),
+  tec('AWS', 'aws', 'nube'),
+  tec('Google Cloud', 'google-cloud', 'nube'),
+];
+
+const TECNOLOGIA_POR_NOMBRE = new Map(TECNOLOGIAS.map((t) => [t.nombre, t]));
+const CATEGORIA_POR_NOMBRE = new Map(CATEGORIAS.map((c) => [c.nombre, c]));
+
+export function categoriaDe(nombre: string): Taxon {
+  return CATEGORIA_POR_NOMBRE.get(nombre) ?? { nombre, slug: slugify(nombre), descripcion: '' };
+}
+
+export function tecnologiaDe(nombre: string): Taxon | undefined {
+  return TECNOLOGIA_POR_NOMBRE.get(nombre);
+}
 
 export function slugify(text: string) {
   return text
@@ -53,7 +128,8 @@ function toPost(raw: RawPost): BlogPost | null {
       description: raw.description,
       keyword: raw.keyword ?? '',
       keywords: raw.keywords ?? [],
-      category: raw.category ?? 'Actualidad',
+      category: raw.category ?? 'Tecnología',
+      tecnologias: (raw.tecnologias ?? []).filter((t) => TECNOLOGIA_POR_NOMBRE.has(t)),
       date: raw.date,
       updated: raw.updated,
       author: raw.author ?? 'Neural Code Lab',
@@ -75,6 +151,24 @@ const POSTS: BlogPost[] = (generated as RawPost[])
 
 export function getAllPosts(): BlogPost[] {
   return POSTS;
+}
+
+export function getPostsByCategory(slug: string): BlogPost[] {
+  return POSTS.filter((p) => categoriaDe(p.category).slug === slug);
+}
+
+export function getPostsByTech(slug: string): BlogPost[] {
+  return POSTS.filter((p) => p.tecnologias.some((t) => tecnologiaDe(t)?.slug === slug));
+}
+
+/** Categorías y tecnologías que tienen al menos un post, con su conteo (para los filtros del blog). */
+export function taxonomiasUsadas() {
+  const cuenta = <T extends Taxon>(lista: T[], usa: (p: BlogPost, t: T) => boolean) =>
+    lista.map((t) => ({ ...t, total: POSTS.filter((p) => usa(p, t)).length })).filter((t) => t.total > 0);
+  return {
+    categorias: cuenta(CATEGORIAS, (p, c) => categoriaDe(p.category).slug === c.slug),
+    tecnologias: cuenta(TECNOLOGIAS, (p, t) => p.tecnologias.includes(t.nombre)),
+  };
 }
 
 export function getPost(slug: string): BlogPost | undefined {

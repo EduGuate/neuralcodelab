@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import { getAllPosts, taxonomiasUsadas } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://neuralcodelab.com';
@@ -35,5 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pages, ...posts];
+  const { categorias, tecnologias } = taxonomiasUsadas();
+  const taxonomias: MetadataRoute.Sitemap = [
+    ...categorias.map((c) => `/blog/categoria/${c.slug}`),
+    ...tecnologias.map((t) => `/blog/tecnologia/${t.slug}`),
+  ].map((ruta) => ({ url: `${baseUrl}${ruta}`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 }));
+
+  return [...pages, ...posts, ...taxonomias];
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ArrowRight, Clock, Rss } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { SITE_URL, formatDate, getAllPosts, readingMinutes } from '@/lib/blog';
+import PostGrid from '@/components/blog/PostGrid';
+import TaxonomyNav from '@/components/blog/TaxonomyNav';
 
 const URL = `${SITE_URL}/blog`;
 const TITLE = 'Blog de tecnología, IA y actualidad | Neural Code Lab';
@@ -51,6 +53,8 @@ export default function BlogPage() {
         </a>
       </header>
 
+      <TaxonomyNav />
+
       {!destacado ? (
         <p className="text-muted-foreground">Pronto publicaremos el primer artículo.</p>
       ) : (
@@ -71,25 +75,7 @@ export default function BlogPage() {
             </span>
           </Link>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {resto.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/blog/${p.slug}`}
-                className="group flex flex-col rounded-2xl border border-border bg-card p-6 hover:border-primary/60 transition-colors"
-              >
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
-                  <Badge variant="secondary">{p.category}</Badge>
-                  <time dateTime={p.date}>{formatDate(p.date)}</time>
-                </div>
-                <h2 className="text-lg font-display font-semibold group-hover:text-primary transition-colors">{p.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{p.description}</p>
-                <span className="mt-auto pt-4 text-xs text-muted-foreground inline-flex items-center gap-1">
-                  <Clock size={12} /> {readingMinutes(p.body)} min de lectura
-                </span>
-              </Link>
-            ))}
-          </div>
+          {resto.length > 0 && <PostGrid posts={resto} />}
         </>
       )}
     </div>

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import KieBanner from '@/components/KieBanner';
-import { SITE_URL, formatDate, getAllPosts, getPost, readingMinutes, renderPost } from '@/lib/blog';
+import { SITE_URL, categoriaDe, formatDate, getAllPosts, getPost, readingMinutes, renderPost, tecnologiaDe } from '@/lib/blog';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -54,7 +54,9 @@ export default async function PostPage({ params }: Props) {
   const minutes = readingMinutes(post.body);
   const related = getAllPosts()
     .filter((p) => p.slug !== post.slug)
-    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .map((p) => ({ p, puntos: p.tecnologias.filter((t) => post.tecnologias.includes(t)).length * 2 + Number(p.category === post.category) }))
+    .sort((a, b) => b.puntos - a.puntos)
+    .map(({ p }) => p)
     .slice(0, 3);
 
   const jsonLd: object[] = [
@@ -69,7 +71,7 @@ export default async function PostPage({ params }: Props) {
       author: { '@type': 'Organization', name: post.author, url: SITE_URL },
       publisher: { '@id': `${SITE_URL}/#organization` },
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-      keywords: [post.keyword, ...post.keywords].filter(Boolean).join(', '),
+      keywords: [post.keyword, ...post.keywords, ...post.tecnologias].filter(Boolean).join(', '),
       articleSection: post.category,
       inLanguage: 'es',
       wordCount: post.body.split(/\s+/).filter(Boolean).length,
@@ -105,10 +107,23 @@ export default async function PostPage({ params }: Props) {
 
       <header className="max-w-3xl mb-10">
         <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-5">
-          <Badge>{post.category}</Badge>
+          <Link href={`/blog/categoria/${categoriaDe(post.category).slug}`}><Badge>{post.category}</Badge></Link>
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span className="inline-flex items-center gap-1"><Clock size={14} /> {minutes} min de lectura</span>
         </div>
+        {post.tecnologias.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            {post.tecnologias.map((t) => (
+              <Link
+                key={t}
+                href={`/blog/tecnologia/${tecnologiaDe(t)?.slug}`}
+                className="rounded-md border border-border px-2 py-0.5 text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/60"
+              >
+                {t}
+              </Link>
+            ))}
+          </div>
+        )}
         <h1 className="text-3xl md:text-5xl font-display font-bold tracking-tight leading-tight">{post.title}</h1>
         <p className="mt-5 text-lg text-muted-foreground">{post.description}</p>
       </header>
