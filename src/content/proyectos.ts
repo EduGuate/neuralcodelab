@@ -532,7 +532,7 @@ export const proyectos: Project[] = [
     id: "e46-heritage",
     title: "E46 Heritage",
     descriptionKey: "projects.items.e46_heritage.description",
-    liveUrl: "",
+    liveUrl: "https://e46.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/E46-Heritage",
     imageUrl: "",
     tags: ["Cars", "BMW", "Community"],
