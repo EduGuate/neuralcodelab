@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink, Github, Search } from 'lucide-react';
@@ -13,12 +13,30 @@ import { Badge } from '@/components/ui/badge';
 export default function ProjectsContent() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState('all');
+  const [activeStack, setActiveStack] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
   const categorias = categoriasBase.map(c => ({ id: c.id, nombre: t(c.nombreKey) }));
 
+  const enCategoria = (project: Project) =>
+    activeCategory === 'all' || (activeCategory === 'eduguate' ? project.githubUrl.includes('github.com/EduGuate/') : project.category === activeCategory);
+
+  // Lenguajes y frameworks disponibles dentro de la categoría elegida, del más usado al menos usado.
+  const stacks = useMemo(() => {
+    const cuenta = new Map<string, number>();
+    proyectos.filter(enCategoria).forEach(p => p.stack?.forEach(s => cuenta.set(s, (cuenta.get(s) ?? 0) + 1)));
+    return [...cuenta.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeCategory]);
+
+  const cambiarCategoria = (id: string) => {
+    setActiveCategory(id);
+    setActiveStack('all'); // el stack elegido puede no existir en la nueva categoría
+  };
+
   const filteredProjects = proyectos
-    .filter(project => activeCategory === 'all' || (activeCategory === 'eduguate' ? project.githubUrl.includes('github.com/EduGuate/') : project.category === activeCategory))
+    .filter(enCategoria)
+    .filter(project => activeStack === 'all' || project.stack?.includes(activeStack))
     .filter(project => {
       const description = t(project.descriptionKey);
       if (!searchTerm.trim()) return true;
@@ -26,7 +44,8 @@ export default function ProjectsContent() {
       return (
         project.title.toLowerCase().includes(searchLower) ||
         description.toLowerCase().includes(searchLower) ||
-        project.tags.some(tag => tag.toLowerCase().includes(searchLower))
+        project.tags.some(tag => tag.toLowerCase().includes(searchLower)) ||
+        (project.stack ?? []).some(tech => tech.toLowerCase().includes(searchLower))
       );
     });
 
@@ -76,7 +95,7 @@ export default function ProjectsContent() {
                 key={categoria.id}
                 variant={activeCategory === categoria.id ? "default" : "outline"}
                 size="sm"
-                onClick={() => setActiveCategory(categoria.id)}
+                onClick={() => cambiarCategoria(categoria.id)}
                 className="rounded-full"
               >
                 {categoria.nombre}
@@ -84,6 +103,32 @@ export default function ProjectsContent() {
             ))}
           </div>
         </div>
+
+        {/* Filtro por lenguaje / framework */}
+        {stacks.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 mb-12 -mt-8 justify-center md:justify-start">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mr-1">{t('projects.stackFilter')}</span>
+            <Button
+              variant={activeStack === 'all' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setActiveStack('all')}
+              className="rounded-full h-7 px-3 text-xs"
+            >
+              {t('projects.allStacks')}
+            </Button>
+            {stacks.map(([tech, total]) => (
+              <Button
+                key={tech}
+                variant={activeStack === tech ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setActiveStack(tech)}
+                className="rounded-full h-7 px-3 text-xs font-mono"
+              >
+                {tech} <span className="ml-1 opacity-60">{total}</span>
+              </Button>
+            ))}
+          </div>
+        )}
 
         {activeCategory === 'templates' && (
           <p className="text-center mb-8">
@@ -135,6 +180,21 @@ export default function ProjectsContent() {
                   <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed">
                     {t(project.descriptionKey)}
                   </p>
+                  {project.stack && project.stack.length > 0 && (
+                    <div className="mt-auto flex flex-wrap gap-1.5">
+                      {project.stack.map(tech => (
+                        <button
+                          key={tech}
+                          type="button"
+                          onClick={() => setActiveStack(tech)}
+                          title={`${t('projects.stackFilter')}: ${tech}`}
+                          className="rounded-md border border-border px-1.5 py-0.5 text-[11px] font-mono text-muted-foreground hover:text-primary hover:border-primary/60"
+                        >
+                          {tech}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
                 <CardFooter className="px-6 pb-6 pt-0 gap-3">
                   {project.liveUrl ? (

@@ -7,6 +7,8 @@ export interface Project {
   imageUrl: string;
   tags: string[];
   category: string;
+  /** Lenguajes y frameworks principales (detectados del package.json y los lenguajes del repo en GitHub). */
+  stack?: string[];
 }
 
 export interface Category {
@@ -23,7 +25,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/CurriculumViateWebsite",
     imageUrl: "/img/cv-website.png",
     tags: ["Portfolio", "Professional", "Personal"],
-    category: "business"
+    category: "business",
+    stack: ["Astro", "Tailwind CSS", "HTML/CSS"],
   },
   {
     id: "uml",
@@ -33,7 +36,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/neuralumlstudio",
     imageUrl: "/img/neural-uml-studio.png",
     tags: ["Tools", "AI", "UML", "Architecture"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "scraper",
@@ -43,7 +47,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/neural_scraper",
     imageUrl: "/img/neural-scraper.png",
     tags: ["Tools", "Scraping", "Data Analysis", "Retro UI"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ridemotohub",
@@ -53,7 +58,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/ridemotohub",
     imageUrl: "/img/ridemotohub.png",
     tags: ["Community", "Astro", "Motorcycles", "Guatemala"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["Astro"],
   },
   {
     id: "infra",
@@ -63,7 +69,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/infralab",
     imageUrl: "/img/infra-lab.png",
     tags: ["Infrastructure", "Homelab", "DevOps", "AI"],
-    category: "infrastructure"
+    category: "infrastructure",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "oryx-studio",
@@ -73,7 +80,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/oryx-studio",
     imageUrl: "/img/oryx-studio.png",
     tags: ["Tools", "Compiler", "AI"],
-    category: "tools"
+    category: "tools",
+    stack: ["Vite", "HTML/CSS", "JavaScript"],
   },
   {
     id: "oryx-parser",
@@ -83,7 +91,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://oryx-parser.neuralcodelab.com/",
     imageUrl: "/img/oryx-parser.png",
     tags: ["Tools", "Compiler", "AI"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "JavaScript"],
   },
   {
     id: "ets",
@@ -93,7 +102,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/etcc",
     imageUrl: "/img/ets-carpet.png",
     tags: ["Business", "Web Design"],
-    category: "business"
+    category: "business",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "data-tool",
@@ -103,7 +113,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/DataSight",
     imageUrl: "/img/data-tool.png",
     tags: ["Tools", "Data Analysis"],
-    category: "tools"
+    category: "tools",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "cleancarpro",
@@ -113,7 +124,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/cleancarprogt",
     imageUrl: "/img/cleancarprogt.png",
     tags: ["Landing Page", "Business"],
-    category: "business"
+    category: "business",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "retrox",
@@ -123,7 +135,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/retrox",
     imageUrl: "/img/retrox-gaming.png",
     tags: ["Landing Page", "Entertainment"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "skatevibes",
@@ -133,7 +146,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/SkateVibe",
     imageUrl: "/img/skatevibes.png",
     tags: ["Landing Page", "Lifestyle"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "sport",
@@ -153,7 +167,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/freecomputerTheme",
     imageUrl: "/img/techprofree.png",
     tags: ["Landing Page", "Tools"],
-    category: "tools"
+    category: "tools",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "slimvita",
@@ -163,7 +178,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/slimvita",
     imageUrl: "/img/slimvita.png",
     tags: ["Health", "Lifestyle"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "learn-mayan",
@@ -193,7 +209,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/cinehub",
     imageUrl: "/img/movies-searcher.png",
     tags: ["Landing Page", "Events"],
-    category: "business"
+    category: "business",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "water",
@@ -223,7 +240,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/yt-random-comment",
     imageUrl: "/img/random-youtube.png",
     tags: ["Entertainment", "YouTube"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["HTML/CSS"],
   },
   {
     id: "img-webp",
@@ -233,7 +251,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/PixelFlow",
     imageUrl: "/img/image-to-webp.png",
     tags: ["Tools", "Image Processing"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     id: "life-path",
@@ -243,7 +262,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/numerodevida",
     imageUrl: "/img/life-path-calculator.png",
     tags: ["Tools", "Lifestyle"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     id: "healthtrack",
@@ -253,7 +273,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/healthtrack",
     imageUrl: "/img/healthtrack.png",
     tags: ["Health", "Fitness"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript", "HTML/CSS"],
   },
   {
     id: "astromaya",
@@ -263,7 +284,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/neuralcodelab/astromaya",
     imageUrl: "/img/astromaya.png",
     tags: ["Education", "Culture"],
-    category: "education"
+    category: "education",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     id: "kidols5",
@@ -273,7 +295,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/K-IDOLS-WARRIORS",
     imageUrl: "/img/k-idols-5.png",
     tags: ["Education", "Kids"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "kidols6",
@@ -283,7 +306,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/k-idols6",
     imageUrl: "/img/k-idols-6.png",
     tags: ["Education", "Kids"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ksaber7",
@@ -293,7 +317,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/k-idols7",
     imageUrl: "/img/k-saber-7.png",
     tags: ["Education", "Kids", "Culture"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ksaber8",
@@ -303,7 +328,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/k-idols8",
     imageUrl: "/img/k-saber-8.png",
     tags: ["Education", "Kids", "Culture"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "camilakids",
@@ -323,7 +349,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/simulador-de-balanceador-de-carga",
     imageUrl: "/img/load-balancer.png",
     tags: ["Tools", "Simulation"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "rabbitmq",
@@ -333,7 +360,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/RabbitmqSimulator",
     imageUrl: "/img/rabbitmq-kafka.png",
     tags: ["Tools", "Simulation", "Messaging"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "kafka",
@@ -343,7 +371,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/kafkaSimulator",
     imageUrl: "/img/kafka-simulator.png",
     tags: ["Tools", "Simulation", "Messaging"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ri-nim",
@@ -353,7 +382,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Ri-N-m-Ch-ab-l-Q-aq-",
     imageUrl: "/img/ri-nim.png",
     tags: ["Education", "Culture", "Mayan"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "magic-machine",
@@ -363,7 +393,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/La-M-quina-de-Creaci-n-M-gica",
     imageUrl: "/img/magic-machine.png",
     tags: ["Tools", "Creative", "AI"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "cloudnest-template",
@@ -373,7 +404,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/CloudNestTemplate",
     imageUrl: "/img/cloudnest-template.png",
     tags: ["Free Template", "Landing Page", "GSAP"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ayudagt",
@@ -383,7 +415,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/ayudagt",
     imageUrl: "",
     tags: ["Education", "Kids", "Guatemala", "Safety"],
-    category: "education"
+    category: "education",
+    stack: ["Expo", "React Native", "TypeScript"],
   },
   {
     id: "empleosdelatlantico",
@@ -393,7 +426,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/empleosdelatlantico",
     imageUrl: "",
     tags: ["Jobs", "Community", "Next.js"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "delatlanticoempleos",
@@ -403,7 +437,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/delatlanticoempleos",
     imageUrl: "",
     tags: ["Jobs", "Community", "MVP"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "Supabase", "TypeScript"],
   },
   {
     id: "empleosdelatlantico-v1",
@@ -413,7 +448,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/empleosdelatlantico",
     imageUrl: "",
     tags: ["Jobs", "Vite", "React"],
-    category: "business"
+    category: "business",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "ecommerce-delatlantico",
@@ -423,7 +459,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/ecommerce-delatlantico",
     imageUrl: "",
     tags: ["Ecommerce", "Next.js", "Supabase"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "agentesgt",
@@ -433,7 +470,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/agentesgt",
     imageUrl: "",
     tags: ["AI", "Agents", "Next.js"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     id: "agentiq",
@@ -443,7 +481,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/agentiq",
     imageUrl: "",
     tags: ["AI", "Call Center", "Next.js"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "Tailwind CSS", "Supabase", "TypeScript"],
   },
   {
     id: "hermes-dashboard",
@@ -453,7 +492,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/hermes-dashboard",
     imageUrl: "",
     tags: ["Dashboard", "AI Agents", "Next.js"],
-    category: "tools"
+    category: "tools",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "sinapsis-explorer",
@@ -463,7 +503,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/sinapsis-explorer",
     imageUrl: "",
     tags: ["Education", "Science", "Interactive"],
-    category: "education"
+    category: "education",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript", "HTML/CSS"],
   },
   {
     id: "vertex-marketing",
@@ -473,7 +514,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/vertex-marketing",
     imageUrl: "",
     tags: ["Marketing", "Next.js"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript", "HTML/CSS"],
   },
   {
     id: "auralink",
@@ -483,7 +525,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/auralink.live",
     imageUrl: "",
     tags: ["Security", "AI", "Astro"],
-    category: "business"
+    category: "business",
+    stack: ["Astro", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "e46-heritage",
@@ -493,7 +536,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/E46-Heritage",
     imageUrl: "",
     tags: ["Cars", "BMW", "Community"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["Next.js", "Three.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "irancorner",
@@ -503,7 +547,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/irancorner",
     imageUrl: "",
     tags: ["Personal", "Next.js"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     id: "neuralcodelab-blog",
@@ -513,7 +558,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/blog_neuralcodelab.com",
     imageUrl: "",
     tags: ["Blog", "Astro"],
-    category: "business"
+    category: "business",
+    stack: ["Astro"],
   },
   {
     id: "cargolegends",
@@ -523,7 +569,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/cargolegendsRP",
     imageUrl: "",
     tags: ["Gaming", "Astro"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["Astro", "Tailwind CSS"],
   },
   {
     id: "microsaas-analisis",
@@ -533,7 +580,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/microsaasAnalisis",
     imageUrl: "",
     tags: ["SaaS", "Astro", "Analysis"],
-    category: "business"
+    category: "business",
+    stack: ["Astro", "TypeScript", "HTML/CSS"],
   },
   {
     id: "plasticycle",
@@ -543,7 +591,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/PlastiCycle",
     imageUrl: "",
     tags: ["Recycling", "Guatemala", "Next.js"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "miel-pura",
@@ -553,7 +602,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Miel-Pura-de-Abejas",
     imageUrl: "",
     tags: ["Landing Page", "Food"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS"],
   },
   {
     id: "coffee",
@@ -563,7 +613,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/coffe_dialogflow",
     imageUrl: "",
     tags: ["Landing Page", "Coffee", "Dialogflow"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS"],
   },
   {
     id: "rentauto",
@@ -573,7 +624,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/rentauto-landingpage",
     imageUrl: "",
     tags: ["Landing Page", "Cars", "Rental"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS"],
   },
   {
     id: "cafeantigua",
@@ -583,7 +635,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Cafeantigua",
     imageUrl: "",
     tags: ["Landing Page", "Coffee", "Guatemala"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS"],
   },
   {
     id: "wavestoregt",
@@ -593,7 +646,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/WavestoreGT",
     imageUrl: "",
     tags: ["Store", "Guatemala"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "cine-hub",
@@ -603,7 +657,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/cinehub",
     imageUrl: "",
     tags: ["Movies", "Search", "React"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "music-player",
@@ -613,7 +668,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/music-player",
     imageUrl: "",
     tags: ["Music", "React"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["React", "JavaScript", "HTML/CSS"],
   },
   {
     id: "futuristic-audio-player",
@@ -623,7 +679,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/futuristic-audio-player",
     imageUrl: "",
     tags: ["Audio", "Visualizer"],
-    category: "entertainment"
+    category: "entertainment",
+    stack: ["HTML/CSS"],
   },
   {
     id: "itzamma",
@@ -633,7 +690,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/itzamma",
     imageUrl: "",
     tags: ["Next.js", "Vercel"],
-    category: "business"
+    category: "business",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript", "TypeScript"],
   },
   {
     id: "imgsocial",
@@ -643,7 +701,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/ImgSocial",
     imageUrl: "",
     tags: ["Images", "Social", "React"],
-    category: "tools"
+    category: "tools",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "webradar",
@@ -653,7 +712,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/WebRadar",
     imageUrl: "",
     tags: ["Dashboard", "Monitoring"],
-    category: "tools"
+    category: "tools",
+    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
     id: "timer-tracker",
@@ -663,7 +723,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/timer-tracker",
     imageUrl: "",
     tags: ["Productivity", "Time"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "tasker-manager",
@@ -673,7 +734,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/tasker-manager",
     imageUrl: "",
     tags: ["Productivity", "Tasks"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "ccai-ops-hub",
@@ -683,7 +745,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Todo_ProjectName",
     imageUrl: "",
     tags: ["Task Manager", "Contact Center"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "excel-tool",
@@ -693,7 +756,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/excel-tool",
     imageUrl: "",
     tags: ["Excel", "Data"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "yt-downloader",
@@ -703,7 +767,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/yt-downloader",
     imageUrl: "",
     tags: ["YouTube", "Video"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS"],
   },
   {
     id: "expense-tracker",
@@ -713,7 +778,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/ExpensTracerDash",
     imageUrl: "",
     tags: ["Finance", "Dashboard", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "cajero-atm",
@@ -723,7 +789,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/cajero_atm",
     imageUrl: "",
     tags: ["Python", "Simulation"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "face-detection",
@@ -733,7 +800,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Facedetecv1.2",
     imageUrl: "",
     tags: ["Computer Vision", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "image-metadata-scanner",
@@ -743,7 +811,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Esc-ner-de-Metadatos-de-Im-genes",
     imageUrl: "",
     tags: ["Images", "Metadata", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "wordpress-vuln",
@@ -753,7 +822,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/WordpresVuln",
     imageUrl: "",
     tags: ["Security", "WordPress", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "wordpress-scanner-visual",
@@ -763,7 +833,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/WordpresScannerVulnVisual",
     imageUrl: "",
     tags: ["Security", "WordPress", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "web-service-scanner",
@@ -773,7 +844,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Web-Service-Vulnerability-Scanner",
     imageUrl: "",
     tags: ["Security", "Web", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "pest-simulation",
@@ -783,7 +855,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Simulaci-n-de-Plagas-en-Cultivos",
     imageUrl: "",
     tags: ["Agriculture", "Simulation", "Python"],
-    category: "education"
+    category: "education",
+    stack: ["Python"],
   },
   {
     id: "agricalculo",
@@ -793,7 +866,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/AgriC-lculo-",
     imageUrl: "",
     tags: ["Agriculture", "Python"],
-    category: "tools"
+    category: "tools",
+    stack: ["Python"],
   },
   {
     id: "iso-adventure",
@@ -803,7 +877,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/isointeractiva",
     imageUrl: "/img/iso-adventure.webp",
     tags: ["Education", "ISO", "Interactive"],
-    category: "education"
+    category: "education",
+    stack: ["HTML/CSS"],
   },
   {
     id: "rcp-paramedico",
@@ -813,7 +888,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Entrenamiento-RCP-de-Param-dico",
     imageUrl: "/img/rcp-paramedico-pulso.webp",
     tags: ["Education", "Health", "Training"],
-    category: "education"
+    category: "education",
+    stack: ["JavaScript", "HTML/CSS"],
   },
   {
     id: "compatibilidad",
@@ -823,7 +899,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/Calculadora_Compatibilidad",
     imageUrl: "/img/calculadora-compatibilidad-duo.png",
     tags: ["Calculator", "Numerology", "Compatibility"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "numerologia",
@@ -833,7 +910,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/CalculadoraNumerologicaAstral",
     imageUrl: "/img/calculadora-numerologica-astral.png",
     tags: ["Calculator", "Numerology", "Astral"],
-    category: "lifestyle"
+    category: "lifestyle",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "homelab-dashboard",
@@ -843,7 +921,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/homelabdashboard",
     imageUrl: "/img/homelab-dashboard.png",
     tags: ["Free Template", "Homelab", "Dashboard"],
-    category: "infrastructure"
+    category: "infrastructure",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "homelab-architecture",
@@ -853,7 +932,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/homelab-architecture",
     imageUrl: "/img/homelab-architecture.png",
     tags: ["Free Template", "Homelab", "Mermaid", "Architecture"],
-    category: "infrastructure"
+    category: "infrastructure",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "g923-fix",
@@ -863,7 +943,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/g923-xbox-linux-fix",
     imageUrl: "",
     tags: ["Linux", "Gaming", "Shell"],
-    category: "infrastructure"
+    category: "infrastructure",
+    stack: ["Shell"],
   },
   {
     id: "g923-fix-linux",
@@ -873,7 +954,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/devlewiso/g923-fix-linux",
     imageUrl: "",
     tags: ["Linux", "Gaming", "Shell"],
-    category: "infrastructure"
+    category: "infrastructure",
+    stack: ["Shell"],
   },
   {
     id: "personal-assistant-landing",
@@ -883,7 +965,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/LandingPage_PersonalAssistant",
     imageUrl: "/img/personal-assistant-landing.png",
     tags: ["Free Template", "Landing Page", "AI"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "perfil-updated",
@@ -893,7 +976,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/perfilUpdated",
     imageUrl: "/img/perfil-updated.png",
     tags: ["Free Template", "Portfolio", "Personal"],
-    category: "business"
+    category: "business",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "irans-corner-dashboard",
@@ -903,7 +987,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/iranscornerdashboard",
     imageUrl: "/img/irans-corner-dashboard.png",
     tags: ["Free Template", "Dashboard", "Tools"],
-    category: "tools"
+    category: "tools",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "nextgentechpro",
@@ -913,7 +998,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/nextgentechpro",
     imageUrl: "/img/nextgentechpro.png",
     tags: ["Free Template", "Bootstrap", "Tech"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "servicios-tecnologicos",
@@ -923,7 +1009,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/Servicios-Tecnol-gicos",
     imageUrl: "/img/servicios-tecnologicos.png",
     tags: ["Free Template", "Bootstrap", "IT"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "cleaning-theme",
@@ -933,7 +1020,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/CleaningTema",
     imageUrl: "/img/cleaning-theme.png",
     tags: ["Free Template", "Bootstrap", "Cleaning"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "hosting-theme",
@@ -943,7 +1031,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/hostingserrvicebootstrap",
     imageUrl: "/img/hosting-theme.png",
     tags: ["Free Template", "Bootstrap", "Hosting"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS"],
   },
   {
     id: "dj-theme",
@@ -953,7 +1042,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/DjBootstrapTheme",
     imageUrl: "/img/dj-theme.png",
     tags: ["Free Template", "Bootstrap", "Music"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "urban-skate-theme",
@@ -963,7 +1053,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/UrbanSkateShopTheme",
     imageUrl: "/img/urban-skate-theme.png",
     tags: ["Free Template", "Bootstrap", "Skate"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS"],
   },
   {
     id: "gamer-theme",
@@ -973,7 +1064,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/GamerBootstrapTheme",
     imageUrl: "/img/gamer-theme.png",
     tags: ["Free Template", "Bootstrap", "Gaming"],
-    category: "templates"
+    category: "templates",
+    stack: ["JavaScript", "HTML/CSS"],
   },
   {
     id: "shoes-theme",
@@ -983,7 +1075,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/ShoesStoreBootstrap",
     imageUrl: "/img/shoes-theme.png",
     tags: ["Free Template", "Bootstrap", "Store"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "dental-theme",
@@ -993,7 +1086,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/DenthalBootstrapTheme",
     imageUrl: "/img/dental-theme.png",
     tags: ["Free Template", "Bootstrap", "Health"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS", "JavaScript"],
   },
   {
     id: "realestate-theme",
@@ -1003,7 +1097,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/realstateTheme",
     imageUrl: "/img/realestate-theme.png",
     tags: ["Free Template", "Bootstrap", "Real Estate"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS"],
   },
   {
     id: "pizza-theme",
@@ -1013,7 +1108,8 @@ export const proyectos: Project[] = [
     githubUrl: "https://github.com/EduGuate/PizzaBootstrapTheme",
     imageUrl: "/img/pizza-theme.png",
     tags: ["Free Template", "Bootstrap", "Food"],
-    category: "templates"
+    category: "templates",
+    stack: ["HTML/CSS"],
   },
   {
     id: "wild-wonders",
@@ -1023,7 +1119,8 @@ export const proyectos: Project[] = [
     githubUrl: "",
     imageUrl: "/img/wild-wonders-canvas.webp",
     tags: ["Free Workflow", "n8n", "IA"],
-    category: "workflows"
+    category: "workflows",
+    stack: ["n8n"],
   }
 ];
 
