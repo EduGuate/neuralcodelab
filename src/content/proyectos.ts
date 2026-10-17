@@ -18,6 +18,17 @@ export interface Category {
 
 export const proyectos: Project[] = [
   {
+    id: "neuralt-llm",
+    title: "NeuralT LLM",
+    descriptionKey: "projects.items.neuralt-llm.description",
+    liveUrl: "",
+    githubUrl: "https://github.com/devlewiso/neuralt-llm",
+    imageUrl: "/img/neuralt-llm.png",
+    tags: ["AI", "Neural Networks", "Education", "Open source"],
+    category: "education",
+    stack: ["Python", "NumPy", "Matplotlib"],
+  },
+  {
     id: "cv",
     title: "My Professional CV",
     descriptionKey: "projects.items.cv.description",
