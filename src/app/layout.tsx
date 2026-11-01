@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import Header from '../components/Header';
 import CookieConsent from '@/components/CookieConsent';
 import Footer from '../components/Footer';
@@ -177,6 +178,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2802646505145866"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
         <TranslationProvider initialLanguage={lang} initialTranslations={translations}>
           <Header />
