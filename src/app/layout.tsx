@@ -50,6 +50,9 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: 'Neural Code Lab' }, { name: 'Iran Lewis' }],
     creator: 'Neural Code Lab',
     publisher: 'Neural Code Lab',
+    other: {
+      'google-adsense-account': 'ca-pub-2802646505145866',
+    },
     alternates: {
       canonical: 'https://neuralcodelab.com',
     },
