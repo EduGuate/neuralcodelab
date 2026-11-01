@@ -2,7 +2,7 @@
 import Script from 'next/script';
 
 // Add proper typing for the custom element
-declare global {
+declare module 'react' {
     namespace JSX {
         interface IntrinsicElements {
             'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id': string }, HTMLElement>;
