@@ -132,7 +132,7 @@ def bajar(url, timeout=20, limite=3_000_000):
     u = urllib.parse.urlsplit(url)
     if u.scheme not in ('http', 'https') or not u.hostname or not host_publico(u.hostname):
         raise ValueError('URL no permitida')
-    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': '*/*'})  # con Accept-Language, Bing devuelve HTML en vez del feed
+    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': '*/*'})
     with ABRIR.open(req, timeout=timeout) as r:
         return r.read(limite), r.headers.get('Content-Type', ''), r.geturl()
 
@@ -161,6 +161,16 @@ def sin_utm(url):
 
 
 # ---- Recolectar ----
+
+def bajar_feed(url):
+    """Bing a veces responde una página HTML corta en vez del RSS; al reintentar suele llegar bien."""
+    for intento in range(4):
+        crudo, tipo, _ = bajar(url)
+        if 'html' not in tipo.lower():
+            return crudo
+        time.sleep(5 * (intento + 1))
+    raise ValueError('respondió HTML en vez del feed')
+
 
 def fecha_de(texto):
     if not texto:
@@ -195,7 +205,7 @@ def recolectar(usadas):
     items, vistas, caidos = [], set(), []
     for fuente, url in FEEDS.items():
         try:
-            crudo, _, _ = bajar(url)
+            crudo = bajar_feed(url)
             n = 0
             for titulo, enlace, resumen, fecha in leer_feed(crudo):
                 d = fecha_de(fecha)
@@ -258,7 +268,7 @@ def leer_articulo(url):
 
 def buscar(consulta):
     q = urllib.parse.quote(consulta)
-    crudo, _, _ = bajar(f'https://www.bing.com/news/search?q={q}&format=rss')
+    crudo = bajar_feed(f'https://www.bing.com/news/search?q={q}&format=rss')
     return [sin_utm(directa(e.strip())) for _, e, _, _ in leer_feed(crudo) if e]
 
 
@@ -269,7 +279,7 @@ def investigar(candidato):
             try:
                 urls += buscar(str(c)[:120])[:6]
             except Exception as e:
-                log('Búsqueda falló:', type(e).__name__)
+                log('Búsqueda falló:', type(e).__name__, str(e)[:80])
     fuentes, dominios = [], set()
     for url in dict.fromkeys(urls):
         d = dominio(url)
