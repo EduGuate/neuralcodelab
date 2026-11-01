@@ -20,7 +20,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = { es: '26 de septiembre de 2026', en: 'September 26, 2026' };
+export const LEGAL_UPDATED = { es: '1 de noviembre de 2026', en: 'November 1, 2026' };
 export const LEGAL_CONTACT = 'devlewiso@gmail.com';
 
 const privacyEs: LegalDoc = {
@@ -330,7 +330,7 @@ const termsEs: LegalDoc = {
     {
       title: '6. Contenido generado con IA',
       paragraphs: [
-        'Parte de las imágenes y ejemplos del sitio se generaron con inteligencia artificial y tienen fines ilustrativos. Si usas nuestras herramientas para publicar contenido sintético, debes etiquetarlo según exijan las plataformas y la ley aplicable.',
+        'Parte de las imágenes y ejemplos del sitio se generaron con inteligencia artificial y tienen fines ilustrativos. Algunos artículos del blog se generan y publican de forma automática con IA a partir de las fuentes que citan, sin revisión humana previa, y lo indican en la propia página: pueden contener errores, así que verifica en esas fuentes cualquier dato importante. Si usas nuestras herramientas para publicar contenido sintético, debes etiquetarlo según exijan las plataformas y la ley aplicable.',
       ],
     },
     {
@@ -388,7 +388,7 @@ const termsEn: LegalDoc = {
     },
     {
       title: '6. AI-generated content',
-      paragraphs: ['Some images and examples on the site were generated with artificial intelligence for illustration. If you use our tools to publish synthetic content, you must label it as required by the platforms and applicable law.'],
+      paragraphs: ['Some images and examples on the site were generated with artificial intelligence for illustration. Some blog articles are generated and published automatically with AI from the sources they cite, without prior human review, and say so on the page: they may contain errors, so check any important information against those sources. If you use our tools to publish synthetic content, you must label it as required by the platforms and applicable law.'],
     },
     {
       title: '7. External links',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Clock, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Bot, Clock, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import KieBanner from '@/components/KieBanner';
 import { SITE_URL, categoriaDe, formatDate, getAllPosts, getPost, readingMinutes, renderPost, tecnologiaDe } from '@/lib/blog';
@@ -128,12 +128,29 @@ export default async function PostPage({ params }: Props) {
         <p className="mt-5 text-lg text-muted-foreground">{post.description}</p>
       </header>
 
+      {post.image && (
+        <img
+          src={post.image}
+          alt={post.imageAlt || post.title}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl border border-border mb-12"
+        />
+      )}
+
       <div className="grid gap-12 lg:grid-cols-[1fr_260px]">
         <div className="min-w-0">
           <div
             className="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:scroll-mt-24 prose-a:text-primary prose-img:rounded-xl"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+
+          {post.aiGenerated && (
+            <p className="mt-10 flex gap-3 rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+              <Bot size={18} className="mt-0.5 flex-shrink-0" />
+              Artículo generado con IA a partir de las fuentes citadas. No fue revisado por una persona antes de publicarse.
+            </p>
+          )}
 
           {post.faq.length > 0 && (
             <section className="mt-14" aria-labelledby="faq">

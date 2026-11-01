@@ -61,8 +61,17 @@ export default function BlogPage() {
         <>
           <Link
             href={`/blog/${destacado.slug}`}
-            className="group block rounded-2xl border border-border bg-card p-8 md:p-10 mb-10 hover:border-primary/60 transition-colors"
+            className="group block overflow-hidden rounded-2xl border border-border bg-card p-8 md:p-10 mb-10 hover:border-primary/60 transition-colors"
           >
+            {destacado.image && (
+              <img
+                src={destacado.image}
+                alt={destacado.imageAlt || destacado.title}
+                width={1200}
+                height={630}
+                className="-mx-8 -mt-8 md:-mx-10 md:-mt-10 mb-8 aspect-[40/21] w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] max-w-none object-cover"
+              />
+            )}
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
               <Badge>{destacado.category}</Badge>
               <time dateTime={destacado.date}>{formatDate(destacado.date)}</time>

@@ -1,8 +1,8 @@
 import { Marked } from 'marked';
 import generated from '@/data/blog-posts.generated.json';
 
-// Los posts viven en content/blog/<slug>.json. Los escribe el workflow de n8n
-// (aprobado por Telegram) o se pueden crear a mano con el mismo formato.
+// Los posts viven en content/blog/<slug>.json. Los escribe scripts/blog-ia/publicar.py
+// (timer en Asgard, sin revisión humana) o se pueden crear a mano con el mismo formato.
 // scripts/build-blog-index.mjs los junta en src/data/blog-posts.generated.json antes de cada build,
 // porque en Cloudflare Workers no se puede leer el disco en tiempo de ejecución.
 
@@ -26,6 +26,8 @@ export type BlogPost = {
   author: string;
   image?: string;
   imageAlt?: string;
+  /** Generado y publicado por la automatización, sin revisión humana. Muestra un aviso en el post. */
+  aiGenerated?: boolean;
   sources: BlogSource[];
   faq: BlogFaq[];
   body: string;
@@ -35,7 +37,7 @@ export type BlogHeading = { id: string; text: string };
 
 // ---- Taxonomía del blog ----
 // Categoría = de qué trata (una por post). Tecnologías = lenguajes/frameworks/herramientas (0 a 4 por post).
-// El workflow de n8n usa exactamente estos nombres; si agregas uno aquí, agrégalo también allá.
+// scripts/blog-ia/publicar.py usa exactamente estos nombres; si agregas uno aquí, agrégalo también allá.
 
 export type Taxon = { nombre: string; slug: string; descripcion: string };
 
@@ -135,6 +137,7 @@ function toPost(raw: RawPost): BlogPost | null {
       author: raw.author ?? 'Neural Code Lab',
       image: raw.image,
       imageAlt: raw.imageAlt,
+      aiGenerated: raw.aiGenerated === true,
       sources: raw.sources ?? [],
       faq: raw.faq ?? [],
       body: raw.body ?? '',

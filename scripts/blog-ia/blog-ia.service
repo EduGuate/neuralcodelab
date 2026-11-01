@@ -1,0 +1,11 @@
+[Unit]
+Description=Blog IA de neuralcodelab.com (genera y publica un post)
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.local/share/blog-ia/neuralcodelab
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=BLOG_IA_CLON=1
+ExecStart=/usr/bin/python3 -B scripts/blog-ia/publicar.py
+TimeoutStartSec=50min

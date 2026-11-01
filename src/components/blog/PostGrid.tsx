@@ -11,8 +11,18 @@ export default function PostGrid({ posts }: { posts: BlogPost[] }) {
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
-          className="group flex flex-col rounded-2xl border border-border bg-card p-6 hover:border-primary/60 transition-colors"
+          className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 hover:border-primary/60 transition-colors"
         >
+          {p.image && (
+            <img
+              src={p.image}
+              alt={p.imageAlt || p.title}
+              width={1200}
+              height={630}
+              loading="lazy"
+              className="-mx-6 -mt-6 mb-5 aspect-[40/21] w-[calc(100%+3rem)] max-w-none object-cover"
+            />
+          )}
           <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
             <Badge variant="secondary">{p.category}</Badge>
             <time dateTime={p.date}>{formatDate(p.date)}</time>
