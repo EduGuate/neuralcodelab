@@ -1,0 +1,40 @@
+{
+  "slug": "logitech-g923-xbox-linux-oversteer",
+  "title": "Cómo hacer funcionar el Logitech G923 Xbox en Linux con Oversteer",
+  "seoTitle": "Logitech G923 Xbox en Linux: solución con Oversteer",
+  "description": "Si Oversteer no detecta tu G923 Xbox en Linux, el problema es el modo USB. Guía paso a paso para cambiarlo y automatizarlo con udev.",
+  "keyword": "g923 linux",
+  "keywords": [
+    "g923 linux",
+    "oversteer g923",
+    "usb_modeswitch g923",
+    "volante logitech linux"
+  ],
+  "category": "Programación y Desarrollo",
+  "tecnologias": [
+    "Linux"
+  ],
+  "date": "2026-11-01",
+  "author": "Iran Lewis",
+  "sources": [
+    {
+      "title": "G923 Fix Linux (repositorio)",
+      "url": "https://github.com/devlewiso/g923-fix-linux"
+    },
+    {
+      "title": "Oversteer",
+      "url": "https://github.com/berarma/oversteer"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Oversteer no detecta mi G923 Xbox?",
+      "a": "Porque el volante arranca en modo Xbox (046d:c26d). Hay que pasarlo a modo PC (046d:c26e) con usb_modeswitch."
+    },
+    {
+      "q": "¿Tengo que repetir el cambio cada vez que lo conecto?",
+      "a": "No, si creas la regla de udev: el cambio se ejecuta solo al conectar el volante."
+    }
+  ],
+  "body": "El **Logitech G923 Xbox Edition** tiene una trampa cuando lo conectas a Linux: se enciende, gira y hasta parece vivo, pero Oversteer no lo detecta y los juegos no lo ven como un volante. No está dañado. Simplemente arranca en el modo equivocado.\n\nEn esta guía verás por qué pasa, cómo cambiarlo a mano y cómo hacer que el cambio ocurra solo cada vez que lo conectes.\n\n## Por qué Linux no reconoce el G923 Xbox\n\nLa versión Xbox del G923 arranca en **modo Xbox**, con el identificador USB `046d:c26d`. Linux no lo trata como un volante en ese modo. Para que funcione hay que pasarlo a **modo PC**, que aparece como `046d:c26e`.\n\nPuedes comprobar en qué modo está con un solo comando:\n\n```bash\nlsusb | grep -i logitech\n```\n\nSi ves `046d:c26d`, sigue en modo Xbox. Si ves `046d:c26e`, ya está en modo PC. Ese número es tu mejor diagnóstico: antes de tocar la configuración de un juego, mira primero qué dice `lsusb`.\n\n## Requisitos\n\nNecesitas un kernel 6.3 o más reciente. Lo verificas con:\n\n```bash\nuname -r\n```\n\nEsta guía usa Debian, Ubuntu o Pop!_OS. En Arch la idea es la misma, pero los paquetes cambian; el repositorio incluye una guía aparte.\n\n## Paso 1: instalar las dependencias\n\n```bash\nsudo apt update\nsudo apt install -y usb-modeswitch python3-evdev python3-pyudev\n```\n\n`usb_modeswitch` es la herramienta que le envía al volante el mensaje para cambiar de modo.\n\n## Paso 2: crear la configuración de usb_modeswitch\n\n```bash\nsudo tee /etc/usb_modeswitch.d/046d:c26d <<'EOF'\nDefaultVendor=046d\nDefaultProduct=c26d\nMessageEndpoint=01\nResponseEndpoint=81\nTargetClass=0x03\nMessageContent=\"0f00010142\"\nEOF\n```\n\nLa línea importante es `MessageContent`: ese es el mensaje que pide el cambio a modo PC.\n\n## Paso 3: hacer que el cambio sea automático\n\nSin este paso tendrías que repetir el comando cada vez que conectes el volante. Una regla de udev lo ejecuta por ti al detectar el dispositivo:\n\n```bash\nsudo tee /etc/udev/rules.d/99-g923.rules <<'EOF'\nACTION==\"add\", SUBSYSTEM==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c26d\", RUN+=\"/usr/sbin/usb_modeswitch -v 046d -p c26d -M 0f00010142\"\nEOF\n```\n\n## Paso 4: instalar los permisos de Oversteer\n\nOversteer necesita permisos para hablar con el volante sin ejecutarse como root:\n\n```bash\nsudo wget -O /usr/lib/udev/rules.d/99-logitech-wheel-perms.rules https://raw.githubusercontent.com/berarma/oversteer/master/data/udev/99-logitech-wheel-perms.rules\n```\n\n## Paso 5: recargar reglas y probar\n\n```bash\nsudo udevadm control --reload-rules\nsudo usb_modeswitch -v 046d -p c26d -M 0f00010142\nlsusb | grep -i logitech\n```\n\nEl último comando ya debería mostrar `046d:c26e`. Si es así, abre Oversteer y el volante debería aparecer.\n\n## Si la regla de udev no funciona\n\nA veces el volante todavía no está listo cuando udev lanza el comando. La solución es un pequeño script que espera dos segundos antes de cambiar de modo y guarda un registro. El script `arreglar-g923.sh` del repositorio hace eso, instala todo lo anterior de una vez y deja el log en `/tmp/g923-modeswitch.log`, así que ahí es donde debes mirar primero si algo falla.\n\nAntes de correr cualquier script con `sudo`, léelo. Este es corto y se entiende en un par de minutos.\n\n## Resumen\n\nEl problema no es el volante ni Oversteer: es el modo USB. Con `usb_modeswitch` lo cambias, con udev lo automatizas y con `lsusb` confirmas que quedó bien."
+}

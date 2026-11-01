@@ -1,0 +1,40 @@
+{
+  "slug": "fabrica-de-shorts-n8n-workflow",
+  "title": "Fábrica de Shorts con n8n: cómo automatizar un video por menos de $0.40",
+  "seoTitle": "Automatizar YouTube Shorts con n8n por menos de $0.40",
+  "description": "Cómo funciona un workflow de n8n de código abierto que crea y publica YouTube Shorts: sus 7 etapas, costos reales y qué revisar antes de usarlo.",
+  "keyword": "automatizar youtube shorts n8n",
+  "keywords": [
+    "automatizar youtube shorts",
+    "n8n youtube",
+    "workflow n8n shorts",
+    "fabrica de shorts"
+  ],
+  "category": "Negocios Digitales",
+  "tecnologias": [
+    "n8n"
+  ],
+  "date": "2026-11-01",
+  "author": "Iran Lewis",
+  "sources": [
+    {
+      "title": "Fábrica de Shorts con IA en n8n (repositorio)",
+      "url": "https://github.com/devlewiso/n8n-fabrica-shorts"
+    },
+    {
+      "title": "Tutorial en video",
+      "url": "https://youtu.be/xv_s1UJoszE"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Cuánto cuesta cada video?",
+      "a": "Según el repositorio, menos de $0.40 por video, sin contar tu servidor."
+    },
+    {
+      "q": "¿Sirve para otros nichos?",
+      "a": "Sí. Cambiando la lista de temas y el prompt del director funciona para otra temática."
+    }
+  ],
+  "body": "Hacer un Short diario a mano se come el tiempo: buscar el tema, escribir, generar imágenes, grabar la voz, editar y subir. **Fábrica de Shorts** es un workflow de n8n, de código abierto, que hace todo ese recorrido solo y cuesta menos de 40 centavos de dólar por video.\n\nEste artículo explica cómo está armado, cuánto cuesta de verdad y qué cuidar antes de encenderlo. Es más útil entender las piezas que copiarlo a ciegas, porque lo mismo sirve para cualquier nicho.\n\n## Qué produce\n\n- Un video vertical de 720×1280 y unos 28 segundos.\n- Voz en español con subtítulos quemados.\n- Publicación automática en YouTube y, si quieres, en TikTok.\n\nLa plantilla viene pensada para un canal de motos, pero cambiando la lista de temas y el prompt del director sirve para otra temática.\n\n## Las 7 etapas del workflow\n\n### 1. Disparo\n\nSe lanza a mano o de forma programada: cada 4 días a las 11:00. Empezar lento es buena idea, porque publicar más no sirve de nada si todavía no sabes qué funciona.\n\n### 2. Verificar el canal\n\nSi la credencial de YouTube no corresponde a tu canal, el workflow se detiene **antes de gastar**. Parece un detalle, pero es la diferencia entre un error gratis y uno que cuesta dinero en cada ejecución.\n\n### 3. Brief\n\nElige categoría y formato al azar, sin repetir lo que ya está en el historial.\n\n### 4. Director de cine con IA\n\nPropone cinco temas, escoge uno y escribe título, descripción, hashtags, narración y un storyboard de tres tomas. Después, el nodo *Validar Nuevo* corta la ejecución si el tema se parece a uno ya hecho. Usa Ollama cloud, con OpenRouter como respaldo gratuito.\n\n### 5. Tomas de video\n\nGenera tres tomas de 10 segundos con Grok Imagine a 480p en [Kie](https://kie.ai?ref=538b343ce64a7b9e5823c3b8ad471121), usa 9.4 segundos de cada una y las une con ffmpeg.\n\n### 6. Voz y montaje\n\nLa voz sale de Gemini 2.5 Pro TTS en Kie. El script `burn.js` la mezcla y quema subtítulos de 3 a 4 palabras, el formato que se lee bien en vertical.\n\n### 7. Publicar\n\nSube el video y guarda su ID en el historial, para que la próxima ejecución sepa qué ya se hizo.\n\n## Cuánto cuesta\n\nSegún el repositorio, cada video sale en menos de **$0.40**: unos $0.36 de video y alrededor de $0.01 de voz en Kie. A eso súmale tu propio servidor para n8n si no lo tienes ya.\n\n## Qué necesitas\n\n- n8n en Docker, con el nodo **Execute Command** habilitado.\n- ffmpeg y ffprobe, más una fuente para los subtítulos.\n- Credenciales de Kie, Ollama, OpenRouter y YouTube.\n- Una Data Table con el historial, que es lo que evita repetir temas.\n\nLa instalación completa, con los comandos, está en el repositorio.\n\n## Antes de encenderlo\n\nHaz la primera prueba con la privacidad en `private`. Revisa el resultado y solo entonces cambia a público. Automatizar la producción no quita la responsabilidad del criterio: si el video no aporta nada, publicarlo más rápido no lo arregla.\n\nTambién revisa que cada video cumpla con las reglas de la plataforma, sobre todo las de contenido generado con IA.\n\n*Nota: el enlace a Kie es de afiliado. Si te registras con él, recibimos una pequeña comisión sin costo extra para ti.*"
+}
