@@ -1,0 +1,58 @@
+{
+  "slug": "el-new-york-times-demanda-a-brave-por-scraping-y-paywalls",
+  "title": "El New York Times demanda a Brave por scraping y paywalls",
+  "description": "El New York Times y otros diarios demandan a Brave por copiar contenido para venderlo a empresas de IA y por su bloqueador de paywalls. Qué dice la demanda.",
+  "keyword": "New York Times demanda Brave",
+  "keywords": [
+    "demanda Brave",
+    "scraping IA",
+    "Brave Search API",
+    "paywall",
+    "derechos de autor IA"
+  ],
+  "category": "Inteligencia Artificial",
+  "tecnologias": [],
+  "date": "2026-11-02",
+  "author": "Neural Code Lab",
+  "aiGenerated": true,
+  "sources": [
+    {
+      "title": "New York Times and other outlets sue web browser Brave over alleged content scraping (TechCrunch)",
+      "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/"
+    },
+    {
+      "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls (The Verge)",
+      "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times"
+    },
+    {
+      "title": "NY Times Accuses Brave Of Scraping And Exploiting Content (Search Engine Journal)",
+      "url": "https://www.searchenginejournal.com/ny-times-accuses-brave-of-scraping-and-exploiting-content/595679/"
+    },
+    {
+      "title": "Copyright infringement: New York Times sues Brave Software (heise online)",
+      "url": "https://www.heise.de/en/news/Copyright-infringement-New-York-Times-sues-Brave-Software-11508658.html"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Quién demandó a Brave y dónde?",
+      "a": "The New York Times presentó una demanda el 2 de noviembre de 2026. Ese mismo día, el Daily News, el Chicago Tribune y el Orlando Sentinel presentaron otra similar. Ambas se interpusieron en un tribunal federal de Manhattan."
+    },
+    {
+      "q": "¿Anthropic, Perplexity y las otras empresas de IA están demandadas?",
+      "a": "Según heise online, no figuran como demandadas en este caso. La demanda las nombra como clientes que habrían recibido contenido a través del índice de Brave."
+    },
+    {
+      "q": "¿Qué ha respondido Brave?",
+      "a": "Hasta la publicación de las fuentes, Brave no había respondido a las solicitudes de comentarios. Perplexity, por su parte, calificó la demanda de desinformación y dijo que el Times paga de más a sus abogados y de menos a sus periodistas."
+    },
+    {
+      "q": "¿Qué pide el New York Times?",
+      "a": "Según TechCrunch, el Times busca una orden judicial (injunction) y una indemnización por daños."
+    }
+  ],
+  "body": "El 2 de noviembre de 2026, The New York Times demandó a Brave, la empresa del navegador enfocado en privacidad, por supuestamente extraer su contenido protegido por derechos de autor y distribuirlo sin permiso a clientes que la demanda identifica como Anthropic, Perplexity, Mistral, xAI y Cohere, según [TechCrunch](https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/). El mismo día, el Daily News, el Chicago Tribune y el Orlando Sentinel presentaron una demanda parecida. Ambas se radicaron en un tribunal federal en Manhattan.\n\nSon acusaciones de los demandantes. Brave no había respondido a las solicitudes de comentarios cuando se publicaron las fuentes consultadas, y nada de lo siguiente ha sido decidido por un juez.\n\n## Qué alegan los diarios contra Brave\n\nEl núcleo del caso es el índice de Brave. Según la demanda, la empresa construyó un índice de más de 30.000 millones de páginas web con un rastreador no identificado, lo que impediría a los editores bloquearlo. TechCrunch añade que el texto describe a Brave como proveedor y distribuidor de contenido robado para empresas de IA, y usa la imagen de un ladrón y un \"fence\" (receptador) que vende lo sustraído a terceros.\n\nLa demanda presentada por los tres diarios sostiene, según [The Verge](https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times), que Brave monetiza ese índice dando a empresas de IA acceso de pago a \"contenido en línea en tiempo real del Brave Index\". Esas empresas lo usarían para entrenar modelos, para responder consultas de usuarios, o para ambas cosas.\n\nSegún [Search Engine Journal](https://www.searchenginejournal.com/ny-times-accuses-brave-of-scraping-and-exploiting-content/595679/), medio que no forma parte de los grandes medios de referencia, la demanda cita la propia publicidad de la Search API de Brave, que la ofrece para entrenamiento de IA, \"grounding\" y extracción de contenido. Para los demandantes, eso demuestra que Brave promueve usos que consideran infractores. Ese medio también describe el uso como contenido de apoyo para respuestas mediante RAG.\n\n## El bloqueador de paywalls y los anuncios\n\nHay un segundo frente, ajeno a la IA. El navegador tiene una función llamada \"Paywall blocker\", y según The Verge Brave promociona que \"cientos de los principales editores\" son accesibles con ella. La demanda afirma que Brave nunca pidió permiso a los editores ni los compensó, y que permite a sus usuarios saltarse los muros de pago sin su consentimiento.\n\nTechCrunch agrega que la demanda también apunta a la práctica de Brave de bloquear los anuncios de los editores mientras vende los suyos.\n\nEl Times pide una orden judicial y daños.\n\n## Lo que dicen las partes\n\nGraham James, portavoz del Times, dijo a The Verge que Brave \"ha pisoteado la ley de derechos de autor establecida\" e ignorado solicitudes reiteradas de detener su conducta. Steven Lieberman, abogado de los otros tres diarios, afirmó que comprar bienes robados de segunda mano no los legitima.\n\nPerplexity respondió por medio de Jesse Dwyer, su director de comunicaciones, con una frase sarcástica sobre los abogados y periodistas del Times, y calificó la demanda de desinformación. Según The Verge, Brave, Anthropic, Mistral y Cohere no respondieron de inmediato. Las empresas de IA, apunta [heise online](https://www.heise.de/en/news/Copyright-infringement-New-York-Times-sues-Brave-Software-11508658.html), no son parte demandada.\n\nEse mismo medio recuerda que el Times ya demandó a OpenAI y Microsoft a finales de 2023, y que según TechCrunch también ha demandado a OpenAI y Perplexity por reclamos similares.\n\n## Qué significa para quien programa o emprende en Latinoamérica\n\nLo más relevante es el ángulo de la cadena de suministro. Hasta ahora la discusión giraba en torno a quien entrena el modelo; este caso apunta a quien vende el acceso a los datos. Si la teoría prospera, el riesgo legal podría extenderse a intermediarios como las APIs de búsqueda.\n\nSi tu producto usa una API de búsqueda o de contenido como base para un agente, un chatbot con RAG o un resumidor de noticias, conviene que revises varias cosas:\n\n- **De dónde sale el contenido.** Pide a tu proveedor información sobre licencias y origen de los datos, y guarda esa respuesta.\n- **No dependas de un solo proveedor.** Si una orden judicial afectara al índice, tu producto no debería caer con él. Diseña la capa de búsqueda para poder cambiarla.\n- **Revisa los contratos.** Mira si el proveedor asume alguna responsabilidad por infracciones o si todo recae en ti.\n- **Evita saltar muros de pago por tu cuenta.** Si tu scraper o tu agente accede a contenido de pago, la defensa de que lo hizo una herramienta de terceros es débil.\n\nLos plazos y el resultado del caso son inciertos. Aun así, el mensaje para startups es práctico: la trazabilidad del dato empieza a ser parte del producto. Quien la documente hoy tendrá menos fricción si sus clientes o inversionistas se lo exigen mañana.\n\nPara editores y medios pequeños de la región, el caso muestra algo útil: un rastreador que no se identifica complica el bloqueo por reglas de acceso, que es justo lo que alegan los demandantes. Conviene vigilar el tráfico de tu sitio y dejar por escrito tus condiciones de uso.\n\n## Qué falta por saber\n\nBrave no ha dado su versión en las fuentes consultadas. Tampoco hay decisión judicial sobre si la extracción, la venta del índice o la función de paywall infringen derechos de autor. Y las empresas de IA mencionadas no son demandadas, por lo que su postura, salvo la de Perplexity, sigue sin conocerse.",
+  "seoTitle": "NYT demanda a Brave por scraping para IA",
+  "image": "/img/blog/el-new-york-times-demanda-a-brave-por-scraping-y-paywalls.jpg",
+  "imageAlt": "Ilustración abstracta de un muro con una puerta entreabierta por la que fluyen páginas de texto hacia una red de nodos luminosos"
+}
