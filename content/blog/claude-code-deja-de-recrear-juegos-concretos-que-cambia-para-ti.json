@@ -1,0 +1,58 @@
+{
+  "slug": "claude-code-deja-de-recrear-juegos-concretos-que-cambia-para-ti",
+  "title": "Claude Code deja de recrear juegos concretos: qué cambia para ti",
+  "description": "Anthropic añadió dos frases al prompt de Claude Code en Opus 5.5 para evitar recrear juegos concretos. Qué sigue permitido y qué hacer si te bloquea.",
+  "keyword": "Claude Code clones de videojuegos",
+  "keywords": [
+    "Claude Code",
+    "Opus 5.5",
+    "prompt de sistema",
+    "clones de videojuegos",
+    "Addy Osmani"
+  ],
+  "category": "Inteligencia Artificial",
+  "tecnologias": [],
+  "date": "2026-11-03",
+  "author": "Neural Code Lab",
+  "aiGenerated": true,
+  "sources": [
+    {
+      "title": "Anthropic clamps down on Claude’s AI video game clones | The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones"
+    },
+    {
+      "title": "Claude’s new rules against game cloning won’t stop the AI copying boom - Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/"
+    },
+    {
+      "title": "Claude Code Just Started Refusing to Help Game Developers – Even on Legitimate Projects | Yahoo Tech",
+      "url": "https://tech.yahoo.com/ai/claude/articles/claude-code-just-started-refusing-160448730.html"
+    },
+    {
+      "title": "Anthropic Cracks Down on Vibe Coding Clones | Mashdigi Global",
+      "url": "https://mashdigi.com/intl/en/claude-opus-5-5-anti-piracy-update/"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Qué cambió exactamente en Claude Code?",
+      "a": "Anthropic añadió dos frases al prompt de Claude Code en Opus 5.5 para que la herramienta evite recrear el juego específico de otra persona. Addy Osmani, de Anthropic, lo confirmó el 30 de octubre de 2026 y explicó que usar Claude para infringir propiedad intelectual va contra la política de uso."
+    },
+    {
+      "q": "¿Puedo seguir haciendo videojuegos con Claude Code?",
+      "a": "Sí. Según Osmani, los juegos originales, los de un género y los construidos con tus propios diseños y recursos deben seguir funcionando. Lo que se busca frenar es la recreación de un juego existente concreto, aunque se le cambie el nombre."
+    },
+    {
+      "q": "¿Qué hago si Claude rechaza un proyecto que es mío?",
+      "a": "Osmani pidió que le hagan llegar esos casos si Claude rechaza algo propio. Además, según Ars Technica, ya hay reportes en GitHub de Anthropic sobre usos legítimos de desarrollo de juegos afectados por el nuevo prompt."
+    },
+    {
+      "q": "¿Hay forma de desactivar la regla?",
+      "a": "Yahoo Tech, citando reportes publicados, indica que no se ha identificado un ajuste de usuario para desactivarla ni un mecanismo de verificación de propiedad. Es información de un medio secundario y no está confirmada por Anthropic."
+    }
+  ],
+  "body": "Anthropic modificó el prompt de sistema de Claude Code para que la herramienta no recree videojuegos existentes. Según [The Verge](https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones), que cita a Tom's Hardware, la empresa seguirá permitiendo que la gente haga juegos con Claude Code, pero no quiere clones directos. El cambio llega en un momento en que el retro gaming está lleno de decompilaciones, recompilaciones y ports hechos con IA.\n\n## Qué dicen las dos frases nuevas\n\nLa regla se descubrió a partir de capturas y análisis de usuarios. Según [Ars Technica](https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/), un usuario que se hace llamar «chasm» notó que la regla aparecía en el prompt de Claude Code alrededor del 27 de octubre, dentro de un archivo json bajo el nombre «tengu_heron_brook». Su texto, traducido, dice más o menos: construye juegos originales, juegos de un género y juegos a partir de los diseños y recursos propios del usuario; no construyas una recreación de un juego existente específico, aunque se le cambie el nombre o se le llame original.\n\nHay un matiz sobre la confirmación. The Verge señala que Anthropic no confirmó esa redacción exacta, aunque sí que se actualizó el prompt de Claude Code en Opus 5.5. Ars Technica añade que XDA verificó por su cuenta la regla en la versión 2.1.314 del binario de Claude Code, publicada el 30 de octubre. XDA también reportó que «tengu_heron_brook» se había usado con otros fines en versiones anteriores, y que Opus 5.5 parece tener instrucciones propias e independientes que restringen la recreación de juegos.\n\nLa confirmación oficial vino de Addy Osmani, ingeniero de software de Anthropic, quien escribió en X el 30 de octubre de 2026 que añadieron dos frases al prompt de Claude Code en Opus 5.5 «para alejarlo de recrear el juego específico de otra persona», porque usar Claude para infringir propiedad intelectual va contra su política de uso. Agregó que los juegos originales, los de género y los hechos con tus propios diseños y recursos «deben seguir funcionando», que seguirán ajustando el equilibrio y que si Claude rechaza algo tuyo, se lo hagas llegar.\n\n## Por qué probablemente no frene el fenómeno\n\nAr Technica es escéptica sobre el alcance. Su argumento principal es que quien quiera copiar juegos puede cambiarse a otro modelo de frontera sin esa restricción, o incluso a modelos de pesos abiertos más baratos que, según el medio, no están tan lejos en capacidades.\n\nEl daño que intenta contener es real. El mismo artículo cuenta que decomp.dev, una comunidad dedicada a la decompilación de juegos, anunció su cierre en octubre. Su mantenedor, Luke Street, escribió que las herramientas de IA dejaron claro que el «aspecto comunitario de la decompilación se ha roto», porque los recién llegados corren a hacer ports usando decompilaciones a las que no contribuyeron. También hay copias apresuradas de demos que, según Ars, hacen que algunos desarrolladores teman mostrar su trabajo temprano.\n\nArs Technica apunta que el prompt podría tener un beneficio más inmediato para Anthropic: ayudar a proteger a la empresa de posible responsabilidad por infracción de derechos de autor en estos proyectos. Sobre la decompilación, el mismo medio dice que los proyectos basados en ingeniería inversa suelen superar el examen legal mientras no incluyan «elementos expresivos» como arte y sonido, pero que no hay garantía de que cada usuario sea tan cuidadoso.\n\n## Dónde está la línea y dónde se está rompiendo\n\nEl problema práctico es el criterio. Ars Technica pregunta cómo distinguir una recreación directa de Tetris, que en principio queda vetada, de un simple juego del género Tetris, que en principio está permitido. Y qué pasa con los mashups, como meter un personaje en el mundo de otro juego. Son preguntas que, recuerda el medio, incluso los tribunales tienen dificultad para resolver.\n\nYa hay señales de fricción. Ars Technica menciona varios reportes en los issues de GitHub de Anthropic que sugieren que el prompt estorba en algunos casos de desarrollo de juegos. Yahoo Tech, un medio que no está entre los de mayor trayectoria en la cobertura de este tema, recoge reportes de rechazos en ingeniería inversa, decompilación, análisis de volcados de fallos, desarrollo anti-trampas y depuración de proyectos propios. Ese medio aclara que son testimonios anecdóticos y que no está confirmado que todos vengan de la nueva instrucción. También cita pruebas de XDA según las cuales Claude se negó a recrear Pokémon Diamond, pero ayudó en un proyecto de decompilación con ROM del propio usuario. Es decir, el comportamiento no parece del todo predecible.\n\nOtro dato, de [Mashdigi](https://mashdigi.com/intl/en/claude-opus-5-5-anti-piracy-update/), que a su vez cita pruebas de CNET: pedirle un juego tipo Breakout con «Claude» impreso en cada ladrillo sí funcionó. Es un solo caso y viene de segunda mano, pero sugiere que la mecánica clásica no está bloqueada por sí sola.\n\nSegún Yahoo Tech, tampoco se ha publicado un mecanismo para verificar que eres dueño de lo que analizas, ni un ajuste para desactivar la regla. Anthropic no lo ha documentado en lo que muestran las fuentes.\n\n## Qué conviene hacer si programas o emprendes desde Latinoamérica\n\nLo que sigue es lectura propia, no un dato de las fuentes.\n\nSi haces juegos originales o de género, el cambio probablemente no te toque. Aun así, conviene describir tus pedidos en términos de mecánicas y estilo propio, no de «hazme el juego X pero con otro nombre». La propia regla dice que renombrar no sirve.\n\nSi tu negocio depende de adaptar o portar títulos existentes, por ejemplo un estudio pequeño que ofrece remakes, el riesgo es doble: la herramienta puede negarse y, además, la política de uso de Anthropic ya considera la infracción de propiedad intelectual como uso indebido. Lo más sensato es no construir un producto sobre ese flujo y usar arte, sonido y código propios o con licencia.\n\nSi trabajas en preservación, modding o seguridad, vale la pena documentar que el material es tuyo o que estás autorizado a analizarlo, y tener un plan B por si un rechazo te frena en plena entrega. Dado que el comportamiento es inconsistente, no conviene atar un flujo crítico a un solo asistente.\n\nY si Claude rechaza algo legítimo, Osmani pidió expresamente que le escriban. Guardar el prompt exacto y la respuesta ayuda a que el reporte sirva.\n\nLo que sigue abierto es cuánto afinará Anthropic la regla y si otros proveedores harán algo parecido; The Verge dijo haber consultado a la empresa si actualizará otros prompts de Claude y no recoge respuesta.",
+  "seoTitle": "Claude Code y la regla contra clones de videojuegos",
+  "image": "/img/blog/claude-code-deja-de-recrear-juegos-concretos-que-cambia-para-ti.jpg",
+  "imageAlt": "Dos siluetas de bloques de juego idénticas separadas por una barrera translúcida, una de ellas desvaneciéndose"
+}
