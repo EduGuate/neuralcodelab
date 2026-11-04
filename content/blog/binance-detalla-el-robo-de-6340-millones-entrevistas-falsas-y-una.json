@@ -1,0 +1,58 @@
+{
+  "slug": "binance-detalla-el-robo-de-6340-millones-entrevistas-falsas-y-una",
+  "title": "Binance detalla el robo de 6.340 millones: entrevistas falsas y una herramienta de IA",
+  "description": "Binance explica cómo perdió 6.340 millones de dólares: malware en junio, falsa entrevista de trabajo en septiembre y una herramienta interna de IA en octubre.",
+  "keyword": "hackeo Binance entrevistas de trabajo falsas",
+  "keywords": [
+    "hackeo Binance",
+    "entrevistas de trabajo falsas",
+    "malware ingenieros",
+    "Corea del Norte criptomonedas",
+    "seguridad desarrolladores"
+  ],
+  "category": "Tecnología",
+  "tecnologias": [],
+  "date": "2026-11-04",
+  "author": "Neural Code Lab",
+  "aiGenerated": true,
+  "sources": [
+    {
+      "title": "Hackers behind $6.3bn Binance heist 'used malware and bogus job interviews' (The Guardian)",
+      "url": "https://www.theguardian.com/business/2026/nov/03/hackers-63bn-binance-heist-malware-bogus-job-interviews-cryptocurrency"
+    },
+    {
+      "title": "Binance Attackers Used Fake Job Interviews To Pull Off $6.3 Billion Crypto Heist (Engadget)",
+      "url": "https://www.engadget.com/2306223/binance-attackers-fake-job-interviews-6-3-billion-crypto-heist/"
+    },
+    {
+      "title": "How Did Binance Get Hacked? It All Started With A Job Interview (Free Press Journal)",
+      "url": "https://www.freepressjournal.in/tech/how-did-binance-get-hacked-it-all-started-with-a-job-interview"
+    },
+    {
+      "title": "Fake job interview behind $9bn Binance heist puts hiring on notice (Human Resources Director)",
+      "url": "https://www.hcamag.com/au/specialisation/employment-law/fake-job-interview-behind-9bn-binance-heist-puts-hiring-on-notice/596045"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Cómo entraron los atacantes a Binance?",
+      "a": "Según Binance, empezaron con malware descargado por un ingeniero en junio y, en septiembre, engañaron a otro ingeniero con entrevistas de trabajo falsas en las que le hicieron descargar una supuesta tarea con código malicioso."
+    },
+    {
+      "q": "¿Cuánto se perdió y cuánto se recuperó?",
+      "a": "Binance habla de 6.340 millones de dólares en activos afectados, de los cuales 2.850 millones se congelaron o interceptaron. Además, dice haber repuesto el 98 % de los tokens afectados y que cubrirá las pérdidas."
+    },
+    {
+      "q": "¿Quién está detrás del ataque?",
+      "a": "El FBI atribuyó el ataque a Corea del Norte. Pyongyang lo rechaza: Kim Yo-jong lo calificó de \"retórica absurda\", según la agencia estatal KCNA citada por The Guardian."
+    },
+    {
+      "q": "¿Qué papel tuvo la herramienta de IA?",
+      "a": "Los atacantes usaron el equipo comprometido junto con una herramienta interna de IA para tomar el control de los sistemas de otros dos ingenieros. Las fuentes no detallan cómo funcionaba esa herramienta."
+    }
+  ],
+  "body": "Binance publicó el 3 de noviembre de 2026 una actualización con el relato del ataque que le costó unos 6.340 millones de dólares en activos digitales. Según la empresa, no fue un golpe de un solo día: empezó en junio con un malware descargado por error, siguió en septiembre con una estafa de reclutamiento y terminó el 29 de octubre con el vaciado de \"hot wallets\". El [FBI atribuyó el ataque a Corea del Norte](https://www.theguardian.com/business/2026/nov/03/hackers-63bn-binance-heist-malware-bogus-job-interviews-cryptocurrency); Pyongyang lo niega.\n\n## La cronología que describe Binance\n\n**Junio.** Un ingeniero de DevOps de wallets buscó en un buscador web cómo instalar una conocida herramienta de programación con IA y terminó descargando una instalación de Homebrew manipulada, según [Engadget](https://www.engadget.com/2306223/binance-attackers-fake-job-interviews-6-3-billion-crypto-heist/). Binance detectó la anomalía y actuó, pero los atacantes ya habían averiguado quiénes eran él y sus compañeros del equipo de infraestructura de wallets. Según [Free Press Journal](https://www.freepressjournal.in/tech/how-did-binance-get-hacked-it-all-started-with-a-job-interview) (medio que cita a Fortune), también supieron que ese ingeniero tenía en su equipo un token de permisos para despliegue de contenedores.\n\n**Septiembre.** Otro ingeniero fue contactado por un supuesto \"director de proyecto\" en una plataforma legítima de búsqueda de empleo. Hubo dos rondas: una videollamada con un supuesto representante de recursos humanos, que compartió una cuenta de red social llena de fotos y videos personales para generar confianza, y una conversación por una app de chat con el supuesto director ejecutivo de una empresa inexistente. Al final se le pidió descargar una \"tarea\". Era un repositorio con código malicioso que se ejecutaba durante la configuración.\n\n**20 de octubre.** Con ese equipo comprometido y una herramienta interna de IA, el atacante tomó el control de los sistemas del ingeniero de DevOps y de otro desarrollador de wallets del mismo equipo.\n\n**29 de octubre.** Usando el equipo del segundo desarrollador y credenciales robadas al primero, lanzaron un script malicioso. Según la publicación [Human Resources Director](https://www.hcamag.com/au/specialisation/employment-law/fake-job-interview-behind-9bn-binance-heist-puts-hiring-on-notice/596045), se movieron 233,46 millones de XRP desde cinco hot wallets en cuatro minutos y la última transferencia no autorizada llegó casi cuatro horas después de iniciado el ataque.\n\n## Un malware hecho para no ser visto\n\nBinance describe un malware con técnicas sofisticadas de ofuscación y evasión: sustituyó un componente legítimo de una herramienta de desarrollo por uno malicioso, contactó con un servidor del atacante y borró rastros de su actividad. Según Free Press Journal, era un malware de día cero que las herramientas de seguridad de los equipos no detectaron en ese momento.\n\nSobre la herramienta interna de IA, las fuentes solo dicen que sirvió para escalar el acceso hacia la infraestructura de firma de wallets. No explican cómo funcionaba ni qué fallo se explotó, así que no hay base para saber si el problema estaba en la herramienta o en cómo estaba conectada.\n\n## Qué se perdió y qué se recuperó\n\nDe los 6.340 millones de dólares afectados, 2.850 millones fueron congelados o interceptados. Binance reconoce que los movimientos continuaron incluso tras suspender los retiros, porque esas transacciones ya estaban autorizadas. La empresa dice que absorberá las pérdidas, que ya apartó fondos suficientes y que repuso el 98 % de los tokens afectados; está comprando los activos restantes, más ilíquidos.\n\nAl 3 de noviembre, según Engadget, ya reconstruyó el sistema de wallets y las herramientas internas de IA, reemplazó dispositivos, retiró credenciales y tokens comprometidos y reforzó el análisis de seguridad en equipos de empleados. Según The Vibes (medio no reconocido, que cita a Reuters), los retiros se restablecieron el domingo anterior tras una suspensión global.\n\n## La atribución a Corea del Norte\n\nEl FBI señaló a Corea del Norte el sábado. Kim Yo-jong, hermana de Kim Jong-un, respondió que la acusación es \"retórica absurda\" y una \"grave provocación política\", según la agencia estatal KCNA citada por The Guardian. Free Press Journal, citando a The Epoch Times, afirma que el FBI nombró al actor conocido como TraderTraitor; no lo vemos en las fuentes de mayor peso, así que conviene tomarlo con cautela. Free Press Journal también señala que el método se parece a campañas norcoreanas conocidas como Contagious Interview y Operation Dream Job, aunque Binance no ha vinculado el ataque con ninguna de las dos.\n\n## Qué cambia para quien programa o emprende\n\nLo más probable es que la lección no sea sobre criptomonedas, sino sobre un hábito común: descargar una tarea técnica enviada por un reclutador en el equipo del trabajo. En este caso la víctima buscaba empleo por su cuenta, y el ataque no pasó por el proceso de contratación de Binance.\n\nSi trabajas como desarrollador en Latinoamérica, y más si tienes acceso a producción, claves o despliegues, conviene aplicar unas reglas simples:\n\n- No ejecutes código de un reclutador o entrevistador en un equipo corporativo.\n- Trata un contacto no solicitado de un reclutador hacia tus ingenieros como un evento de seguridad, no solo como una oferta.\n- Desconfía de instaladores hallados en buscadores: instala herramientas desde las fuentes oficiales.\n- Guarda tokens y permisos de despliegue fuera de las laptops de trabajo cuando sea posible, y rótalos tras cualquier anomalía.\n\nSi diriges un equipo pequeño, conviene asumir que no tienes los recursos de Binance. La propia empresa dice haber frenado 57 amenazas vinculadas a Corea del Norte en 2026 y aun así fue vulnerada. Un experto citado por Human Resources Director propone verificar la identidad de forma continua y no dejar nunca que un candidato o un entrevistador ejecute código en un dispositivo corporativo. Y si integras herramientas internas de IA con sistemas sensibles, conviene limitar sus permisos y registrar qué hacen, porque aquí una de ellas fue parte de la cadena del ataque.\n\nBinance dice que invertirá más en detección de amenazas con IA y encargará una revisión independiente. Los resultados completos aún no se conocen: el informe es preliminar y la investigación sigue abierta.",
+  "seoTitle": "Cómo hackearon a Binance: entrevistas falsas y IA",
+  "image": "/img/blog/binance-detalla-el-robo-de-6340-millones-entrevistas-falsas-y-una.jpg",
+  "imageAlt": "Ilustración abstracta de una puerta digital entreabierta con una llave que se desliza desde un mensaje de chat hacia una bóveda"
+}
