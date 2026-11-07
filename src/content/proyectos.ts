@@ -602,17 +602,6 @@ export const proyectos: Project[] = [
     stack: ["HTML/CSS"],
   },
   {
-    id: "wavestoregt",
-    title: "WaveStore GT",
-    descriptionKey: "projects.items.wavestoregt.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/WavestoreGT",
-    imageUrl: "",
-    tags: ["Store", "Guatemala"],
-    category: "business",
-    stack: ["HTML/CSS", "JavaScript"],
-  },
-  {
     id: "cine-hub",
     title: "CineHub",
     descriptionKey: "projects.items.cine_hub.description",
