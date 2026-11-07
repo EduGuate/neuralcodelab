@@ -448,17 +448,6 @@ export const proyectos: Project[] = [
     stack: ["React", "TypeScript", "Vite"],
   },
   {
-    id: "ecommerce-delatlantico",
-    title: "Del Atlántico Ecommerce",
-    descriptionKey: "projects.items.ecommerce_delatlantico.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/ecommerce-delatlantico",
-    imageUrl: "",
-    tags: ["Ecommerce", "Next.js", "Supabase"],
-    category: "business",
-    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
-  },
-  {
     id: "agentesgt",
     title: "Agentes GT",
     descriptionKey: "projects.items.agentesgt.description",
