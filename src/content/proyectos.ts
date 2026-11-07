@@ -9,6 +9,8 @@ export interface Project {
   category: string;
   /** Lenguajes y frameworks principales (detectados del package.json y los lenguajes del repo en GitHub). */
   stack?: string[];
+  /** Enlaces extra para probar el proyecto (p. ej. cada app de un marketplace). */
+  links?: { labelKey: string; url: string }[];
 }
 
 export interface Category {
@@ -17,6 +19,22 @@ export interface Category {
 }
 
 export const proyectos: Project[] = [
+  {
+    id: "marketplace-valle",
+    title: "Marketplace Valle",
+    descriptionKey: "projects.items.marketplace-valle.description",
+    liveUrl: "https://marketplacevalle-web.devlewiso.workers.dev/",
+    githubUrl: "",
+    imageUrl: "/img/marketplace-valle.jpg",
+    tags: ["Marketplace", "Delivery", "AI", "Guatemala"],
+    category: "business",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare Workers", "Neon Postgres", "Gemini"],
+    links: [
+      { labelKey: "projects.items.marketplace-valle.linkStore", url: "https://marketplacevalle-web.devlewiso.workers.dev/" },
+      { labelKey: "projects.items.marketplace-valle.linkBusiness", url: "https://marketplacevalle-comercio.devlewiso.workers.dev/" },
+      { labelKey: "projects.items.marketplace-valle.linkDriver", url: "https://marketplacevalle-repartidor.devlewiso.workers.dev/" },
+    ],
+  },
   {
     id: "neuralt-llm",
     title: "NeuralT LLM",

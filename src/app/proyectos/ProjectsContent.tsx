@@ -197,7 +197,17 @@ export default function ProjectsContent() {
                   )}
                 </CardContent>
                 <CardFooter className="px-6 pb-6 pt-0 gap-3">
-                  {project.liveUrl ? (
+                  {project.links && project.links.length > 0 ? (
+                    <div className="flex flex-1 flex-wrap gap-2">
+                      {project.links.map(link => (
+                        <Button key={link.url} asChild size="sm" variant={link === project.links![0] ? 'default' : 'outline'} className="flex-1 gap-1.5">
+                          <a href={link.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink size={14} /> {t(link.labelKey)}
+                          </a>
+                        </Button>
+                      ))}
+                    </div>
+                  ) : project.liveUrl ? (
                     <Button asChild size="sm" className="flex-1 gap-2">
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink size={16} /> {t('projects.viewProject')}
