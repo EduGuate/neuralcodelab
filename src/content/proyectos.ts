@@ -448,17 +448,6 @@ export const proyectos: Project[] = [
     stack: ["React", "TypeScript", "Vite"],
   },
   {
-    id: "empleosdelatlantico-v1",
-    title: "Empleos del Atlántico (v1)",
-    descriptionKey: "projects.items.empleosdelatlantico_v1.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/empleosdelatlantico",
-    imageUrl: "",
-    tags: ["Jobs", "Vite", "React"],
-    category: "business",
-    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
-  },
-  {
     id: "ecommerce-delatlantico",
     title: "Del Atlántico Ecommerce",
     descriptionKey: "projects.items.ecommerce_delatlantico.description",
