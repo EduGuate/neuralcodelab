@@ -231,17 +231,6 @@ export const proyectos: Project[] = [
     category: "tools"
   },
   {
-    id: "movies",
-    title: "Movies Searcher",
-    descriptionKey: "projects.items.movies.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/cinehub",
-    imageUrl: "/img/movies-searcher.png",
-    tags: ["Landing Page", "Events"],
-    category: "business",
-    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
-  },
-  {
     id: "water",
     title: "Water Landing Page",
     descriptionKey: "projects.items.water.description",
@@ -627,12 +616,12 @@ export const proyectos: Project[] = [
     id: "cine-hub",
     title: "CineHub",
     descriptionKey: "projects.items.cine_hub.description",
-    liveUrl: "",
+    liveUrl: "https://cine.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/cinehub",
-    imageUrl: "",
+    imageUrl: "/img/cinehub.jpg",
     tags: ["Movies", "Search", "React"],
     category: "entertainment",
-    stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Cloudflare Workers"],
   },
   {
     id: "futuristic-audio-player",
