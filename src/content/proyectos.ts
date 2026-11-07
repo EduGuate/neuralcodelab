@@ -635,17 +635,6 @@ export const proyectos: Project[] = [
     stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
   },
   {
-    id: "music-player",
-    title: "Music Player",
-    descriptionKey: "projects.items.music_player.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/music-player",
-    imageUrl: "",
-    tags: ["Music", "React"],
-    category: "entertainment",
-    stack: ["React", "JavaScript", "HTML/CSS"],
-  },
-  {
     id: "futuristic-audio-player",
     title: "Futuristic Player",
     descriptionKey: "projects.items.futuristic_audio_player.description",
