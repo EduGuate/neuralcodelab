@@ -52,7 +52,7 @@ export const proyectos: Project[] = [
     descriptionKey: "projects.items.cv.description",
     liveUrl: "https://mycven.neuralcodelab.com/",
     githubUrl: "https://github.com/devlewiso/CurriculumViateWebsite",
-    imageUrl: "/img/cv-website.png",
+    imageUrl: "/img/cv-website-2026.jpg",
     tags: ["Portfolio", "Professional", "Personal"],
     category: "business",
     stack: ["Astro", "Tailwind CSS", "HTML/CSS"],
