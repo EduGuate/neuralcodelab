@@ -496,17 +496,6 @@ export const proyectos: Project[] = [
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "HTML/CSS"],
   },
   {
-    id: "vertex-marketing",
-    title: "Vertex Marketing",
-    descriptionKey: "projects.items.vertex_marketing.description",
-    liveUrl: "",
-    githubUrl: "https://github.com/devlewiso/vertex-marketing",
-    imageUrl: "",
-    tags: ["Marketing", "Next.js"],
-    category: "business",
-    stack: ["Next.js", "Tailwind CSS", "TypeScript", "HTML/CSS"],
-  },
-  {
     id: "auralink",
     title: "AuraLink AI Security",
     descriptionKey: "projects.items.auralink.description",
