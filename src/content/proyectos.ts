@@ -569,6 +569,17 @@ export const proyectos: Project[] = [
     stack: ["Next.js", "TypeScript", "GSAP", "React Flow", "Three.js"],
   },
   {
+    id: "aprenderagil",
+    title: "Ágil, Scrum y Sprint",
+    descriptionKey: "projects.items.aprenderagil.description",
+    liveUrl: "https://agil.neuralcodelab.com/",
+    githubUrl: "https://github.com/devlewiso/aprender-agil",
+    imageUrl: "/img/aprender-agil.jpg",
+    tags: ["Ágil", "Scrum", "Interactivo"],
+    category: "education",
+    stack: ["JavaScript", "HTML", "CSS", "GSAP", "Cloudflare Workers"],
+  },
+  {
     id: "microsaas-analisis",
     title: "MicroSaaS Análisis",
     descriptionKey: "projects.items.microsaas_analisis.description",
