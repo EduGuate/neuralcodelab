@@ -558,6 +558,17 @@ export const proyectos: Project[] = [
     stack: ["JavaScript", "HTML", "CSS", "Cloudflare Workers"],
   },
   {
+    id: "pedidosbajofuego",
+    title: "Pedidos Bajo Fuego",
+    descriptionKey: "projects.items.pedidosbajofuego.description",
+    liveUrl: "https://arquitectura.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "/img/pedidos-bajo-fuego.jpg",
+    tags: ["Microservicios", "Azure", "Arquitectura"],
+    category: "infrastructure",
+    stack: ["Next.js", "TypeScript", "GSAP", "React Flow", "Three.js"],
+  },
+  {
     id: "microsaas-analisis",
     title: "MicroSaaS Análisis",
     descriptionKey: "projects.items.microsaas_analisis.description",
