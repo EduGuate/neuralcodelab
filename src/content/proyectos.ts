@@ -536,6 +536,17 @@ export const proyectos: Project[] = [
     stack: ["Astro", "CSS", "Cloudflare Workers"],
   },
   {
+    id: "cuartoarma",
+    title: "El Cuarto Que Se Arma",
+    descriptionKey: "projects.items.cuartoarma.description",
+    liveUrl: "https://cuarto.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "/img/cuarto-que-se-arma.jpg",
+    tags: ["3D", "Storybook", "Three.js"],
+    category: "entertainment",
+    stack: ["Three.js", "JavaScript", "Cloudflare Workers"],
+  },
+  {
     id: "microsaas-analisis",
     title: "MicroSaaS Análisis",
     descriptionKey: "projects.items.microsaas_analisis.description",
