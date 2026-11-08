@@ -547,6 +547,17 @@ export const proyectos: Project[] = [
     stack: ["Three.js", "JavaScript", "Cloudflare Workers"],
   },
   {
+    id: "microservicios",
+    title: "Aprender Microservicios",
+    descriptionKey: "projects.items.microservicios.description",
+    liveUrl: "https://microservicios.neuralcodelab.com/",
+    githubUrl: "",
+    imageUrl: "/img/microservicios.jpg",
+    tags: ["Microservicios", "Curso", "Interactivo"],
+    category: "education",
+    stack: ["JavaScript", "HTML", "CSS", "Cloudflare Workers"],
+  },
+  {
     id: "microsaas-analisis",
     title: "MicroSaaS Análisis",
     descriptionKey: "projects.items.microsaas_analisis.description",
