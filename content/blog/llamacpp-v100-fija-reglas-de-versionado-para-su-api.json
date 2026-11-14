@@ -1,0 +1,64 @@
+{
+  "slug": "llamacpp-v100-fija-reglas-de-versionado-para-su-api",
+  "title": "llama.cpp v1.0.0 fija reglas de versionado para su API",
+  "description": "llama.cpp y ggml llegan a v1.0.0 y ligan los cambios incompatibles de API y ABI a saltos de versión mayor. Qué implica para quien construye con IA local.",
+  "keyword": "llama.cpp v1.0.0",
+  "keywords": [
+    "llama.cpp",
+    "ggml",
+    "IA local",
+    "versionado semántico",
+    "inferencia local"
+  ],
+  "category": "Inteligencia Artificial",
+  "tecnologias": [
+    "C++"
+  ],
+  "date": "2026-11-14",
+  "author": "Neural Code Lab",
+  "aiGenerated": true,
+  "sources": [
+    {
+      "title": "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem (Hugging Face)",
+      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+    },
+    {
+      "title": "llama.cpp Ships v1.0.0 With Semver for libllama and ggml (AI Weekly)",
+      "url": "https://aiweekly.co/alerts/llamacpp-ships-v100-with-semver-for-libllama-and-ggml"
+    },
+    {
+      "title": "llama.cpp v1.0.0: la IA local ya tiene API estable (El Ecosistema Startup)",
+      "url": "https://ecosistemastartup.com/llama-cpp-v1-0-0-la-ia-local-ya-tiene-api-estable/"
+    },
+    {
+      "title": "Llama.cpp V1.0.0 legt Regeln für die API-Stabilität lokaler KI-Tools fest (Unite.AI)",
+      "url": "https://www.unite.ai/de/llama-cpp-v1-0-0-sets-api-stability-rules-for-local-ai-tools/"
+    },
+    {
+      "title": "The official llama.cpp Mac app 'Llama' couldn't see any of my 83 GGUF files (Hack-Log)",
+      "url": "https://note.com/hacklog_stealth/n/n21a692d67980?hl=en"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Qué significa que llama.cpp llegue a la v1.0.0?",
+      "a": "Según el anuncio de ggml-org, llama.cpp y ggml reflejarán a partir de ahora las incompatibilidades de API y ABI con saltos de versión mayor. Es un compromiso de estabilidad con quienes dependen de sus librerías."
+    },
+    {
+      "q": "¿Cuándo sube cada número de versión?",
+      "a": "Según AI Weekly, MAJOR indica un cambio incompatible en la API pública de C en ./include; MINOR cubre funciones compatibles, actualizaciones de backends y nuevos modelos; PATCH queda para correcciones sin cambios de API."
+    },
+    {
+      "q": "¿Cuántas arquitecturas de modelos soporta?",
+      "a": "El anuncio oficial indica más de 150 variantes de arquitectura, además de todos los métodos principales de decodificación especulativa."
+    },
+    {
+      "q": "¿Los modelos GGUF que descargué yo mismo aparecen en la app Llama para Mac?",
+      "a": "Según un análisis de Hack-Log, la app solo detecta automáticamente los modelos del caché de Hugging Face. Para los demás, el autor recomienda el archivo models.user.ini descrito en el README. Es un reporte de un solo usuario, no una cifra oficial."
+    }
+  ],
+  "body": "El 13 de noviembre de 2026, el equipo de ggml-org publicó en el [blog de Hugging Face](https://huggingface.co/blog/ggml-org/llama-cpp-v1) la versión 1.0.0 de las librerías de llama.cpp y de ggml. La novedad de fondo no es un modelo ni un benchmark: es una regla. De aquí en adelante, las incompatibilidades de API y ABI se señalarán con un salto de versión mayor.\n\n## Qué cambia con el versionado semántico\n\nEl proyecto cumple 3,5 años y, según el propio anuncio, muchas aplicaciones ya dependen de su trabajo. Cada integración nueva significa más desarrolladores atados a las interfaces de la librería, de ahí que el equipo hable de la necesidad de una API flexible pero estable.\n\nSegún el resumen de [AI Weekly](https://aiweekly.co/alerts/llamacpp-ships-v100-with-semver-for-libllama-and-ggml), las reglas funcionan así:\n\n- **MAJOR**: cambio incompatible en la API pública de C dentro de `./include`.\n- **MINOR**: funciones compatibles hacia atrás, actualizaciones de backends y soporte de modelos nuevos.\n- **PATCH**: correcciones de errores sin cambios de API.\n\nLas librerías afectadas son libllama (cabeceras en `llama.cpp/include/`) y libggml (`ggml/include/`), de acuerdo con [El Ecosistema Startup](https://ecosistemastartup.com/llama-cpp-v1-0-0-la-ia-local-ya-tiene-api-estable/). El equipo añade que será más estricto al hacer visibles esos límites a medida que crezca la adopción.\n\n## Qué trae la versión 1.0.0 por dentro\n\nUnite.AI, que describe las notas de versión con detalle, reporta una limpieza de la API: se eliminan 35 funciones obsoletas y la API de decodificación especulativa NextN pasa del encabezado de extensión `llama-ext.h` al público `llama.h`, con lo que queda cubierta por las nuevas reglas. Esa publicación está generada por un agente de IA y revisada por su redacción, así que conviene contrastar los detalles finos con las notas oficiales del repositorio.\n\nEntre lo nuevo que menciona esa fuente:\n\n- Cachés clave-valor en FP8 y un caché en memoria del host para modelos Mixture-of-Experts, con porción de CPU configurable.\n- Un endpoint `/v1/audio/speech` compatible con OpenAI en llama-server.\n- Correcciones de seguridad en el servidor (falsificación de peticiones, CORS y DNS rebinding) y restricción de `HF_TOKEN` a hosts de huggingface.co.\n- Una interfaz web rediseñada, con grupos de chat con nombre y editor Markdown con vista previa.\n- Mejoras en backends como CUDA, Metal, Vulkan, SYCL, OpenCL, WebGPU y Hexagon.\n\nEl anuncio oficial, por su parte, indica soporte para más de 150 variantes de arquitectura y para todos los métodos principales de decodificación especulativa. Cada backend de ggml puede compilarse como librería dinámica y cargarse en tiempo de ejecución.\n\n## Distribución e infraestructura de pruebas\n\nSegún AI Weekly y Unite.AI, hay artefactos pre-release para Linux, macOS, Windows, Android e iOS, y empaquetado vía Docker, Debian, Homebrew, conda-forge, MacPorts, Winget y XCFramework. Unite.AI añade que, según una discusión de los mantenedores del 7 de agosto de 2026, solo se crea un tag oficial de llama.cpp cuando su copia de ggml es idéntica a la publicada de ggml, para que los builds sean compatibles con un ggml instalado en el sistema.\n\nPara sostener el ritmo de desarrollo, el equipo dice que escala su CI con HF Buckets y HF Jobs, y suma runners propios con apoyo de hardware de NVIDIA, AMD, Qualcomm, Arm, IBM e Intel. También afirma que integra LLMs en su ciclo de desarrollo, pero que la calidad del código y el control de la arquitectura siguen siendo la prioridad.\n\n## Qué significa en la práctica si programas o emprendes\n\nLo más probable es que el mayor beneficio lo vean quienes embeben libllama o libggml en sus propios productos: un número de versión mayor distinto es ahora una señal explícita de que hay que revisar el código antes de actualizar. Quien mantiene paquetes o pipelines de release gana un criterio claro para decidir cuándo actualizar sin sorpresas.\n\nConviene hacer tres cosas:\n\n1. **Fija la versión** de llama.cpp y ggml en tus builds, y actualiza dentro de la misma versión mayor con pruebas normales.\n2. **Revisa si usas funciones obsoletas.** Si tu código llamaba a alguna de las 35 funciones que, según Unite.AI, se eliminaron, la migración a 1.0.0 puede exigir cambios.\n3. **Si expones llama-server**, lee las correcciones de seguridad de las notas de versión y valora actualizar.\n\nPara equipos pequeños en Latinoamérica que quieren evitar facturas variables de APIs de terceros, una dependencia con reglas de compatibilidad claras facilita planificar. Aun así, la estabilidad de la API no sustituye medir el rendimiento en tu hardware real: ningún artículo de los consultados ofrece cifras de velocidad propias de esta versión.\n\n## Un detalle práctico: la app Llama para Mac\n\nUn análisis publicado el 14 de noviembre de 2026 en [Hack-Log](https://note.com/hacklog_stealth/n/n21a692d67980?hl=en), una fuente independiente y de un solo autor, describe la app de barra de menú «Llama» para Mac. Según ese texto, se instala con `brew install --cask llama-app`, requiere macOS 15.0 o superior y levanta un servidor compatible con OpenAI en `http://localhost:9931/v1`.\n\nSu autor reporta que, en su Mac mini M4 de 16 GB, la app no detectó ninguno de sus 83 archivos GGUF, porque solo recoge automáticamente los modelos del caché de Hugging Face. Propone dos salidas: describirlos en `~/.config/llama/models.user.ini` (el método que atribuye al README oficial) o recolocarlos con enlaces simbólicos en formato de caché si son idénticos a los publicados. Es la experiencia de una sola persona, pero sirve de aviso: si tienes modelos descargados a mano, comprueba qué ve la herramienta antes de asumir que está rota.\n\n## Lo que aún no está claro\n\nLas fuentes no detallan un calendario de versiones mayores futuras ni cuántas aplicaciones concretas tendrán que migrar. Tampoco hay en el anuncio oficial cifras de rendimiento. Lo confirmado es el compromiso de versionado y el alcance de soporte descrito arriba; el resto del detalle técnico proviene de resúmenes de medios secundarios y conviene verificarlo en las notas de versión del proyecto.",
+  "seoTitle": "llama.cpp v1.0.0: versionado semántico y API",
+  "image": "/img/blog/llamacpp-v100-fija-reglas-de-versionado-para-su-api.jpg",
+  "imageAlt": "Ilustración abstracta de bloques encajados y numerados que forman una estructura estable, con un bloque mayor resaltado entre ellos"
+}
